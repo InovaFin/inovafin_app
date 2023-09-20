@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/verde_principal"
     android:gravity="center"
-    tools:context=".SplashScreen">
+    tools:context=".LoginCadastro">
 
-    <ImageView
-        android:layout_width="190dp"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/logo_branca"/>
+        android:textSize="23sp"
+        android:text="Tela Login e Cadastro"
+        android:textColor="@color/verde_principal"
+        android:textStyle="bold"/>
 
 </LinearLayout>
