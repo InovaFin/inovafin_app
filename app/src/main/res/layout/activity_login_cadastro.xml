@@ -7,12 +7,63 @@
     android:gravity="center"
     tools:context=".LoginCadastro">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="23sp"
-        android:text="Tela Login e Cadastro"
-        android:textColor="@color/verde_principal"
-        android:textStyle="bold"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="40dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="181dp"
+            android:layout_height="40dp"
+            android:src="@drawable/logo_verde"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="100dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seja bem-vindo!"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vamos começar!"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="26sp"
+                android:layout_marginBottom="100dp"/>
+
+            <Button
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_botao"
+                android:text="Login"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginBottom="15dp"/>
+
+            <Button
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_botao"
+                android:text="Cadastro"
+                android:textStyle="bold"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="15sp"/>
+
+        </LinearLayout>
+        
+    </LinearLayout>
 
 </LinearLayout>
