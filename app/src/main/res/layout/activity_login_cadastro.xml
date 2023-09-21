@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:background="@color/branco_background"
     tools:context=".LoginCadastro">
 
     <LinearLayout
@@ -33,6 +34,7 @@
                 android:fontFamily="@font/poppins_bold"
                 android:textSize="32sp"
                 android:textStyle="bold"
+                android:textColor="@color/black"
                 android:layout_marginBottom="5dp"/>
 
             <TextView
@@ -41,6 +43,7 @@
                 android:text="Vamos começar!"
                 android:fontFamily="@font/poppins_medium"
                 android:textSize="26sp"
+                android:textColor="@color/black_secundario"
                 android:layout_marginBottom="100dp"/>
 
             <Button
@@ -53,6 +56,7 @@
                 android:textSize="16sp"
                 android:fontFamily="@font/poppins_medium"
                 android:paddingVertical="10dp"
+                android:textColor="@color/white"
                 android:layout_marginBottom="15dp"/>
 
             <Button
@@ -64,6 +68,7 @@
                 android:textStyle="bold"
                 android:fontFamily="@font/poppins_medium"
                 android:paddingVertical="10dp"
+                android:textColor="@color/white"
                 android:textSize="15sp"/>
 
         </LinearLayout>

@@ -25,5 +25,10 @@ class Login : AppCompatActivity() {
 //            var navegarTelaHome = Intent(this, Home::class.java)
 //            startActivity(navegarTelaHome)
 //        }
+
+        binding.btEsqueceuSenha.setOnClickListener {
+            var navegarTelaEsqSenha = Intent(this, EsqueceuSenha::class.java)
+            startActivity(navegarTelaEsqSenha)
+        }
     }
 }
