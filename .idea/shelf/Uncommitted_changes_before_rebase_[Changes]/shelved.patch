@@ -1,0 +1,19 @@
+Index: app/src/main/java/com/example/inovafin/LoginCadastro.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.inovafin\r\n\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport android.os.Bundle\r\n\r\nclass LoginCadastro : AppCompatActivity() {\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContentView(R.layout.activity_login_cadastro)\r\n\r\n        println(\"Testando push\")\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/inovafin/LoginCadastro.kt b/app/src/main/java/com/example/inovafin/LoginCadastro.kt
+--- a/app/src/main/java/com/example/inovafin/LoginCadastro.kt	(revision f2c2d7f368203035203457ecc3632a49c23d58b6)
++++ b/app/src/main/java/com/example/inovafin/LoginCadastro.kt	(date 1695254091228)
+@@ -7,7 +7,5 @@
+     override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
+         setContentView(R.layout.activity_login_cadastro)
+-
+-        println("Testando push")
+     }
+ }
+\ No newline at end of file
