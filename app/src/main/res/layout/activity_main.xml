@@ -11,6 +11,6 @@
     <ImageView
         android:layout_width="190dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/logo_branca"/>
+        android:src="@drawable/logo_branca_500"/>
 
 </LinearLayout>
