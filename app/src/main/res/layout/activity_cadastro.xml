@@ -44,14 +44,15 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="text"
-            android:hint="Nome"
-            android:paddingStart="10dp"
-            android:textColorHint="@color/verde_principal"
             android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:fontFamily="@font/poppins"
+            android:hint="Nome"
+            android:inputType="text"
+            android:paddingStart="10dp"
             android:paddingBottom="20dp"
-            android:fontFamily="@font/poppins"/>
+            android:backgroundTint="@color/verde_principal"
+            android:textColorHint="@color/verde_principal" />
 
         <EditText
             android:layout_width="match_parent"
@@ -61,6 +62,7 @@
             android:hint="E-mail"
             android:paddingStart="10dp"
             android:textColorHint="@color/verde_principal"
+            android:backgroundTint="@color/verde_principal"
             android:layout_marginBottom="5dp"
             android:paddingBottom="20dp"
             android:fontFamily="@font/poppins"/>
@@ -75,41 +77,34 @@
             android:paddingStart="10dp"
             android:layout_marginBottom="5dp"
             android:textColorHint="@color/verde_principal"
+            android:backgroundTint="@color/verde_principal"
             android:fontFamily="@font/poppins"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:backgroundTint="@color/verde_principal"
             android:ems="10"
-            android:inputType="textPassword"
+            android:fontFamily="@font/poppins"
+            android:foregroundTint="#FF0505"
             android:hint="Confirmar Senha"
-            android:paddingBottom="20dp"
+            android:inputType="textPassword"
             android:paddingStart="10dp"
-            android:layout_marginBottom="25dp"
-            android:textColorHint="@color/verde_principal"
-            android:fontFamily="@font/poppins"/>
+            android:paddingBottom="20dp"
+            android:textColorHint="@color/verde_principal" />
 
         <Button
             android:id="@+id/btCadastro"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
             android:background="@drawable/bg_botao"
-            android:text="Cadastrar"
-            android:textStyle="bold"
-            android:textSize="16sp"
             android:fontFamily="@font/poppins_medium"
             android:paddingVertical="10dp"
-            android:layout_marginBottom="15dp"/>
-
-        <TextView
-            android:id="@+id/btLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Login"
-            android:fontFamily="@font/poppins_medium"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:layout_marginTop="20dp"/>
+            android:text="Cadastrar"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

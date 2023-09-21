@@ -14,10 +14,15 @@ class LoginCadastro : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        // Navegação entre tela Login e Cadastro
+        // Navegação para Tela Login
         binding.btLogin.setOnClickListener {
-            var navegarTelaLogin = Intent(this, Login)
+            var navegarTelaLogin = Intent(this, Login::class.java)
             startActivity(navegarTelaLogin)
+        }
+
+        binding.btCadastro.setOnClickListener {
+            var navegarTelaCadastro = Intent(this, Cadastro::class.java)
+            startActivity(navegarTelaCadastro)
         }
     }
 }
