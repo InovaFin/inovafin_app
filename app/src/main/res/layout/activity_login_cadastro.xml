@@ -44,24 +44,26 @@
                 android:layout_marginBottom="100dp"/>
 
             <Button
-                android:id="@+id/bt_login"
+                android:id="@+id/btLogin"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_botao"
                 android:text="Login"
                 android:textStyle="bold"
                 android:textSize="16sp"
-                android:fontFamily="@font/poppins_bold"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingVertical="10dp"
                 android:layout_marginBottom="15dp"/>
 
             <Button
-                android:id="@+id/bt_cadastro"
+                android:id="@+id/btCadastro"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_botao"
                 android:text="Cadastro"
                 android:textStyle="bold"
-                android:fontFamily="@font/poppins_bold"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingVertical="10dp"
                 android:textSize="15sp"/>
 
         </LinearLayout>
