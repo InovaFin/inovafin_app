@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:background="@color/branco_background"
     tools:context=".LoginCadastro">
 
     <LinearLayout
@@ -16,7 +17,7 @@
         <ImageView
             android:layout_width="181dp"
             android:layout_height="40dp"
-            android:src="@drawable/logo_verde"
+            android:src="@drawable/logo_verde_500"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="100dp"/>
 
@@ -33,6 +34,7 @@
                 android:fontFamily="@font/poppins_bold"
                 android:textSize="32sp"
                 android:textStyle="bold"
+                android:textColor="@color/black"
                 android:layout_marginBottom="5dp"/>
 
             <TextView
@@ -41,25 +43,32 @@
                 android:text="Vamos começar!"
                 android:fontFamily="@font/poppins_medium"
                 android:textSize="26sp"
+                android:textColor="@color/black_secundario"
                 android:layout_marginBottom="100dp"/>
 
             <Button
+                android:id="@+id/btLogin"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_botao"
                 android:text="Login"
                 android:textStyle="bold"
                 android:textSize="16sp"
-                android:fontFamily="@font/poppins_bold"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingVertical="10dp"
+                android:textColor="@color/white"
                 android:layout_marginBottom="15dp"/>
 
             <Button
+                android:id="@+id/btCadastro"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_botao"
                 android:text="Cadastro"
                 android:textStyle="bold"
-                android:fontFamily="@font/poppins_bold"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingVertical="10dp"
+                android:textColor="@color/white"
                 android:textSize="15sp"/>
 
         </LinearLayout>
