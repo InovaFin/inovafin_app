@@ -48,7 +48,13 @@ class Cadastro : AppCompatActivity() {
                         } else {
                             ret = result["status"].asString
                             if (ret == "ok")
+                            {
                                 Toast.makeText(applicationContext, "Incluído com sucesso", Toast.LENGTH_LONG).show()
+
+                                // Navegação para tela Login
+                                var voltarTela = Intent(this, Login::class.java)
+                                startActivity(voltarTela)
+                            }
                             else
                                 Toast.makeText(applicationContext, "Erro", Toast.LENGTH_LONG).show()
                         }
