@@ -45,6 +45,7 @@
             android:layout_marginBottom="15dp"/>
 
         <EditText
+            android:id="@+id/nomeUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
@@ -59,6 +60,7 @@
             android:textColorHint="@color/verde_principal" />
 
         <EditText
+            android:id="@+id/emailUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -73,6 +75,7 @@
             android:fontFamily="@font/poppins"/>
 
         <EditText
+            android:id="@+id/senhaUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -87,6 +90,7 @@
             android:fontFamily="@font/poppins"/>
 
         <EditText
+            android:id="@+id/confSenhaUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="40dp"
