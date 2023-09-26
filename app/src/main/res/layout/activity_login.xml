@@ -36,6 +36,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/emailUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -50,6 +51,7 @@
             android:fontFamily="@font/poppins"/>
 
         <EditText
+            android:id="@+id/senhaUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"

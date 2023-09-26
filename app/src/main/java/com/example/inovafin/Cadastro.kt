@@ -27,44 +27,6 @@ class Cadastro : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        fun inserir() {
-            nome = binding.nomeUsuario.text.toString()
-            email = binding.emailUsuario.text.toString()
-            senha = binding.senhaUsuario.text.toString()
-
-            url = Host
-
-            try {
-                Ion.with(this)
-                    .load(url)
-                    .setBodyParameter("nome", nome)
-                    .setBodyParameter("email", email)
-                    .setBodyParameter("senha", senha)
-                    .asJsonObject()
-                    .setCallback(FutureCallback<JsonObject> { e, result ->
-                        if (e != null) {
-                            // Ocorreu um erro na solicitação HTTP
-                            Toast.makeText(applicationContext, "Erro na solicitação: " + e.localizedMessage, Toast.LENGTH_LONG).show()
-                        } else {
-                            ret = result["status"].asString
-                            if (ret == "ok")
-                            {
-                                Toast.makeText(applicationContext, "Incluído com sucesso", Toast.LENGTH_LONG).show()
-
-                                // Navegação para tela Login
-                                var voltarTela = Intent(this, Login::class.java)
-                                startActivity(voltarTela)
-                            }
-                            else
-                                Toast.makeText(applicationContext, "Erro", Toast.LENGTH_LONG).show()
-                        }
-                    })
-            } catch (e: Exception) {
-                // Lidar com exceções gerais aqui
-                Toast.makeText(applicationContext, "Erro geral: " + e.localizedMessage, Toast.LENGTH_LONG).show()
-            }
-        }
-
         // Navegação para Tela LoginCadastro
         binding.icVoltar.setOnClickListener {
             var voltarTela = Intent(this, LoginCadastro::class.java)
@@ -75,6 +37,43 @@ class Cadastro : AppCompatActivity() {
         binding.btCadastro.setOnClickListener {
             inserir()
         }
+    }
 
+    fun inserir() {
+        nome = binding.nomeUsuario.text.toString()
+        email = binding.emailUsuario.text.toString()
+        senha = binding.senhaUsuario.text.toString()
+
+        url = Host
+
+        try {
+            Ion.with(this)
+                .load(url)
+                .setBodyParameter("nome", nome)
+                .setBodyParameter("email", email)
+                .setBodyParameter("senha", senha)
+                .asJsonObject()
+                .setCallback(FutureCallback<JsonObject> { e, result ->
+                    if (e != null) {
+                        // Ocorreu um erro na solicitação HTTP
+                        Toast.makeText(applicationContext, "Erro ao cadastrar: " + e.localizedMessage, Toast.LENGTH_LONG).show()
+                    } else {
+                        ret = result["status"].asString
+                        if (ret == "ok")
+                        {
+                            Toast.makeText(applicationContext, "Cadastro realizado!", Toast.LENGTH_LONG).show()
+
+                            // Navegação para tela Login
+                            var navegarTelaLogin = Intent(this, Login::class.java)
+                            startActivity(navegarTelaLogin)
+                        }
+                        else
+                            Toast.makeText(applicationContext, "$ret", Toast.LENGTH_LONG).show()
+                    }
+                })
+        } catch (e: Exception) {
+            // Lidar com exceções gerais aqui
+            Toast.makeText(applicationContext, "$ret", Toast.LENGTH_LONG).show()
+        }
     }
 }
