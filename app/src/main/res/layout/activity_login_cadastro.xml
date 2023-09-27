@@ -48,9 +48,10 @@
 
             <Button
                 android:id="@+id/btLogin"
+                android:clickable="true"
                 android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_botao"
+                android:layout_height="55dp"
+                android:background="@drawable/bg_botao_ripple"
                 android:text="Login"
                 android:textStyle="bold"
                 android:textSize="16sp"
@@ -61,9 +62,10 @@
 
             <Button
                 android:id="@+id/btCadastro"
+                android:clickable="true"
                 android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_botao"
+                android:layout_height="55dp"
+                android:background="@drawable/bg_botao_ripple"
                 android:text="Cadastro"
                 android:textStyle="bold"
                 android:fontFamily="@font/poppins_medium"

@@ -59,18 +59,36 @@
             android:textColor="@color/black"
             android:fontFamily="@font/poppins"/>
 
-        <Button
+        <LinearLayout
             android:id="@+id/btRecuperar"
+            android:clickable="true"
             android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_botao"
-            android:text="Recuperar"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:fontFamily="@font/poppins_medium"
+            android:layout_height="55dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/bg_botao_ripple"
+            android:gravity="center"
             android:paddingVertical="10dp"
-            android:textColor="@color/white"
-            android:layout_marginBottom="15dp"/>
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/btText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="Recuperar"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins_bold"/>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/btAnimacao"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:lottie_rawRes="@raw/load_white"
+                android:visibility="gone"
+                app:lottie_loop="true"
+                app:lottie_autoPlay="false"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 

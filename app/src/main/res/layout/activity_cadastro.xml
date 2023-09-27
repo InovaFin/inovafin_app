@@ -128,9 +128,9 @@
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/btAnimacao"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                app:lottie_rawRes="@raw/load"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:lottie_rawRes="@raw/load_white"
                 android:visibility="gone"
                 app:lottie_loop="true"
                 app:lottie_autoPlay="false"/>

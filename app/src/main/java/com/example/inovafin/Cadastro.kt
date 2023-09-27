@@ -50,11 +50,9 @@ class Cadastro : AppCompatActivity() {
     }
 
      fun pararAnimacao() {
-        // Tornar a animação visível e iniciar
          binding.btAnimacao.cancelAnimation()
          binding.btAnimacao.visibility = View.GONE
 
-         // Ocultar o texto do botão
          binding.btText.visibility = View.VISIBLE
     }
 

@@ -2,6 +2,7 @@ package com.example.inovafin
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.inovafin.databinding.ActivityLoginBinding
@@ -38,9 +39,27 @@ class Login : AppCompatActivity() {
 
         // Navegação para Tela Home
         binding.btLogin.setOnClickListener {
+            iniciarAnimacao()
             logar()
         }
     }
+
+    fun iniciarAnimacao() {
+        // Tornar a animação visível e iniciar
+        binding.btAnimacao.visibility = View.VISIBLE
+        binding.btAnimacao.playAnimation()
+
+        // Ocultar o texto do botão
+        binding.btText.visibility = View.GONE
+    }
+
+    fun pararAnimacao() {
+        binding.btAnimacao.cancelAnimation()
+        binding.btAnimacao.visibility = View.GONE
+
+        binding.btText.visibility = View.VISIBLE
+    }
+
     fun logar() {
         email = binding.emailUsuario.text.toString()
         senha = binding.senhaUsuario.text.toString()
@@ -54,6 +73,7 @@ class Login : AppCompatActivity() {
                 .setBodyParameter("senha",senha)
                 .asJsonObject()
                 .setCallback(FutureCallback<JsonObject> { e, result ->
+                    pararAnimacao()
                     val jsonObject = result.asJsonObject
                     val ret = jsonObject.get("status").asString
                     if (ret == "ok")

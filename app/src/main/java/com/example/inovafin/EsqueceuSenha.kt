@@ -3,6 +3,7 @@ package com.example.inovafin
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import com.example.inovafin.databinding.ActivityEsqueceuSenhaBinding
 import com.google.gson.JsonObject
@@ -30,8 +31,25 @@ class EsqueceuSenha : AppCompatActivity() {
         }
 
         binding.btRecuperar.setOnClickListener {
+            iniciarAnimacao()
             recuperar()
         }
+    }
+
+    fun iniciarAnimacao() {
+        // Tornar a animação visível e iniciar
+        binding.btAnimacao.visibility = View.VISIBLE
+        binding.btAnimacao.playAnimation()
+
+        // Ocultar o texto do botão
+        binding.btText.visibility = View.GONE
+    }
+
+    fun pararAnimacao() {
+        binding.btAnimacao.cancelAnimation()
+        binding.btAnimacao.visibility = View.GONE
+
+        binding.btText.visibility = View.VISIBLE
     }
     fun recuperar() {
         email = binding.emailUsuario.text.toString()
@@ -43,6 +61,7 @@ class EsqueceuSenha : AppCompatActivity() {
             .setBodyParameter("email", email)
             .asJsonObject()
             .setCallback(FutureCallback<JsonObject> { e, result ->
+                pararAnimacao()
                 if (e != null) {
                     // Ocorreu um erro na solicitação HTTP
                     Toast.makeText(applicationContext, "Erro na solicitação HTTP: ${e.localizedMessage}", Toast.LENGTH_LONG).show()
