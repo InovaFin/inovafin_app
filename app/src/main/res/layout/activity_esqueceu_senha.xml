@@ -45,6 +45,7 @@
             android:layout_marginBottom="20dp"/>
 
         <EditText
+            android:id="@+id/emailUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -59,11 +60,11 @@
             android:fontFamily="@font/poppins"/>
 
         <Button
-            android:id="@+id/btEnviar"
+            android:id="@+id/btRecuperar"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_botao"
-            android:text="Enviar"
+            android:text="Recuperar"
             android:textStyle="bold"
             android:textSize="16sp"
             android:fontFamily="@font/poppins_medium"

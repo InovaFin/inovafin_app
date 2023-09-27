@@ -1,0 +1,85 @@
+Index: app/src/main/java/com/example/inovafin/Cadastro.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.inovafin\r\n\r\nimport android.content.Intent\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport android.os.Bundle\r\nimport com.example.inovafin.databinding.ActivityCadastroBinding\r\n\r\nclass Cadastro : AppCompatActivity() {\r\n\r\n    private lateinit var binding: ActivityCadastroBinding\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        binding = ActivityCadastroBinding.inflate(layoutInflater)\r\n        val view = binding.root\r\n        setContentView(view)\r\n\r\n        // Navegação para Tela LoginCadastro\r\n        binding.icVoltar.setOnClickListener {\r\n            var voltarTela = Intent(this, LoginCadastro::class.java)\r\n            startActivity(voltarTela)\r\n        }\r\n\r\n        // Navegação para Tela Home\r\n//        binding.btCadastro.setOnClickListener {\r\n//            var navegarTelaHome = Intent(this, Home::class.java)\r\n//            startActivity(navegarTelaHome)\r\n//        }\r\n    }\r\n}
+===================================================================
+diff --git a/app/src/main/java/com/example/inovafin/Cadastro.kt b/app/src/main/java/com/example/inovafin/Cadastro.kt
+--- a/app/src/main/java/com/example/inovafin/Cadastro.kt	
++++ b/app/src/main/java/com/example/inovafin/Cadastro.kt	
+@@ -1,12 +1,16 @@
+ package com.example.inovafin
+ 
+ import android.content.Intent
+-import androidx.appcompat.app.AppCompatActivity
+ import android.os.Bundle
++import androidx.appcompat.app.AppCompatActivity
+ import com.example.inovafin.databinding.ActivityCadastroBinding
+ 
+ class Cadastro : AppCompatActivity() {
+ 
++    var Host = "https://inovafin.000webhostapp.com/projeto/"
++    var url: String? = null
++    var ret: String? = null
++
+     private lateinit var binding: ActivityCadastroBinding
+     override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
+@@ -14,13 +18,17 @@
+         val view = binding.root
+         setContentView(view)
+ 
++        val nome = binding.nomeUsuario
++
+         // Navegação para Tela LoginCadastro
+         binding.icVoltar.setOnClickListener {
+             var voltarTela = Intent(this, LoginCadastro::class.java)
+             startActivity(voltarTela)
+         }
+ 
+-        // Navegação para Tela Home
++
++
++        // Navegação para Tela LoginCadastro se true
+ //        binding.btCadastro.setOnClickListener {
+ //            var navegarTelaHome = Intent(this, Home::class.java)
+ //            startActivity(navegarTelaHome)
+Index: app/src/main/res/layout/activity_cadastro.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".Cadastro\"\r\n    android:background=\"@color/branco_background\"\r\n    android:orientation=\"vertical\">\r\n\r\n    <ImageView\r\n        android:id=\"@+id/icVoltar\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:src=\"@drawable/ic_voltar\"\r\n        android:layout_marginTop=\"40dp\"\r\n        android:layout_marginStart=\"20dp\"\r\n        android:layout_marginBottom=\"30dp\"/>\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:orientation=\"vertical\"\r\n        android:gravity=\"center\"\r\n        android:layout_marginHorizontal=\"40dp\">\r\n\r\n        <TextView\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:fontFamily=\"@font/poppins_bold\"\r\n            android:text=\"É ótimo ter você \\naqui!\"\r\n            android:textAlignment=\"center\"\r\n            android:textSize=\"29sp\"\r\n            android:textColor=\"@color/black\"\r\n            android:textStyle=\"bold\"/>\r\n\r\n        <TextView\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"Vamos iniciar sua jornada\\n com nosso aplicativo.\"\r\n            android:fontFamily=\"@font/poppins_medium\"\r\n            android:textSize=\"19sp\"\r\n            android:textAlignment=\"center\"\r\n            android:textColor=\"@color/black_secundario\"\r\n            android:layout_marginBottom=\"15dp\"/>\r\n\r\n        <EditText\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginBottom=\"5dp\"\r\n            android:ems=\"10\"\r\n            android:fontFamily=\"@font/poppins\"\r\n            android:hint=\"Nome\"\r\n            android:inputType=\"text\"\r\n            android:paddingStart=\"10dp\"\r\n            android:paddingBottom=\"20dp\"\r\n            android:textColor=\"@color/black\"\r\n            android:backgroundTint=\"@color/verde_principal\"\r\n            android:textColorHint=\"@color/verde_principal\" />\r\n\r\n        <EditText\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:ems=\"10\"\r\n            android:inputType=\"textEmailAddress\"\r\n            android:hint=\"E-mail\"\r\n            android:paddingStart=\"10dp\"\r\n            android:textColorHint=\"@color/verde_principal\"\r\n            android:backgroundTint=\"@color/verde_principal\"\r\n            android:layout_marginBottom=\"5dp\"\r\n            android:textColor=\"@color/black\"\r\n            android:paddingBottom=\"20dp\"\r\n            android:fontFamily=\"@font/poppins\"/>\r\n\r\n        <EditText\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:ems=\"10\"\r\n            android:inputType=\"textPassword\"\r\n            android:hint=\"Senha\"\r\n            android:paddingBottom=\"20dp\"\r\n            android:paddingStart=\"10dp\"\r\n            android:layout_marginBottom=\"5dp\"\r\n            android:textColorHint=\"@color/verde_principal\"\r\n            android:textColor=\"@color/black\"\r\n            android:backgroundTint=\"@color/verde_principal\"\r\n            android:fontFamily=\"@font/poppins\"/>\r\n\r\n        <EditText\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginBottom=\"40dp\"\r\n            android:backgroundTint=\"@color/verde_principal\"\r\n            android:ems=\"10\"\r\n            android:fontFamily=\"@font/poppins\"\r\n            android:foregroundTint=\"#FF0505\"\r\n            android:hint=\"Confirmar Senha\"\r\n            android:inputType=\"textPassword\"\r\n            android:textColor=\"@color/black\"\r\n            android:paddingStart=\"10dp\"\r\n            android:paddingBottom=\"20dp\"\r\n            android:textColorHint=\"@color/verde_principal\" />\r\n\r\n        <Button\r\n            android:id=\"@+id/btCadastro\"\r\n            android:layout_width=\"250dp\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginBottom=\"15dp\"\r\n            android:background=\"@drawable/bg_botao\"\r\n            android:fontFamily=\"@font/poppins_medium\"\r\n            android:paddingVertical=\"10dp\"\r\n            android:text=\"Cadastrar\"\r\n            android:textSize=\"16sp\"\r\n            android:textColor=\"@color/white\"\r\n            android:textStyle=\"bold\" />\r\n\r\n    </LinearLayout>\r\n\r\n</LinearLayout>
+===================================================================
+diff --git a/app/src/main/res/layout/activity_cadastro.xml b/app/src/main/res/layout/activity_cadastro.xml
+--- a/app/src/main/res/layout/activity_cadastro.xml	
++++ b/app/src/main/res/layout/activity_cadastro.xml	
+@@ -45,6 +45,7 @@
+             android:layout_marginBottom="15dp"/>
+ 
+         <EditText
++            android:id="@+id/nomeUsuario"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginBottom="5dp"
+@@ -59,6 +60,7 @@
+             android:textColorHint="@color/verde_principal" />
+ 
+         <EditText
++            android:id="@+id/emailUsuario"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:ems="10"
+@@ -73,6 +75,7 @@
+             android:fontFamily="@font/poppins"/>
+ 
+         <EditText
++            android:id="@+id/senhaUsuario"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:ems="10"
+@@ -87,6 +90,7 @@
+             android:fontFamily="@font/poppins"/>
+ 
+         <EditText
++            android:id="@+id/confSenhaUsuario"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginBottom="40dp"
