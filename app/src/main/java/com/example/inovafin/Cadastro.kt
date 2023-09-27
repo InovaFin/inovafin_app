@@ -35,8 +35,27 @@ class Cadastro : AppCompatActivity() {
 
         // Navegação para Tela Home
         binding.btCadastro.setOnClickListener {
+            iniciarAnimacao()
             inserir()
         }
+    }
+
+     fun iniciarAnimacao() {
+         // Tornar a animação visível e iniciar
+         binding.btAnimacao.visibility = View.VISIBLE
+         binding.btAnimacao.playAnimation()
+
+         // Ocultar o texto do botão
+         binding.btText.visibility = View.GONE
+    }
+
+     fun pararAnimacao() {
+        // Tornar a animação visível e iniciar
+         binding.btAnimacao.cancelAnimation()
+         binding.btAnimacao.visibility = View.GONE
+
+         // Ocultar o texto do botão
+         binding.btText.visibility = View.VISIBLE
     }
 
     fun inserir() {
@@ -54,6 +73,7 @@ class Cadastro : AppCompatActivity() {
                 .setBodyParameter("senha", senha)
                 .asJsonObject()
                 .setCallback(FutureCallback<JsonObject> { e, result ->
+                    pararAnimacao()
                     if (e != null) {
                         // Ocorreu um erro na solicitação HTTP
                         Toast.makeText(applicationContext, "Erro ao cadastrar: " + e.localizedMessage, Toast.LENGTH_LONG).show()
