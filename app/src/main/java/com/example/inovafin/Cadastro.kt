@@ -73,7 +73,7 @@ class Cadastro : AppCompatActivity() {
                 })
         } catch (e: Exception) {
             // Lidar com exceções gerais aqui
-            Toast.makeText(applicationContext, "$ret", Toast.LENGTH_LONG).show()
+            Toast.makeText(applicationContext, "Erro" + e.localizedMessage, Toast.LENGTH_LONG).show()
         }
     }
 }

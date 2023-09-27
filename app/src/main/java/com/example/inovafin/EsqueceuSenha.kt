@@ -11,7 +11,7 @@ import com.koushikdutta.ion.Ion
 
 class EsqueceuSenha : AppCompatActivity() {
 
-    var Host = "https://inovafin.000webhostapp.com/projeto/recuperar.php"
+    var Host = "https://inovafin.000webhostapp.com/PHPMailer-master/recuperar.php"
     var url: String? = null
     var ret: String? = null
 
@@ -38,24 +38,28 @@ class EsqueceuSenha : AppCompatActivity() {
 
         url = Host
 
-        try {
-            Ion.with(this)
-                .load(url)
-                .setBodyParameter("email", email)
-                .asJsonObject()
-                .setCallback(FutureCallback<JsonObject> { e, result ->
-                    val jsonObject = result.asJsonObject
-                    val ret = jsonObject.get("status").asString
-                    if (ret == "ok")
-                    {
-
+        Ion.with(this)
+            .load(url)
+            .setBodyParameter("email", email)
+            .asJsonObject()
+            .setCallback(FutureCallback<JsonObject> { e, result ->
+                if (e != null) {
+                    // Ocorreu um erro na solicitação HTTP
+                    Toast.makeText(applicationContext, "Erro na solicitação HTTP: ${e.localizedMessage}", Toast.LENGTH_LONG).show()
+                } else {
+                    try {
+                        val jsonObject = result.asJsonObject
+                        val ret = jsonObject.get("status").asString
+                        if (ret == "ok") {
+                            Toast.makeText(applicationContext, "Senha atualizada!\nVerifique sua caixa de entrada!", Toast.LENGTH_LONG).show()
+                        } else {
+                            Toast.makeText(applicationContext, "Erro no servidor: $ret", Toast.LENGTH_LONG).show()
+                        }
+                    } catch (ex: Exception) {
+                        // Erro ao analisar o JSON da resposta do servidor
+                        Toast.makeText(applicationContext, "Erro ao analisar resposta do servidor: ${ex.localizedMessage}", Toast.LENGTH_LONG).show()
                     }
-                    else
-                        Toast.makeText(applicationContext, "$ret", Toast.LENGTH_LONG).show()
-                })
-        } catch (e: Exception) {
-            // Lidar com exceções gerais aqui
-            Toast.makeText(applicationContext, "$ret", Toast.LENGTH_LONG).show()
-        }
+                }
+            })
     }
 }
