@@ -2,6 +2,7 @@ package com.example.inovafin
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Patterns
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -60,36 +61,47 @@ class Login : AppCompatActivity() {
         binding.btText.visibility = View.VISIBLE
     }
 
+    fun validacaoEmail(emailText: String): Boolean {
+        val pattern = Patterns.EMAIL_ADDRESS
+        return pattern.matcher(emailText).matches()
+    }
+
     fun logar() {
         email = binding.emailUsuario.text.toString()
         senha = binding.senhaUsuario.text.toString()
 
         url = Host
 
-        try {
-            Ion.with(this)
-                .load(url)
-                .setBodyParameter("email", email)
-                .setBodyParameter("senha",senha)
-                .asJsonObject()
-                .setCallback(FutureCallback<JsonObject> { e, result ->
-                    pararAnimacao()
-                    val jsonObject = result.asJsonObject
-                    val ret = jsonObject.get("status").asString
-                    if (ret == "ok")
-                    {
-                        Toast.makeText(applicationContext, "Logado com sucesso", Toast.LENGTH_LONG).show()
+        if (validacaoEmail(email!!)){
+            try {
+                Ion.with(this)
+                    .load(url)
+                    .setBodyParameter("email", email)
+                    .setBodyParameter("senha",senha)
+                    .asJsonObject()
+                    .setCallback(FutureCallback<JsonObject> { e, result ->
+                        pararAnimacao()
+                        val jsonObject = result.asJsonObject
+                        val ret = jsonObject.get("status").asString
+                        if (ret == "ok")
+                        {
+                            Toast.makeText(applicationContext, "Logado com sucesso", Toast.LENGTH_LONG).show()
 
-//                      // Navegação para tela Home
-                        var navegarTelaHome = Intent(this, Home::class.java)
-                        startActivity(navegarTelaHome)
-                    }
-                    else
-                        Toast.makeText(applicationContext, "$ret", Toast.LENGTH_LONG).show()
-                })
-        } catch (e: Exception) {
-            // Lidar com exceções gerais aqui
-            Toast.makeText(applicationContext, "$ret", Toast.LENGTH_LONG).show()
+                            // Navegação para tela Home
+                            var navegarTelaHome = Intent(this, Home::class.java)
+                            startActivity(navegarTelaHome)
+                        }
+                        else
+                            Toast.makeText(applicationContext, "$ret", Toast.LENGTH_LONG).show()
+                    })
+            } catch (e: Exception) {
+                // Lidar com exceções gerais aqui
+                Toast.makeText(applicationContext, "$ret", Toast.LENGTH_LONG).show()
+            }
+        }
+        else {
+            pararAnimacao()
+            Toast.makeText(this, "Email inválido!", Toast.LENGTH_SHORT).show()
         }
     }
 }

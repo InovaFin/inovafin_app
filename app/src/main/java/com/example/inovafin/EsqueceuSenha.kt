@@ -3,6 +3,7 @@ package com.example.inovafin
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Patterns
 import android.view.View
 import android.widget.Toast
 import com.example.inovafin.databinding.ActivityEsqueceuSenhaBinding
@@ -51,34 +52,51 @@ class EsqueceuSenha : AppCompatActivity() {
 
         binding.btText.visibility = View.VISIBLE
     }
+
+    fun validacaoEmail(emailText: String): Boolean {
+        val pattern = Patterns.EMAIL_ADDRESS
+        return pattern.matcher(emailText).matches()
+    }
+
     fun recuperar() {
         email = binding.emailUsuario.text.toString()
 
         url = Host
 
-        Ion.with(this)
-            .load(url)
-            .setBodyParameter("email", email)
-            .asJsonObject()
-            .setCallback(FutureCallback<JsonObject> { e, result ->
-                pararAnimacao()
-                if (e != null) {
-                    // Ocorreu um erro na solicitação HTTP
-                    Toast.makeText(applicationContext, "Erro na solicitação HTTP: ${e.localizedMessage}", Toast.LENGTH_LONG).show()
-                } else {
-                    try {
-                        val jsonObject = result.asJsonObject
-                        val ret = jsonObject.get("status").asString
-                        if (ret == "ok") {
-                            Toast.makeText(applicationContext, "Senha atualizada!\nVerifique sua caixa de entrada!", Toast.LENGTH_LONG).show()
+        if (validacaoEmail(email!!)){
+            try {
+                Ion.with(this)
+                    .load(url)
+                    .setBodyParameter("email", email)
+                    .asJsonObject()
+                    .setCallback(FutureCallback<JsonObject> { e, result ->
+                        pararAnimacao()
+                        if (e != null) {
+                            // Ocorreu um erro na solicitação HTTP
+                            Toast.makeText(applicationContext, "Erro na solicitação HTTP: ${e.localizedMessage}", Toast.LENGTH_LONG).show()
                         } else {
-                            Toast.makeText(applicationContext, "Erro no servidor: $ret", Toast.LENGTH_LONG).show()
+                            try {
+                                val jsonObject = result.asJsonObject
+                                val ret = jsonObject.get("status").asString
+                                if (ret == "ok") {
+                                    Toast.makeText(applicationContext, "Senha atualizada!\nVerifique sua caixa de entrada!", Toast.LENGTH_LONG).show()
+                                } else {
+                                    Toast.makeText(applicationContext, "Erro no servidor: $ret", Toast.LENGTH_LONG).show()
+                                }
+                            } catch (ex: Exception) {
+                                // Erro ao analisar o JSON da resposta do servidor
+                                Toast.makeText(applicationContext, "Erro ao analisar resposta do servidor: ${ex.localizedMessage}", Toast.LENGTH_LONG).show()
+                            }
                         }
-                    } catch (ex: Exception) {
-                        // Erro ao analisar o JSON da resposta do servidor
-                        Toast.makeText(applicationContext, "Erro ao analisar resposta do servidor: ${ex.localizedMessage}", Toast.LENGTH_LONG).show()
-                    }
-                }
-            })
+                    })
+            }
+            catch (ex: Exception){
+                Toast.makeText(applicationContext,"${ex.localizedMessage}", Toast.LENGTH_LONG).show()
+            }
+        }
+        else {
+            pararAnimacao()
+            Toast.makeText(this, "Email inválido!", Toast.LENGTH_SHORT).show()
+        }
     }
 }
