@@ -6,8 +6,8 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/app/src/main/java/com/example/inovafin/LoginCadastro.kt b/app/src/main/java/com/example/inovafin/LoginCadastro.kt
---- a/app/src/main/java/com/example/inovafin/LoginCadastro.kt	(revision f2c2d7f368203035203457ecc3632a49c23d58b6)
-+++ b/app/src/main/java/com/example/inovafin/LoginCadastro.kt	(date 1695254091228)
+--- a/app/src/main/java/com/example/inovafin/LoginCadastro.kt	
++++ b/app/src/main/java/com/example/inovafin/LoginCadastro.kt	
 @@ -7,7 +7,5 @@
      override fun onCreate(savedInstanceState: Bundle?) {
          super.onCreate(savedInstanceState)
