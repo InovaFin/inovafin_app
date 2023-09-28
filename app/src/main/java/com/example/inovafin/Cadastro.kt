@@ -67,16 +67,16 @@ class Cadastro : AppCompatActivity() {
         return pattern.matcher(emailText).matches()
     }
 
-    fun validarSenha(): String? {
+    fun validarSenha(): Int? {
         senha = binding.senhaUsuario.text.toString()
         if (senha!!.length >= 8) {
             if (senha == confirmSenha) {
                 return null // Senha válida
             } else {
-                return "As senhas são diferentes!"
+                return 1
             }
         } else {
-            return "A senha deve ter pelo menos 8 caracteres"
+            return 0
         }
     }
 
@@ -89,60 +89,54 @@ class Cadastro : AppCompatActivity() {
 
         val erroSenha = validarSenha()
 
-        if (validarNome(nome!!)){
-            if (validarEmail(email!!)){
-                // validar Senha
-                if (erroSenha === null){
-                    pararAnimacao()
-                    Toast.makeText(this, "Senhas corretas!", Toast.LENGTH_SHORT).show()
-//                try {
-//                    Ion.with(this)
-//                        .load(url)
-//                        .setBodyParameter("nome", nome)
-//                        .setBodyParameter("email", email)
-//                        .setBodyParameter("senha", senha)
-//                        .asJsonObject()
-//                        .setCallback(FutureCallback<JsonObject> { e, result ->
-//                            pararAnimacao()
-//                            if (e != null) {
-//                                // Ocorreu um erro na solicitação HTTP
-//                                Toast.makeText(applicationContext, "Erro ao cadastrar: " + e.localizedMessage, Toast.LENGTH_LONG).show()
-//                            } else {
-//                                ret = result["status"].asString
-//                                if (ret == "ok")
-//                                {
-//                                    Toast.makeText(applicationContext, "Cadastro realizado!", Toast.LENGTH_LONG).show()
-//
-//                                    // Navegação para tela Login
-//                                    var navegarTelaLogin = Intent(this, Login::class.java)
-//                                    startActivity(navegarTelaLogin)
-//                                }
-//                                else
-//                                    Toast.makeText(applicationContext, "$ret", Toast.LENGTH_LONG).show()
-//                            }
-//                        })
-//                } catch (e: Exception) {
-//                    // Lidar com exceções gerais aqui
-//                    Toast.makeText(applicationContext, "Erro" + e.localizedMessage, Toast.LENGTH_LONG).show()
-//                }
-                }
-                else if (erroSenha == "As senhas são diferentes!"){
-                    pararAnimacao()
-                    Toast.makeText(this, "$erroSenha", Toast.LENGTH_SHORT).show()
-                }
-                else if (erroSenha == "A senha deve ter pelo menos 8 caracteres"){
-                    pararAnimacao()
-                    Toast.makeText(this, "$erroSenha", Toast.LENGTH_SHORT).show()
-                }
-            }
-            else {
-                pararAnimacao()
-                Toast.makeText(this, "Email inválido!", Toast.LENGTH_SHORT).show()
+        if (validarNome(nome!!) && validarEmail(email!!) && erroSenha === null) {
+            pararAnimacao()
+            try {
+                Ion.with(this)
+                    .load(url)
+                    .setBodyParameter("nome", nome)
+                    .setBodyParameter("email", email)
+                    .setBodyParameter("senha", senha)
+                    .asJsonObject()
+                    .setCallback(FutureCallback<JsonObject> { e, result ->
+                        pararAnimacao()
+                        if (e != null) {
+                            // Ocorreu um erro na solicitação HTTP
+                            Toast.makeText(applicationContext, "Erro ao cadastrar: " + e.localizedMessage, Toast.LENGTH_LONG).show()
+                        } else {
+                            ret = result["status"].asString
+                            if (ret == "ok")
+                            {
+                                Toast.makeText(applicationContext, "Cadastro realizado!", Toast.LENGTH_LONG).show()
+
+                                // Navegação para tela Login
+                                var navegarTelaLogin = Intent(this, Login::class.java)
+                                startActivity(navegarTelaLogin)
+                            }
+                            else
+                                Toast.makeText(applicationContext, "$ret", Toast.LENGTH_LONG).show()
+                        }
+                    })
+            } catch (e: Exception) {
+                // Lidar com exceções gerais aqui
+                Toast.makeText(applicationContext, "Erro" + e.localizedMessage, Toast.LENGTH_LONG).show()
             }
         }
         else {
             pararAnimacao()
-            Toast.makeText(this, "Nome inválido!", Toast.LENGTH_SHORT).show()
+            if (!validarNome(nome!!)) {
+                binding.nomeUsuario.error = "Nome inválido (pelo menos 3 caracteres)"
+            }
+            if (!validarEmail(email!!)) {
+                binding.emailUsuario.error = "Email inválido"
+            }
+            if (erroSenha == 0){
+                binding.senhaUsuario.error = "A senha deve conter no mínimo 8 caracteres!"
+            }
+            else
+            {
+                binding.confirmSenhaUsuario.error = "As senhas são diferentes!"
+            }
         }
     }
 }

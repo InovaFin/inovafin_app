@@ -96,7 +96,7 @@ class EsqueceuSenha : AppCompatActivity() {
         }
         else {
             pararAnimacao()
-            Toast.makeText(this, "Email inválido!", Toast.LENGTH_SHORT).show()
+            binding.emailUsuario.error = "Digite um Email válido!"
         }
     }
 }
