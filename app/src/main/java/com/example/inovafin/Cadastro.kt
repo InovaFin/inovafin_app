@@ -58,6 +58,10 @@ class Cadastro : AppCompatActivity() {
          binding.btText.visibility = View.VISIBLE
     }
 
+    fun validarNome(nome: String): Boolean {
+        return nome.isNotEmpty() && nome.length >= 3
+    }
+
     fun validarEmail(emailText: String): Boolean {
         val pattern = Patterns.EMAIL_ADDRESS
         return pattern.matcher(emailText).matches()
@@ -85,10 +89,12 @@ class Cadastro : AppCompatActivity() {
 
         val erroSenha = validarSenha()
 
-        if (validarEmail(email!!)){
-            if (erroSenha === null){
-                pararAnimacao()
-                Toast.makeText(this, "Senhas corretas!", Toast.LENGTH_SHORT).show()
+        if (validarNome(nome!!)){
+            if (validarEmail(email!!)){
+                // validar Senha
+                if (erroSenha === null){
+                    pararAnimacao()
+                    Toast.makeText(this, "Senhas corretas!", Toast.LENGTH_SHORT).show()
 //                try {
 //                    Ion.with(this)
 //                        .load(url)
@@ -119,19 +125,24 @@ class Cadastro : AppCompatActivity() {
 //                    // Lidar com exceções gerais aqui
 //                    Toast.makeText(applicationContext, "Erro" + e.localizedMessage, Toast.LENGTH_LONG).show()
 //                }
+                }
+                else if (erroSenha == "As senhas são diferentes!"){
+                    pararAnimacao()
+                    Toast.makeText(this, "$erroSenha", Toast.LENGTH_SHORT).show()
+                }
+                else if (erroSenha == "A senha deve ter pelo menos 8 caracteres"){
+                    pararAnimacao()
+                    Toast.makeText(this, "$erroSenha", Toast.LENGTH_SHORT).show()
+                }
             }
-            else if (erroSenha == "As senhas são diferentes!"){
+            else {
                 pararAnimacao()
-                Toast.makeText(this, "$erroSenha", Toast.LENGTH_SHORT).show()
-            }
-            else if (erroSenha == "A senha deve ter pelo menos 8 caracteres"){
-                pararAnimacao()
-                Toast.makeText(this, "$erroSenha", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Email inválido!", Toast.LENGTH_SHORT).show()
             }
         }
         else {
             pararAnimacao()
-            Toast.makeText(this, "Email inválido!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Nome inválido!", Toast.LENGTH_SHORT).show()
         }
     }
 }
