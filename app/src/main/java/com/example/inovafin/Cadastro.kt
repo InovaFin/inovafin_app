@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.inovafin.Validacoes.Validacao
 import com.example.inovafin.databinding.ActivityCadastroBinding
 import com.google.gson.JsonObject
 import com.koushikdutta.async.future.FutureCallback
@@ -23,13 +24,23 @@ class Cadastro : AppCompatActivity() {
     var confirmSenha: String? = null
 
     private lateinit var binding: ActivityCadastroBinding
+
+    // Armazena uma instância da classe AnimacaoDeLoad
     private lateinit var animacaoDeLoad: AnimacaoDeLoad
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCadastroBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 
+        // Variáveis parâmetro para os métodos da classe Validacao e solicitação HTTP
+        nome = binding.nomeUsuario.text.toString()
+        email = binding.emailUsuario.text.toString()
+        senha = binding.senhaUsuario.text.toString()
+        confirmSenha = binding.confirmSenhaUsuario.text.toString()
+
+        // Cria uma nova instância da classe AnimacaoDeLoad e inicializa ela com os parâmetros relevantes
         animacaoDeLoad = AnimacaoDeLoad(binding.btAnimacao, binding.btText, this)
 
         // Navegação para Tela LoginCadastro
@@ -39,43 +50,21 @@ class Cadastro : AppCompatActivity() {
         }
 
         binding.btCadastro.setOnClickListener {
+            // Chama um método da Classe AnimacaoDeLoad
             animacaoDeLoad.iniciarAnimacao()
+
             inserir()
         }
     }
 
-    fun validarNome(nome: String): Boolean {
-        return nome.isNotEmpty() && nome.length >= 3
-    }
-
-    fun validarEmail(emailText: String): Boolean {
-        val pattern = Patterns.EMAIL_ADDRESS
-        return pattern.matcher(emailText).matches()
-    }
-
-    fun validarSenha(): Int? {
-        senha = binding.senhaUsuario.text.toString()
-        if (senha!!.length >= 8) {
-            if (senha == confirmSenha) {
-                return null // Senha válida
-            } else {
-                return 1
-            }
-        } else {
-            return 0
-        }
-    }
-
     fun inserir() {
-        nome = binding.nomeUsuario.text.toString()
-        email = binding.emailUsuario.text.toString()
-        confirmSenha = binding.confirmSenhaUsuario.text.toString()
-
         url = Host
 
-        val erroSenha = validarSenha()
+        // Retorna um valor que indica o status da validação de senha
+        val erroSenha = Validacao.validarSenha(senha, confirmSenha)
 
-        if (validarNome(nome!!) && validarEmail(email!!) && erroSenha === null) {
+        // Chama dois métodos da classe Validacao mais uma uma variável e verifica seus valores
+        if (Validacao.validarNome(nome!!) && Validacao.validarEmail(email!!) && erroSenha === null) {
             try {
                 Ion.with(this)
                     .load(url)
@@ -84,7 +73,9 @@ class Cadastro : AppCompatActivity() {
                     .setBodyParameter("senha", senha)
                     .asJsonObject()
                     .setCallback(FutureCallback<JsonObject> { e, result ->
+                        // Chama um método da Classe AnimacaoDeLoad
                         animacaoDeLoad.pararAnimacao()
+
                         if (e != null) {
                             // Ocorreu um erro na solicitação HTTP
                             Toast.makeText(applicationContext, "Erro ao cadastrar: " + e.localizedMessage, Toast.LENGTH_LONG).show()
@@ -108,11 +99,13 @@ class Cadastro : AppCompatActivity() {
             }
         }
         else {
+            // Chama um método da Classe AnimacaoDeLoad
             animacaoDeLoad.pararAnimacao()
-            if (!validarNome(nome!!)) {
+
+            if (!Validacao.validarNome(nome!!)) {
                 binding.nomeUsuario.error = "Nome inválido (pelo menos 3 caracteres)"
             }
-            if (!validarEmail(email!!)) {
+            if (!Validacao.validarEmail(email!!)) {
                 binding.emailUsuario.error = "Email inválido"
             }
             if (erroSenha == 0){

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
+import com.example.inovafin.Validacoes.Validacao
 import com.example.inovafin.databinding.ActivityEsqueceuSenhaBinding
 import com.google.gson.JsonObject
 import com.koushikdutta.async.future.FutureCallback
@@ -29,6 +30,9 @@ class EsqueceuSenha : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        // Variável parâmetro para o método da classe Validacao e solicitação HTTP
+        email = binding.emailUsuario.text.toString()
+
         // Cria uma nova instância da classe AnimacaoDeLoad e inicializa ela com os parâmetros relevantes
         animacaoDeLoad = AnimacaoDeLoad(binding.btAnimacao, binding.btText, this)
 
@@ -45,17 +49,11 @@ class EsqueceuSenha : AppCompatActivity() {
         }
     }
 
-    fun validacaoEmail(emailText: String): Boolean {
-        val pattern = Patterns.EMAIL_ADDRESS
-        return pattern.matcher(emailText).matches()
-    }
-
     fun recuperar() {
-        email = binding.emailUsuario.text.toString()
-
         url = Host
 
-        if (validacaoEmail(email!!)){
+        // Chama um método da classe Validacao e verifica seu valor
+        if (Validacao.validarEmail(email!!)){
             try {
                 Ion.with(this)
                     .load(url)
