@@ -6,6 +6,7 @@ import android.util.Patterns
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.inovafin.Load.AnimacaoDeLoad
 import com.example.inovafin.databinding.ActivityLoginBinding
 import com.google.gson.JsonObject
 import com.koushikdutta.async.future.FutureCallback
@@ -21,11 +22,18 @@ class Login : AppCompatActivity() {
     var senha: String? = null
 
     private lateinit var binding: ActivityLoginBinding
+
+    // Armazena uma instância da classe AnimacaoDeLoad
+    private lateinit var animacaoDeLoad: AnimacaoDeLoad
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        // Cria uma nova instância da classe AnimacaoDeLoad e inicializa ela com os parâmetros relevantes
+        animacaoDeLoad = AnimacaoDeLoad(binding.btAnimacao, binding.btText, this)
 
         //Navegação para Tela LoginCadastro
         binding.icVoltar.setOnClickListener {
@@ -40,25 +48,11 @@ class Login : AppCompatActivity() {
 
         // Navegação para Tela Home
         binding.btLogin.setOnClickListener {
-            iniciarAnimacao()
+            // Chama um método da Classe AnimacaoDeLoad
+            animacaoDeLoad.iniciarAnimacao()
+
             logar()
         }
-    }
-
-    fun iniciarAnimacao() {
-        // Tornar a animação visível e iniciar
-        binding.btAnimacao.visibility = View.VISIBLE
-        binding.btAnimacao.playAnimation()
-
-        // Ocultar o texto do botão
-        binding.btText.visibility = View.GONE
-    }
-
-    fun pararAnimacao() {
-        binding.btAnimacao.cancelAnimation()
-        binding.btAnimacao.visibility = View.GONE
-
-        binding.btText.visibility = View.VISIBLE
     }
 
     fun validacaoEmail(emailText: String): Boolean {
@@ -80,7 +74,9 @@ class Login : AppCompatActivity() {
                     .setBodyParameter("senha",senha)
                     .asJsonObject()
                     .setCallback(FutureCallback<JsonObject> { e, result ->
-                        pararAnimacao()
+                        // Chama um método da Classe AnimacaoDeLoad
+                        animacaoDeLoad.pararAnimacao()
+
                         val jsonObject = result.asJsonObject
                         val ret = jsonObject.get("status").asString
                         if (ret == "ok")
@@ -100,7 +96,9 @@ class Login : AppCompatActivity() {
             }
         }
         else {
-            pararAnimacao()
+            // Chama um método da Classe AnimacaoDeLoad
+            animacaoDeLoad.pararAnimacao()
+
             binding.emailUsuario.error = "Digite um Email válido!"
         }
     }

@@ -1,10 +1,10 @@
 package com.example.inovafin
 
+import com.example.inovafin.Load.AnimacaoDeLoad
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
-import android.view.View
 import android.widget.Toast
 import com.example.inovafin.databinding.ActivityEsqueceuSenhaBinding
 import com.google.gson.JsonObject
@@ -20,11 +20,17 @@ class EsqueceuSenha : AppCompatActivity() {
     var email: String? = null
 
     private lateinit var binding: ActivityEsqueceuSenhaBinding
+
+    // Armazena uma instância da AnimacaoDeLoad
+    private lateinit var animacaoDeLoad: AnimacaoDeLoad
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEsqueceuSenhaBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        // Cria uma nova instância da classe AnimacaoDeLoad e inicializa ela com os parâmetros relevantes
+        animacaoDeLoad = AnimacaoDeLoad(binding.btAnimacao, binding.btText, this)
 
         binding.icVoltar.setOnClickListener {
             val voltarTela = Intent(this, Login::class.java)
@@ -32,25 +38,11 @@ class EsqueceuSenha : AppCompatActivity() {
         }
 
         binding.btRecuperar.setOnClickListener {
-            iniciarAnimacao()
+            // Chama um método da Classe AnimacaoDeLoad
+            animacaoDeLoad.iniciarAnimacao()
+
             recuperar()
         }
-    }
-
-    fun iniciarAnimacao() {
-        // Tornar a animação visível e iniciar
-        binding.btAnimacao.visibility = View.VISIBLE
-        binding.btAnimacao.playAnimation()
-
-        // Ocultar o texto do botão
-        binding.btText.visibility = View.GONE
-    }
-
-    fun pararAnimacao() {
-        binding.btAnimacao.cancelAnimation()
-        binding.btAnimacao.visibility = View.GONE
-
-        binding.btText.visibility = View.VISIBLE
     }
 
     fun validacaoEmail(emailText: String): Boolean {
@@ -70,7 +62,9 @@ class EsqueceuSenha : AppCompatActivity() {
                     .setBodyParameter("email", email)
                     .asJsonObject()
                     .setCallback(FutureCallback<JsonObject> { e, result ->
-                        pararAnimacao()
+                        // Chama um método da Classe AnimacaoDeLoad
+                        animacaoDeLoad.pararAnimacao()
+
                         if (e != null) {
                             // Ocorreu um erro na solicitação HTTP
                             Toast.makeText(applicationContext, "Erro na solicitação HTTP: ${e.localizedMessage}", Toast.LENGTH_LONG).show()
@@ -95,7 +89,9 @@ class EsqueceuSenha : AppCompatActivity() {
             }
         }
         else {
-            pararAnimacao()
+            // Chama um método da Classe AnimacaoDeLoad
+            animacaoDeLoad.pararAnimacao()
+
             binding.emailUsuario.error = "Digite um Email válido!"
         }
     }

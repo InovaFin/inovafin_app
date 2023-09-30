@@ -1,10 +1,9 @@
 package com.example.inovafin
 
+import com.example.inovafin.Load.AnimacaoDeLoad
 import android.content.Intent
 import android.os.Bundle
-import android.provider.ContactsContract.CommonDataKinds.Email
 import android.util.Patterns
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.inovafin.databinding.ActivityCadastroBinding
@@ -24,11 +23,14 @@ class Cadastro : AppCompatActivity() {
     var confirmSenha: String? = null
 
     private lateinit var binding: ActivityCadastroBinding
+    private lateinit var animacaoDeLoad: AnimacaoDeLoad
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCadastroBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        animacaoDeLoad = AnimacaoDeLoad(binding.btAnimacao, binding.btText, this)
 
         // Navegação para Tela LoginCadastro
         binding.icVoltar.setOnClickListener {
@@ -37,25 +39,9 @@ class Cadastro : AppCompatActivity() {
         }
 
         binding.btCadastro.setOnClickListener {
-            iniciarAnimacao()
+            animacaoDeLoad.iniciarAnimacao()
             inserir()
         }
-    }
-
-     fun iniciarAnimacao() {
-         // Tornar a animação visível e iniciar
-         binding.btAnimacao.visibility = View.VISIBLE
-         binding.btAnimacao.playAnimation()
-
-         // Ocultar o texto do botão
-         binding.btText.visibility = View.GONE
-    }
-
-     fun pararAnimacao() {
-         binding.btAnimacao.cancelAnimation()
-         binding.btAnimacao.visibility = View.GONE
-
-         binding.btText.visibility = View.VISIBLE
     }
 
     fun validarNome(nome: String): Boolean {
@@ -98,7 +84,7 @@ class Cadastro : AppCompatActivity() {
                     .setBodyParameter("senha", senha)
                     .asJsonObject()
                     .setCallback(FutureCallback<JsonObject> { e, result ->
-                        pararAnimacao()
+                        animacaoDeLoad.pararAnimacao()
                         if (e != null) {
                             // Ocorreu um erro na solicitação HTTP
                             Toast.makeText(applicationContext, "Erro ao cadastrar: " + e.localizedMessage, Toast.LENGTH_LONG).show()
@@ -122,7 +108,7 @@ class Cadastro : AppCompatActivity() {
             }
         }
         else {
-            pararAnimacao()
+            animacaoDeLoad.pararAnimacao()
             if (!validarNome(nome!!)) {
                 binding.nomeUsuario.error = "Nome inválido (pelo menos 3 caracteres)"
             }
