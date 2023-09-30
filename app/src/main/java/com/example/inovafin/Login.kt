@@ -2,8 +2,6 @@ package com.example.inovafin
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Patterns
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.inovafin.Load.AnimacaoDeLoad
@@ -19,9 +17,6 @@ class Login : AppCompatActivity() {
     var url: String? = null
     var ret: String? = null
 
-    var email: String? = null
-    var senha: String? = null
-
     private lateinit var binding: ActivityLoginBinding
 
     // Armazena uma instância da classe AnimacaoDeLoad
@@ -32,10 +27,6 @@ class Login : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
-        // Variáveis parâmetro para o métodos da classe Validacao e solicitação HTTP
-        email = binding.emailUsuario.text.toString()
-        senha = binding.senhaUsuario.text.toString()
 
         // Cria uma nova instância da classe AnimacaoDeLoad e inicializa ela com os parâmetros relevantes
         animacaoDeLoad = AnimacaoDeLoad(binding.btAnimacao, binding.btText, this)
@@ -63,13 +54,15 @@ class Login : AppCompatActivity() {
     fun logar() {
         url = Host
 
+        val emailValido = Validacao.validarEmail(binding.emailUsuario.text.toString())
+
         // Chama um método da classe Validacao e verifica seu valor
-        if (Validacao.validarEmail(email!!)){
+        if (emailValido){
             try {
                 Ion.with(this)
                     .load(url)
-                    .setBodyParameter("email", email)
-                    .setBodyParameter("senha",senha)
+                    .setBodyParameter("email", binding.emailUsuario.text.toString())
+                    .setBodyParameter("senha", binding.senhaUsuario.text.toString())
                     .asJsonObject()
                     .setCallback(FutureCallback<JsonObject> { e, result ->
                         // Chama um método da Classe AnimacaoDeLoad

@@ -4,7 +4,6 @@ import com.example.inovafin.Load.AnimacaoDeLoad
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Patterns
 import android.widget.Toast
 import com.example.inovafin.Validacoes.Validacao
 import com.example.inovafin.databinding.ActivityEsqueceuSenhaBinding
@@ -18,8 +17,6 @@ class EsqueceuSenha : AppCompatActivity() {
     var url: String? = null
     var ret: String? = null
 
-    var email: String? = null
-
     private lateinit var binding: ActivityEsqueceuSenhaBinding
 
     // Armazena uma instância da AnimacaoDeLoad
@@ -29,9 +26,6 @@ class EsqueceuSenha : AppCompatActivity() {
         binding = ActivityEsqueceuSenhaBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
-        // Variável parâmetro para o método da classe Validacao e solicitação HTTP
-        email = binding.emailUsuario.text.toString()
 
         // Cria uma nova instância da classe AnimacaoDeLoad e inicializa ela com os parâmetros relevantes
         animacaoDeLoad = AnimacaoDeLoad(binding.btAnimacao, binding.btText, this)
@@ -52,12 +46,14 @@ class EsqueceuSenha : AppCompatActivity() {
     fun recuperar() {
         url = Host
 
+        val emailValido = Validacao.validarEmail(binding.emailUsuario.text.toString())
+
         // Chama um método da classe Validacao e verifica seu valor
-        if (Validacao.validarEmail(email!!)){
+        if (emailValido){
             try {
                 Ion.with(this)
                     .load(url)
-                    .setBodyParameter("email", email)
+                    .setBodyParameter("email", binding.emailUsuario.text.toString())
                     .asJsonObject()
                     .setCallback(FutureCallback<JsonObject> { e, result ->
                         // Chama um método da Classe AnimacaoDeLoad
@@ -69,7 +65,7 @@ class EsqueceuSenha : AppCompatActivity() {
                         } else {
                             try {
                                 val jsonObject = result.asJsonObject
-                                val ret = jsonObject.get("status").asString
+                                ret = jsonObject.get("status").asString
                                 if (ret == "ok") {
                                     Toast.makeText(applicationContext, "Verifique sua caixa de entrada!", Toast.LENGTH_LONG).show()
                                 } else {

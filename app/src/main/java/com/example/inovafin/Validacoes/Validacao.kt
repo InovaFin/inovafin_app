@@ -6,11 +6,11 @@ class Validacao {
     companion object {
         fun validarEmail(email: String): Boolean {
             val pattern = Patterns.EMAIL_ADDRESS
-            return pattern.matcher(email).matches()
+            return pattern.matcher(email).matches() // Verifica se o email é válido
         }
 
         fun validarNome(nome: String): Boolean {
-            return nome.isNotEmpty() && nome.length >= 3
+            return nome.isNotEmpty() && nome.length >= 3 // Verifica se a senha é nula e se possui mais de 3 caracteres
         }
 
         fun validarSenha(senha: String?, confirmSenha: String?): Int? {

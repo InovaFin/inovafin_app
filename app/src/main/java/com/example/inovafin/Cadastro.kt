@@ -3,7 +3,6 @@ package com.example.inovafin
 import com.example.inovafin.Load.AnimacaoDeLoad
 import android.content.Intent
 import android.os.Bundle
-import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.inovafin.Validacoes.Validacao
@@ -18,11 +17,6 @@ class Cadastro : AppCompatActivity() {
     var url: String? = null
     var ret: String? = null
 
-    var nome: String? = null
-    var email: String? = null
-    var senha: String? = null
-    var confirmSenha: String? = null
-
     private lateinit var binding: ActivityCadastroBinding
 
     // Armazena uma instância da classe AnimacaoDeLoad
@@ -33,12 +27,6 @@ class Cadastro : AppCompatActivity() {
         binding = ActivityCadastroBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
-        // Variáveis parâmetro para os métodos da classe Validacao e solicitação HTTP
-        nome = binding.nomeUsuario.text.toString()
-        email = binding.emailUsuario.text.toString()
-        senha = binding.senhaUsuario.text.toString()
-        confirmSenha = binding.confirmSenhaUsuario.text.toString()
 
         // Cria uma nova instância da classe AnimacaoDeLoad e inicializa ela com os parâmetros relevantes
         animacaoDeLoad = AnimacaoDeLoad(binding.btAnimacao, binding.btText, this)
@@ -61,16 +49,22 @@ class Cadastro : AppCompatActivity() {
         url = Host
 
         // Retorna um valor que indica o status da validação de senha
-        val erroSenha = Validacao.validarSenha(senha, confirmSenha)
+        val erroSenha = Validacao.validarSenha(binding.senhaUsuario.text.toString(), binding.confirmSenhaUsuario.text.toString())
+
+        // Retorna um valor que indica o status do email inserido
+        val emailValido = Validacao.validarEmail(binding.emailUsuario.text.toString())
+
+        val nomeValido = Validacao.validarNome(binding.nomeUsuario.text.toString())
+
 
         // Chama dois métodos da classe Validacao mais uma uma variável e verifica seus valores
-        if (Validacao.validarNome(nome!!) && Validacao.validarEmail(email!!) && erroSenha === null) {
+        if (nomeValido && emailValido && erroSenha === null) {
             try {
                 Ion.with(this)
                     .load(url)
-                    .setBodyParameter("nome", nome)
-                    .setBodyParameter("email", email)
-                    .setBodyParameter("senha", senha)
+                    .setBodyParameter("nome", binding.nomeUsuario.text.toString())
+                    .setBodyParameter("email", binding.emailUsuario.text.toString())
+                    .setBodyParameter("senha", binding.senhaUsuario.text.toString())
                     .asJsonObject()
                     .setCallback(FutureCallback<JsonObject> { e, result ->
                         // Chama um método da Classe AnimacaoDeLoad
@@ -102,10 +96,10 @@ class Cadastro : AppCompatActivity() {
             // Chama um método da Classe AnimacaoDeLoad
             animacaoDeLoad.pararAnimacao()
 
-            if (!Validacao.validarNome(nome!!)) {
+            if (!nomeValido) {
                 binding.nomeUsuario.error = "Nome inválido (pelo menos 3 caracteres)"
             }
-            if (!Validacao.validarEmail(email!!)) {
+            if (!emailValido) {
                 binding.emailUsuario.error = "Email inválido"
             }
             if (erroSenha == 0){
