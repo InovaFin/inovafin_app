@@ -1,14 +1,16 @@
 package com.example.inovafin
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.inovafin.databinding.ActivityHomeBinding
 
 class Home : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
+
+    private var podeVoltar = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
@@ -16,7 +18,8 @@ class Home : AppCompatActivity() {
         setContentView(view)
 
         binding.btPerfil.setOnClickListener {
-            Toast.makeText(applicationContext, "Foto Perfil", Toast.LENGTH_SHORT).show()
+            var navegarTelaConfiguracoes = Intent(this, Configuracoes::class.java)
+            startActivity(navegarTelaConfiguracoes)
         }
 
         binding.nomeUsuario.setOnClickListener {
@@ -24,15 +27,22 @@ class Home : AppCompatActivity() {
         }
 
         binding.btCalculadora.setOnClickListener {
-            Toast.makeText(applicationContext, "Calculadora", Toast.LENGTH_SHORT).show()
+            try {
+                val intent = Intent()
+                intent.action = Intent.ACTION_MAIN
+                intent.addCategory(Intent.CATEGORY_APP_CALCULATOR)
+                startActivity(intent)
+            } catch (e: Exception) {
+                Toast.makeText(applicationContext, "Não foi possível abrir a calculadora.", Toast.LENGTH_SHORT).show()
+            }
         }
 
         binding.btNotificacao.setOnClickListener {
             Toast.makeText(applicationContext, "Notificações", Toast.LENGTH_SHORT).show()
         }
+    }
 
-        binding.btConfig.setOnClickListener {
-            Toast.makeText(applicationContext, "Configurações", Toast.LENGTH_SHORT).show()
-        }
+    override fun onBackPressed() {
+        // Impede que o usuário volte para a tela anterior
     }
 }

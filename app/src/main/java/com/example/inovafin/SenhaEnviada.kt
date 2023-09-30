@@ -15,8 +15,12 @@ class SenhaEnviada : AppCompatActivity() {
         setContentView(view)
 
         binding.btLogin.setOnClickListener {
-            var navegacaoTelaLogin = Intent(this, Login::class.java)
-            startActivity(navegacaoTelaLogin)
+            var navegarTelaLogin = Intent(this, Login::class.java)
+            startActivity(navegarTelaLogin)
         }
+    }
+
+    override fun onBackPressed() {
+        // Impede que o usuário volte para a tela anterior
     }
 }

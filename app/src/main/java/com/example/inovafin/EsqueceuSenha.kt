@@ -68,8 +68,8 @@ class EsqueceuSenha : AppCompatActivity() {
                                 if (ret == "ok") {
                                     Toast.makeText(applicationContext, "Verifique sua caixa de entrada!", Toast.LENGTH_LONG).show()
 
-                                    var navegacaoTelaSenhaEnviada = Intent(this, SenhaEnviada::class.java)
-                                    startActivity(navegacaoTelaSenhaEnviada)
+                                    var navegarTelaSenhaEnviada = Intent(this, SenhaEnviada::class.java)
+                                    startActivity(navegarTelaSenhaEnviada)
                                 } else {
                                     Toast.makeText(applicationContext, "Erro no servidor: $ret", Toast.LENGTH_LONG).show()
                                 }

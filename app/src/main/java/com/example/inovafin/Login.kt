@@ -33,7 +33,8 @@ class Login : AppCompatActivity() {
 
         //Navegação para Tela LoginCadastro
         binding.icVoltar.setOnClickListener {
-            onBackPressed()
+            var voltarTela = Intent(this, LoginCadastro::class.java)
+            startActivity(voltarTela)
         }
 
         binding.btEsqueceuSenha.setOnClickListener {

@@ -15,7 +15,7 @@ class Validacao {
 
         fun validarSenha(senha: String?, confirmSenha: String?): Int? {
             if (senha != null && confirmSenha != null) {
-                if (senha.length >= 8) {
+                if (senha.length >= 6) {
                     if (senha == confirmSenha) {
                         return null // Senha válida
                     } else {
