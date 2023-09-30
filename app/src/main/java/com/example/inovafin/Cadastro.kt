@@ -31,10 +31,8 @@ class Cadastro : AppCompatActivity() {
         // Cria uma nova instância da classe AnimacaoDeLoad e inicializa ela com os parâmetros relevantes
         animacaoDeLoad = AnimacaoDeLoad(binding.btAnimacao, binding.btText, this)
 
-        // Navegação para Tela LoginCadastro
         binding.icVoltar.setOnClickListener {
-            var voltarTela = Intent(this, LoginCadastro::class.java)
-            startActivity(voltarTela)
+            onBackPressed()
         }
 
         binding.btCadastro.setOnClickListener {

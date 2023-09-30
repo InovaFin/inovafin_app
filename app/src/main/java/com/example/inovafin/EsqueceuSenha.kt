@@ -31,8 +31,7 @@ class EsqueceuSenha : AppCompatActivity() {
         animacaoDeLoad = AnimacaoDeLoad(binding.btAnimacao, binding.btText, this)
 
         binding.icVoltar.setOnClickListener {
-            val voltarTela = Intent(this, Login::class.java)
-            startActivity(voltarTela)
+            onBackPressed()
         }
 
         binding.btRecuperar.setOnClickListener {
