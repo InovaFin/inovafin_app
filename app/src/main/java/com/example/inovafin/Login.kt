@@ -73,8 +73,6 @@ class Login : AppCompatActivity() {
                         val ret = jsonObject.get("status").asString
                         if (ret == "ok")
                         {
-                            Toast.makeText(applicationContext, "Logado com sucesso", Toast.LENGTH_LONG).show()
-
                             // Navegação para tela Home
                             var navegarTelaHome = Intent(this, Home::class.java)
                             startActivity(navegarTelaHome)
