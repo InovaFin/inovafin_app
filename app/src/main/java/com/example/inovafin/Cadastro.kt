@@ -90,7 +90,6 @@ class Cadastro : AppCompatActivity() {
         val erroSenha = validarSenha()
 
         if (validarNome(nome!!) && validarEmail(email!!) && erroSenha === null) {
-            pararAnimacao()
             try {
                 Ion.with(this)
                     .load(url)

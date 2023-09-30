@@ -79,7 +79,7 @@ class EsqueceuSenha : AppCompatActivity() {
                                 val jsonObject = result.asJsonObject
                                 val ret = jsonObject.get("status").asString
                                 if (ret == "ok") {
-                                    Toast.makeText(applicationContext, "Senha atualizada!\nVerifique sua caixa de entrada!", Toast.LENGTH_LONG).show()
+                                    Toast.makeText(applicationContext, "Verifique sua caixa de entrada!", Toast.LENGTH_LONG).show()
                                 } else {
                                     Toast.makeText(applicationContext, "Erro no servidor: $ret", Toast.LENGTH_LONG).show()
                                 }
