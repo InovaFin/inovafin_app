@@ -48,14 +48,10 @@ class Cadastro : AppCompatActivity() {
     fun inserir() {
         url = Host
 
-        // Retorna um valor que indica o status da validação de senha
-        val erroSenha = Validacao.validarSenha(binding.senhaUsuario.text.toString(), binding.confirmSenhaUsuario.text.toString())
-
-        // Retorna um valor que indica o status do email inserido
-        val emailValido = Validacao.validarEmail(binding.emailUsuario.text.toString())
-
+        // Cada variável retorna um valor do metodo correspondente indicando o status do dado inserido pelo usuário
         val nomeValido = Validacao.validarNome(binding.nomeUsuario.text.toString())
-
+        val emailValido = Validacao.validarEmail(binding.emailUsuario.text.toString())
+        val erroSenha = Validacao.validarSenha(binding.senhaUsuario.text.toString(), binding.confirmSenhaUsuario.text.toString())
 
         // Chama dois métodos da classe Validacao mais uma uma variável e verifica seus valores
         if (nomeValido && emailValido && erroSenha === null) {
@@ -88,7 +84,6 @@ class Cadastro : AppCompatActivity() {
                         }
                     })
             } catch (e: Exception) {
-                // Lidar com exceções gerais aqui
                 Toast.makeText(applicationContext, "Erro" + e.localizedMessage, Toast.LENGTH_LONG).show()
             }
         }
@@ -96,6 +91,7 @@ class Cadastro : AppCompatActivity() {
             // Chama um método da Classe AnimacaoDeLoad
             animacaoDeLoad.pararAnimacao()
 
+            // Verifica os resultados da validação e mostra mensagens de erro apropriadas
             if (!nomeValido) {
                 binding.nomeUsuario.error = "Nome inválido (pelo menos 3 caracteres)"
             }

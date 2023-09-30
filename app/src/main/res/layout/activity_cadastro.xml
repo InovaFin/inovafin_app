@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--Conteúdo Geral-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -13,7 +14,7 @@
         android:background="@color/branco_background"
         android:orientation="vertical">
 
-
+        <!--Botão Voltar-->
         <ImageView
             android:id="@+id/icVoltar"
             android:layout_width="wrap_content"
@@ -22,6 +23,7 @@
             android:layout_marginTop="40dp"
             android:layout_marginStart="20dp"
             android:layout_marginBottom="30dp"/>
+        <!--Botão Voltar-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,6 +32,7 @@
             android:gravity="center"
             android:layout_marginHorizontal="40dp">
 
+            <!--Título-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -39,7 +42,9 @@
                 android:textSize="29sp"
                 android:textColor="@color/black"
                 android:textStyle="bold"/>
+            <!--Título-->
 
+            <!--Subtitulo-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -49,7 +54,9 @@
                 android:textAlignment="center"
                 android:textColor="@color/black_secundario"
                 android:layout_marginBottom="15dp"/>
+            <!--Subtitulo-->
 
+            <!--Nome-->
             <EditText
                 android:id="@+id/nomeUsuario"
                 android:layout_width="match_parent"
@@ -65,7 +72,9 @@
                 android:background="@drawable/bg_edittext"
                 android:textCursorDrawable="@drawable/custom_cursor"
                 android:textColorHint="@color/verde_principal" />
+            <!--Nome-->
 
+            <!--Email-->
             <EditText
                 android:id="@+id/emailUsuario"
                 android:layout_width="match_parent"
@@ -81,7 +90,9 @@
                 android:background="@drawable/bg_edittext"
                 android:textCursorDrawable="@drawable/custom_cursor"
                 android:fontFamily="@font/poppins"/>
+            <!--Email-->
 
+            <!--Senha-->
             <EditText
                 android:id="@+id/senhaUsuario"
                 android:layout_width="match_parent"
@@ -97,7 +108,9 @@
                 android:background="@drawable/bg_edittext"
                 android:textCursorDrawable="@drawable/custom_cursor"
                 android:fontFamily="@font/poppins"/>
+            <!--Senha-->
 
+            <!--Confirmar Senha-->
             <EditText
                 android:id="@+id/confirmSenhaUsuario"
                 android:layout_width="match_parent"
@@ -113,7 +126,9 @@
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="15dp"
                 android:textColorHint="@color/verde_principal" />
+            <!--Confirmar Senha-->
 
+            <!--Botão Cadastro-->
             <LinearLayout
                 android:id="@+id/btCadastro"
                 android:clickable="true"
@@ -125,6 +140,7 @@
                 android:paddingVertical="10dp"
                 android:orientation="horizontal">
 
+                <!--Texto Botão-->
                 <TextView
                     android:id="@+id/btText"
                     android:layout_width="wrap_content"
@@ -133,7 +149,9 @@
                     android:text="Cadastrar"
                     android:textSize="16sp"
                     android:fontFamily="@font/poppins_bold"/>
+                <!--Texto Botão-->
 
+                <!--Animação do Botão-->
                 <com.airbnb.lottie.LottieAnimationView
                     android:id="@+id/btAnimacao"
                     android:layout_width="100dp"
@@ -142,11 +160,14 @@
                     android:visibility="gone"
                     app:lottie_loop="true"
                     app:lottie_autoPlay="false"/>
+                <!--Animação do Botão-->
 
             </LinearLayout>
+            <!--Botão Cadastro-->
 
         </LinearLayout>
 
     </LinearLayout>
+    <!--Conteúdo Geral-->
 
 </ScrollView>

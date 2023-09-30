@@ -54,6 +54,7 @@ class Login : AppCompatActivity() {
     fun logar() {
         url = Host
 
+        // Retorna um valor do metodo correspondente indicando o status do dado inserido pelo usuário
         val emailValido = Validacao.validarEmail(binding.emailUsuario.text.toString())
 
         // Chama um método da classe Validacao e verifica seu valor

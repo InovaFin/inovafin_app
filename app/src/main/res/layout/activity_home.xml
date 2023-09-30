@@ -52,34 +52,40 @@
                     </LinearLayout>
                     <!--Botão/Foto de Perfil-->
 
-                    <!--Ícones Cabeçalho-->
+                    <!--Botões Cabeçalho-->
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
+                        <!--Botão Calculadora-->
                         <ImageView
                             android:id="@+id/btCalculadora"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="15dp"
                             android:src="@drawable/ic_calculadora"/>
+                        <!--Botão Calculadora-->
 
+                        <!--Botão Notificações-->
                         <ImageView
                             android:id="@+id/btNotificacao"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="15dp"
                             android:src="@drawable/ic_notificacao"/>
+                        <!--Botão Notificações-->
 
+                        <!--Botão Configurações-->
                         <ImageView
                             android:id="@+id/btConfig"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@drawable/ic_config"/>
+                        <!--Botão Configurações-->
 
                     </LinearLayout>
-                    <!--Ícones Cabeçalho-->
+                    <!--Botões Cabeçalho-->
 
                 </LinearLayout>
 
@@ -142,7 +148,7 @@
             </LinearLayout>
             <!--Saldo Geral-->
 
-            <!--Minhas Contas-->
+            <!--Botão Minhas Contas-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -177,7 +183,7 @@
                 </LinearLayout>
 
             </LinearLayout>
-            <!--Minhas Contas-->
+            <!--Botão Minhas Contas-->
 
             <!--Linha cinza-->
             <LinearLayout
