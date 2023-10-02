@@ -38,7 +38,8 @@ class Home : AppCompatActivity() {
         }
 
         binding.btNotificacao.setOnClickListener {
-            Toast.makeText(applicationContext, "Notificações", Toast.LENGTH_SHORT).show()
+            var navegarTelaNotificacoes = Intent(this, Notificacoes::class.java)
+            startActivity(navegarTelaNotificacoes)
         }
     }
 
