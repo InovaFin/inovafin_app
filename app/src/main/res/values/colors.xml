@@ -8,4 +8,5 @@
     <color name="black_secundario">#2D2D2D</color>
     <color name="black_terciario">#545454</color>
     <color name="cinza">#EFEFEF</color>
+    <color name="vermelho">#D60000</color>
 </resources>

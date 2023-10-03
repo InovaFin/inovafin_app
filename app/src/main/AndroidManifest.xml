@@ -16,8 +16,17 @@
         android:theme="@style/Theme.InovaFin"
         tools:targetApi="31">
         <activity
+            android:name=".SaldoGeral"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".Notificacoes"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".Configuracoes"
             android:exported="false" />
@@ -26,7 +35,7 @@
             android:exported="false" />
         <activity
             android:name=".Home"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".EsqueceuSenha"
             android:exported="false" />
@@ -41,12 +50,7 @@
             android:exported="false" />
         <activity
             android:name=".SplashScreen"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false">
         </activity>
 
         <meta-data
