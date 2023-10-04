@@ -2,14 +2,14 @@ package com.example.inovafin
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.inovafin.databinding.ActivitySaldoGeralBinding
+import com.example.inovafin.databinding.ActivityMinhasContasBinding
 
-class SaldoGeral : AppCompatActivity() {
+class MinhasContas : AppCompatActivity() {
 
-    private lateinit var binding: ActivitySaldoGeralBinding
+    private lateinit var binding: ActivityMinhasContasBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySaldoGeralBinding.inflate(layoutInflater)
+        binding = ActivityMinhasContasBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 
