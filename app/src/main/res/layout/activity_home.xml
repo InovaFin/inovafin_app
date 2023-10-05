@@ -188,6 +188,7 @@
 
             <!--Valores à Receber-->
             <LinearLayout
+                android:id="@+id/btValorReceber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -230,6 +231,7 @@
 
             <!--Valores à Pagar-->
             <LinearLayout
+                android:id="@+id/btValorPagar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -272,6 +274,7 @@
 
             <!--Dinheiro Guardado/Investido-->
             <LinearLayout
+                android:id="@+id/btValorGuardado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"

@@ -51,6 +51,22 @@ class Home : AppCompatActivity() {
             var navegarTelaMinhasContas = Intent(this, MinhasContas::class.java)
             startActivity(navegarTelaMinhasContas)
         }
+
+        binding.btValorReceber.setOnClickListener {
+            var navegarTelaValorReceber = Intent(this, ValorReceber::class.java)
+            startActivity(navegarTelaValorReceber)
+        }
+
+        binding.btValorPagar.setOnClickListener {
+            val navegarTelaValorPagar = Intent(this, ValorPagar::class.java)
+            startActivity(navegarTelaValorPagar)
+        }
+
+        binding.btValorGuardado.setOnClickListener {
+            var navegarTelaValorGuardado = Intent(this, ValorGuardado::class.java)
+            startActivity(navegarTelaValorGuardado)
+        }
+
     }
 
     override fun onBackPressed() {

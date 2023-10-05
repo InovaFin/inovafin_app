@@ -16,20 +16,22 @@
         android:theme="@style/Theme.InovaFin"
         tools:targetApi="31">
         <activity
-            android:name=".ValorReceber"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:name=".ValorPagar"
+            android:exported="false">
         </activity>
         <activity
-            android:name=".MinhasContas"
+            android:name=".ValorGuardado"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".ValorReceber"
             android:exported="false"></activity>
         <activity
+            android:name=".MinhasContas"
+            android:exported="false" />
+        <activity
             android:name=".SaldoGeral"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".Notificacoes"
             android:exported="false" />
@@ -41,7 +43,13 @@
             android:exported="false" />
         <activity
             android:name=".Home"
-            android:exported="false"></activity>
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".EsqueceuSenha"
             android:exported="false" />
@@ -56,9 +64,7 @@
             android:exported="false" />
         <activity
             android:name=".SplashScreen"
-            android:exported="false">
-
-        </activity>
+            android:exported="false" />
 
         <meta-data
             android:name="preloaded_fonts"

@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/branco_background"
+    tools:context=".ValorGuardado">
+
+
+
+    <!--Header-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        android:paddingHorizontal="30dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <!--Botão Voltar-->
+            <ImageView
+                android:id="@+id/icFechar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_fechar"/>
+            <!--Botão Voltar-->
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:text="Guardado/Investido"
+            android:textSize="24sp"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/black"/>
+
+    </RelativeLayout>
+    <!--Header-->
+
+    <!--Valor Total-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:paddingHorizontal="22dp"
+        android:paddingVertical="20dp"
+        android:background="@drawable/bg_saldo_geral"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Valor total Guardado/Investido"
+                android:textSize="15sp"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:textColor="@color/azul"
+            android:text="R$ 00,00"
+            android:fontFamily="@font/roboto_bold"
+            android:textSize="30dp"/>
+
+    </LinearLayout>
+    <!--Valor Total-->
+
+    <!--Botão Excluir e Adicionar-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <!--Botão Excluir-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginVertical="20dp"
+            android:layout_marginEnd="15dp"
+            android:paddingVertical="11dp"
+            android:paddingHorizontal="18dp"
+            android:elevation="9dp"
+            android:clickable="true"
+            android:background="@drawable/bg_botao_secundario_ripple">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_excluir"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Excluir"
+                android:textColor="@color/black_secundario"
+                android:textSize="13sp"
+                android:fontFamily="@font/roboto_bold"/>
+
+        </LinearLayout>
+        <!--Botão Excluir-->
+
+        <!--Botão Adicionar-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginVertical="20dp"
+            android:paddingVertical="11dp"
+            android:paddingHorizontal="18dp"
+            android:elevation="9dp"
+            android:clickable="true"
+            android:background="@drawable/bg_botao_secundario_ripple">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_add_black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Adicionar"
+                android:textColor="@color/black_secundario"
+                android:textSize="13sp"
+                android:fontFamily="@font/roboto_bold"/>
+
+        </LinearLayout>
+        <!--Botão Adicionar-->
+
+    </LinearLayout>
+    <!--Botão Excluir e Adicionar-->
+
+    <!--Lista de Valores-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--Valor Guardado/Investido-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:background="@drawable/bg_botao_terciario_ripple"
+                android:gravity="center"
+                android:paddingVertical="25dp"
+                android:paddingHorizontal="30dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Estaff"
+                        android:textColor="@color/black_secundario"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:text="R$150,00"
+                        android:textColor="@color/black_secundario"
+                        android:fontFamily="@font/roboto_light"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <!--Valor Guardado/Investido-->
+
+            <!--Linha cinza-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_linha"/>
+            <!--Linha cinza-->
+
+            <!--Valor Guardado/Investido-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:background="@drawable/bg_botao_terciario_ripple"
+                android:gravity="center"
+                android:paddingVertical="25dp"
+                android:paddingHorizontal="30dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Estaff"
+                        android:textColor="@color/black_secundario"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:text="R$150,00"
+                        android:textColor="@color/black_secundario"
+                        android:fontFamily="@font/roboto_light"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <!--Valor Guardado/Investido-->
+
+            <!--Linha cinza-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_linha"/>
+            <!--Linha cinza-->
+
+            <!--Valor Guardado/Investido-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:background="@drawable/bg_botao_terciario_ripple"
+                android:gravity="center"
+                android:paddingVertical="25dp"
+                android:paddingHorizontal="30dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Estaff"
+                        android:textColor="@color/black_secundario"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:text="R$150,00"
+                        android:textColor="@color/black_secundario"
+                        android:fontFamily="@font/roboto_light"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <!--Valor Guardado/Investido-->
+
+            <!--Linha cinza-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_linha"/>
+            <!--Linha cinza-->
+
+            <!--Valor Guardado/Investido-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:background="@drawable/bg_botao_terciario_ripple"
+                android:gravity="center"
+                android:paddingVertical="25dp"
+                android:paddingHorizontal="30dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Estaff"
+                        android:textColor="@color/black_secundario"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:text="R$150,00"
+                        android:textColor="@color/black_secundario"
+                        android:fontFamily="@font/roboto_light"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <!--Valor Guardado/Investido-->
+
+            <!--Linha cinza-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_linha"/>
+            <!--Linha cinza-->
+
+            <!--Valor Guardado/Investido-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:background="@drawable/bg_botao_terciario_ripple"
+                android:gravity="center"
+                android:paddingVertical="25dp"
+                android:paddingHorizontal="30dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Estaff"
+                        android:textColor="@color/black_secundario"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:text="R$150,00"
+                        android:textColor="@color/black_secundario"
+                        android:fontFamily="@font/roboto_light"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <!--Valor Guardado/Investido-->
+
+            <!--Linha cinza-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_linha"/>
+            <!--Linha cinza-->
+
+            <!--Valor Guardado/Investido-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:background="@drawable/bg_botao_terciario_ripple"
+                android:gravity="center"
+                android:paddingVertical="25dp"
+                android:paddingHorizontal="30dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Estaff"
+                        android:textColor="@color/black_secundario"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:text="R$150,00"
+                        android:textColor="@color/black_secundario"
+                        android:fontFamily="@font/roboto_light"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <!--Valor Guardado/Investido-->
+
+            <!--Linha cinza-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_linha"/>
+            <!--Linha cinza-->
+
+            <!--Valor Guardado/Investido-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:background="@drawable/bg_botao_terciario_ripple"
+                android:gravity="center"
+                android:paddingVertical="25dp"
+                android:paddingHorizontal="30dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Estaff"
+                        android:textColor="@color/black_secundario"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:text="R$150,00"
+                        android:textColor="@color/black_secundario"
+                        android:fontFamily="@font/roboto_light"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <!--Valor Guardado/Investido-->
+
+            <!--Linha cinza-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_linha"/>
+            <!--Linha cinza-->
+
+            <!--Valor Guardado/Investido-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:background="@drawable/bg_botao_terciario_ripple"
+                android:gravity="center"
+                android:paddingVertical="25dp"
+                android:paddingHorizontal="30dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Estaff"
+                        android:textColor="@color/black_secundario"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:text="R$150,00"
+                        android:textColor="@color/black_secundario"
+                        android:fontFamily="@font/roboto_light"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <!--Valor Guardado/Investido-->
+
+            <!--Linha cinza-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_linha"/>
+            <!--Linha cinza-->
+
+            <!--Valor Guardado/Investido-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:background="@drawable/bg_botao_terciario_ripple"
+                android:gravity="center"
+                android:paddingVertical="25dp"
+                android:paddingHorizontal="30dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Estaff"
+                        android:textColor="@color/black_secundario"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:text="R$150,00"
+                        android:textColor="@color/black_secundario"
+                        android:fontFamily="@font/roboto_light"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <!--Valor Guardado/Investido-->
+
+            <!--Linha cinza-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_linha"/>
+            <!--Linha cinza-->
+
+            <!--Valor Guardado/Investido-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:background="@drawable/bg_botao_terciario_ripple"
+                android:gravity="center"
+                android:paddingVertical="25dp"
+                android:paddingHorizontal="30dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Estaff"
+                        android:textColor="@color/black_secundario"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:text="R$150,00"
+                        android:textColor="@color/black_secundario"
+                        android:fontFamily="@font/roboto_light"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <!--Valor Guardado/Investido-->
+
+            <!--Linha cinza-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_linha"/>
+            <!--Linha cinza-->
+
+            <!--Valor Guardado/Investido-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:background="@drawable/bg_botao_terciario_ripple"
+                android:gravity="center"
+                android:paddingVertical="25dp"
+                android:paddingHorizontal="30dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Estaff"
+                        android:textColor="@color/black_secundario"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:text="R$150,00"
+                        android:textColor="@color/black_secundario"
+                        android:fontFamily="@font/roboto_light"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <!--Valor Guardado/Investido-->
+
+            <!--Linha cinza-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_linha"/>
+            <!--Linha cinza-->
+
+        </LinearLayout>
+
+    </ScrollView>
+    <!--Lista de Valores-->
+
+</LinearLayout>

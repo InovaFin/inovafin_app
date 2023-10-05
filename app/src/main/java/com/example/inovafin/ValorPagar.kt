@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.inovafin.databinding.ActivityValorReceberBinding
 
-class ValorReceber : AppCompatActivity() {
+class ValorPagar : AppCompatActivity() {
 
     private lateinit var binding: ActivityValorReceberBinding
     override fun onCreate(savedInstanceState: Bundle?) {
