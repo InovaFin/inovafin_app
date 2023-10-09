@@ -1,8 +1,8 @@
 package com.example.inovafin
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.inovafin.databinding.ActivityConfiguracoesBinding
 
 class Configuracoes : AppCompatActivity() {
@@ -16,6 +16,11 @@ class Configuracoes : AppCompatActivity() {
 
         binding.icFechar.setOnClickListener {
             onBackPressed()
+        }
+
+        binding.btEditarPerfil.setOnClickListener {
+            val navegarTelaEditarPerfil = Intent(this, EditarPerfil::class.java)
+            startActivity(navegarTelaEditarPerfil)
         }
     }
 }

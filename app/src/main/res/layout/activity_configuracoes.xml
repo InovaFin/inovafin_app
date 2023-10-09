@@ -104,6 +104,7 @@
 
             <!--Editar Perfil-->
             <LinearLayout
+                android:id="@+id/btEditarPerfil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_botao_terciario_ripple"
