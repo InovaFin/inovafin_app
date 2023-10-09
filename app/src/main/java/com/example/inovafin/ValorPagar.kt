@@ -2,14 +2,14 @@ package com.example.inovafin
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.inovafin.databinding.ActivityValorReceberBinding
+import com.example.inovafin.databinding.ActivityValorPagarBinding
 
 class ValorPagar : AppCompatActivity() {
 
-    private lateinit var binding: ActivityValorReceberBinding
+    private lateinit var binding: ActivityValorPagarBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityValorReceberBinding.inflate(layoutInflater)
+        binding = ActivityValorPagarBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 
