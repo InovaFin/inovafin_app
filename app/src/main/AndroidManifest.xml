@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +15,45 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.InovaFin"
         tools:targetApi="31">
+        <activity
+            android:name=".AjudaSaldoGeral"
+            android:exported="false" />
+        <activity
+            android:name=".EditarPerfil"
+            android:exported="false" />
+        <activity
+            android:name=".ValorPagar"
+            android:exported="false" />
+        <activity
+            android:name=".ValorGuardado"
+            android:exported="false" />
+        <activity
+            android:name=".ValorReceber"
+            android:exported="false" />
+        <activity
+            android:name=".MinhasContas"
+            android:exported="false" />
+        <activity
+            android:name=".SaldoGeral"
+            android:exported="false" />
+        <activity
+            android:name=".Notificacoes"
+            android:exported="false" />
+        <activity
+            android:name=".Configuracoes"
+            android:exported="false" />
+        <activity
+            android:name=".SenhaEnviada"
+            android:exported="false" />
+        <activity
+            android:name=".Home"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".EsqueceuSenha"
             android:exported="false" />
@@ -26,13 +68,7 @@
             android:exported="false" />
         <activity
             android:name=".SplashScreen"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
 
         <meta-data
             android:name="preloaded_fonts"
