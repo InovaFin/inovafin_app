@@ -16,6 +16,7 @@ class AjudaSaldoGeral : AppCompatActivity() {
         binding.icFechar.setOnClickListener {
             onBackPressed()
             // testanto
+            // teste pc da joyce
         }
     }
 }
