@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/branco_background"
+    tools:context=".AjudaSaldoGeral">
+
+    <!--Conteúdo Geral-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--Botão Fechar-->
+        <ImageView
+            android:id="@+id/icFechar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="40dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/ic_fechar"/>
+        <!--Botão Fechar-->
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Visualize melhor o seu dinheiro?"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/black"
+                android:textSize="17sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Com essa funcionalidade você pode somar um valor que irá receber essa semana e/ou subtrair outro valor de uma conta que irá pagar amanhã e assim por diante!
+                \n\nIsso tudo sem afetar no valor real do seu Saldo Geral, que voltará ao normal assim que você voltar à tela Home.
+                \n\nAssim você pode visualizar como vai estar sua grana no final do mês, semana, ou em qualquer outro período!"
+                android:fontFamily="@font/roboto"
+                android:textColor="@color/black"
+                android:textSize="15sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <!--Conteúdo Geral-->
+
+</ScrollView>
