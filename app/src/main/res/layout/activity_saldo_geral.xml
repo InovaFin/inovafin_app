@@ -64,7 +64,7 @@
             android:layout_marginHorizontal="30dp"
             android:paddingHorizontal="22dp"
             android:paddingVertical="20dp"
-            android:background="@drawable/bg_saldo_geral"
+            android:background="@drawable/bg_borda_simples"
             android:orientation="vertical">
 
             <LinearLayout
@@ -132,7 +132,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="1.5dp"
-                    android:background="@drawable/bg_saldo_geral"
+                    android:background="@drawable/bg_borda_simples"
                     android:src="@drawable/ic_duvida"/>
                 <!--Botão Dúvida-->
 

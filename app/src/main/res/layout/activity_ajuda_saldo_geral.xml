@@ -28,7 +28,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
-            android:padding="10dp"
+            android:background="@drawable/bg_botao_secundario"
+            android:paddingVertical="20dp"
+            android:paddingHorizontal="15dp"
             android:orientation="vertical">
 
             <TextView

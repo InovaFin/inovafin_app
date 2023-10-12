@@ -20,11 +20,15 @@ public final class ActivityValorGuardadoBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final LinearLayout btAdicionar;
+
+  @NonNull
   public final ImageView icFechar;
 
   private ActivityValorGuardadoBinding(@NonNull LinearLayout rootView,
-      @NonNull ImageView icFechar) {
+      @NonNull LinearLayout btAdicionar, @NonNull ImageView icFechar) {
     this.rootView = rootView;
+    this.btAdicionar = btAdicionar;
     this.icFechar = icFechar;
   }
 
@@ -55,13 +59,19 @@ public final class ActivityValorGuardadoBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btAdicionar;
+      LinearLayout btAdicionar = ViewBindings.findChildViewById(rootView, id);
+      if (btAdicionar == null) {
+        break missingId;
+      }
+
       id = R.id.icFechar;
       ImageView icFechar = ViewBindings.findChildViewById(rootView, id);
       if (icFechar == null) {
         break missingId;
       }
 
-      return new ActivityValorGuardadoBinding((LinearLayout) rootView, icFechar);
+      return new ActivityValorGuardadoBinding((LinearLayout) rootView, btAdicionar, icFechar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

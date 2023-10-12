@@ -56,7 +56,7 @@
         android:layout_marginHorizontal="30dp"
         android:paddingHorizontal="22dp"
         android:paddingVertical="20dp"
-        android:background="@drawable/bg_saldo_geral"
+        android:background="@drawable/bg_borda_simples"
         android:orientation="vertical">
 
         <LinearLayout
@@ -136,6 +136,7 @@
 
         <!--Botão Adicionar-->
         <LinearLayout
+            android:id="@+id/btAdicionar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"

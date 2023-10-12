@@ -14,6 +14,7 @@ color verde_principal
 color verde_secundario
 color vermelho
 color white
+drawable bg_borda_simples
 drawable bg_botao
 drawable bg_botao_perfil
 drawable bg_botao_ripple
@@ -29,7 +30,6 @@ drawable bg_menu_nav
 drawable bg_menu_nav_home
 drawable bg_menu_nav_home_ripple
 drawable bg_notificacao
-drawable bg_saldo_geral
 drawable custom_cursor
 drawable ic_add
 drawable ic_add_black
@@ -67,6 +67,7 @@ font roboto
 font roboto_bold
 font roboto_light
 font roboto_medium
+id btAdicionar
 id btAjuda
 id btAnimacao
 id btCadastro
@@ -74,6 +75,8 @@ id btCalculadora
 id btEditarPerfil
 id btEsqueceuSenha
 id btExpandir
+id btExpandir_conta
+id btExpandir_tipo
 id btLogin
 id btMinhasContas
 id btNotificacao
@@ -93,6 +96,7 @@ id icFechar
 id icVoltar
 id nomeUsuario
 id senhaUsuario
+layout activity_adicionar_valor
 layout activity_ajuda_saldo_geral
 layout activity_cadastro
 layout activity_configuracoes
