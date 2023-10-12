@@ -1,5 +1,6 @@
 package com.example.inovafin
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.inovafin.databinding.ActivityValorReceberBinding
@@ -15,6 +16,11 @@ class ValorReceber : AppCompatActivity() {
 
         binding.icFechar.setOnClickListener {
             onBackPressed()
+        }
+
+        binding.btAdicionar.setOnClickListener {
+            val navegarTelaAddValor = Intent (this, AdicionarValor::class.java)
+            startActivity(navegarTelaAddValor)
         }
     }
 }

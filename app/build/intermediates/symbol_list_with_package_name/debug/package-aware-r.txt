@@ -2936,6 +2936,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable bg_borda_simples
 drawable bg_botao
 drawable bg_botao_perfil
 drawable bg_botao_ripple
@@ -2951,7 +2952,6 @@ drawable bg_menu_nav
 drawable bg_menu_nav_home
 drawable bg_menu_nav_home_ripple
 drawable bg_notificacao
-drawable bg_saldo_geral
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3188,6 +3188,7 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btAdicionar
 id btAjuda
 id btAnimacao
 id btCadastro
@@ -3195,6 +3196,8 @@ id btCalculadora
 id btEditarPerfil
 id btEsqueceuSenha
 id btExpandir
+id btExpandir_conta
+id btExpandir_tipo
 id btLogin
 id btMinhasContas
 id btNotificacao
@@ -3731,6 +3734,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_adicionar_valor
 layout activity_ajuda_saldo_geral
 layout activity_cadastro
 layout activity_configuracoes
