@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -29,15 +30,28 @@ public final class ActivitySaldoGeralBinding implements ViewBinding {
   public final ImageView btExpandir;
 
   @NonNull
+  public final LinearLayout btSaldoGeralGuardado;
+
+  @NonNull
+  public final LinearLayout btSaldoGeralPagar;
+
+  @NonNull
+  public final LinearLayout btSaldoGeralReceber;
+
+  @NonNull
   public final ImageView icFechar;
 
   private ActivitySaldoGeralBinding(@NonNull ScrollView rootView, @NonNull ImageView btAjuda,
       @NonNull ImageView btCalculadora, @NonNull ImageView btExpandir,
-      @NonNull ImageView icFechar) {
+      @NonNull LinearLayout btSaldoGeralGuardado, @NonNull LinearLayout btSaldoGeralPagar,
+      @NonNull LinearLayout btSaldoGeralReceber, @NonNull ImageView icFechar) {
     this.rootView = rootView;
     this.btAjuda = btAjuda;
     this.btCalculadora = btCalculadora;
     this.btExpandir = btExpandir;
+    this.btSaldoGeralGuardado = btSaldoGeralGuardado;
+    this.btSaldoGeralPagar = btSaldoGeralPagar;
+    this.btSaldoGeralReceber = btSaldoGeralReceber;
     this.icFechar = icFechar;
   }
 
@@ -86,6 +100,24 @@ public final class ActivitySaldoGeralBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btSaldoGeralGuardado;
+      LinearLayout btSaldoGeralGuardado = ViewBindings.findChildViewById(rootView, id);
+      if (btSaldoGeralGuardado == null) {
+        break missingId;
+      }
+
+      id = R.id.btSaldoGeralPagar;
+      LinearLayout btSaldoGeralPagar = ViewBindings.findChildViewById(rootView, id);
+      if (btSaldoGeralPagar == null) {
+        break missingId;
+      }
+
+      id = R.id.btSaldoGeralReceber;
+      LinearLayout btSaldoGeralReceber = ViewBindings.findChildViewById(rootView, id);
+      if (btSaldoGeralReceber == null) {
+        break missingId;
+      }
+
       id = R.id.icFechar;
       ImageView icFechar = ViewBindings.findChildViewById(rootView, id);
       if (icFechar == null) {
@@ -93,7 +125,7 @@ public final class ActivitySaldoGeralBinding implements ViewBinding {
       }
 
       return new ActivitySaldoGeralBinding((ScrollView) rootView, btAjuda, btCalculadora,
-          btExpandir, icFechar);
+          btExpandir, btSaldoGeralGuardado, btSaldoGeralPagar, btSaldoGeralReceber, icFechar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

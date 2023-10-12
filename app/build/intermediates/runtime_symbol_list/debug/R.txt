@@ -2972,6 +2972,10 @@ int drawable ic_avancar 0x7f080096
 int drawable ic_banco 0x7f080097
 int drawable ic_calculadora 0x7f080098
 int drawable ic_calculadora_black 0x7f0800fd
+int drawable ic_checkbox 0x7f080109
+int drawable ic_checkbox_guardado 0x7f08010b
+int drawable ic_checkbox_pagar 0x7f08010c
+int drawable ic_checkbox_receber 0x7f08010a
 int drawable ic_clear_black_24 0x7f080099
 int drawable ic_clock_black_24dp 0x7f08009a
 int drawable ic_config 0x7f08009b
@@ -3196,6 +3200,9 @@ int id btNotificacao 0x7f0a0069
 int id btPerfil 0x7f0a006a
 int id btRecuperar 0x7f0a006b
 int id btSaldoGeral 0x7f0a020a
+int id btSaldoGeralGuardado 0x7f0a0210
+int id btSaldoGeralPagar 0x7f0a0211
+int id btSaldoGeralReceber 0x7f0a0212
 int id btText 0x7f0a006c
 int id btValorGuardado 0x7f0a020b
 int id btValorPagar 0x7f0a020c
@@ -3735,6 +3742,9 @@ int layout activity_main 0x7f0d0022
 int layout activity_minhas_contas 0x7f0d007c
 int layout activity_notificacoes 0x7f0d007a
 int layout activity_saldo_geral 0x7f0d007b
+int layout activity_saldo_geral_guardado 0x7f0d0083
+int layout activity_saldo_geral_pagar 0x7f0d0084
+int layout activity_saldo_geral_receber 0x7f0d0082
 int layout activity_senha_enviada 0x7f0d0023
 int layout activity_valor_guardado 0x7f0d007e
 int layout activity_valor_pagar 0x7f0d007f

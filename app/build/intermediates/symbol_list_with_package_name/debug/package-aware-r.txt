@@ -2973,6 +2973,10 @@ drawable ic_avancar
 drawable ic_banco
 drawable ic_calculadora
 drawable ic_calculadora_black
+drawable ic_checkbox
+drawable ic_checkbox_guardado
+drawable ic_checkbox_pagar
+drawable ic_checkbox_receber
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
 drawable ic_config
@@ -3197,6 +3201,9 @@ id btNotificacao
 id btPerfil
 id btRecuperar
 id btSaldoGeral
+id btSaldoGeralGuardado
+id btSaldoGeralPagar
+id btSaldoGeralReceber
 id btText
 id btValorGuardado
 id btValorPagar
@@ -3736,6 +3743,9 @@ layout activity_main
 layout activity_minhas_contas
 layout activity_notificacoes
 layout activity_saldo_geral
+layout activity_saldo_geral_guardado
+layout activity_saldo_geral_pagar
+layout activity_saldo_geral_receber
 layout activity_senha_enviada
 layout activity_valor_guardado
 layout activity_valor_pagar
