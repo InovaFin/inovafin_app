@@ -3203,6 +3203,7 @@ id btMinhasContas
 id btNotificacao
 id btPerfil
 id btRecuperar
+id btRegistro
 id btSaldoGeral
 id btSaldoGeralGuardado
 id btSaldoGeralPagar
@@ -3741,6 +3742,7 @@ layout activity_configuracoes
 layout activity_editar_perfil
 layout activity_esqueceu_senha
 layout activity_home
+layout activity_info_registro
 layout activity_login
 layout activity_login_cadastro
 layout activity_main

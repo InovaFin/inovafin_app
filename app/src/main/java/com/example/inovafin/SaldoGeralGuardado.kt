@@ -1,5 +1,6 @@
 package com.example.inovafin
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.inovafin.databinding.ActivitySaldoGeralGuardadoBinding
@@ -15,6 +16,11 @@ class SaldoGeralGuardado : AppCompatActivity() {
 
         binding.icFechar.setOnClickListener {
             onBackPressed()
+        }
+
+        binding.btRegistro.setOnClickListener {
+            val navegarTelaRegistro = Intent (this, InfoRegistro::class.java)
+            startActivity(navegarTelaRegistro)
         }
     }
 }

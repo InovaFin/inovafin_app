@@ -16,10 +16,13 @@
         android:theme="@style/Theme.InovaFin"
         tools:targetApi="31">
         <activity
-            android:name=".AdicionarValor"
+            android:name=".InfoRegistro"
             android:exported="false">
 
         </activity>
+        <activity
+            android:name=".AdicionarValor"
+            android:exported="false"></activity>
         <activity
             android:name=".SaldoGeralPagar"
             android:exported="false" />

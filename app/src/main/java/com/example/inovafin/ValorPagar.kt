@@ -22,5 +22,10 @@ class ValorPagar : AppCompatActivity() {
             val navegarTelaAddValor = Intent (this, AdicionarValor::class.java)
             startActivity(navegarTelaAddValor)
         }
+
+        binding.btRegistro.setOnClickListener {
+            val navegarTelaRegistro = Intent (this, InfoRegistro::class.java)
+            startActivity(navegarTelaRegistro)
+        }
     }
 }
