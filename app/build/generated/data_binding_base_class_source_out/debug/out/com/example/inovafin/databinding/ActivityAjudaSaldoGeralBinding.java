@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ScrollView;
+import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -17,12 +17,12 @@ import java.lang.String;
 
 public final class ActivityAjudaSaldoGeralBinding implements ViewBinding {
   @NonNull
-  private final ScrollView rootView;
+  private final RelativeLayout rootView;
 
   @NonNull
   public final ImageView icFechar;
 
-  private ActivityAjudaSaldoGeralBinding(@NonNull ScrollView rootView,
+  private ActivityAjudaSaldoGeralBinding(@NonNull RelativeLayout rootView,
       @NonNull ImageView icFechar) {
     this.rootView = rootView;
     this.icFechar = icFechar;
@@ -30,7 +30,7 @@ public final class ActivityAjudaSaldoGeralBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public ScrollView getRoot() {
+  public RelativeLayout getRoot() {
     return rootView;
   }
 
@@ -61,7 +61,7 @@ public final class ActivityAjudaSaldoGeralBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityAjudaSaldoGeralBinding((ScrollView) rootView, icFechar);
+      return new ActivityAjudaSaldoGeralBinding((RelativeLayout) rootView, icFechar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,22 +7,24 @@
     android:background="@color/branco_background"
     tools:context=".AjudaSaldoGeral">
 
+    <!--Botão Fechar-->
+    <ImageView
+        android:id="@+id/icFechar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="40dp"
+        android:layout_marginHorizontal="30dp"
+        android:src="@drawable/ic_fechar"/>
+    <!--Botão Fechar-->
+
     <!--Conteúdo Geral-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
         android:orientation="vertical">
-
-        <!--Botão Fechar-->
-        <ImageView
-            android:id="@+id/icFechar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="40dp"
-            android:layout_marginHorizontal="30dp"
-            android:layout_alignParentBottom="true"
-            android:src="@drawable/ic_fechar"/>
-        <!--Botão Fechar-->
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -57,4 +59,4 @@
     </LinearLayout>
     <!--Conteúdo Geral-->
 
-</ScrollView>
+</RelativeLayout>

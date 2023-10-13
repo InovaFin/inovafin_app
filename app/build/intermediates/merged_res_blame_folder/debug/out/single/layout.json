@@ -86,5 +86,9 @@
     {
         "merged": "com.example.inovafin.app-mergeDebugResources-29:/layout/activity_info_registro.xml",
         "source": "com.example.inovafin.app-main-32:/layout/activity_info_registro.xml"
+    },
+    {
+        "merged": "com.example.inovafin.app-mergeDebugResources-29:/layout/activity_ajuda_saldo_geral.xml",
+        "source": "com.example.inovafin.app-main-32:/layout/activity_ajuda_saldo_geral.xml"
     }
 ]
