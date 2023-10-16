@@ -146,34 +146,35 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/btnAddContas"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:paddingHorizontal="17dp"
             android:layout_marginTop="15dp"
+            android:background="@drawable/bg_botao_ripple"
+            android:clickable="true"
             android:gravity="center"
             android:orientation="horizontal"
-            android:clickable="true"
-            android:background="@drawable/bg_botao_ripple">
+            android:paddingHorizontal="17dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="15dp"
-                    android:src="@drawable/ic_add"/>
+                    android:src="@drawable/ic_add" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
                     android:text="Adicionar Contas"
                     android:textColor="@color/white"
-                    android:textSize="13sp"
-                    android:fontFamily="@font/roboto_bold"/>
+                    android:textSize="13sp" />
 
             </LinearLayout>
 

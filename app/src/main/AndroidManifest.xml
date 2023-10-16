@@ -16,6 +16,9 @@
         android:theme="@style/Theme.InovaFin"
         tools:targetApi="31">
         <activity
+            android:name=".NovaConta"
+            android:exported="false" />
+        <activity
             android:name=".ExcluirPagar"
             android:exported="false" />
         <activity
