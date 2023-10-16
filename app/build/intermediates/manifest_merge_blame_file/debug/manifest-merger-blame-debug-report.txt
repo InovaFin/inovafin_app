@@ -9,212 +9,212 @@
 9        android:targetSdkVersion="33" />
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:5:5-67
-11-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:5:22-64
+11-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:5:5-67
+11-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:5:22-64
 12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-12-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:6:5-79
-12-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:6:22-76
+12-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:6:5-79
+12-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:6:22-76
 13
 14    <permission
-14-->[androidx.core:core:1.9.0] C:\Users\vinicius\.gradle\caches\transforms-3\738147d0f85917708540e295877f94a3\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+14-->[androidx.core:core:1.9.0] C:\Users\erick\.gradle\caches\transforms-3\738147d0f85917708540e295877f94a3\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
 15        android:name="com.example.inovafin.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-15-->[androidx.core:core:1.9.0] C:\Users\vinicius\.gradle\caches\transforms-3\738147d0f85917708540e295877f94a3\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+15-->[androidx.core:core:1.9.0] C:\Users\erick\.gradle\caches\transforms-3\738147d0f85917708540e295877f94a3\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
 16        android:protectionLevel="signature" />
-16-->[androidx.core:core:1.9.0] C:\Users\vinicius\.gradle\caches\transforms-3\738147d0f85917708540e295877f94a3\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+16-->[androidx.core:core:1.9.0] C:\Users\erick\.gradle\caches\transforms-3\738147d0f85917708540e295877f94a3\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
 17
 18    <uses-permission android:name="com.example.inovafin.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-18-->[androidx.core:core:1.9.0] C:\Users\vinicius\.gradle\caches\transforms-3\738147d0f85917708540e295877f94a3\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
-18-->[androidx.core:core:1.9.0] C:\Users\vinicius\.gradle\caches\transforms-3\738147d0f85917708540e295877f94a3\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+18-->[androidx.core:core:1.9.0] C:\Users\erick\.gradle\caches\transforms-3\738147d0f85917708540e295877f94a3\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+18-->[androidx.core:core:1.9.0] C:\Users\erick\.gradle\caches\transforms-3\738147d0f85917708540e295877f94a3\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
 19
 20    <application
-20-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:8:5-93:19
+20-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:8:5-93:19
 21        android:allowBackup="true"
-21-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:9:9-35
+21-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:9:9-35
 22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-22-->[androidx.core:core:1.9.0] C:\Users\vinicius\.gradle\caches\transforms-3\738147d0f85917708540e295877f94a3\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+22-->[androidx.core:core:1.9.0] C:\Users\erick\.gradle\caches\transforms-3\738147d0f85917708540e295877f94a3\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
 23        android:dataExtractionRules="@xml/data_extraction_rules"
-23-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:10:9-65
+23-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:10:9-65
 24        android:debuggable="true"
 25        android:extractNativeLibs="false"
 26        android:fullBackupContent="@xml/backup_rules"
-26-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:11:9-54
+26-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:11:9-54
 27        android:icon="@mipmap/ic_launcher"
-27-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:12:9-43
+27-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:12:9-43
 28        android:label="@string/app_name"
-28-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:13:9-41
+28-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:13:9-41
 29        android:roundIcon="@mipmap/ic_launcher_round"
-29-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:14:9-54
+29-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:14:9-54
 30        android:supportsRtl="true"
-30-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:15:9-35
+30-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:15:9-35
 31        android:testOnly="true"
 32        android:theme="@style/Theme.InovaFin" >
-32-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:16:9-46
+32-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:16:9-46
 33        <activity
-33-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:18:9-22:20
+33-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:18:9-22:20
 34            android:name="com.example.inovafin.InfoRegistro"
-34-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:19:13-41
+34-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:19:13-41
 35            android:exported="false" >
-35-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:20:13-37
+35-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:20:13-37
 36        </activity>
 37        <activity
-37-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:23:9-25:49
+37-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:23:9-25:49
 38            android:name="com.example.inovafin.AdicionarValor"
-38-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:24:13-43
+38-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:24:13-43
 39            android:exported="false" />
-39-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:25:13-37
+39-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:25:13-37
 40        <activity
-40-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:26:9-28:40
+40-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:26:9-28:40
 41            android:name="com.example.inovafin.SaldoGeralPagar"
-41-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:27:13-44
+41-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:27:13-44
 42            android:exported="false" />
-42-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:28:13-37
+42-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:28:13-37
 43        <activity
-43-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:29:9-31:40
+43-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:29:9-31:40
 44            android:name="com.example.inovafin.SaldoGeralGuardado"
-44-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:30:13-47
+44-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:30:13-47
 45            android:exported="false" />
-45-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:31:13-37
+45-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:31:13-37
 46        <activity
-46-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:32:9-34:40
+46-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:32:9-34:40
 47            android:name="com.example.inovafin.SaldoGeralReceber"
-47-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:33:13-46
+47-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:33:13-46
 48            android:exported="false" />
-48-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:34:13-37
+48-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:34:13-37
 49        <activity
-49-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:35:9-37:40
+49-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:35:9-37:40
 50            android:name="com.example.inovafin.AjudaSaldoGeral"
-50-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:36:13-44
+50-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:36:13-44
 51            android:exported="false" />
-51-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:37:13-37
+51-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:37:13-37
 52        <activity
-52-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:38:9-40:40
+52-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:38:9-40:40
 53            android:name="com.example.inovafin.EditarPerfil"
-53-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:39:13-41
+53-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:39:13-41
 54            android:exported="false" />
-54-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:40:13-37
+54-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:40:13-37
 55        <activity
-55-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:41:9-43:40
+55-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:41:9-43:40
 56            android:name="com.example.inovafin.ValorPagar"
-56-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:42:13-39
+56-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:42:13-39
 57            android:exported="false" />
-57-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:43:13-37
+57-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:43:13-37
 58        <activity
-58-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:44:9-46:40
+58-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:44:9-46:40
 59            android:name="com.example.inovafin.ValorGuardado"
-59-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:45:13-42
+59-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:45:13-42
 60            android:exported="false" />
-60-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:46:13-37
+60-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:46:13-37
 61        <activity
-61-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:47:9-49:40
+61-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:47:9-49:40
 62            android:name="com.example.inovafin.ValorReceber"
-62-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:48:13-41
+62-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:48:13-41
 63            android:exported="false" />
-63-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:49:13-37
+63-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:49:13-37
 64        <activity
-64-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:50:9-52:40
+64-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:50:9-52:40
 65            android:name="com.example.inovafin.MinhasContas"
-65-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:51:13-41
+65-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:51:13-41
 66            android:exported="false" />
-66-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:52:13-37
+66-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:52:13-37
 67        <activity
-67-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:53:9-55:40
+67-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:53:9-55:40
 68            android:name="com.example.inovafin.SaldoGeral"
-68-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:54:13-39
+68-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:54:13-39
 69            android:exported="false" />
-69-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:55:13-37
+69-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:55:13-37
 70        <activity
-70-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:56:9-58:40
+70-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:56:9-58:40
 71            android:name="com.example.inovafin.Notificacoes"
-71-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:57:13-41
+71-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:57:13-41
 72            android:exported="false" />
-72-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:58:13-37
+72-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:58:13-37
 73        <activity
-73-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:59:9-61:40
+73-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:59:9-61:40
 74            android:name="com.example.inovafin.Configuracoes"
-74-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:60:13-42
+74-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:60:13-42
 75            android:exported="false" />
-75-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:61:13-37
+75-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:61:13-37
 76        <activity
-76-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:62:9-64:40
+76-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:62:9-64:40
 77            android:name="com.example.inovafin.SenhaEnviada"
-77-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:63:13-41
+77-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:63:13-41
 78            android:exported="false" />
-78-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:64:13-37
+78-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:64:13-37
 79        <activity
-79-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:65:9-73:20
+79-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:65:9-73:20
 80            android:name="com.example.inovafin.Home"
-80-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:66:13-33
+80-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:66:13-33
 81            android:exported="true" >
-81-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:67:13-36
+81-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:67:13-36
 82            <intent-filter>
-82-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:68:13-72:29
+82-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:68:13-72:29
 83                <action android:name="android.intent.action.MAIN" />
-83-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:69:17-69
-83-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:69:25-66
+83-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:69:17-69
+83-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:69:25-66
 84
 85                <category android:name="android.intent.category.LAUNCHER" />
-85-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:71:17-77
-85-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:71:27-74
+85-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:71:17-77
+85-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:71:27-74
 86            </intent-filter>
 87        </activity>
 88        <activity
-88-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:74:9-76:40
+88-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:74:9-76:40
 89            android:name="com.example.inovafin.EsqueceuSenha"
-89-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:75:13-42
+89-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:75:13-42
 90            android:exported="false" />
-90-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:76:13-37
+90-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:76:13-37
 91        <activity
-91-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:77:9-79:40
+91-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:77:9-79:40
 92            android:name="com.example.inovafin.Cadastro"
-92-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:78:13-37
+92-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:78:13-37
 93            android:exported="false" />
-93-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:79:13-37
+93-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:79:13-37
 94        <activity
-94-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:80:9-82:40
+94-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:80:9-82:40
 95            android:name="com.example.inovafin.Login"
-95-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:81:13-34
+95-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:81:13-34
 96            android:exported="false" />
-96-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:82:13-37
+96-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:82:13-37
 97        <activity
-97-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:83:9-85:40
+97-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:83:9-85:40
 98            android:name="com.example.inovafin.LoginCadastro"
-98-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:84:13-42
+98-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:84:13-42
 99            android:exported="false" />
-99-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:85:13-37
+99-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:85:13-37
 100        <activity
-100-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:86:9-88:40
+100-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:86:9-88:40
 101            android:name="com.example.inovafin.SplashScreen"
-101-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:87:13-41
+101-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:87:13-41
 102            android:exported="false" />
-102-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:88:13-37
+102-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:88:13-37
 103
 104        <meta-data
-104-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:90:9-92:57
+104-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:90:9-92:57
 105            android:name="preloaded_fonts"
-105-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:91:13-43
+105-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:91:13-43
 106            android:resource="@array/preloaded_fonts" />
-106-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:92:13-54
+106-->C:\Users\erick\AndroidStudioProjects\InovaFin\app\src\main\AndroidManifest.xml:92:13-54
 107
 108        <provider
-108-->[androidx.emoji2:emoji2:1.2.0] C:\Users\vinicius\.gradle\caches\transforms-3\3ffd57255e6f9966dfb3d4f8b250b487\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+108-->[androidx.emoji2:emoji2:1.2.0] C:\Users\erick\.gradle\caches\transforms-3\3ffd57255e6f9966dfb3d4f8b250b487\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
 109            android:name="androidx.startup.InitializationProvider"
-109-->[androidx.emoji2:emoji2:1.2.0] C:\Users\vinicius\.gradle\caches\transforms-3\3ffd57255e6f9966dfb3d4f8b250b487\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+109-->[androidx.emoji2:emoji2:1.2.0] C:\Users\erick\.gradle\caches\transforms-3\3ffd57255e6f9966dfb3d4f8b250b487\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
 110            android:authorities="com.example.inovafin.androidx-startup"
-110-->[androidx.emoji2:emoji2:1.2.0] C:\Users\vinicius\.gradle\caches\transforms-3\3ffd57255e6f9966dfb3d4f8b250b487\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+110-->[androidx.emoji2:emoji2:1.2.0] C:\Users\erick\.gradle\caches\transforms-3\3ffd57255e6f9966dfb3d4f8b250b487\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
 111            android:exported="false" >
-111-->[androidx.emoji2:emoji2:1.2.0] C:\Users\vinicius\.gradle\caches\transforms-3\3ffd57255e6f9966dfb3d4f8b250b487\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+111-->[androidx.emoji2:emoji2:1.2.0] C:\Users\erick\.gradle\caches\transforms-3\3ffd57255e6f9966dfb3d4f8b250b487\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
 112            <meta-data
-112-->[androidx.emoji2:emoji2:1.2.0] C:\Users\vinicius\.gradle\caches\transforms-3\3ffd57255e6f9966dfb3d4f8b250b487\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+112-->[androidx.emoji2:emoji2:1.2.0] C:\Users\erick\.gradle\caches\transforms-3\3ffd57255e6f9966dfb3d4f8b250b487\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
 113                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-113-->[androidx.emoji2:emoji2:1.2.0] C:\Users\vinicius\.gradle\caches\transforms-3\3ffd57255e6f9966dfb3d4f8b250b487\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+113-->[androidx.emoji2:emoji2:1.2.0] C:\Users\erick\.gradle\caches\transforms-3\3ffd57255e6f9966dfb3d4f8b250b487\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
 114                android:value="androidx.startup" />
-114-->[androidx.emoji2:emoji2:1.2.0] C:\Users\vinicius\.gradle\caches\transforms-3\3ffd57255e6f9966dfb3d4f8b250b487\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+114-->[androidx.emoji2:emoji2:1.2.0] C:\Users\erick\.gradle\caches\transforms-3\3ffd57255e6f9966dfb3d4f8b250b487\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
 115            <meta-data
-115-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\vinicius\.gradle\caches\transforms-3\2fedbf8c74c9edc50a1bd4976a1d5f3e\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+115-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\erick\.gradle\caches\transforms-3\2fedbf8c74c9edc50a1bd4976a1d5f3e\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
 116                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-116-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\vinicius\.gradle\caches\transforms-3\2fedbf8c74c9edc50a1bd4976a1d5f3e\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+116-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\erick\.gradle\caches\transforms-3\2fedbf8c74c9edc50a1bd4976a1d5f3e\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
 117                android:value="androidx.startup" />
-117-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\vinicius\.gradle\caches\transforms-3\2fedbf8c74c9edc50a1bd4976a1d5f3e\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+117-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\erick\.gradle\caches\transforms-3\2fedbf8c74c9edc50a1bd4976a1d5f3e\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
 118        </provider>
 119    </application>
 120

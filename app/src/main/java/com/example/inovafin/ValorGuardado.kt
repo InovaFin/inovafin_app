@@ -27,5 +27,10 @@ class ValorGuardado : AppCompatActivity() {
             val navegarTelaRegistro = Intent (this, InfoRegistro::class.java)
             startActivity(navegarTelaRegistro)
         }
+
+        binding.btExcluir.setOnClickListener {
+            val navegarTelaExcluir = Intent (this, ExcluirGuardado::class.java)
+            startActivity(navegarTelaExcluir)
+        }
     }
 }

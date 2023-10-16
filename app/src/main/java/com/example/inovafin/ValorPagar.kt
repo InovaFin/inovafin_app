@@ -27,5 +27,10 @@ class ValorPagar : AppCompatActivity() {
             val navegarTelaRegistro = Intent (this, InfoRegistro::class.java)
             startActivity(navegarTelaRegistro)
         }
+
+        binding.btExcluir.setOnClickListener {
+            val navegarTelaExcluir = Intent (this, ExcluirPagar::class.java)
+            startActivity(navegarTelaExcluir)
+        }
     }
 }

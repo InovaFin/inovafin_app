@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!--Valor a Receber-->
+                <!--Valor guardado-->
                 <LinearLayout
                     android:id="@+id/btRegistro"
                     android:layout_width="match_parent"
@@ -104,7 +104,7 @@
                     </LinearLayout>
 
                 </LinearLayout>
-                <!--Valor Receber-->
+                <!--Valor guardado-->
 
                 <!--Linha cinza-->
                 <LinearLayout
@@ -113,7 +113,7 @@
                     android:background="@drawable/bg_linha"/>
                 <!--Linha cinza-->
 
-                <!--Valor a Receber-->
+                <!--Valor guardado-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -156,7 +156,7 @@
                     </LinearLayout>
 
                 </LinearLayout>
-                <!--Valor Receber-->
+                <!--Valor guardado-->
 
                 <!--Linha cinza-->
                 <LinearLayout
