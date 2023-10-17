@@ -103,6 +103,7 @@
 
         <!--Botão Excluir-->
         <LinearLayout
+            android:id="@+id/btExcluir"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"

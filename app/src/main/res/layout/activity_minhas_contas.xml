@@ -58,14 +58,15 @@
 
             <!--Minha Conta-->
             <LinearLayout
+                android:id="@+id/btnContaEscolhida1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:clickable="true"
                 android:background="@drawable/bg_botao_terciario_ripple"
+                android:clickable="true"
                 android:gravity="center"
-                android:paddingVertical="25dp"
-                android:paddingHorizontal="30dp">
+                android:orientation="vertical"
+                android:paddingHorizontal="30dp"
+                android:paddingVertical="25dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -76,15 +77,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:fontFamily="@font/roboto_medium"
                         android:text="Conta Nubank"
                         android:textColor="@color/black_secundario"
-                        android:fontFamily="@font/roboto_medium"
-                        android:textSize="15sp"/>
+                        android:textSize="15sp" />
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:src="@drawable/ic_avancar"/>
+                        android:src="@drawable/ic_avancar" />
 
                 </LinearLayout>
 

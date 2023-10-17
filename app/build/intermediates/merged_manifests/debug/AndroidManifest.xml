@@ -31,9 +31,23 @@
         android:testOnly="true"
         android:theme="@style/Theme.InovaFin" >
         <activity
+            android:name="com.example.inovafin.ContaEscolhida"
+            android:exported="false" />
+        <activity
+            android:name="com.example.inovafin.NovaConta"
+            android:exported="false" />
+        <activity
+            android:name="com.example.inovafin.ExcluirPagar"
+            android:exported="false" />
+        <activity
+            android:name="com.example.inovafin.ExcluirGuardado"
+            android:exported="false" />
+        <activity
+            android:name="com.example.inovafin.ExcluirReceber"
+            android:exported="false" />
+        <activity
             android:name="com.example.inovafin.InfoRegistro"
-            android:exported="false" >
-        </activity>
+            android:exported="false" />
         <activity
             android:name="com.example.inovafin.AdicionarValor"
             android:exported="false" />
@@ -78,12 +92,7 @@
             android:exported="false" />
         <activity
             android:name="com.example.inovafin.Home"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false" >
         </activity>
         <activity
             android:name="com.example.inovafin.EsqueceuSenha"
@@ -99,7 +108,13 @@
             android:exported="false" />
         <activity
             android:name="com.example.inovafin.SplashScreen"
-            android:exported="false" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"

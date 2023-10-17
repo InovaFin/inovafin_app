@@ -23,16 +23,20 @@ public final class ActivityValorGuardadoBinding implements ViewBinding {
   public final LinearLayout btAdicionar;
 
   @NonNull
+  public final LinearLayout btExcluir;
+
+  @NonNull
   public final LinearLayout btRegistro;
 
   @NonNull
   public final ImageView icFechar;
 
   private ActivityValorGuardadoBinding(@NonNull LinearLayout rootView,
-      @NonNull LinearLayout btAdicionar, @NonNull LinearLayout btRegistro,
-      @NonNull ImageView icFechar) {
+      @NonNull LinearLayout btAdicionar, @NonNull LinearLayout btExcluir,
+      @NonNull LinearLayout btRegistro, @NonNull ImageView icFechar) {
     this.rootView = rootView;
     this.btAdicionar = btAdicionar;
+    this.btExcluir = btExcluir;
     this.btRegistro = btRegistro;
     this.icFechar = icFechar;
   }
@@ -70,6 +74,12 @@ public final class ActivityValorGuardadoBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btExcluir;
+      LinearLayout btExcluir = ViewBindings.findChildViewById(rootView, id);
+      if (btExcluir == null) {
+        break missingId;
+      }
+
       id = R.id.btRegistro;
       LinearLayout btRegistro = ViewBindings.findChildViewById(rootView, id);
       if (btRegistro == null) {
@@ -82,8 +92,8 @@ public final class ActivityValorGuardadoBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityValorGuardadoBinding((LinearLayout) rootView, btAdicionar, btRegistro,
-          icFechar);
+      return new ActivityValorGuardadoBinding((LinearLayout) rootView, btAdicionar, btExcluir,
+          btRegistro, icFechar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

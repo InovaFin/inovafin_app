@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,11 +21,20 @@ public final class ActivityMinhasContasBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
+  public final LinearLayout btnAddContas;
+
+  @NonNull
+  public final LinearLayout btnContaEscolhida1;
+
+  @NonNull
   public final ImageView icFechar;
 
   private ActivityMinhasContasBinding(@NonNull RelativeLayout rootView,
+      @NonNull LinearLayout btnAddContas, @NonNull LinearLayout btnContaEscolhida1,
       @NonNull ImageView icFechar) {
     this.rootView = rootView;
+    this.btnAddContas = btnAddContas;
+    this.btnContaEscolhida1 = btnContaEscolhida1;
     this.icFechar = icFechar;
   }
 
@@ -55,13 +65,26 @@ public final class ActivityMinhasContasBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnAddContas;
+      LinearLayout btnAddContas = ViewBindings.findChildViewById(rootView, id);
+      if (btnAddContas == null) {
+        break missingId;
+      }
+
+      id = R.id.btnContaEscolhida1;
+      LinearLayout btnContaEscolhida1 = ViewBindings.findChildViewById(rootView, id);
+      if (btnContaEscolhida1 == null) {
+        break missingId;
+      }
+
       id = R.id.icFechar;
       ImageView icFechar = ViewBindings.findChildViewById(rootView, id);
       if (icFechar == null) {
         break missingId;
       }
 
-      return new ActivityMinhasContasBinding((RelativeLayout) rootView, icFechar);
+      return new ActivityMinhasContasBinding((RelativeLayout) rootView, btnAddContas,
+          btnContaEscolhida1, icFechar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

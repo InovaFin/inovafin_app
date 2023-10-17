@@ -15,17 +15,19 @@ class MinhasContas : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        binding.icFechar.setOnClickListener {
-            onBackPressed()
+        binding.btnContaEscolhida1.setOnClickListener{
+            val intent = Intent(this, ContaEscolhida::class.java);
+            startActivity(intent);
         }
-        //Pegando o btn adicionar conta
-        val btnAddContas = findViewById<LinearLayout>(R.id.btnAddContas);
 
-        //Evento do botao de adicionar contas
-        btnAddContas.setOnClickListener{
+        binding.btnAddContas.setOnClickListener{
             val intent = Intent(this, NovaConta::class.java);
 
             startActivity(intent);
+        }
+
+        binding.icFechar.setOnClickListener {
+            onBackPressed()
         }
     }
 }

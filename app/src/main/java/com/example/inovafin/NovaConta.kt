@@ -7,13 +7,21 @@ import android.text.TextWatcher
 import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.EditText
+import android.widget.Toast
 import com.example.inovafin.databinding.ActivityNovaContaBinding
+import com.koushikdutta.ion.Ion
+import java.io.OutputStream
+import java.io.OutputStreamWriter
 import java.math.BigDecimal
+import java.net.HttpURLConnection
+import java.net.URL
 import java.text.DecimalFormat
 import java.text.NumberFormat
 import java.util.Locale
 
 class NovaConta : AppCompatActivity() {
+
+    var host = "https://inovafin.000webhostapp.com/projeto/inserirBanco.php";
 
     private lateinit var binding: ActivityNovaContaBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +30,8 @@ class NovaConta : AppCompatActivity() {
         setContentView(binding.root)
 
         // Pegando o saldoConta
-        binding.saldoConta.addTextChangedListener(ExampleTextWatcher(binding.saldoConta))
+        //binding.saldoConta.addTextChangedListener(ExampleTextWatcher(binding.saldoConta))
+
 
         // Criando o array com opções
         val spinnerOP = listOf(
@@ -40,10 +49,48 @@ class NovaConta : AppCompatActivity() {
         // Conectando o adapter ao spinner
         binding.spinner.adapter = adapter
 
+
+        binding.btnConcluir.setOnClickListener {
+            cadastroBanco();
+        }
+    }
+
+    fun cadastroBanco() {
+        val url = host
+
+        var nomeBanco = binding.contaEditText.text.toString();
+        var instituicao = binding.spinner.selectedItem.toString();
+        var saldoConta = binding.saldoConta.text.toString();
+
+        if (nomeBanco.isNotEmpty() && instituicao.isNotEmpty() && saldoConta.isNotEmpty()) {
+
+            Ion.with(this)
+                .load(url)
+                .setBodyParameter("nomeBanco", nomeBanco)
+                .setBodyParameter("instituicao", instituicao)
+                .setBodyParameter("saldoConta", saldoConta)
+                .asJsonObject()
+                .setCallback { e, result ->
+                    if (e == null) {
+
+                        runOnUiThread {
+                            Toast.makeText(
+                                this,
+                                "Operação bem-sucedida",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+
+                    } else {
+                        runOnUiThread { Toast.makeText(this, "ERRO", Toast.LENGTH_SHORT).show() }
+                    }
+
+                }
+
+        }
     }
 }
-
-class ExampleTextWatcher(val saldoConta: EditText) : TextWatcher {
+/*class ExampleTextWatcher(val saldoConta: EditText) : TextWatcher {
     companion object {
         private const val replaceRegex: String = "[R$,.\u00A0]"
         private const val replaceFinal: String = "R$\u00A0"
@@ -79,4 +126,4 @@ class ExampleTextWatcher(val saldoConta: EditText) : TextWatcher {
             Log.e("ERRO", e.toString())
         }
     }
-}
+}*/

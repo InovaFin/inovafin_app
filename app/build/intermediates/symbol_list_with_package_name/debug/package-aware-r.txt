@@ -3195,6 +3195,7 @@ id btCadastro
 id btCalculadora
 id btEditarPerfil
 id btEsqueceuSenha
+id btExcluir
 id btExpandir
 id btExpandir_conta
 id btExpandir_tipo
@@ -3212,6 +3213,9 @@ id btText
 id btValorGuardado
 id btValorPagar
 id btValorReceber
+id btnAddContas
+id btnConcluir
+id btnContaEscolhida1
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3240,6 +3244,7 @@ id compress
 id confirmSenhaUsuario
 id confirm_button
 id constraint
+id contaEditText
 id container
 id content
 id contentPanel
@@ -3475,6 +3480,7 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
+id saldoConta
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3531,6 +3537,7 @@ id software
 id south
 id spacer
 id special_effects_controller_view_tag
+id spinner
 id spline
 id split_action_bar
 id spread
@@ -3574,6 +3581,10 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
+id textView2
+id textView3
+id textView4
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3739,8 +3750,12 @@ layout activity_adicionar_valor
 layout activity_ajuda_saldo_geral
 layout activity_cadastro
 layout activity_configuracoes
+layout activity_conta_escolhida
 layout activity_editar_perfil
 layout activity_esqueceu_senha
+layout activity_excluir_guardado
+layout activity_excluir_pagar
+layout activity_excluir_receber
 layout activity_home
 layout activity_info_registro
 layout activity_login
@@ -3748,6 +3763,7 @@ layout activity_login_cadastro
 layout activity_main
 layout activity_minhas_contas
 layout activity_notificacoes
+layout activity_nova_conta
 layout activity_saldo_geral
 layout activity_saldo_geral_guardado
 layout activity_saldo_geral_pagar
