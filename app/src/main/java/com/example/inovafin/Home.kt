@@ -68,8 +68,4 @@ class Home : AppCompatActivity() {
         }
 
     }
-
-    override fun onBackPressed() {
-        // Impede que o usuário volte para a tela anterior
-    }
 }

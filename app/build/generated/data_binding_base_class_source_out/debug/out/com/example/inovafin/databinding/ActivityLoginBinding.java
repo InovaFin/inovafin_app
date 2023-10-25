@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -27,6 +26,9 @@ public final class ActivityLoginBinding implements ViewBinding {
   public final LottieAnimationView btAnimacao;
 
   @NonNull
+  public final TextView btCadastro;
+
+  @NonNull
   public final TextView btEsqueceuSenha;
 
   @NonNull
@@ -39,22 +41,19 @@ public final class ActivityLoginBinding implements ViewBinding {
   public final EditText emailUsuario;
 
   @NonNull
-  public final ImageView icVoltar;
-
-  @NonNull
   public final EditText senhaUsuario;
 
   private ActivityLoginBinding(@NonNull ScrollView rootView,
-      @NonNull LottieAnimationView btAnimacao, @NonNull TextView btEsqueceuSenha,
-      @NonNull LinearLayout btLogin, @NonNull TextView btText, @NonNull EditText emailUsuario,
-      @NonNull ImageView icVoltar, @NonNull EditText senhaUsuario) {
+      @NonNull LottieAnimationView btAnimacao, @NonNull TextView btCadastro,
+      @NonNull TextView btEsqueceuSenha, @NonNull LinearLayout btLogin, @NonNull TextView btText,
+      @NonNull EditText emailUsuario, @NonNull EditText senhaUsuario) {
     this.rootView = rootView;
     this.btAnimacao = btAnimacao;
+    this.btCadastro = btCadastro;
     this.btEsqueceuSenha = btEsqueceuSenha;
     this.btLogin = btLogin;
     this.btText = btText;
     this.emailUsuario = emailUsuario;
-    this.icVoltar = icVoltar;
     this.senhaUsuario = senhaUsuario;
   }
 
@@ -91,6 +90,12 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btCadastro;
+      TextView btCadastro = ViewBindings.findChildViewById(rootView, id);
+      if (btCadastro == null) {
+        break missingId;
+      }
+
       id = R.id.btEsqueceuSenha;
       TextView btEsqueceuSenha = ViewBindings.findChildViewById(rootView, id);
       if (btEsqueceuSenha == null) {
@@ -115,20 +120,14 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.icVoltar;
-      ImageView icVoltar = ViewBindings.findChildViewById(rootView, id);
-      if (icVoltar == null) {
-        break missingId;
-      }
-
       id = R.id.senhaUsuario;
       EditText senhaUsuario = ViewBindings.findChildViewById(rootView, id);
       if (senhaUsuario == null) {
         break missingId;
       }
 
-      return new ActivityLoginBinding((ScrollView) rootView, btAnimacao, btEsqueceuSenha, btLogin,
-          btText, emailUsuario, icVoltar, senhaUsuario);
+      return new ActivityLoginBinding((ScrollView) rootView, btAnimacao, btCadastro,
+          btEsqueceuSenha, btLogin, btText, emailUsuario, senhaUsuario);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

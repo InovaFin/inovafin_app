@@ -96,7 +96,6 @@ id btValorReceber
 id btnAddContas
 id btnConcluir
 id btnContaEscolhida1
-id confirmSenhaUsuario
 id contaEditText
 id emailUsuario
 id icFechar

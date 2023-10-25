@@ -5,32 +5,21 @@
     android:background="@color/branco_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingHorizontal="35dp"
+    android:paddingTop="150dp"
     tools:context=".Login">
 
     <!--Conteúdo Geral-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/branco_background">
-
-        <!--Botão Voltar-->
-        <ImageView
-            android:id="@+id/icVoltar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_voltar"
-            android:layout_marginTop="40dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="50dp"/>
-        <!--Botão Voltar-->
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            android:gravity="center"
-            android:layout_marginHorizontal="40dp">
+            android:gravity="center">
 
             <!--Título-->
             <TextView
@@ -131,6 +120,20 @@
 
             </LinearLayout>
             <!--Botão Login-->
+
+            <!--Botão Cadastro-->
+            <TextView
+                android:id="@+id/btCadastro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cadastro"
+                android:clickable="true"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="10dp"/>
+            <!--Botão Cadastro-->
 
         </LinearLayout>
 

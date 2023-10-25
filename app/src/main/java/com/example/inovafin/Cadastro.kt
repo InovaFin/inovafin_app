@@ -1,5 +1,6 @@
 package com.example.inovafin
 
+import android.content.Intent
 import com.example.inovafin.Util.AnimacaoDeLoad
 import android.os.Bundle
 import android.widget.Toast
@@ -31,15 +32,16 @@ class Cadastro : AppCompatActivity() {
         // Cria uma nova instância da classe AnimacaoDeLoad e inicializa ela com os parâmetros relevantes
         animacaoDeLoad = AnimacaoDeLoad(binding.btAnimacao, binding.btText, this)
 
-        binding.icVoltar.setOnClickListener {
-            onBackPressed()
-        }
-
         binding.btCadastro.setOnClickListener {
             // Chama um método da Classe AnimacaoDeLoad
             animacaoDeLoad.iniciarAnimacao()
 
             validarCampos()
+        }
+
+        binding.btLogin.setOnClickListener {
+            var i = Intent(this, Login::class.java)
+            startActivity(i)
         }
     }
 
@@ -96,5 +98,9 @@ class Cadastro : AppCompatActivity() {
 
             }
         }
+    }
+
+    override fun onBackPressed() {
+        // Impede que o usuário volte para a tela anterior
     }
 }

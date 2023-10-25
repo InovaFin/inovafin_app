@@ -3292,7 +3292,6 @@ int id clockwise 0x7f0a009c
 int id closest 0x7f0a009d
 int id collapseActionView 0x7f0a009e
 int id compress 0x7f0a009f
-int id confirmSenhaUsuario 0x7f0a00a0
 int id confirm_button 0x7f0a00a1
 int id constraint 0x7f0a00a2
 int id contaEditText 0x7f0a00a3

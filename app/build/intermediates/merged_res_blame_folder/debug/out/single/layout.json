@@ -28,10 +28,6 @@
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-39:\\layout\\activity_nova_conta.xml"
     },
     {
-        "merged": "com.example.inovafin.app-mergeDebugResources-36:/layout/activity_configuracoes.xml",
-        "source": "com.example.inovafin.app-main-39:/layout/activity_configuracoes.xml"
-    },
-    {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-36:\\layout\\activity_saldo_geral_guardado.xml",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-39:\\layout\\activity_saldo_geral_guardado.xml"
     },
@@ -46,6 +42,10 @@
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-36:\\layout\\activity_cadastro.xml",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-39:\\layout\\activity_cadastro.xml"
+    },
+    {
+        "merged": "com.example.inovafin.app-mergeDebugResources-36:/layout/activity_cadastro.xml",
+        "source": "com.example.inovafin.app-main-39:/layout/activity_cadastro.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-36:\\layout\\activity_editar_perfil.xml",
@@ -78,6 +78,10 @@
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-36:\\layout\\activity_ajuda_saldo_geral.xml",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-39:\\layout\\activity_ajuda_saldo_geral.xml"
+    },
+    {
+        "merged": "com.example.inovafin.app-mergeDebugResources-36:/layout/activity_login.xml",
+        "source": "com.example.inovafin.app-main-39:/layout/activity_login.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-36:\\layout\\activity_login.xml",

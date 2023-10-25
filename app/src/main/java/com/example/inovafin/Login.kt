@@ -38,20 +38,20 @@ class Login : AppCompatActivity() {
 
         animacaoDeLoad = AnimacaoDeLoad(binding.btAnimacao, binding.btText, this)
 
-        binding.icVoltar.setOnClickListener {
-            var voltarTela = Intent(this, LoginCadastro::class.java)
-            startActivity(voltarTela)
-        }
-
         binding.btEsqueceuSenha.setOnClickListener {
-            var navegarTelaEsqSenha = Intent(this, EsqueceuSenha::class.java)
-            startActivity(navegarTelaEsqSenha)
+            var i = Intent(this, EsqueceuSenha::class.java)
+            startActivity(i)
         }
 
         binding.btLogin.setOnClickListener {
             animacaoDeLoad.iniciarAnimacao()
 
             validarCampos()
+        }
+
+        binding.btCadastro.setOnClickListener {
+            var i = Intent(this, Cadastro::class.java)
+            startActivity(i)
         }
     }
 
