@@ -5,22 +5,27 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.inovafin.Util.AnimacaoDeLoad
-import com.example.inovafin.Util.Validacao
+import com.example.inovafin.Util.ConfiguraBd
 import com.example.inovafin.databinding.ActivityLoginBinding
+import com.example.inovafin.model.Usuario
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
+import com.google.firebase.auth.FirebaseAuthInvalidUserException
+import com.google.firebase.auth.FirebaseAuthUserCollisionException
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 import com.google.gson.JsonObject
 import com.koushikdutta.async.future.FutureCallback
 import com.koushikdutta.ion.Ion
 
 class Login : AppCompatActivity() {
 
-    var Host = "https://inovafin.000webhostapp.com/projeto/login.php"
-    var url: String? = null
-    var ret: String? = null
-
     private lateinit var binding: ActivityLoginBinding
 
-    // Armazena uma instância da classe AnimacaoDeLoad
     private lateinit var animacaoDeLoad: AnimacaoDeLoad
+
+    private lateinit var usuario: Usuario
+
+    private lateinit var autentificacao: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,10 +33,8 @@ class Login : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        // Cria uma nova instância da classe AnimacaoDeLoad e inicializa ela com os parâmetros relevantes
         animacaoDeLoad = AnimacaoDeLoad(binding.btAnimacao, binding.btText, this)
 
-        //Navegação para Tela LoginCadastro
         binding.icVoltar.setOnClickListener {
             var voltarTela = Intent(this, LoginCadastro::class.java)
             startActivity(voltarTela)
@@ -42,54 +45,63 @@ class Login : AppCompatActivity() {
             startActivity(navegarTelaEsqSenha)
         }
 
-        // Navegação para Tela Home
         binding.btLogin.setOnClickListener {
-            // Chama um método da Classe AnimacaoDeLoad
             animacaoDeLoad.iniciarAnimacao()
 
-            logar()
+            validarCampos()
         }
     }
 
-    fun logar() {
-        url = Host
+    fun validarCampos() {
+        val email = binding.emailUsuario.text.toString()
+        val senha = binding.senhaUsuario.text.toString()
 
-        // Retorna um valor do metodo correspondente indicando o status do dado inserido pelo usuário
-        val emailValido = Validacao.validarEmail(binding.emailUsuario.text.toString())
-
-        // Chama um método da classe Validacao e verifica seu valor
-        if (emailValido){
-            try {
-                Ion.with(this)
-                    .load(url)
-                    .setBodyParameter("email", binding.emailUsuario.text.toString())
-                    .setBodyParameter("senha", binding.senhaUsuario.text.toString())
-                    .asJsonObject()
-                    .setCallback(FutureCallback<JsonObject> { e, result ->
-                        // Chama um método da Classe AnimacaoDeLoad
-                        animacaoDeLoad.pararAnimacao()
-
-                        val jsonObject = result.asJsonObject
-                        val ret = jsonObject.get("status").asString
-                        if (ret == "ok")
-                        {
-                            // Navegação para tela Home
-                            var navegarTelaHome = Intent(this, Home::class.java)
-                            startActivity(navegarTelaHome)
-                        }
-                        else
-                            Toast.makeText(applicationContext, "$ret", Toast.LENGTH_LONG).show()
-                    })
-            } catch (e: Exception) {
-                // Lidar com exceções gerais aqui
-                Toast.makeText(applicationContext, "$ret", Toast.LENGTH_LONG).show()
+        if (email.isNotEmpty() && senha.isNotEmpty()) {
+            usuario = Usuario(email, senha)
+            logarUsuario(usuario)
+        } else {
+            if (email.isEmpty()) {
+                Toast.makeText(applicationContext, "Preencha um Email", Toast.LENGTH_LONG).show()
+            } else if (senha.isEmpty()) {
+                Toast.makeText(applicationContext, "Preencha uma Senha", Toast.LENGTH_LONG).show()
             }
         }
-        else {
-            // Chama um método da Classe AnimacaoDeLoad
-            animacaoDeLoad.pararAnimacao()
+    }
 
-            binding.emailUsuario.error = "Digite um Email válido!"
+    private fun logarUsuario(usuario: Usuario) {
+        autentificacao = ConfiguraBd.Firebaseautentificacao()
+
+        autentificacao.signInWithEmailAndPassword(
+            usuario.email, usuario.senha
+        ).addOnCompleteListener(this) {task ->
+            if (task.isSuccessful) {
+                animacaoDeLoad.pararAnimacao()
+
+                abrirHome()
+            } else {
+                animacaoDeLoad.pararAnimacao()
+
+                var excecao = ""
+
+                try {
+                    throw task.exception!!
+                } catch (e: FirebaseAuthInvalidUserException) {
+                    excecao = "Usuario não cadastrado!"
+                } catch (e: FirebaseAuthInvalidCredentialsException) {
+                    excecao = "Email ou senha incorretos!"
+                } catch (e: Exception) {
+                    excecao = "Erro ao logar usuário! " + e.message
+                    e.printStackTrace()
+                }
+
+                Toast.makeText(applicationContext, "$excecao", Toast.LENGTH_LONG).show()
+
+            }
         }
+    }
+
+    private fun abrirHome() {
+        var i = Intent(this, Home::class.java)
+        startActivity(i)
     }
 }

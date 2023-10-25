@@ -16,7 +16,6 @@ class Cadastro : AppCompatActivity() {
 
     private lateinit var binding: ActivityCadastroBinding
 
-    // Armazena uma instância da classe AnimacaoDeLoad
     private lateinit var animacaoDeLoad: AnimacaoDeLoad
 
     private lateinit var usuario: Usuario
