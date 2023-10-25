@@ -8,6 +8,9 @@ import com.example.inovafin.Util.ConfiguraBd
 import com.example.inovafin.databinding.ActivityCadastroBinding
 import com.example.inovafin.model.Usuario
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
+import com.google.firebase.auth.FirebaseAuthUserCollisionException
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 
 class Cadastro : AppCompatActivity() {
 
@@ -75,9 +78,23 @@ class Cadastro : AppCompatActivity() {
             } else {
                 animacaoDeLoad.pararAnimacao()
 
-                // Ocorreu um erro durante a criação do usuário
-                val exception = task.exception
-                Toast.makeText(applicationContext, "$exception", Toast.LENGTH_LONG).show()
+                var excecao = ""
+
+                try {
+                    throw task.exception!!
+                } catch (e: FirebaseAuthWeakPasswordException) {
+                    excecao = "Digite uma senha mais forte!"
+                } catch (e: FirebaseAuthInvalidCredentialsException) {
+                    excecao = "Digite um Email válido!"
+                } catch (e: FirebaseAuthUserCollisionException) {
+                    excecao = "Essa conta já existe!"
+                } catch (e: Exception) {
+                    excecao = "Erro ao cadastrarusuário! " + e.message
+                    e.printStackTrace()
+                }
+
+                Toast.makeText(applicationContext, "$excecao", Toast.LENGTH_LONG).show()
+
             }
         }
     }
