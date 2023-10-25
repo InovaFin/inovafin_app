@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/branco_background"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".EsqueceuSenha">
 
     <!--Conteúdo Geral-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".EsqueceuSenha"
         android:background="@color/branco_background"
         android:orientation="vertical">
 

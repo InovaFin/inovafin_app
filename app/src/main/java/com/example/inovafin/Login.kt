@@ -53,22 +53,25 @@ class Login : AppCompatActivity() {
     }
 
     fun validarCampos() {
+        val nome = ""
         val email = binding.emailUsuario.text.toString()
         val senha = binding.senhaUsuario.text.toString()
 
         if (email.isNotEmpty() && senha.isNotEmpty()) {
-            usuario = Usuario(email, senha)
-            logarUsuario(usuario)
+            usuario = Usuario(nome, email, senha)
+            logarUsuario()
         } else {
             if (email.isEmpty()) {
+                animacaoDeLoad.pararAnimacao()
                 Toast.makeText(applicationContext, "Preencha um Email", Toast.LENGTH_LONG).show()
             } else if (senha.isEmpty()) {
+                animacaoDeLoad.pararAnimacao()
                 Toast.makeText(applicationContext, "Preencha uma Senha", Toast.LENGTH_LONG).show()
             }
         }
     }
 
-    private fun logarUsuario(usuario: Usuario) {
+    private fun logarUsuario() {
         autentificacao = ConfiguraBd.Firebaseautentificacao()
 
         autentificacao.signInWithEmailAndPassword(
@@ -95,7 +98,6 @@ class Login : AppCompatActivity() {
                 }
 
                 Toast.makeText(applicationContext, "$excecao", Toast.LENGTH_LONG).show()
-
             }
         }
     }
