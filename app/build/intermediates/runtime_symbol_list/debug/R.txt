@@ -3255,6 +3255,7 @@ int id btNotificacao 0x7f0a0078
 int id btPerfil 0x7f0a0079
 int id btRecuperar 0x7f0a007a
 int id btRegistro 0x7f0a007b
+int id btSair 0x7f0a022c
 int id btSaldoGeral 0x7f0a007c
 int id btSaldoGeralGuardado 0x7f0a007d
 int id btSaldoGeralPagar 0x7f0a007e

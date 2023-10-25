@@ -5,10 +5,12 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.inovafin.databinding.ActivityHomeBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class Home : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)

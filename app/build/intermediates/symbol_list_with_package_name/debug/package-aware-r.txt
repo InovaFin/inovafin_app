@@ -3256,6 +3256,7 @@ id btNotificacao
 id btPerfil
 id btRecuperar
 id btRegistro
+id btSair
 id btSaldoGeral
 id btSaldoGeralGuardado
 id btSaldoGeralPagar

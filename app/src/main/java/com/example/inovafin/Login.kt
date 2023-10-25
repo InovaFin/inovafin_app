@@ -13,6 +13,7 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
+import com.google.firebase.auth.FirebaseUser
 import com.google.gson.JsonObject
 import com.koushikdutta.async.future.FutureCallback
 import com.koushikdutta.ion.Ion
@@ -32,6 +33,8 @@ class Login : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        autentificacao = ConfiguraBd.Firebaseautentificacao()
 
         animacaoDeLoad = AnimacaoDeLoad(binding.btAnimacao, binding.btText, this)
 
@@ -72,8 +75,6 @@ class Login : AppCompatActivity() {
     }
 
     private fun logarUsuario() {
-        autentificacao = ConfiguraBd.Firebaseautentificacao()
-
         autentificacao.signInWithEmailAndPassword(
             usuario.email, usuario.senha
         ).addOnCompleteListener(this) {task ->

@@ -25,16 +25,20 @@ public final class ActivityConfiguracoesBinding implements ViewBinding {
   public final LinearLayout btEditarPerfil;
 
   @NonNull
+  public final LinearLayout btSair;
+
+  @NonNull
   public final ImageView icFechar;
 
   @NonNull
   public final TextView nomeUsuario;
 
   private ActivityConfiguracoesBinding(@NonNull RelativeLayout rootView,
-      @NonNull LinearLayout btEditarPerfil, @NonNull ImageView icFechar,
-      @NonNull TextView nomeUsuario) {
+      @NonNull LinearLayout btEditarPerfil, @NonNull LinearLayout btSair,
+      @NonNull ImageView icFechar, @NonNull TextView nomeUsuario) {
     this.rootView = rootView;
     this.btEditarPerfil = btEditarPerfil;
+    this.btSair = btSair;
     this.icFechar = icFechar;
     this.nomeUsuario = nomeUsuario;
   }
@@ -72,6 +76,12 @@ public final class ActivityConfiguracoesBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btSair;
+      LinearLayout btSair = ViewBindings.findChildViewById(rootView, id);
+      if (btSair == null) {
+        break missingId;
+      }
+
       id = R.id.icFechar;
       ImageView icFechar = ViewBindings.findChildViewById(rootView, id);
       if (icFechar == null) {
@@ -84,8 +94,8 @@ public final class ActivityConfiguracoesBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityConfiguracoesBinding((RelativeLayout) rootView, btEditarPerfil, icFechar,
-          nomeUsuario);
+      return new ActivityConfiguracoesBinding((RelativeLayout) rootView, btEditarPerfil, btSair,
+          icFechar, nomeUsuario);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

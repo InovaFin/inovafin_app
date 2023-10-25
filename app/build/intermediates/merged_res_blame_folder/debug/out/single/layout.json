@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-36:\\layout\\activity_saldo_geral_pagar.xml",
-        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-39:\\layout\\activity_saldo_geral_pagar.xml"
-    },
-    {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-36:\\layout\\activity_notificacoes.xml",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-39:\\layout\\activity_notificacoes.xml"
+    },
+    {
+        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-36:\\layout\\activity_saldo_geral_pagar.xml",
+        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-39:\\layout\\activity_saldo_geral_pagar.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-36:\\layout\\activity_adicionar_valor.xml",
@@ -28,12 +28,16 @@
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-39:\\layout\\activity_nova_conta.xml"
     },
     {
-        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-36:\\layout\\activity_excluir_receber.xml",
-        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-39:\\layout\\activity_excluir_receber.xml"
+        "merged": "com.example.inovafin.app-mergeDebugResources-36:/layout/activity_configuracoes.xml",
+        "source": "com.example.inovafin.app-main-39:/layout/activity_configuracoes.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-36:\\layout\\activity_saldo_geral_guardado.xml",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-39:\\layout\\activity_saldo_geral_guardado.xml"
+    },
+    {
+        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-36:\\layout\\activity_excluir_receber.xml",
+        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-39:\\layout\\activity_excluir_receber.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-36:\\layout\\activity_excluir_pagar.xml",
@@ -58,10 +62,6 @@
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-36:\\layout\\activity_valor_guardado.xml",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-39:\\layout\\activity_valor_guardado.xml"
-    },
-    {
-        "merged": "com.example.inovafin.app-mergeDebugResources-36:/layout/activity_esqueceu_senha.xml",
-        "source": "com.example.inovafin.app-main-39:/layout/activity_esqueceu_senha.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-36:\\layout\\activity_saldo_geral.xml",
