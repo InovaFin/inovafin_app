@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.inovafin.app-mergeDebugResources-28:/values-small-v4/values-small-v4.xml",
+            "outputFile": "com.example.inovafin.app-mergeDebugResources-35:/values-small-v4/values-small-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\vinicius\\.gradle\\caches\\transforms-3\\b84fd8e0913fbee5ea341511771bb46a\\transformed\\material-1.9.0\\res\\values-small-v4\\values-small-v4.xml",
+                    "source": "C:\\Users\\erick\\.gradle\\caches\\transforms-3\\fec2e55f830ebfdd0822c02afd5ff96e\\transformed\\material-1.9.0\\res\\values-small-v4\\values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

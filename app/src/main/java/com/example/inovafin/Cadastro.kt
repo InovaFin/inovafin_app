@@ -1,26 +1,24 @@
 package com.example.inovafin
 
-import com.example.inovafin.Load.AnimacaoDeLoad
-import android.content.Intent
+import com.example.inovafin.Util.AnimacaoDeLoad
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.inovafin.Validacoes.Validacao
+import com.example.inovafin.Util.ConfiguraBd
 import com.example.inovafin.databinding.ActivityCadastroBinding
-import com.google.gson.JsonObject
-import com.koushikdutta.async.future.FutureCallback
-import com.koushikdutta.ion.Ion
+import com.example.inovafin.model.Usuario
+import com.google.firebase.auth.FirebaseAuth
 
 class Cadastro : AppCompatActivity() {
-
-    var Host = "https://inovafin.000webhostapp.com/projeto/inserir.php"
-    var url: String? = null
-    var ret: String? = null
 
     private lateinit var binding: ActivityCadastroBinding
 
     // Armazena uma instância da classe AnimacaoDeLoad
     private lateinit var animacaoDeLoad: AnimacaoDeLoad
+
+    private lateinit var usuario: Usuario
+
+    private lateinit var autentificacao: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,69 +37,47 @@ class Cadastro : AppCompatActivity() {
             // Chama um método da Classe AnimacaoDeLoad
             animacaoDeLoad.iniciarAnimacao()
 
-            inserir()
+            validarCampos()
         }
     }
 
-    fun inserir() {
-        url = Host
+    fun validarCampos() {
+        val nome = binding.nomeUsuario.text.toString()
+        val email = binding.emailUsuario.text.toString()
+        val senha = binding.senhaUsuario.text.toString()
 
-        // Cada variável retorna um valor do metodo correspondente indicando o status do dado inserido pelo usuário
-        val nomeValido = Validacao.validarNome(binding.nomeUsuario.text.toString())
-        val emailValido = Validacao.validarEmail(binding.emailUsuario.text.toString())
-        val erroSenha = Validacao.validarSenha(binding.senhaUsuario.text.toString(), binding.confirmSenhaUsuario.text.toString())
-
-        // Chama dois métodos da classe Validacao mais uma uma variável e verifica seus valores
-        if (nomeValido && emailValido && erroSenha === null) {
-            try {
-                Ion.with(this)
-                    .load(url)
-                    .setBodyParameter("nome", binding.nomeUsuario.text.toString())
-                    .setBodyParameter("email", binding.emailUsuario.text.toString())
-                    .setBodyParameter("senha", binding.senhaUsuario.text.toString())
-                    .asJsonObject()
-                    .setCallback(FutureCallback<JsonObject> { e, result ->
-                        // Chama um método da Classe AnimacaoDeLoad
-                        animacaoDeLoad.pararAnimacao()
-
-                        if (e != null) {
-                            // Ocorreu um erro na solicitação HTTP
-                            Toast.makeText(applicationContext, "Erro ao cadastrar: " + e.localizedMessage, Toast.LENGTH_LONG).show()
-                        } else {
-                            ret = result["status"].asString
-                            if (ret == "ok")
-                            {
-                                Toast.makeText(applicationContext, "Cadastro realizado!", Toast.LENGTH_LONG).show()
-
-                                // Navegação para tela Login
-                                var navegarTelaLogin = Intent(this, Login::class.java)
-                                startActivity(navegarTelaLogin)
-                            }
-                            else
-                                Toast.makeText(applicationContext, "$ret", Toast.LENGTH_LONG).show()
-                        }
-                    })
-            } catch (e: Exception) {
-                Toast.makeText(applicationContext, "Erro" + e.localizedMessage, Toast.LENGTH_LONG).show()
+        if (nome.isNotEmpty() && email.isNotEmpty() && senha.isNotEmpty()) {
+            usuario = Usuario(nome, email, senha)
+            cadastrarUsuario()
+        } else {
+            if (nome.isEmpty()) {
+                Toast.makeText(applicationContext, "Preencha um Nome", Toast.LENGTH_LONG).show()
+            } else if (email.isEmpty()) {
+                Toast.makeText(applicationContext, "Preencha um Email", Toast.LENGTH_LONG).show()
+            } else if (senha.isEmpty()) {
+                Toast.makeText(applicationContext, "Preencha uma Senha", Toast.LENGTH_LONG).show()
             }
         }
-        else {
-            // Chama um método da Classe AnimacaoDeLoad
-            animacaoDeLoad.pararAnimacao()
+    }
 
-            // Verifica os resultados da validação e mostra mensagens de erro apropriadas
-            if (!nomeValido) {
-                binding.nomeUsuario.error = "Nome inválido (pelo menos 3 caracteres)"
-            }
-            if (!emailValido) {
-                binding.emailUsuario.error = "Email inválido"
-            }
-            if (erroSenha == 0){
-                binding.senhaUsuario.error = "A senha deve conter no mínimo 8 caracteres!"
-            }
-            else
-            {
-                binding.confirmSenhaUsuario.error = "As senhas são diferentes!"
+    private fun cadastrarUsuario() {
+        autentificacao = ConfiguraBd.Firebaseautentificacao()
+
+        autentificacao.createUserWithEmailAndPassword(
+            usuario.email, usuario.senha
+        ).addOnCompleteListener(this) {task ->
+            if (task.isSuccessful) {
+                animacaoDeLoad.pararAnimacao()
+
+                // O usuário foi criado com sucesso
+                val user = task.result?.user
+                Toast.makeText(applicationContext, "Usuário cadastrado!", Toast.LENGTH_LONG).show()
+            } else {
+                animacaoDeLoad.pararAnimacao()
+
+                // Ocorreu um erro durante a criação do usuário
+                val exception = task.exception
+                Toast.makeText(applicationContext, "$exception", Toast.LENGTH_LONG).show()
             }
         }
     }

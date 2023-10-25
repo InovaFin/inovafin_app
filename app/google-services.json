@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1029948228403",
+    "project_id": "inovafin-65a6a",
+    "storage_bucket": "inovafin-65a6a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1029948228403:android:e2005243111decaba83446",
+        "android_client_info": {
+          "package_name": "com.example.inovafin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-18K0yYbOsd7n7zlj4UuCqR_Zf96ol0Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

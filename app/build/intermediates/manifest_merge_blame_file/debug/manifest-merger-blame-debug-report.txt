@@ -9,243 +9,446 @@
 9        android:targetSdkVersion="33" />
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:5:5-67
-11-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:5:22-64
+11-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:5:5-67
+11-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:5:22-64
 12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-12-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:6:5-79
-12-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:6:22-76
-13
-14    <permission
-14-->[androidx.core:core:1.9.0] C:\Users\vinicius\.gradle\caches\transforms-3\738147d0f85917708540e295877f94a3\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
-15        android:name="com.example.inovafin.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-15-->[androidx.core:core:1.9.0] C:\Users\vinicius\.gradle\caches\transforms-3\738147d0f85917708540e295877f94a3\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
-16        android:protectionLevel="signature" />
-16-->[androidx.core:core:1.9.0] C:\Users\vinicius\.gradle\caches\transforms-3\738147d0f85917708540e295877f94a3\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
-17
-18    <uses-permission android:name="com.example.inovafin.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-18-->[androidx.core:core:1.9.0] C:\Users\vinicius\.gradle\caches\transforms-3\738147d0f85917708540e295877f94a3\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
-18-->[androidx.core:core:1.9.0] C:\Users\vinicius\.gradle\caches\transforms-3\738147d0f85917708540e295877f94a3\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
-19
-20    <application
-20-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:8:5-108:19
-21        android:allowBackup="true"
-21-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:9:9-35
-22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-22-->[androidx.core:core:1.9.0] C:\Users\vinicius\.gradle\caches\transforms-3\738147d0f85917708540e295877f94a3\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
-23        android:dataExtractionRules="@xml/data_extraction_rules"
-23-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:10:9-65
-24        android:debuggable="true"
-25        android:extractNativeLibs="false"
-26        android:fullBackupContent="@xml/backup_rules"
-26-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:11:9-54
-27        android:icon="@mipmap/ic_launcher"
-27-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:12:9-43
-28        android:label="@string/app_name"
-28-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:13:9-41
-29        android:roundIcon="@mipmap/ic_launcher_round"
-29-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:14:9-54
-30        android:supportsRtl="true"
-30-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:15:9-35
-31        android:testOnly="true"
-32        android:theme="@style/Theme.InovaFin" >
-32-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:16:9-46
-33        <activity
-33-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:18:9-20:40
-34            android:name="com.example.inovafin.ContaEscolhida"
-34-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:19:13-43
-35            android:exported="false" />
-35-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:20:13-37
+12-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:6:5-79
+12-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:6:22-76
+13    <uses-permission android:name="android.permission.WAKE_LOCK" />
+13-->[com.google.android.gms:play-services-measurement-api:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\9851f31a8613f4efd762800e6b8833f7\transformed\play-services-measurement-api-21.4.0\AndroidManifest.xml:24:5-68
+13-->[com.google.android.gms:play-services-measurement-api:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\9851f31a8613f4efd762800e6b8833f7\transformed\play-services-measurement-api-21.4.0\AndroidManifest.xml:24:22-65
+14    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+14-->[com.google.android.gms:play-services-measurement-api:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\9851f31a8613f4efd762800e6b8833f7\transformed\play-services-measurement-api-21.4.0\AndroidManifest.xml:25:5-79
+14-->[com.google.android.gms:play-services-measurement-api:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\9851f31a8613f4efd762800e6b8833f7\transformed\play-services-measurement-api-21.4.0\AndroidManifest.xml:25:22-76
+15    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+15-->[com.google.android.gms:play-services-measurement:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\b50ff126c4ac4d4cc6ffb7ed3d92b363\transformed\play-services-measurement-21.4.0\AndroidManifest.xml:26:5-110
+15-->[com.google.android.gms:play-services-measurement:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\b50ff126c4ac4d4cc6ffb7ed3d92b363\transformed\play-services-measurement-21.4.0\AndroidManifest.xml:26:22-107
+16
+17    <permission
+17-->[androidx.core:core:1.9.0] C:\Users\erick\.gradle\caches\transforms-3\fa5b8c27d3a67ea41b19585cddd623f5\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+18        android:name="com.example.inovafin.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+18-->[androidx.core:core:1.9.0] C:\Users\erick\.gradle\caches\transforms-3\fa5b8c27d3a67ea41b19585cddd623f5\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+19        android:protectionLevel="signature" />
+19-->[androidx.core:core:1.9.0] C:\Users\erick\.gradle\caches\transforms-3\fa5b8c27d3a67ea41b19585cddd623f5\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+20
+21    <uses-permission android:name="com.example.inovafin.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+21-->[androidx.core:core:1.9.0] C:\Users\erick\.gradle\caches\transforms-3\fa5b8c27d3a67ea41b19585cddd623f5\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+21-->[androidx.core:core:1.9.0] C:\Users\erick\.gradle\caches\transforms-3\fa5b8c27d3a67ea41b19585cddd623f5\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+22
+23    <application
+23-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:8:5-107:19
+24        android:allowBackup="true"
+24-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:9:9-35
+25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+25-->[androidx.core:core:1.9.0] C:\Users\erick\.gradle\caches\transforms-3\fa5b8c27d3a67ea41b19585cddd623f5\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+26        android:dataExtractionRules="@xml/data_extraction_rules"
+26-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:10:9-65
+27        android:debuggable="true"
+28        android:extractNativeLibs="false"
+29        android:fullBackupContent="@xml/backup_rules"
+29-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:11:9-54
+30        android:icon="@mipmap/ic_launcher"
+30-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:12:9-43
+31        android:label="@string/app_name"
+31-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:13:9-41
+32        android:roundIcon="@mipmap/ic_launcher_round"
+32-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:14:9-54
+33        android:supportsRtl="true"
+33-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:15:9-35
+34        android:testOnly="true"
+35        android:theme="@style/Theme.InovaFin" >
+35-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:16:9-46
 36        <activity
-36-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:21:9-23:40
-37            android:name="com.example.inovafin.NovaConta"
-37-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:22:13-38
+36-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:18:9-20:40
+37            android:name="com.example.inovafin.ContaEscolhida"
+37-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:19:13-43
 38            android:exported="false" />
-38-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:23:13-37
+38-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:20:13-37
 39        <activity
-39-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:24:9-26:40
-40            android:name="com.example.inovafin.ExcluirPagar"
-40-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:25:13-41
+39-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:21:9-23:40
+40            android:name="com.example.inovafin.NovaConta"
+40-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:22:13-38
 41            android:exported="false" />
-41-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:26:13-37
+41-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:23:13-37
 42        <activity
-42-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:27:9-29:40
-43            android:name="com.example.inovafin.ExcluirGuardado"
-43-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:28:13-44
+42-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:24:9-26:40
+43            android:name="com.example.inovafin.ExcluirPagar"
+43-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:25:13-41
 44            android:exported="false" />
-44-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:29:13-37
+44-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:26:13-37
 45        <activity
-45-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:30:9-32:40
-46            android:name="com.example.inovafin.ExcluirReceber"
-46-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:31:13-43
+45-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:27:9-29:40
+46            android:name="com.example.inovafin.ExcluirGuardado"
+46-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:28:13-44
 47            android:exported="false" />
-47-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:32:13-37
+47-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:29:13-37
 48        <activity
-48-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:33:9-35:40
-49            android:name="com.example.inovafin.InfoRegistro"
-49-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:34:13-41
+48-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:30:9-32:40
+49            android:name="com.example.inovafin.ExcluirReceber"
+49-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:31:13-43
 50            android:exported="false" />
-50-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:35:13-37
+50-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:32:13-37
 51        <activity
-51-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:36:9-38:40
-52            android:name="com.example.inovafin.AdicionarValor"
-52-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:37:13-43
+51-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:33:9-35:40
+52            android:name="com.example.inovafin.InfoRegistro"
+52-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:34:13-41
 53            android:exported="false" />
-53-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:38:13-37
+53-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:35:13-37
 54        <activity
-54-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:39:9-41:40
-55            android:name="com.example.inovafin.SaldoGeralPagar"
-55-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:40:13-44
+54-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:36:9-38:40
+55            android:name="com.example.inovafin.AdicionarValor"
+55-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:37:13-43
 56            android:exported="false" />
-56-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:41:13-37
+56-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:38:13-37
 57        <activity
-57-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:42:9-44:40
-58            android:name="com.example.inovafin.SaldoGeralGuardado"
-58-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:43:13-47
+57-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:39:9-41:40
+58            android:name="com.example.inovafin.SaldoGeralPagar"
+58-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:40:13-44
 59            android:exported="false" />
-59-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:44:13-37
+59-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:41:13-37
 60        <activity
-60-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:45:9-47:40
-61            android:name="com.example.inovafin.SaldoGeralReceber"
-61-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:46:13-46
+60-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:42:9-44:40
+61            android:name="com.example.inovafin.SaldoGeralGuardado"
+61-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:43:13-47
 62            android:exported="false" />
-62-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:47:13-37
+62-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:44:13-37
 63        <activity
-63-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:48:9-50:40
-64            android:name="com.example.inovafin.AjudaSaldoGeral"
-64-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:49:13-44
+63-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:45:9-47:40
+64            android:name="com.example.inovafin.SaldoGeralReceber"
+64-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:46:13-46
 65            android:exported="false" />
-65-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:50:13-37
+65-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:47:13-37
 66        <activity
-66-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:51:9-53:40
-67            android:name="com.example.inovafin.EditarPerfil"
-67-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:52:13-41
+66-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:48:9-50:40
+67            android:name="com.example.inovafin.AjudaSaldoGeral"
+67-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:49:13-44
 68            android:exported="false" />
-68-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:53:13-37
+68-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:50:13-37
 69        <activity
-69-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:54:9-56:40
-70            android:name="com.example.inovafin.ValorPagar"
-70-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:55:13-39
+69-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:51:9-53:40
+70            android:name="com.example.inovafin.EditarPerfil"
+70-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:52:13-41
 71            android:exported="false" />
-71-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:56:13-37
+71-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:53:13-37
 72        <activity
-72-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:57:9-59:40
-73            android:name="com.example.inovafin.ValorGuardado"
-73-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:58:13-42
+72-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:54:9-56:40
+73            android:name="com.example.inovafin.ValorPagar"
+73-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:55:13-39
 74            android:exported="false" />
-74-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:59:13-37
+74-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:56:13-37
 75        <activity
-75-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:60:9-62:40
-76            android:name="com.example.inovafin.ValorReceber"
-76-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:61:13-41
+75-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:57:9-59:40
+76            android:name="com.example.inovafin.ValorGuardado"
+76-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:58:13-42
 77            android:exported="false" />
-77-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:62:13-37
+77-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:59:13-37
 78        <activity
-78-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:63:9-65:40
-79            android:name="com.example.inovafin.MinhasContas"
-79-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:64:13-41
+78-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:60:9-62:40
+79            android:name="com.example.inovafin.ValorReceber"
+79-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:61:13-41
 80            android:exported="false" />
-80-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:65:13-37
+80-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:62:13-37
 81        <activity
-81-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:66:9-68:40
-82            android:name="com.example.inovafin.SaldoGeral"
-82-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:67:13-39
+81-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:63:9-65:40
+82            android:name="com.example.inovafin.MinhasContas"
+82-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:64:13-41
 83            android:exported="false" />
-83-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:68:13-37
+83-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:65:13-37
 84        <activity
-84-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:69:9-71:40
-85            android:name="com.example.inovafin.Notificacoes"
-85-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:70:13-41
+84-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:66:9-68:40
+85            android:name="com.example.inovafin.SaldoGeral"
+85-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:67:13-39
 86            android:exported="false" />
-86-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:71:13-37
+86-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:68:13-37
 87        <activity
-87-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:72:9-74:40
-88            android:name="com.example.inovafin.Configuracoes"
-88-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:73:13-42
+87-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:69:9-71:40
+88            android:name="com.example.inovafin.Notificacoes"
+88-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:70:13-41
 89            android:exported="false" />
-89-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:74:13-37
+89-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:71:13-37
 90        <activity
-90-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:75:9-77:40
-91            android:name="com.example.inovafin.SenhaEnviada"
-91-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:76:13-41
+90-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:72:9-74:40
+91            android:name="com.example.inovafin.Configuracoes"
+91-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:73:13-42
 92            android:exported="false" />
-92-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:77:13-37
+92-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:74:13-37
 93        <activity
-93-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:78:9-82:20
-94            android:name="com.example.inovafin.Home"
-94-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:79:13-33
-95            android:exported="false" >
-95-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:80:13-37
-96        </activity>
-97        <activity
-97-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:83:9-85:40
-98            android:name="com.example.inovafin.EsqueceuSenha"
-98-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:84:13-42
-99            android:exported="false" />
-99-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:85:13-37
+93-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:75:9-77:40
+94            android:name="com.example.inovafin.SenhaEnviada"
+94-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:76:13-41
+95            android:exported="false" />
+95-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:77:13-37
+96        <activity
+96-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:78:9-81:20
+97            android:name="com.example.inovafin.Home"
+97-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:79:13-33
+98            android:exported="false" >
+98-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:80:13-37
+99        </activity>
 100        <activity
-100-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:86:9-88:40
-101            android:name="com.example.inovafin.Cadastro"
-101-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:87:13-37
+100-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:82:9-84:40
+101            android:name="com.example.inovafin.EsqueceuSenha"
+101-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:83:13-42
 102            android:exported="false" />
-102-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:88:13-37
+102-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:84:13-37
 103        <activity
-103-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:89:9-91:40
-104            android:name="com.example.inovafin.Login"
-104-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:90:13-34
+103-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:85:9-87:40
+104            android:name="com.example.inovafin.Cadastro"
+104-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:86:13-37
 105            android:exported="false" />
-105-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:91:13-37
+105-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:87:13-37
 106        <activity
-106-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:92:9-94:40
-107            android:name="com.example.inovafin.LoginCadastro"
-107-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:93:13-42
+106-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:88:9-90:40
+107            android:name="com.example.inovafin.Login"
+107-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:89:13-34
 108            android:exported="false" />
-108-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:94:13-37
+108-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:90:13-37
 109        <activity
-109-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:95:9-103:20
-110            android:name="com.example.inovafin.SplashScreen"
-110-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:96:13-41
-111            android:exported="true" >
-111-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:97:13-36
-112            <intent-filter>
-112-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:98:13-102:29
-113                <action android:name="android.intent.action.MAIN" />
-113-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:99:17-69
-113-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:99:25-66
-114
-115                <category android:name="android.intent.category.LAUNCHER" />
-115-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:101:17-77
-115-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:101:27-74
-116            </intent-filter>
-117        </activity>
-118
-119        <meta-data
-119-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:105:9-107:57
-120            android:name="preloaded_fonts"
-120-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:106:13-43
-121            android:resource="@array/preloaded_fonts" />
-121-->C:\Users\vinicius\Desktop\inovafin_app\app\src\main\AndroidManifest.xml:107:13-54
-122
-123        <provider
-123-->[androidx.emoji2:emoji2:1.2.0] C:\Users\vinicius\.gradle\caches\transforms-3\3ffd57255e6f9966dfb3d4f8b250b487\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-124            android:name="androidx.startup.InitializationProvider"
-124-->[androidx.emoji2:emoji2:1.2.0] C:\Users\vinicius\.gradle\caches\transforms-3\3ffd57255e6f9966dfb3d4f8b250b487\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
-125            android:authorities="com.example.inovafin.androidx-startup"
-125-->[androidx.emoji2:emoji2:1.2.0] C:\Users\vinicius\.gradle\caches\transforms-3\3ffd57255e6f9966dfb3d4f8b250b487\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
-126            android:exported="false" >
-126-->[androidx.emoji2:emoji2:1.2.0] C:\Users\vinicius\.gradle\caches\transforms-3\3ffd57255e6f9966dfb3d4f8b250b487\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
-127            <meta-data
-127-->[androidx.emoji2:emoji2:1.2.0] C:\Users\vinicius\.gradle\caches\transforms-3\3ffd57255e6f9966dfb3d4f8b250b487\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-128                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-128-->[androidx.emoji2:emoji2:1.2.0] C:\Users\vinicius\.gradle\caches\transforms-3\3ffd57255e6f9966dfb3d4f8b250b487\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
-129                android:value="androidx.startup" />
-129-->[androidx.emoji2:emoji2:1.2.0] C:\Users\vinicius\.gradle\caches\transforms-3\3ffd57255e6f9966dfb3d4f8b250b487\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+109-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:91:9-93:40
+110            android:name="com.example.inovafin.LoginCadastro"
+110-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:92:13-42
+111            android:exported="false" />
+111-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:93:13-37
+112        <activity
+112-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:94:9-102:20
+113            android:name="com.example.inovafin.SplashScreen"
+113-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:95:13-41
+114            android:exported="true" >
+114-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:96:13-36
+115            <intent-filter>
+115-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:97:13-101:29
+116                <action android:name="android.intent.action.MAIN" />
+116-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:98:17-69
+116-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:98:25-66
+117
+118                <category android:name="android.intent.category.LAUNCHER" />
+118-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:100:17-77
+118-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:100:27-74
+119            </intent-filter>
+120        </activity>
+121
+122        <meta-data
+122-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:104:9-106:57
+123            android:name="preloaded_fonts"
+123-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:105:13-43
+124            android:resource="@array/preloaded_fonts" />
+124-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:106:13-54
+125
+126        <service
+126-->[com.google.firebase:firebase-analytics-ktx:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\fc39f18687c7d5579853bcc156ce65a3\transformed\firebase-analytics-ktx-21.4.0\AndroidManifest.xml:8:9-14:19
+127            android:name="com.google.firebase.components.ComponentDiscoveryService"
+127-->[com.google.firebase:firebase-analytics-ktx:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\fc39f18687c7d5579853bcc156ce65a3\transformed\firebase-analytics-ktx-21.4.0\AndroidManifest.xml:9:13-84
+128            android:directBootAware="true"
+128-->[com.google.firebase:firebase-common:20.4.2] C:\Users\erick\.gradle\caches\transforms-3\0d79cf050ef76d27558d5bf78f180ef5\transformed\firebase-common-20.4.2\AndroidManifest.xml:32:13-43
+129            android:exported="false" >
+129-->[com.google.firebase:firebase-analytics-ktx:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\fc39f18687c7d5579853bcc156ce65a3\transformed\firebase-analytics-ktx-21.4.0\AndroidManifest.xml:10:13-37
 130            <meta-data
-130-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\vinicius\.gradle\caches\transforms-3\2fedbf8c74c9edc50a1bd4976a1d5f3e\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
-131                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-131-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\vinicius\.gradle\caches\transforms-3\2fedbf8c74c9edc50a1bd4976a1d5f3e\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
-132                android:value="androidx.startup" />
-132-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\vinicius\.gradle\caches\transforms-3\2fedbf8c74c9edc50a1bd4976a1d5f3e\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
-133        </provider>
-134    </application>
-135
-136</manifest>
+130-->[com.google.firebase:firebase-analytics-ktx:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\fc39f18687c7d5579853bcc156ce65a3\transformed\firebase-analytics-ktx-21.4.0\AndroidManifest.xml:11:13-13:85
+131                android:name="com.google.firebase.components:com.google.firebase.analytics.ktx.FirebaseAnalyticsLegacyRegistrar"
+131-->[com.google.firebase:firebase-analytics-ktx:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\fc39f18687c7d5579853bcc156ce65a3\transformed\firebase-analytics-ktx-21.4.0\AndroidManifest.xml:12:17-129
+132                android:value="com.google.firebase.components.ComponentRegistrar" />
+132-->[com.google.firebase:firebase-analytics-ktx:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\fc39f18687c7d5579853bcc156ce65a3\transformed\firebase-analytics-ktx-21.4.0\AndroidManifest.xml:13:17-82
+133            <meta-data
+133-->[com.google.firebase:firebase-auth-ktx:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\d6910872f46051707a88d0f70dcede1d\transformed\firebase-auth-ktx-22.2.0\AndroidManifest.xml:11:13-13:85
+134                android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthLegacyRegistrar"
+134-->[com.google.firebase:firebase-auth-ktx:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\d6910872f46051707a88d0f70dcede1d\transformed\firebase-auth-ktx-22.2.0\AndroidManifest.xml:12:17-119
+135                android:value="com.google.firebase.components.ComponentRegistrar" />
+135-->[com.google.firebase:firebase-auth-ktx:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\d6910872f46051707a88d0f70dcede1d\transformed\firebase-auth-ktx-22.2.0\AndroidManifest.xml:13:17-82
+136            <meta-data
+136-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:69:13-71:85
+137                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+137-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:70:17-109
+138                android:value="com.google.firebase.components.ComponentRegistrar" />
+138-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:71:17-82
+139            <meta-data
+139-->[com.google.android.gms:play-services-measurement-api:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\9851f31a8613f4efd762800e6b8833f7\transformed\play-services-measurement-api-21.4.0\AndroidManifest.xml:31:13-33:85
+140                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+140-->[com.google.android.gms:play-services-measurement-api:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\9851f31a8613f4efd762800e6b8833f7\transformed\play-services-measurement-api-21.4.0\AndroidManifest.xml:32:17-139
+141                android:value="com.google.firebase.components.ComponentRegistrar" />
+141-->[com.google.android.gms:play-services-measurement-api:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\9851f31a8613f4efd762800e6b8833f7\transformed\play-services-measurement-api-21.4.0\AndroidManifest.xml:33:17-82
+142            <meta-data
+142-->[com.google.firebase:firebase-installations:17.2.0] C:\Users\erick\.gradle\caches\transforms-3\f49e71052c581e38a3dd508812b8d306\transformed\firebase-installations-17.2.0\AndroidManifest.xml:15:13-17:85
+143                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
+143-->[com.google.firebase:firebase-installations:17.2.0] C:\Users\erick\.gradle\caches\transforms-3\f49e71052c581e38a3dd508812b8d306\transformed\firebase-installations-17.2.0\AndroidManifest.xml:16:17-130
+144                android:value="com.google.firebase.components.ComponentRegistrar" />
+144-->[com.google.firebase:firebase-installations:17.2.0] C:\Users\erick\.gradle\caches\transforms-3\f49e71052c581e38a3dd508812b8d306\transformed\firebase-installations-17.2.0\AndroidManifest.xml:17:17-82
+145            <meta-data
+145-->[com.google.firebase:firebase-installations:17.2.0] C:\Users\erick\.gradle\caches\transforms-3\f49e71052c581e38a3dd508812b8d306\transformed\firebase-installations-17.2.0\AndroidManifest.xml:18:13-20:85
+146                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+146-->[com.google.firebase:firebase-installations:17.2.0] C:\Users\erick\.gradle\caches\transforms-3\f49e71052c581e38a3dd508812b8d306\transformed\firebase-installations-17.2.0\AndroidManifest.xml:19:17-127
+147                android:value="com.google.firebase.components.ComponentRegistrar" />
+147-->[com.google.firebase:firebase-installations:17.2.0] C:\Users\erick\.gradle\caches\transforms-3\f49e71052c581e38a3dd508812b8d306\transformed\firebase-installations-17.2.0\AndroidManifest.xml:20:17-82
+148            <meta-data
+148-->[com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\erick\.gradle\caches\transforms-3\7f7e54a708a49f691546829c26d83682\transformed\firebase-common-ktx-20.4.2\AndroidManifest.xml:12:13-14:85
+149                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+149-->[com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\erick\.gradle\caches\transforms-3\7f7e54a708a49f691546829c26d83682\transformed\firebase-common-ktx-20.4.2\AndroidManifest.xml:13:17-116
+150                android:value="com.google.firebase.components.ComponentRegistrar" />
+150-->[com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\erick\.gradle\caches\transforms-3\7f7e54a708a49f691546829c26d83682\transformed\firebase-common-ktx-20.4.2\AndroidManifest.xml:14:17-82
+151            <meta-data
+151-->[com.google.firebase:firebase-common:20.4.2] C:\Users\erick\.gradle\caches\transforms-3\0d79cf050ef76d27558d5bf78f180ef5\transformed\firebase-common-20.4.2\AndroidManifest.xml:35:13-37:85
+152                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+152-->[com.google.firebase:firebase-common:20.4.2] C:\Users\erick\.gradle\caches\transforms-3\0d79cf050ef76d27558d5bf78f180ef5\transformed\firebase-common-20.4.2\AndroidManifest.xml:36:17-109
+153                android:value="com.google.firebase.components.ComponentRegistrar" />
+153-->[com.google.firebase:firebase-common:20.4.2] C:\Users\erick\.gradle\caches\transforms-3\0d79cf050ef76d27558d5bf78f180ef5\transformed\firebase-common-20.4.2\AndroidManifest.xml:37:17-82
+154        </service>
+155
+156        <activity
+156-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:29:9-46:20
+157            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+157-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:30:13-80
+158            android:excludeFromRecents="true"
+158-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:31:13-46
+159            android:exported="true"
+159-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:32:13-36
+160            android:launchMode="singleTask"
+160-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:33:13-44
+161            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+161-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:34:13-72
+162            <intent-filter>
+162-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:35:13-45:29
+163                <action android:name="android.intent.action.VIEW" />
+163-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:36:17-69
+163-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:36:25-66
+164
+165                <category android:name="android.intent.category.DEFAULT" />
+165-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:38:17-76
+165-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:38:27-73
+166                <category android:name="android.intent.category.BROWSABLE" />
+166-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:39:17-78
+166-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:39:27-75
+167
+168                <data
+168-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:41:17-44:51
+169                    android:host="firebase.auth"
+169-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:42:21-49
+170                    android:path="/"
+170-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:43:21-37
+171                    android:scheme="genericidp" />
+171-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:44:21-48
+172            </intent-filter>
+173        </activity>
+174        <activity
+174-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:47:9-64:20
+175            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+175-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:48:13-79
+176            android:excludeFromRecents="true"
+176-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:49:13-46
+177            android:exported="true"
+177-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:50:13-36
+178            android:launchMode="singleTask"
+178-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:51:13-44
+179            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+179-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:52:13-72
+180            <intent-filter>
+180-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:53:13-63:29
+181                <action android:name="android.intent.action.VIEW" />
+181-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:36:17-69
+181-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:36:25-66
+182
+183                <category android:name="android.intent.category.DEFAULT" />
+183-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:38:17-76
+183-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:38:27-73
+184                <category android:name="android.intent.category.BROWSABLE" />
+184-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:39:17-78
+184-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:39:27-75
+185
+186                <data
+186-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:41:17-44:51
+187                    android:host="firebase.auth"
+187-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:42:21-49
+188                    android:path="/"
+188-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:43:21-37
+189                    android:scheme="recaptcha" />
+189-->[com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:44:21-48
+190            </intent-filter>
+191        </activity>
+192
+193        <receiver
+193-->[com.google.android.gms:play-services-measurement:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\b50ff126c4ac4d4cc6ffb7ed3d92b363\transformed\play-services-measurement-21.4.0\AndroidManifest.xml:29:9-33:20
+194            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+194-->[com.google.android.gms:play-services-measurement:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\b50ff126c4ac4d4cc6ffb7ed3d92b363\transformed\play-services-measurement-21.4.0\AndroidManifest.xml:30:13-85
+195            android:enabled="true"
+195-->[com.google.android.gms:play-services-measurement:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\b50ff126c4ac4d4cc6ffb7ed3d92b363\transformed\play-services-measurement-21.4.0\AndroidManifest.xml:31:13-35
+196            android:exported="false" >
+196-->[com.google.android.gms:play-services-measurement:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\b50ff126c4ac4d4cc6ffb7ed3d92b363\transformed\play-services-measurement-21.4.0\AndroidManifest.xml:32:13-37
+197        </receiver>
+198
+199        <service
+199-->[com.google.android.gms:play-services-measurement:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\b50ff126c4ac4d4cc6ffb7ed3d92b363\transformed\play-services-measurement-21.4.0\AndroidManifest.xml:35:9-38:40
+200            android:name="com.google.android.gms.measurement.AppMeasurementService"
+200-->[com.google.android.gms:play-services-measurement:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\b50ff126c4ac4d4cc6ffb7ed3d92b363\transformed\play-services-measurement-21.4.0\AndroidManifest.xml:36:13-84
+201            android:enabled="true"
+201-->[com.google.android.gms:play-services-measurement:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\b50ff126c4ac4d4cc6ffb7ed3d92b363\transformed\play-services-measurement-21.4.0\AndroidManifest.xml:37:13-35
+202            android:exported="false" />
+202-->[com.google.android.gms:play-services-measurement:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\b50ff126c4ac4d4cc6ffb7ed3d92b363\transformed\play-services-measurement-21.4.0\AndroidManifest.xml:38:13-37
+203        <service
+203-->[com.google.android.gms:play-services-measurement:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\b50ff126c4ac4d4cc6ffb7ed3d92b363\transformed\play-services-measurement-21.4.0\AndroidManifest.xml:39:9-43:72
+204            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+204-->[com.google.android.gms:play-services-measurement:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\b50ff126c4ac4d4cc6ffb7ed3d92b363\transformed\play-services-measurement-21.4.0\AndroidManifest.xml:40:13-87
+205            android:enabled="true"
+205-->[com.google.android.gms:play-services-measurement:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\b50ff126c4ac4d4cc6ffb7ed3d92b363\transformed\play-services-measurement-21.4.0\AndroidManifest.xml:41:13-35
+206            android:exported="false"
+206-->[com.google.android.gms:play-services-measurement:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\b50ff126c4ac4d4cc6ffb7ed3d92b363\transformed\play-services-measurement-21.4.0\AndroidManifest.xml:42:13-37
+207            android:permission="android.permission.BIND_JOB_SERVICE" />
+207-->[com.google.android.gms:play-services-measurement:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\b50ff126c4ac4d4cc6ffb7ed3d92b363\transformed\play-services-measurement-21.4.0\AndroidManifest.xml:43:13-69
+208
+209        <uses-library
+209-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\erick\.gradle\caches\transforms-3\6b3370265653060aa3a40fc26050d96c\transformed\ads-adservices-1.0.0-beta05\AndroidManifest.xml:23:9-25:40
+210            android:name="android.ext.adservices"
+210-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\erick\.gradle\caches\transforms-3\6b3370265653060aa3a40fc26050d96c\transformed\ads-adservices-1.0.0-beta05\AndroidManifest.xml:24:13-50
+211            android:required="false" />
+211-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\erick\.gradle\caches\transforms-3\6b3370265653060aa3a40fc26050d96c\transformed\ads-adservices-1.0.0-beta05\AndroidManifest.xml:25:13-37
+212
+213        <provider
+213-->[com.google.firebase:firebase-common:20.4.2] C:\Users\erick\.gradle\caches\transforms-3\0d79cf050ef76d27558d5bf78f180ef5\transformed\firebase-common-20.4.2\AndroidManifest.xml:23:9-28:39
+214            android:name="com.google.firebase.provider.FirebaseInitProvider"
+214-->[com.google.firebase:firebase-common:20.4.2] C:\Users\erick\.gradle\caches\transforms-3\0d79cf050ef76d27558d5bf78f180ef5\transformed\firebase-common-20.4.2\AndroidManifest.xml:24:13-77
+215            android:authorities="com.example.inovafin.firebaseinitprovider"
+215-->[com.google.firebase:firebase-common:20.4.2] C:\Users\erick\.gradle\caches\transforms-3\0d79cf050ef76d27558d5bf78f180ef5\transformed\firebase-common-20.4.2\AndroidManifest.xml:25:13-72
+216            android:directBootAware="true"
+216-->[com.google.firebase:firebase-common:20.4.2] C:\Users\erick\.gradle\caches\transforms-3\0d79cf050ef76d27558d5bf78f180ef5\transformed\firebase-common-20.4.2\AndroidManifest.xml:26:13-43
+217            android:exported="false"
+217-->[com.google.firebase:firebase-common:20.4.2] C:\Users\erick\.gradle\caches\transforms-3\0d79cf050ef76d27558d5bf78f180ef5\transformed\firebase-common-20.4.2\AndroidManifest.xml:27:13-37
+218            android:initOrder="100" />
+218-->[com.google.firebase:firebase-common:20.4.2] C:\Users\erick\.gradle\caches\transforms-3\0d79cf050ef76d27558d5bf78f180ef5\transformed\firebase-common-20.4.2\AndroidManifest.xml:28:13-36
+219
+220        <activity
+220-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\erick\.gradle\caches\transforms-3\505da5826076f57c2968e02349495c0c\transformed\play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+221            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+221-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\erick\.gradle\caches\transforms-3\505da5826076f57c2968e02349495c0c\transformed\play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+222            android:exported="false"
+222-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\erick\.gradle\caches\transforms-3\505da5826076f57c2968e02349495c0c\transformed\play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+223            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+223-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\erick\.gradle\caches\transforms-3\505da5826076f57c2968e02349495c0c\transformed\play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+224
+225        <meta-data
+225-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\erick\.gradle\caches\transforms-3\0ea6521d74e65641c5ab105cfa38bb5c\transformed\play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
+226            android:name="com.google.android.gms.version"
+226-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\erick\.gradle\caches\transforms-3\0ea6521d74e65641c5ab105cfa38bb5c\transformed\play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
+227            android:value="@integer/google_play_services_version" />
+227-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\erick\.gradle\caches\transforms-3\0ea6521d74e65641c5ab105cfa38bb5c\transformed\play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
+228
+229        <provider
+229-->[androidx.emoji2:emoji2:1.2.0] C:\Users\erick\.gradle\caches\transforms-3\5dd820c5b0a1d46b0699fcacef60c6b1\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+230            android:name="androidx.startup.InitializationProvider"
+230-->[androidx.emoji2:emoji2:1.2.0] C:\Users\erick\.gradle\caches\transforms-3\5dd820c5b0a1d46b0699fcacef60c6b1\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+231            android:authorities="com.example.inovafin.androidx-startup"
+231-->[androidx.emoji2:emoji2:1.2.0] C:\Users\erick\.gradle\caches\transforms-3\5dd820c5b0a1d46b0699fcacef60c6b1\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+232            android:exported="false" >
+232-->[androidx.emoji2:emoji2:1.2.0] C:\Users\erick\.gradle\caches\transforms-3\5dd820c5b0a1d46b0699fcacef60c6b1\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+233            <meta-data
+233-->[androidx.emoji2:emoji2:1.2.0] C:\Users\erick\.gradle\caches\transforms-3\5dd820c5b0a1d46b0699fcacef60c6b1\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+234                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+234-->[androidx.emoji2:emoji2:1.2.0] C:\Users\erick\.gradle\caches\transforms-3\5dd820c5b0a1d46b0699fcacef60c6b1\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+235                android:value="androidx.startup" />
+235-->[androidx.emoji2:emoji2:1.2.0] C:\Users\erick\.gradle\caches\transforms-3\5dd820c5b0a1d46b0699fcacef60c6b1\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+236            <meta-data
+236-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\erick\.gradle\caches\transforms-3\0e00b94c8dabd62282f2ff52adc548f6\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+237                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+237-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\erick\.gradle\caches\transforms-3\0e00b94c8dabd62282f2ff52adc548f6\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+238                android:value="androidx.startup" />
+238-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\erick\.gradle\caches\transforms-3\0e00b94c8dabd62282f2ff52adc548f6\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+239        </provider>
+240    </application>
+241
+242</manifest>

@@ -4,8 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.inovafin.Load.AnimacaoDeLoad
-import com.example.inovafin.Validacoes.Validacao
+import com.example.inovafin.Util.AnimacaoDeLoad
+import com.example.inovafin.Util.Validacao
 import com.example.inovafin.databinding.ActivityLoginBinding
 import com.google.gson.JsonObject
 import com.koushikdutta.async.future.FutureCallback
