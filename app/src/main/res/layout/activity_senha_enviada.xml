@@ -38,12 +38,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Sua senha foi alterada e enviada para seu E-mail."
-                android:fontFamily="@font/poppins_medium"
-                android:textSize="18sp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/poppins"
+                android:text="Um E-mail de recuperação de senha foi enviado."
                 android:textAlignment="center"
-                android:textColor="@color/black_secundario"
-                android:layout_marginBottom="15dp"/>
+                android:textColor="@color/black"
+                android:textSize="16sp" />
             <!--Subtitulo-->
 
             <!--Subtitulo-->

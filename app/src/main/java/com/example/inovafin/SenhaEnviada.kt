@@ -15,8 +15,8 @@ class SenhaEnviada : AppCompatActivity() {
         setContentView(view)
 
         binding.btLogin.setOnClickListener {
-            var navegarTelaLogin = Intent(this, Login::class.java)
-            startActivity(navegarTelaLogin)
+            var i = Intent(this, Login::class.java)
+            startActivity(i)
         }
     }
 

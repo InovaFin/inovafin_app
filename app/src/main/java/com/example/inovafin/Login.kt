@@ -81,7 +81,8 @@ class Login : AppCompatActivity() {
             if (task.isSuccessful) {
                 animacaoDeLoad.pararAnimacao()
 
-                abrirHome()
+                var i = Intent(this, Home::class.java)
+                startActivity(i)
             } else {
                 animacaoDeLoad.pararAnimacao()
 
@@ -101,10 +102,5 @@ class Login : AppCompatActivity() {
                 Toast.makeText(applicationContext, "$excecao", Toast.LENGTH_LONG).show()
             }
         }
-    }
-
-    private fun abrirHome() {
-        var i = Intent(this, Home::class.java)
-        startActivity(i)
     }
 }

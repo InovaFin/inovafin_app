@@ -73,9 +73,8 @@ class Cadastro : AppCompatActivity() {
             if (task.isSuccessful) {
                 animacaoDeLoad.pararAnimacao()
 
-                // O usuário foi criado com sucesso
-                val user = task.result?.user
-                Toast.makeText(applicationContext, "Usuário cadastrado!", Toast.LENGTH_LONG).show()
+                var i = Intent(this, Login::class.java)
+                startActivity(i)
             } else {
                 animacaoDeLoad.pararAnimacao()
 

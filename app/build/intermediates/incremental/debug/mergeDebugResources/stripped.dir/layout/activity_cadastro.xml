@@ -5,7 +5,6 @@
     android:background="@color/branco_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="120dp"
     tools:context=".Cadastro">
 
     <!--Conteúdo Geral-->
@@ -13,6 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/branco_background"
+        android:layout_marginTop="110dp"
+        android:layout_marginBottom="30dp"
         android:orientation="vertical">
 
 
@@ -36,7 +37,7 @@
                 android:textStyle="bold" />
             <!--Título-->
 
-            <!--Título-->
+            <!--Subtitulo-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -46,7 +47,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
-            <!--Título-->
+            <!--Subtitulo-->
 
             <!--Nome-->
             <EditText

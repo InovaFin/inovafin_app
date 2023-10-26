@@ -5,14 +5,15 @@
     android:background="@color/branco_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingHorizontal="35dp"
-    android:paddingTop="150dp"
     tools:context=".Login">
 
     <!--Conteúdo Geral-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingHorizontal="35dp"
+        android:paddingTop="150dp"
+        android:paddingBottom="30dp"
         android:orientation="vertical">
 
         <LinearLayout
