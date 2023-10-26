@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.inovafin.Util.ConfiguraBd
 import com.example.inovafin.databinding.ActivityConfiguracoesBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class Configuracoes : AppCompatActivity() {
 
@@ -14,11 +15,16 @@ class Configuracoes : AppCompatActivity() {
 
     private lateinit var autentificacao: FirebaseAuth
 
+    private lateinit var firestore: FirebaseFirestore
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityConfiguracoesBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        autentificacao = ConfiguraBd.Firebaseautentificacao()
+        firestore = ConfiguraBd.Firebasefirestore()
 
         binding.icFechar.setOnClickListener {
             onBackPressed()
@@ -52,8 +58,28 @@ class Configuracoes : AppCompatActivity() {
         dialog.show()
     }
 
+    override fun onStart() {
+        super.onStart()
+        val usuarioAuth = autentificacao.currentUser
+
+        if (usuarioAuth != null) {
+
+            val usuarioId = autentificacao.currentUser!!.uid
+
+            // Resgatar dados aqui!
+            firestore.collection("Usuarios").document(usuarioId)
+                .addSnapshotListener { document, error ->
+                    if (document != null) {
+                        val emailUsuario = autentificacao.currentUser!!.email
+                        
+                        binding.nomeUsuario.text = document.getString("nome")
+                        binding.emailUsuario.text = emailUsuario
+                    }
+                }
+        }
+    }
+
     fun deslogar() {
-        autentificacao = ConfiguraBd.Firebaseautentificacao()
         try {
             autentificacao.signOut()
             finish()

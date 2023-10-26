@@ -1,0 +1,3 @@
+com.example.inovafin.test
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme
