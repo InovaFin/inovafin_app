@@ -2,6 +2,7 @@ package com.example.inovafin
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.inovafin.Util.ConfiguraBd
 import com.example.inovafin.databinding.ActivityConfiguracoesBinding
@@ -29,8 +30,26 @@ class Configuracoes : AppCompatActivity() {
         }
 
         binding.btSair.setOnClickListener {
+            dialogConfirmacao()
+        }
+    }
+
+    fun dialogConfirmacao() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Confirmação")
+        builder.setMessage("Tem certeza de que deseja sair do aplicativo?")
+
+        builder.setPositiveButton("Sim") { dialog, which ->
+            // Usuário confirmou a saída
             deslogar()
         }
+
+        builder.setNegativeButton("Não") { dialog, which ->
+            // Usuário cancelou a saída
+        }
+
+        val dialog = builder.create()
+        dialog.show()
     }
 
     fun deslogar() {

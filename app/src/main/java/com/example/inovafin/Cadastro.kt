@@ -3,6 +3,8 @@ package com.example.inovafin
 import android.content.Intent
 import com.example.inovafin.Util.AnimacaoDeLoad
 import android.os.Bundle
+import android.text.InputType
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.inovafin.Util.ConfiguraBd
@@ -60,8 +62,10 @@ class Cadastro : AppCompatActivity() {
             usuario = Usuario(nome, email, senha)
             cadastrarUsuario()
         } else {
+            animacaoDeLoad.pararAnimacao()
             if (nome.isEmpty()) {
                 Toast.makeText(applicationContext, "Preencha um Nome", Toast.LENGTH_LONG).show()
+                Log.d("d", "Sem nome")
             } else if (email.isEmpty()) {
                 Toast.makeText(applicationContext, "Preencha um Email", Toast.LENGTH_LONG).show()
             } else if (senha.isEmpty()) {

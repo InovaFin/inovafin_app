@@ -3121,9 +3121,11 @@ int drawable notification_template_icon_bg 0x7f080119
 int drawable notification_template_icon_low_bg 0x7f08011a
 int drawable notification_tile_bg 0x7f08011b
 int drawable notify_panel_notification_icon_bg 0x7f08011c
-int drawable test_level_drawable 0x7f08011d
-int drawable tooltip_frame_dark 0x7f08011e
-int drawable tooltip_frame_light 0x7f08011f
+int drawable senha_off 0x7f08011d
+int drawable senha_on 0x7f08011e
+int drawable test_level_drawable 0x7f08011f
+int drawable tooltip_frame_dark 0x7f080120
+int drawable tooltip_frame_light 0x7f080121
 int font poppins 0x7f090000
 int font poppins_bold 0x7f090001
 int font poppins_medium 0x7f090002

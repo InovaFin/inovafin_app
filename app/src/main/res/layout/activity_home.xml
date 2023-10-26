@@ -81,17 +81,33 @@
 
                 </LinearLayout>
 
-                <!--Nome Usuário-->
-                <TextView
-                    android:id="@+id/nomeUsuario"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Olá Usuário"
-                    android:fontFamily="@font/roboto_bold"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
-                    android:layout_marginTop="30dp"/>
-                <!--Nome Usuário-->
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Olá "
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:layout_marginTop="30dp"/>
+
+                    <!--Nome Usuário-->
+                    <TextView
+                        android:id="@+id/nomeUsuario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Usuário"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:layout_marginTop="30dp"/>
+                    <!--Nome Usuário-->
+
+                </LinearLayout>
 
             </LinearLayout>
             <!--Cabeçalho-->

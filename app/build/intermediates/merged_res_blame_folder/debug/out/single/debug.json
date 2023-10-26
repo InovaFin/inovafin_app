@@ -64,10 +64,6 @@
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-39:\\drawable\\ic_add_black.xml"
     },
     {
-        "merged": "com.example.inovafin.app-merged_res-37:/layout_activity_cadastro.xml.flat",
-        "source": "com.example.inovafin.app-main-39:/layout/activity_cadastro.xml"
-    },
-    {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-37:\\drawable_ic_checkbox_receber.xml.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-39:\\drawable\\ic_checkbox_receber.xml"
     },
@@ -140,6 +136,10 @@
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-39:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
+        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-37:\\drawable_senha_off.xml.flat",
+        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-39:\\drawable\\senha_off.xml"
+    },
+    {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-37:\\mipmap-xxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-39:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
@@ -182,6 +182,14 @@
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-37:\\mipmap-hdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-39:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.inovafin.app-merged_res-37:/layout_activity_home.xml.flat",
+        "source": "com.example.inovafin.app-main-39:/layout/activity_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-37:\\drawable_senha_on.xml.flat",
+        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-39:\\drawable\\senha_on.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-37:\\drawable_ic_notificacao.xml.flat",

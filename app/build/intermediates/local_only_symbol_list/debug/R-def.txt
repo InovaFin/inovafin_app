@@ -60,6 +60,8 @@ drawable img_perfil
 drawable img_senha_enviada
 drawable logo_branca_500
 drawable logo_verde_500
+drawable senha_off
+drawable senha_on
 font poppins
 font poppins_bold
 font poppins_medium

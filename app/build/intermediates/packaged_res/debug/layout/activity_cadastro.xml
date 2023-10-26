@@ -85,23 +85,68 @@
                 android:fontFamily="@font/poppins"/>
             <!--Email-->
 
-            <!--Senha-->
-            <EditText
-                android:id="@+id/senhaUsuario"
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:id="@+id/senhaUsuario"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:hint="Senha"-->
+<!--                android:textColorHint="@color/verde_principal"-->
+<!--                app:boxStrokeColor="@color/verde_principal"-->
+<!--                app:counterEnabled="true"-->
+<!--                app:counterMaxLength="18"-->
+<!--                app:counterTextColor="@color/verde_principal"-->
+<!--                app:helperText="Obrigatório*"-->
+<!--                app:helperTextTextColor="@color/vermelho"-->
+<!--                app:hintTextColor="@color/verde_principal"-->
+<!--                app:passwordToggleEnabled="true"-->
+<!--                app:placeholderTextColor="@color/verde_principal"-->
+<!--                app:prefixTextColor="@color/verde_principal"-->
+<!--                app:suffixTextColor="@color/verde_principal">-->
+
+<!--                <EditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:textColor="@color/verde_principal"-->
+<!--                    android:inputType="textPassword"-->
+<!--                    android:textColorHighlight="@color/verde_principal"-->
+<!--                    android:textColorHint="@color/verde_principal" />-->
+
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPassword"
-                android:hint="Senha"
-                android:paddingVertical="15dp"
-                android:paddingHorizontal="10dp"
-                android:layout_marginBottom="10dp"
-                android:textColorHint="@color/verde_principal"
-                android:textColor="@color/black"
-                android:background="@drawable/bg_edittext"
-                android:textCursorDrawable="@drawable/custom_cursor"
-                android:fontFamily="@font/poppins"/>
-            <!--Senha-->
+                android:layout_marginBottom="10dp">
+
+                <!--Senha-->
+                <EditText
+                    android:id="@+id/senhaUsuario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPassword"
+                    android:hint="Senha"
+                    android:paddingVertical="15dp"
+                    android:paddingHorizontal="10dp"
+                    android:textColorHint="@color/verde_principal"
+                    android:textColor="@color/black"
+                    android:background="@drawable/bg_edittext"
+                    android:textCursorDrawable="@drawable/custom_cursor"
+                    android:fontFamily="@font/poppins"/>
+                <!--Senha-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/btVerSenha"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:paddingVertical="17dp"-->
+<!--                    android:paddingEnd="15dp"-->
+<!--                    android:clickable="true"-->
+<!--                    android:src="@drawable/senha_off" />-->
+
+            </RelativeLayout>
 
 <!--            &lt;!&ndash;Confirmar Senha&ndash;&gt;-->
 <!--            <EditText-->
