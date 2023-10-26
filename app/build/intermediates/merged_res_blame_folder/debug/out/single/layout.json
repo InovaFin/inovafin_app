@@ -20,10 +20,6 @@
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-39:\\layout\\activity_configuracoes.xml"
     },
     {
-        "merged": "com.example.inovafin.app-mergeDebugResources-36:/layout/activity_senha_enviada.xml",
-        "source": "com.example.inovafin.app-main-39:/layout/activity_senha_enviada.xml"
-    },
-    {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-36:\\layout\\activity_conta_escolhida.xml",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-39:\\layout\\activity_conta_escolhida.xml"
     },

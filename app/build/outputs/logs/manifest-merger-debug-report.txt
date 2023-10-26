@@ -5,8 +5,10 @@ INJECTED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\s
 INJECTED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:2:1-109:12
 INJECTED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:2:1-109:12
 MERGED from [androidx.databinding:viewbinding:8.1.1] C:\Users\erick\.gradle\caches\transforms-3\ae9868568b2d6c1f7b76c495398b4330\transformed\viewbinding-8.1.1\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.firebase:firebase-firestore-ktx:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\6f7e68fbb2b3d4910893db9cd38aafe0\transformed\firebase-firestore-ktx-24.9.0\AndroidManifest.xml:2:1-18:12
 MERGED from [com.google.firebase:firebase-analytics-ktx:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\fc39f18687c7d5579853bcc156ce65a3\transformed\firebase-analytics-ktx-21.4.0\AndroidManifest.xml:2:1-17:12
 MERGED from [com.google.firebase:firebase-auth-ktx:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\d6910872f46051707a88d0f70dcede1d\transformed\firebase-auth-ktx-22.2.0\AndroidManifest.xml:2:1-17:12
+MERGED from [com.google.firebase:firebase-firestore:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\e6c77336863ab0425fbb9a368101194d\transformed\firebase-firestore-24.9.0\AndroidManifest.xml:2:1-26:12
 MERGED from [com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:17:1-75:12
 MERGED from [com.google.firebase:firebase-analytics:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\ae03a24956e51d2033ce978f75d2f33d\transformed\firebase-analytics-21.4.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-measurement-api:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\9851f31a8613f4efd762800e6b8833f7\transformed\play-services-measurement-api-21.4.0\AndroidManifest.xml:17:1-37:12
@@ -27,11 +29,12 @@ MERGED from [com.koushikdutta.ion:ion:3.1.0] C:\Users\erick\.gradle\caches\trans
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\erick\.gradle\caches\transforms-3\59a10ae3668e9adc3430f07ed9388cbc\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\erick\.gradle\caches\transforms-3\876b67e9da222262da52e3730d359751\transformed\firebase-auth-interop-20.0.0\AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.firebase:firebase-common:20.4.2] C:\Users\erick\.gradle\caches\transforms-3\0d79cf050ef76d27558d5bf78f180ef5\transformed\firebase-common-20.4.2\AndroidManifest.xml:15:1-41:12
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] C:\Users\erick\.gradle\caches\transforms-3\76e3c77c9cdd3ceac0fa1e41e97f71cb\transformed\firebase-appcheck-interop-17.0.0\AndroidManifest.xml:15:1-25:12
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] C:\Users\erick\.gradle\caches\transforms-3\36b6c4224bf4baa6e209087f04667705\transformed\firebase-database-collection-18.0.1\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] C:\Users\erick\.gradle\caches\transforms-3\732866a1470af1879d4439b82ae48b08\transformed\play-services-auth-api-phone-17.4.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\erick\.gradle\caches\transforms-3\505da5826076f57c2968e02349495c0c\transformed\play-services-base-18.0.1\AndroidManifest.xml:16:1-24:12
 MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] C:\Users\erick\.gradle\caches\transforms-3\e8ce0d6a956ac55f7bd8dbe47004c33f\transformed\recaptcha-18.1.2\AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.android.play:integrity:1.1.0] C:\Users\erick\.gradle\caches\transforms-3\dd3841197b35434b1d5c7f75151275db\transformed\integrity-1.1.0\AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] C:\Users\erick\.gradle\caches\transforms-3\76e3c77c9cdd3ceac0fa1e41e97f71cb\transformed\firebase-appcheck-interop-17.0.0\AndroidManifest.xml:15:1-25:12
-MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\erick\.gradle\caches\transforms-3\505da5826076f57c2968e02349495c0c\transformed\play-services-base-18.0.1\AndroidManifest.xml:16:1-24:12
 MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] C:\Users\erick\.gradle\caches\transforms-3\009a68fad5bc719b32f7b3d82ac97b7f\transformed\firebase-installations-interop-17.1.1\AndroidManifest.xml:15:1-19:12
 MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\erick\.gradle\caches\transforms-3\c15a2857adfb3888feeb04681c62e58d\transformed\play-services-tasks-18.0.2\AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\erick\.gradle\caches\transforms-3\8a8e3a5a7a6612fae2d884558fb8092d\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:17:1-27:12
@@ -82,7 +85,9 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\erick\.gradle\ca
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\erick\.gradle\caches\transforms-3\144dcf61efe6378bc94e8e97eee59ab9\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\erick\.gradle\caches\transforms-3\027eabdae25773eee447a384e8043aa2\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\erick\.gradle\caches\transforms-3\913604e8c17ec63679e981dca099163c\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:17:1-22:12
+MERGED from [io.grpc:grpc-android:1.52.1] C:\Users\erick\.gradle\caches\transforms-3\d4708815818a7a271cb67b4a60d950d6\transformed\grpc-android-1.52.1\AndroidManifest.xml:2:1-11:12
 MERGED from [com.koushikdutta.async:androidasync:3.1.0] C:\Users\erick\.gradle\caches\transforms-3\d13478f3b92d805c9b2eb3f9d4baca5a\transformed\androidasync-3.1.0\AndroidManifest.xml:2:1-16:12
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\erick\.gradle\caches\transforms-3\b42531295da524645f50a1dbfe608a39\transformed\protolite-well-known-types-18.0.0\AndroidManifest.xml:2:1-11:12
 	package
 		INJECTED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml
 	android:versionName
@@ -95,6 +100,8 @@ MERGED from [com.koushikdutta.async:androidasync:3.1.0] C:\Users\erick\.gradle\c
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:5:5-67
+MERGED from [com.google.firebase:firebase-firestore:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\e6c77336863ab0425fbb9a368101194d\transformed\firebase-firestore-24.9.0\AndroidManifest.xml:11:5-67
+MERGED from [com.google.firebase:firebase-firestore:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\e6c77336863ab0425fbb9a368101194d\transformed\firebase-firestore-24.9.0\AndroidManifest.xml:11:5-67
 MERGED from [com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:25:5-67
 MERGED from [com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:25:5-67
 MERGED from [com.google.android.gms:play-services-measurement-api:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\9851f31a8613f4efd762800e6b8833f7\transformed\play-services-measurement-api-21.4.0\AndroidManifest.xml:22:5-67
@@ -117,6 +124,8 @@ MERGED from [com.koushikdutta.async:androidasync:3.1.0] C:\Users\erick\.gradle\c
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:5:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:6:5-79
+MERGED from [com.google.firebase:firebase-firestore:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\e6c77336863ab0425fbb9a368101194d\transformed\firebase-firestore-24.9.0\AndroidManifest.xml:10:5-79
+MERGED from [com.google.firebase:firebase-firestore:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\e6c77336863ab0425fbb9a368101194d\transformed\firebase-firestore-24.9.0\AndroidManifest.xml:10:5-79
 MERGED from [com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:26:5-79
 MERGED from [com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:26:5-79
 MERGED from [com.google.android.gms:play-services-measurement-api:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\9851f31a8613f4efd762800e6b8833f7\transformed\play-services-measurement-api-21.4.0\AndroidManifest.xml:23:5-79
@@ -131,15 +140,21 @@ MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] C:\Users\erick\.grad
 MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] C:\Users\erick\.gradle\caches\transforms-3\e8ce0d6a956ac55f7bd8dbe47004c33f\transformed\recaptcha-18.1.2\AndroidManifest.xml:8:5-79
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\a323b4a4f3d8a00954638fca09879b19\transformed\play-services-measurement-sdk-api-21.4.0\AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\a323b4a4f3d8a00954638fca09879b19\transformed\play-services-measurement-sdk-api-21.4.0\AndroidManifest.xml:24:5-79
+MERGED from [io.grpc:grpc-android:1.52.1] C:\Users\erick\.gradle\caches\transforms-3\d4708815818a7a271cb67b4a60d950d6\transformed\grpc-android-1.52.1\AndroidManifest.xml:9:5-79
+MERGED from [io.grpc:grpc-android:1.52.1] C:\Users\erick\.gradle\caches\transforms-3\d4708815818a7a271cb67b4a60d950d6\transformed\grpc-android-1.52.1\AndroidManifest.xml:9:5-79
 	android:name
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:6:22-76
 application
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:8:5-107:19
 INJECTED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:8:5-107:19
+MERGED from [com.google.firebase:firebase-firestore-ktx:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\6f7e68fbb2b3d4910893db9cd38aafe0\transformed\firebase-firestore-ktx-24.9.0\AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.firebase:firebase-firestore-ktx:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\6f7e68fbb2b3d4910893db9cd38aafe0\transformed\firebase-firestore-ktx-24.9.0\AndroidManifest.xml:8:5-16:19
 MERGED from [com.google.firebase:firebase-analytics-ktx:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\fc39f18687c7d5579853bcc156ce65a3\transformed\firebase-analytics-ktx-21.4.0\AndroidManifest.xml:7:5-15:19
 MERGED from [com.google.firebase:firebase-analytics-ktx:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\fc39f18687c7d5579853bcc156ce65a3\transformed\firebase-analytics-ktx-21.4.0\AndroidManifest.xml:7:5-15:19
 MERGED from [com.google.firebase:firebase-auth-ktx:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\d6910872f46051707a88d0f70dcede1d\transformed\firebase-auth-ktx-22.2.0\AndroidManifest.xml:7:5-15:19
 MERGED from [com.google.firebase:firebase-auth-ktx:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\d6910872f46051707a88d0f70dcede1d\transformed\firebase-auth-ktx-22.2.0\AndroidManifest.xml:7:5-15:19
+MERGED from [com.google.firebase:firebase-firestore:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\e6c77336863ab0425fbb9a368101194d\transformed\firebase-firestore-24.9.0\AndroidManifest.xml:13:5-24:19
+MERGED from [com.google.firebase:firebase-firestore:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\e6c77336863ab0425fbb9a368101194d\transformed\firebase-firestore-24.9.0\AndroidManifest.xml:13:5-24:19
 MERGED from [com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:28:5-73:19
 MERGED from [com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:28:5-73:19
 MERGED from [com.google.firebase:firebase-analytics:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\ae03a24956e51d2033ce978f75d2f33d\transformed\firebase-analytics-21.4.0\AndroidManifest.xml:7:5-20
@@ -170,12 +185,12 @@ MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\erick\.g
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\erick\.gradle\caches\transforms-3\876b67e9da222262da52e3730d359751\transformed\firebase-auth-interop-20.0.0\AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.firebase:firebase-common:20.4.2] C:\Users\erick\.gradle\caches\transforms-3\0d79cf050ef76d27558d5bf78f180ef5\transformed\firebase-common-20.4.2\AndroidManifest.xml:22:5-39:19
 MERGED from [com.google.firebase:firebase-common:20.4.2] C:\Users\erick\.gradle\caches\transforms-3\0d79cf050ef76d27558d5bf78f180ef5\transformed\firebase-common-20.4.2\AndroidManifest.xml:22:5-39:19
-MERGED from [com.google.android.play:integrity:1.1.0] C:\Users\erick\.gradle\caches\transforms-3\dd3841197b35434b1d5c7f75151275db\transformed\integrity-1.1.0\AndroidManifest.xml:5:5-6:19
-MERGED from [com.google.android.play:integrity:1.1.0] C:\Users\erick\.gradle\caches\transforms-3\dd3841197b35434b1d5c7f75151275db\transformed\integrity-1.1.0\AndroidManifest.xml:5:5-6:19
 MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] C:\Users\erick\.gradle\caches\transforms-3\76e3c77c9cdd3ceac0fa1e41e97f71cb\transformed\firebase-appcheck-interop-17.0.0\AndroidManifest.xml:23:5-20
 MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] C:\Users\erick\.gradle\caches\transforms-3\76e3c77c9cdd3ceac0fa1e41e97f71cb\transformed\firebase-appcheck-interop-17.0.0\AndroidManifest.xml:23:5-20
 MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\erick\.gradle\caches\transforms-3\505da5826076f57c2968e02349495c0c\transformed\play-services-base-18.0.1\AndroidManifest.xml:19:5-23:19
 MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\erick\.gradle\caches\transforms-3\505da5826076f57c2968e02349495c0c\transformed\play-services-base-18.0.1\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.play:integrity:1.1.0] C:\Users\erick\.gradle\caches\transforms-3\dd3841197b35434b1d5c7f75151275db\transformed\integrity-1.1.0\AndroidManifest.xml:5:5-6:19
+MERGED from [com.google.android.play:integrity:1.1.0] C:\Users\erick\.gradle\caches\transforms-3\dd3841197b35434b1d5c7f75151275db\transformed\integrity-1.1.0\AndroidManifest.xml:5:5-6:19
 MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\erick\.gradle\caches\transforms-3\c15a2857adfb3888feeb04681c62e58d\transformed\play-services-tasks-18.0.2\AndroidManifest.xml:5:5-20
 MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\erick\.gradle\caches\transforms-3\c15a2857adfb3888feeb04681c62e58d\transformed\play-services-tasks-18.0.2\AndroidManifest.xml:5:5-20
 MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\erick\.gradle\caches\transforms-3\8a8e3a5a7a6612fae2d884558fb8092d\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:25:5-20
@@ -400,10 +415,14 @@ INJECTED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\s
 INJECTED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml
 MERGED from [androidx.databinding:viewbinding:8.1.1] C:\Users\erick\.gradle\caches\transforms-3\ae9868568b2d6c1f7b76c495398b4330\transformed\viewbinding-8.1.1\AndroidManifest.xml:5:5-44
 MERGED from [androidx.databinding:viewbinding:8.1.1] C:\Users\erick\.gradle\caches\transforms-3\ae9868568b2d6c1f7b76c495398b4330\transformed\viewbinding-8.1.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-firestore-ktx:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\6f7e68fbb2b3d4910893db9cd38aafe0\transformed\firebase-firestore-ktx-24.9.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-firestore-ktx:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\6f7e68fbb2b3d4910893db9cd38aafe0\transformed\firebase-firestore-ktx-24.9.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-analytics-ktx:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\fc39f18687c7d5579853bcc156ce65a3\transformed\firebase-analytics-ktx-21.4.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-analytics-ktx:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\fc39f18687c7d5579853bcc156ce65a3\transformed\firebase-analytics-ktx-21.4.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-auth-ktx:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\d6910872f46051707a88d0f70dcede1d\transformed\firebase-auth-ktx-22.2.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-auth-ktx:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\d6910872f46051707a88d0f70dcede1d\transformed\firebase-auth-ktx-22.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-firestore:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\e6c77336863ab0425fbb9a368101194d\transformed\firebase-firestore-24.9.0\AndroidManifest.xml:6:5-44
+MERGED from [com.google.firebase:firebase-firestore:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\e6c77336863ab0425fbb9a368101194d\transformed\firebase-firestore-24.9.0\AndroidManifest.xml:6:5-44
 MERGED from [com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:21:5-23:64
 MERGED from [com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:21:5-23:64
 MERGED from [com.google.firebase:firebase-analytics:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\ae03a24956e51d2033ce978f75d2f33d\transformed\firebase-analytics-21.4.0\AndroidManifest.xml:5:5-44
@@ -444,16 +463,18 @@ MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\erick\.g
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\erick\.gradle\caches\transforms-3\876b67e9da222262da52e3730d359751\transformed\firebase-auth-interop-20.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-common:20.4.2] C:\Users\erick\.gradle\caches\transforms-3\0d79cf050ef76d27558d5bf78f180ef5\transformed\firebase-common-20.4.2\AndroidManifest.xml:19:5-44
 MERGED from [com.google.firebase:firebase-common:20.4.2] C:\Users\erick\.gradle\caches\transforms-3\0d79cf050ef76d27558d5bf78f180ef5\transformed\firebase-common-20.4.2\AndroidManifest.xml:19:5-44
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] C:\Users\erick\.gradle\caches\transforms-3\76e3c77c9cdd3ceac0fa1e41e97f71cb\transformed\firebase-appcheck-interop-17.0.0\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] C:\Users\erick\.gradle\caches\transforms-3\76e3c77c9cdd3ceac0fa1e41e97f71cb\transformed\firebase-appcheck-interop-17.0.0\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] C:\Users\erick\.gradle\caches\transforms-3\36b6c4224bf4baa6e209087f04667705\transformed\firebase-database-collection-18.0.1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] C:\Users\erick\.gradle\caches\transforms-3\36b6c4224bf4baa6e209087f04667705\transformed\firebase-database-collection-18.0.1\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] C:\Users\erick\.gradle\caches\transforms-3\732866a1470af1879d4439b82ae48b08\transformed\play-services-auth-api-phone-17.4.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] C:\Users\erick\.gradle\caches\transforms-3\732866a1470af1879d4439b82ae48b08\transformed\play-services-auth-api-phone-17.4.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\erick\.gradle\caches\transforms-3\505da5826076f57c2968e02349495c0c\transformed\play-services-base-18.0.1\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\erick\.gradle\caches\transforms-3\505da5826076f57c2968e02349495c0c\transformed\play-services-base-18.0.1\AndroidManifest.xml:18:5-43
 MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] C:\Users\erick\.gradle\caches\transforms-3\e8ce0d6a956ac55f7bd8dbe47004c33f\transformed\recaptcha-18.1.2\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] C:\Users\erick\.gradle\caches\transforms-3\e8ce0d6a956ac55f7bd8dbe47004c33f\transformed\recaptcha-18.1.2\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.play:integrity:1.1.0] C:\Users\erick\.gradle\caches\transforms-3\dd3841197b35434b1d5c7f75151275db\transformed\integrity-1.1.0\AndroidManifest.xml:4:5-44
 MERGED from [com.google.android.play:integrity:1.1.0] C:\Users\erick\.gradle\caches\transforms-3\dd3841197b35434b1d5c7f75151275db\transformed\integrity-1.1.0\AndroidManifest.xml:4:5-44
-MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] C:\Users\erick\.gradle\caches\transforms-3\76e3c77c9cdd3ceac0fa1e41e97f71cb\transformed\firebase-appcheck-interop-17.0.0\AndroidManifest.xml:18:5-20:41
-MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] C:\Users\erick\.gradle\caches\transforms-3\76e3c77c9cdd3ceac0fa1e41e97f71cb\transformed\firebase-appcheck-interop-17.0.0\AndroidManifest.xml:18:5-20:41
-MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\erick\.gradle\caches\transforms-3\505da5826076f57c2968e02349495c0c\transformed\play-services-base-18.0.1\AndroidManifest.xml:18:5-43
-MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\erick\.gradle\caches\transforms-3\505da5826076f57c2968e02349495c0c\transformed\play-services-base-18.0.1\AndroidManifest.xml:18:5-43
 MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] C:\Users\erick\.gradle\caches\transforms-3\009a68fad5bc719b32f7b3d82ac97b7f\transformed\firebase-installations-interop-17.1.1\AndroidManifest.xml:17:5-44
 MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] C:\Users\erick\.gradle\caches\transforms-3\009a68fad5bc719b32f7b3d82ac97b7f\transformed\firebase-installations-interop-17.1.1\AndroidManifest.xml:17:5-44
 MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\erick\.gradle\caches\transforms-3\c15a2857adfb3888feeb04681c62e58d\transformed\play-services-tasks-18.0.2\AndroidManifest.xml:4:5-43
@@ -554,8 +575,12 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\erick\.gradle\caches\transform
 MERGED from [androidx.print:print:1.0.0] C:\Users\erick\.gradle\caches\transforms-3\027eabdae25773eee447a384e8043aa2\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\erick\.gradle\caches\transforms-3\913604e8c17ec63679e981dca099163c\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\erick\.gradle\caches\transforms-3\913604e8c17ec63679e981dca099163c\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
+MERGED from [io.grpc:grpc-android:1.52.1] C:\Users\erick\.gradle\caches\transforms-3\d4708815818a7a271cb67b4a60d950d6\transformed\grpc-android-1.52.1\AndroidManifest.xml:5:5-7:41
+MERGED from [io.grpc:grpc-android:1.52.1] C:\Users\erick\.gradle\caches\transforms-3\d4708815818a7a271cb67b4a60d950d6\transformed\grpc-android-1.52.1\AndroidManifest.xml:5:5-7:41
 MERGED from [com.koushikdutta.async:androidasync:3.1.0] C:\Users\erick\.gradle\caches\transforms-3\d13478f3b92d805c9b2eb3f9d4baca5a\transformed\androidasync-3.1.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.koushikdutta.async:androidasync:3.1.0] C:\Users\erick\.gradle\caches\transforms-3\d13478f3b92d805c9b2eb3f9d4baca5a\transformed\androidasync-3.1.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\erick\.gradle\caches\transforms-3\b42531295da524645f50a1dbfe608a39\transformed\protolite-well-known-types-18.0.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\erick\.gradle\caches\transforms-3\b42531295da524645f50a1dbfe608a39\transformed\protolite-well-known-types-18.0.0\AndroidManifest.xml:7:5-9:41
 	tools:overrideLibrary
 		ADDED from [com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:23:9-61
 	android:targetSdkVersion
@@ -563,9 +588,13 @@ MERGED from [com.koushikdutta.async:androidasync:3.1.0] C:\Users\erick\.gradle\c
 	android:minSdkVersion
 		INJECTED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml
 service#com.google.firebase.components.ComponentDiscoveryService
-ADDED from [com.google.firebase:firebase-analytics-ktx:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\fc39f18687c7d5579853bcc156ce65a3\transformed\firebase-analytics-ktx-21.4.0\AndroidManifest.xml:8:9-14:19
+ADDED from [com.google.firebase:firebase-firestore-ktx:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\6f7e68fbb2b3d4910893db9cd38aafe0\transformed\firebase-firestore-ktx-24.9.0\AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.firebase:firebase-analytics-ktx:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\fc39f18687c7d5579853bcc156ce65a3\transformed\firebase-analytics-ktx-21.4.0\AndroidManifest.xml:8:9-14:19
+MERGED from [com.google.firebase:firebase-analytics-ktx:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\fc39f18687c7d5579853bcc156ce65a3\transformed\firebase-analytics-ktx-21.4.0\AndroidManifest.xml:8:9-14:19
 MERGED from [com.google.firebase:firebase-auth-ktx:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\d6910872f46051707a88d0f70dcede1d\transformed\firebase-auth-ktx-22.2.0\AndroidManifest.xml:8:9-14:19
 MERGED from [com.google.firebase:firebase-auth-ktx:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\d6910872f46051707a88d0f70dcede1d\transformed\firebase-auth-ktx-22.2.0\AndroidManifest.xml:8:9-14:19
+MERGED from [com.google.firebase:firebase-firestore:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\e6c77336863ab0425fbb9a368101194d\transformed\firebase-firestore-24.9.0\AndroidManifest.xml:14:9-23:19
+MERGED from [com.google.firebase:firebase-firestore:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\e6c77336863ab0425fbb9a368101194d\transformed\firebase-firestore-24.9.0\AndroidManifest.xml:14:9-23:19
 MERGED from [com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:66:9-72:19
 MERGED from [com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:66:9-72:19
 MERGED from [com.google.android.gms:play-services-measurement-api:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\9851f31a8613f4efd762800e6b8833f7\transformed\play-services-measurement-api-21.4.0\AndroidManifest.xml:28:9-34:19
@@ -577,13 +606,19 @@ MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\erick\.gra
 MERGED from [com.google.firebase:firebase-common:20.4.2] C:\Users\erick\.gradle\caches\transforms-3\0d79cf050ef76d27558d5bf78f180ef5\transformed\firebase-common-20.4.2\AndroidManifest.xml:30:9-38:19
 MERGED from [com.google.firebase:firebase-common:20.4.2] C:\Users\erick\.gradle\caches\transforms-3\0d79cf050ef76d27558d5bf78f180ef5\transformed\firebase-common-20.4.2\AndroidManifest.xml:30:9-38:19
 	android:exported
-		ADDED from [com.google.firebase:firebase-analytics-ktx:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\fc39f18687c7d5579853bcc156ce65a3\transformed\firebase-analytics-ktx-21.4.0\AndroidManifest.xml:10:13-37
+		ADDED from [com.google.firebase:firebase-firestore-ktx:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\6f7e68fbb2b3d4910893db9cd38aafe0\transformed\firebase-firestore-ktx-24.9.0\AndroidManifest.xml:11:13-37
 	tools:targetApi
 		ADDED from [com.google.firebase:firebase-common:20.4.2] C:\Users\erick\.gradle\caches\transforms-3\0d79cf050ef76d27558d5bf78f180ef5\transformed\firebase-common-20.4.2\AndroidManifest.xml:34:13-32
 	android:directBootAware
 		ADDED from [com.google.firebase:firebase-common:20.4.2] C:\Users\erick\.gradle\caches\transforms-3\0d79cf050ef76d27558d5bf78f180ef5\transformed\firebase-common-20.4.2\AndroidManifest.xml:32:13-43
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics-ktx:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\fc39f18687c7d5579853bcc156ce65a3\transformed\firebase-analytics-ktx-21.4.0\AndroidManifest.xml:9:13-84
+		ADDED from [com.google.firebase:firebase-firestore-ktx:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\6f7e68fbb2b3d4910893db9cd38aafe0\transformed\firebase-firestore-ktx-24.9.0\AndroidManifest.xml:10:13-84
+meta-data#com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreLegacyRegistrar
+ADDED from [com.google.firebase:firebase-firestore-ktx:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\6f7e68fbb2b3d4910893db9cd38aafe0\transformed\firebase-firestore-ktx-24.9.0\AndroidManifest.xml:12:13-14:85
+	android:value
+		ADDED from [com.google.firebase:firebase-firestore-ktx:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\6f7e68fbb2b3d4910893db9cd38aafe0\transformed\firebase-firestore-ktx-24.9.0\AndroidManifest.xml:14:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-firestore-ktx:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\6f7e68fbb2b3d4910893db9cd38aafe0\transformed\firebase-firestore-ktx-24.9.0\AndroidManifest.xml:13:17-129
 meta-data#com.google.firebase.components:com.google.firebase.analytics.ktx.FirebaseAnalyticsLegacyRegistrar
 ADDED from [com.google.firebase:firebase-analytics-ktx:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\fc39f18687c7d5579853bcc156ce65a3\transformed\firebase-analytics-ktx-21.4.0\AndroidManifest.xml:11:13-13:85
 	android:value
@@ -596,6 +631,18 @@ ADDED from [com.google.firebase:firebase-auth-ktx:22.2.0] C:\Users\erick\.gradle
 		ADDED from [com.google.firebase:firebase-auth-ktx:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\d6910872f46051707a88d0f70dcede1d\transformed\firebase-auth-ktx-22.2.0\AndroidManifest.xml:13:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-auth-ktx:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\d6910872f46051707a88d0f70dcede1d\transformed\firebase-auth-ktx-22.2.0\AndroidManifest.xml:12:17-119
+meta-data#com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar
+ADDED from [com.google.firebase:firebase-firestore:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\e6c77336863ab0425fbb9a368101194d\transformed\firebase-firestore-24.9.0\AndroidManifest.xml:17:13-19:85
+	android:value
+		ADDED from [com.google.firebase:firebase-firestore:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\e6c77336863ab0425fbb9a368101194d\transformed\firebase-firestore-24.9.0\AndroidManifest.xml:19:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-firestore:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\e6c77336863ab0425fbb9a368101194d\transformed\firebase-firestore-24.9.0\AndroidManifest.xml:18:17-122
+meta-data#com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar
+ADDED from [com.google.firebase:firebase-firestore:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\e6c77336863ab0425fbb9a368101194d\transformed\firebase-firestore-24.9.0\AndroidManifest.xml:20:13-22:85
+	android:value
+		ADDED from [com.google.firebase:firebase-firestore:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\e6c77336863ab0425fbb9a368101194d\transformed\firebase-firestore-24.9.0\AndroidManifest.xml:22:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-firestore:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\e6c77336863ab0425fbb9a368101194d\transformed\firebase-firestore-24.9.0\AndroidManifest.xml:21:17-111
 activity#com.google.firebase.auth.internal.GenericIdpActivity
 ADDED from [com.google.firebase:firebase-auth:22.2.0] C:\Users\erick\.gradle\caches\transforms-3\e9422867493a05a93f9cf43dfb611c10\transformed\firebase-auth-22.2.0\AndroidManifest.xml:29:9-46:20
 	android:excludeFromRecents

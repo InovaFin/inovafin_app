@@ -12,6 +12,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
+import com.google.firebase.firestore.FirebaseFirestore
 
 class Cadastro : AppCompatActivity() {
 
@@ -23,11 +24,16 @@ class Cadastro : AppCompatActivity() {
 
     private lateinit var autentificacao: FirebaseAuth
 
+    private lateinit var firestore: FirebaseFirestore
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCadastroBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        autentificacao = ConfiguraBd.Firebaseautentificacao()
+        firestore = ConfiguraBd.Firebasefirestore()
 
         // Cria uma nova instância da classe AnimacaoDeLoad e inicializa ela com os parâmetros relevantes
         animacaoDeLoad = AnimacaoDeLoad(binding.btAnimacao, binding.btText, this)
@@ -65,13 +71,13 @@ class Cadastro : AppCompatActivity() {
     }
 
     private fun cadastrarUsuario() {
-        autentificacao = ConfiguraBd.Firebaseautentificacao()
-
         autentificacao.createUserWithEmailAndPassword(
             usuario.email, usuario.senha
         ).addOnCompleteListener(this) {task ->
             if (task.isSuccessful) {
                 animacaoDeLoad.pararAnimacao()
+
+                salvaDados()
 
                 var i = Intent(this, Login::class.java)
                 startActivity(i)
@@ -89,12 +95,39 @@ class Cadastro : AppCompatActivity() {
                 } catch (e: FirebaseAuthUserCollisionException) {
                     excecao = "Essa conta já existe!"
                 } catch (e: Exception) {
-                    excecao = "Erro ao cadastrarusuário! " + e.message
+                    excecao = "Erro ao cadastrar usuário! " + e.message
                     e.printStackTrace()
                 }
 
                 Toast.makeText(applicationContext, "$excecao", Toast.LENGTH_LONG).show()
 
+            }
+        }
+    }
+
+    private fun salvaDados() {
+
+        val usuarioMasp = hashMapOf(
+            "foto" to "",
+            "nome" to usuario.nome
+        )
+
+        val usuarioId = autentificacao.currentUser!!.uid
+
+        firestore.collection("Usuarios").document(usuarioId)
+            .set(usuarioMasp).addOnCompleteListener(this) {task ->
+            if (task.isSuccessful) {
+
+            } else {
+                var excecao = ""
+
+                try {
+                    throw task.exception!!
+                } catch (e: Exception) {
+                    excecao = "Erro ao salvar os dados! " + e.message
+                    e.printStackTrace()
+                }
+                Toast.makeText(applicationContext, "$excecao", Toast.LENGTH_LONG).show()
             }
         }
     }
