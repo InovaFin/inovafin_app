@@ -8,17 +8,27 @@ import android.provider.MediaStore.Video.Media
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.example.inovafin.Util.ConfiguraBd
 import com.example.inovafin.databinding.ActivityEditarPerfilBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class EditarPerfil : AppCompatActivity() {
 
     private lateinit var binding: ActivityEditarPerfilBinding
+
+    private lateinit var autentificacao: FirebaseAuth
+
+    private lateinit var firestore: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEditarPerfilBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        autentificacao = ConfiguraBd.Firebaseautentificacao()
+        firestore = ConfiguraBd.Firebasefirestore()
 
         binding.icFechar.setOnClickListener {
             onBackPressed()
@@ -50,7 +60,26 @@ class EditarPerfil : AppCompatActivity() {
             }
         }
 
-    private fun doSomeOperations() {
-        // Coloque aqui qualquer operação adicional que você deseja realizar após selecionar a imagem.
+    override fun onStart() {
+        super.onStart()
+        val usuarioAuth = autentificacao.currentUser
+
+        if (usuarioAuth != null) {
+
+            val usuarioId = autentificacao.currentUser!!.uid
+
+            val emailUsuario = autentificacao.currentUser!!.email
+
+            // Resgatar dados aqui!
+            firestore.collection("Usuarios").document(usuarioId)
+                .addSnapshotListener { document, error ->
+                    if (document != null) {
+                        // Aplica os dados no layout
+                        binding.nomeUsuario.hint = document.getString("nome")
+                        binding.emailUsuario.hint = emailUsuario
+                    }
+                }
+        }
     }
+
 }

@@ -71,6 +71,7 @@
 
             <!--Nome-->
             <EditText
+                android:id="@+id/nomeUsuario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -108,6 +109,7 @@
 
             <!--Email-->
             <EditText
+                android:id="@+id/emailUsuario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -163,41 +165,41 @@
         </LinearLayout>
         <!--Senha-->
 
-        <!--ConfirmSenha-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="30dp"
-            android:orientation="vertical">
+<!--        &lt;!&ndash;ConfirmSenha&ndash;&gt;-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="30dp"-->
+<!--            android:orientation="vertical">-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Confirmar Senha"
-                android:textColor="@color/black"
-                android:layout_marginBottom="10dp"
-                android:textSize="15sp"
-                android:fontFamily="@font/roboto_medium"/>
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Confirmar Senha"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:textSize="15sp"-->
+<!--                android:fontFamily="@font/roboto_medium"/>-->
 
-            <!--Email-->
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPassword"
-                android:paddingVertical="15dp"
-                android:paddingHorizontal="10dp"
-                android:textColorHint="@color/black_terciario"
-                android:layout_marginBottom="15dp"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:background="@drawable/bg_edittext_secundario"
-                android:textCursorDrawable="@drawable/custom_cursor"
-                android:fontFamily="@font/roboto"/>
-            <!--Email-->
+<!--            &lt;!&ndash;Email&ndash;&gt;-->
+<!--            <EditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:ems="10"-->
+<!--                android:inputType="textPassword"-->
+<!--                android:paddingVertical="15dp"-->
+<!--                android:paddingHorizontal="10dp"-->
+<!--                android:textColorHint="@color/black_terciario"-->
+<!--                android:layout_marginBottom="15dp"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="15sp"-->
+<!--                android:background="@drawable/bg_edittext_secundario"-->
+<!--                android:textCursorDrawable="@drawable/custom_cursor"-->
+<!--                android:fontFamily="@font/roboto"/>-->
+<!--            &lt;!&ndash;Email&ndash;&gt;-->
 
-        </LinearLayout>
-        <!--ConfirmSenha-->
+<!--        </LinearLayout>-->
+<!--        &lt;!&ndash;ConfirmSenha&ndash;&gt;-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -320,7 +322,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Salvar"
+                        android:text="Salvar e Alterar"
                         android:textColor="@color/white"
                         android:textSize="13sp"
                         android:fontFamily="@font/roboto_bold"/>

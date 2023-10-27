@@ -4,6 +4,7 @@ package com.example.inovafin.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -25,18 +26,27 @@ public final class ActivityEditarPerfilBinding implements ViewBinding {
   public final LinearLayout btAlterarFoto;
 
   @NonNull
+  public final EditText emailUsuario;
+
+  @NonNull
   public final ImageView icFechar;
 
   @NonNull
   public final ShapeableImageView imagemUsuario;
 
+  @NonNull
+  public final EditText nomeUsuario;
+
   private ActivityEditarPerfilBinding(@NonNull ScrollView rootView,
-      @NonNull LinearLayout btAlterarFoto, @NonNull ImageView icFechar,
-      @NonNull ShapeableImageView imagemUsuario) {
+      @NonNull LinearLayout btAlterarFoto, @NonNull EditText emailUsuario,
+      @NonNull ImageView icFechar, @NonNull ShapeableImageView imagemUsuario,
+      @NonNull EditText nomeUsuario) {
     this.rootView = rootView;
     this.btAlterarFoto = btAlterarFoto;
+    this.emailUsuario = emailUsuario;
     this.icFechar = icFechar;
     this.imagemUsuario = imagemUsuario;
+    this.nomeUsuario = nomeUsuario;
   }
 
   @Override
@@ -72,6 +82,12 @@ public final class ActivityEditarPerfilBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.emailUsuario;
+      EditText emailUsuario = ViewBindings.findChildViewById(rootView, id);
+      if (emailUsuario == null) {
+        break missingId;
+      }
+
       id = R.id.icFechar;
       ImageView icFechar = ViewBindings.findChildViewById(rootView, id);
       if (icFechar == null) {
@@ -84,8 +100,14 @@ public final class ActivityEditarPerfilBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityEditarPerfilBinding((ScrollView) rootView, btAlterarFoto, icFechar,
-          imagemUsuario);
+      id = R.id.nomeUsuario;
+      EditText nomeUsuario = ViewBindings.findChildViewById(rootView, id);
+      if (nomeUsuario == null) {
+        break missingId;
+      }
+
+      return new ActivityEditarPerfilBinding((ScrollView) rootView, btAlterarFoto, emailUsuario,
+          icFechar, imagemUsuario, nomeUsuario);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
