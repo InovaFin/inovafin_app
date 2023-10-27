@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.inovafin.Util.ConfiguraBd
 import com.example.inovafin.databinding.ActivityConfiguracoesBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -74,6 +75,10 @@ class Configuracoes : AppCompatActivity() {
                         
                         binding.nomeUsuario.text = document.getString("nome")
                         binding.emailUsuario.text = emailUsuario
+
+                        val foto = document.getString("foto")
+                        // Verifique se a foto do banco não é nula antes de carregar
+                        Glide.with(this).load(foto).into(binding.imagemUsuario)
                     }
                 }
         }

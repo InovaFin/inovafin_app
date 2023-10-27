@@ -84,10 +84,6 @@
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\layout\\activity_configuracoes.xml"
     },
     {
-        "merged": "com.example.inovafin.app-mergeDebugResources-37:/layout/activity_home.xml",
-        "source": "com.example.inovafin.app-main-40:/layout/activity_home.xml"
-    },
-    {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-37:\\layout\\activity_home.xml",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\layout\\activity_home.xml"
     },
@@ -98,6 +94,10 @@
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-37:\\layout\\activity_excluir_guardado.xml",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\layout\\activity_excluir_guardado.xml"
+    },
+    {
+        "merged": "com.example.inovafin.app-mergeDebugResources-37:/layout/activity_configuracoes.xml",
+        "source": "com.example.inovafin.app-main-40:/layout/activity_configuracoes.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-37:\\layout\\activity_notificacoes.xml",

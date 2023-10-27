@@ -88,10 +88,6 @@
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\mipmap-xhdpi\\ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.example.inovafin.app-merged_res-38:/layout_activity_home.xml.flat",
-        "source": "com.example.inovafin.app-main-40:/layout/activity_home.xml"
-    },
-    {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\xml_data_extraction_rules.xml.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\xml\\data_extraction_rules.xml"
     },
@@ -230,6 +226,10 @@
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\drawable_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.inovafin.app-merged_res-38:/layout_activity_configuracoes.xml.flat",
+        "source": "com.example.inovafin.app-main-40:/layout/activity_configuracoes.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\drawable_ic_duvida.xml.flat",
