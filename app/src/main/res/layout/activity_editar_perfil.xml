@@ -219,13 +219,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <ImageView
+                <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/imagemUsuario"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     app:shapeAppearance="@style/circular"
                     app:strokeWidth="5dp"
                     app:strokeColor="@color/verde_principal"
+                    android:scaleType="centerCrop"
                     android:padding="5dp"
                     android:background="@color/verde_secundario"
                     android:src="@drawable/ic_perfil"/>

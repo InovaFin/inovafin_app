@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.inovafin.R;
+import com.google.android.material.imageview.ShapeableImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -27,11 +28,11 @@ public final class ActivityEditarPerfilBinding implements ViewBinding {
   public final ImageView icFechar;
 
   @NonNull
-  public final ImageView imagemUsuario;
+  public final ShapeableImageView imagemUsuario;
 
   private ActivityEditarPerfilBinding(@NonNull ScrollView rootView,
       @NonNull LinearLayout btAlterarFoto, @NonNull ImageView icFechar,
-      @NonNull ImageView imagemUsuario) {
+      @NonNull ShapeableImageView imagemUsuario) {
     this.rootView = rootView;
     this.btAlterarFoto = btAlterarFoto;
     this.icFechar = icFechar;
@@ -78,7 +79,7 @@ public final class ActivityEditarPerfilBinding implements ViewBinding {
       }
 
       id = R.id.imagemUsuario;
-      ImageView imagemUsuario = ViewBindings.findChildViewById(rootView, id);
+      ShapeableImageView imagemUsuario = ViewBindings.findChildViewById(rootView, id);
       if (imagemUsuario == null) {
         break missingId;
       }
