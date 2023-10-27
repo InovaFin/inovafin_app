@@ -71,6 +71,7 @@ font roboto_light
 font roboto_medium
 id btAdicionar
 id btAjuda
+id btAlterarDados
 id btAlterarFoto
 id btAnimacao
 id btCadastro
@@ -104,6 +105,7 @@ id emailUsuario
 id icFechar
 id icVoltar
 id imagemUsuario
+id msgErro
 id nomeUsuario
 id saldoConta
 id senhaUsuario

@@ -129,41 +129,43 @@
         </LinearLayout>
         <!--Email-->
 
-        <!--Senha-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="30dp"
-            android:orientation="vertical">
+<!--        &lt;!&ndash;Senha&ndash;&gt;-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="30dp"-->
+<!--            android:orientation="vertical">-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nova Senha"
-                android:textColor="@color/black"
-                android:layout_marginBottom="10dp"
-                android:textSize="15sp"
-                android:fontFamily="@font/roboto_medium"/>
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Nova Senha"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:textSize="15sp"-->
+<!--                android:fontFamily="@font/roboto_medium"/>-->
 
-            <!--Nova Senha-->
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPassword"
-                android:paddingVertical="15dp"
-                android:paddingHorizontal="10dp"
-                android:textColorHint="@color/black_terciario"
-                android:layout_marginBottom="15dp"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:background="@drawable/bg_edittext_secundario"
-                android:textCursorDrawable="@drawable/custom_cursor"
-                android:fontFamily="@font/roboto"/>
-            <!--Nova Senha-->
+<!--&lt;!&ndash;            &lt;!&ndash;Nova Senha&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            <EditText&ndash;&gt;-->
+<!--&lt;!&ndash;                android:id="@+id/senhaUsuario"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:ems="10"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:text=""&ndash;&gt;-->
+<!--&lt;!&ndash;                android:inputType="textPassword"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:paddingVertical="15dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:paddingHorizontal="10dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:textColorHint="@color/black_terciario"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_marginBottom="15dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:textColor="@color/black"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:textSize="15sp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:background="@drawable/bg_edittext_secundario"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:textCursorDrawable="@drawable/custom_cursor"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:fontFamily="@font/roboto"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;Nova Senha&ndash;&gt;&ndash;&gt;-->
 
-        </LinearLayout>
-        <!--Senha-->
+<!--        </LinearLayout>-->
+<!--        &lt;!&ndash;Senha&ndash;&gt;-->
 
 <!--        &lt;!&ndash;ConfirmSenha&ndash;&gt;-->
 <!--        <LinearLayout-->
@@ -305,6 +307,7 @@
 
             <!--Botão Alterar Perfil-->
             <LinearLayout
+                android:id="@+id/btAlterarDados"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:paddingHorizontal="17dp"
@@ -331,6 +334,21 @@
 
             </LinearLayout>
             <!--Botão Alterar Perfil-->
+
+            <!--Título-->
+            <TextView
+                android:id="@+id/msgErro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:text="Editar Perfil"
+                android:textSize="15sp"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/black"/>
+            <!--Título-->
 
         </LinearLayout>
 

@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -23,6 +24,9 @@ public final class ActivityEditarPerfilBinding implements ViewBinding {
   private final ScrollView rootView;
 
   @NonNull
+  public final LinearLayout btAlterarDados;
+
+  @NonNull
   public final LinearLayout btAlterarFoto;
 
   @NonNull
@@ -35,17 +39,23 @@ public final class ActivityEditarPerfilBinding implements ViewBinding {
   public final ShapeableImageView imagemUsuario;
 
   @NonNull
+  public final TextView msgErro;
+
+  @NonNull
   public final EditText nomeUsuario;
 
   private ActivityEditarPerfilBinding(@NonNull ScrollView rootView,
-      @NonNull LinearLayout btAlterarFoto, @NonNull EditText emailUsuario,
-      @NonNull ImageView icFechar, @NonNull ShapeableImageView imagemUsuario,
+      @NonNull LinearLayout btAlterarDados, @NonNull LinearLayout btAlterarFoto,
+      @NonNull EditText emailUsuario, @NonNull ImageView icFechar,
+      @NonNull ShapeableImageView imagemUsuario, @NonNull TextView msgErro,
       @NonNull EditText nomeUsuario) {
     this.rootView = rootView;
+    this.btAlterarDados = btAlterarDados;
     this.btAlterarFoto = btAlterarFoto;
     this.emailUsuario = emailUsuario;
     this.icFechar = icFechar;
     this.imagemUsuario = imagemUsuario;
+    this.msgErro = msgErro;
     this.nomeUsuario = nomeUsuario;
   }
 
@@ -76,6 +86,12 @@ public final class ActivityEditarPerfilBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btAlterarDados;
+      LinearLayout btAlterarDados = ViewBindings.findChildViewById(rootView, id);
+      if (btAlterarDados == null) {
+        break missingId;
+      }
+
       id = R.id.btAlterarFoto;
       LinearLayout btAlterarFoto = ViewBindings.findChildViewById(rootView, id);
       if (btAlterarFoto == null) {
@@ -100,14 +116,20 @@ public final class ActivityEditarPerfilBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.msgErro;
+      TextView msgErro = ViewBindings.findChildViewById(rootView, id);
+      if (msgErro == null) {
+        break missingId;
+      }
+
       id = R.id.nomeUsuario;
       EditText nomeUsuario = ViewBindings.findChildViewById(rootView, id);
       if (nomeUsuario == null) {
         break missingId;
       }
 
-      return new ActivityEditarPerfilBinding((ScrollView) rootView, btAlterarFoto, emailUsuario,
-          icFechar, imagemUsuario, nomeUsuario);
+      return new ActivityEditarPerfilBinding((ScrollView) rootView, btAlterarDados, btAlterarFoto,
+          emailUsuario, icFechar, imagemUsuario, msgErro, nomeUsuario);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

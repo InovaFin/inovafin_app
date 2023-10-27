@@ -3243,6 +3243,7 @@ id browser_actions_menu_items
 id browser_actions_menu_view
 id btAdicionar
 id btAjuda
+id btAlterarDados
 id btAlterarFoto
 id btAnimacao
 id btCadastro
@@ -3460,6 +3461,7 @@ id month_navigation_next
 id month_navigation_previous
 id month_title
 id motion_base
+id msgErro
 id mtrl_anchor_parent
 id mtrl_calendar_day_selector_frame
 id mtrl_calendar_days_of_week
