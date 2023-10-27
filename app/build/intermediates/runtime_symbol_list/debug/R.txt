@@ -3042,11 +3042,11 @@ int drawable ic_mtrl_chip_checked_circle 0x7f0800ca
 int drawable ic_mtrl_chip_close_circle 0x7f0800cb
 int drawable ic_notificacao 0x7f0800cc
 int drawable ic_perfil 0x7f0800cd
+int drawable ic_perfil_config 0x7f080122
 int drawable ic_sair 0x7f0800ce
 int drawable ic_search_black_24 0x7f0800cf
 int drawable ic_voltar 0x7f0800d0
 int drawable img_logo 0x7f0800d1
-int drawable img_perfil 0x7f0800d2
 int drawable img_senha_enviada 0x7f0800d3
 int drawable logo_branca_500 0x7f0800d4
 int drawable logo_verde_500 0x7f0800d5
@@ -3242,6 +3242,7 @@ int id browser_actions_menu_items 0x7f0a0069
 int id browser_actions_menu_view 0x7f0a006a
 int id btAdicionar 0x7f0a006b
 int id btAjuda 0x7f0a006c
+int id btAlterarFoto 0x7f0a022c
 int id btAnimacao 0x7f0a006d
 int id btCadastro 0x7f0a006e
 int id btCalculadora 0x7f0a006f
@@ -3254,7 +3255,6 @@ int id btExpandir_tipo 0x7f0a0075
 int id btLogin 0x7f0a0076
 int id btMinhasContas 0x7f0a0077
 int id btNotificacao 0x7f0a0078
-int id btPerfil 0x7f0a0079
 int id btRecuperar 0x7f0a007a
 int id btRegistro 0x7f0a007b
 int id btSair 0x7f0a007c
@@ -3263,6 +3263,7 @@ int id btSaldoGeralGuardado 0x7f0a007e
 int id btSaldoGeralPagar 0x7f0a007f
 int id btSaldoGeralReceber 0x7f0a0080
 int id btText 0x7f0a0081
+int id btUsuario 0x7f0a022d
 int id btValorGuardado 0x7f0a0082
 int id btValorPagar 0x7f0a0083
 int id btValorReceber 0x7f0a0084
@@ -3398,6 +3399,7 @@ int id ifRoom 0x7f0a0105
 int id ignore 0x7f0a0106
 int id ignoreRequest 0x7f0a0107
 int id image 0x7f0a0108
+int id imagemUsuario 0x7f0a022e
 int id immediateStop 0x7f0a0109
 int id included 0x7f0a010a
 int id indeterminate 0x7f0a010b
@@ -5219,6 +5221,7 @@ int style Widget_MaterialComponents_Toolbar_PrimarySurface 0x7f130450
 int style Widget_MaterialComponents_Toolbar_Surface 0x7f130451
 int style Widget_MaterialComponents_Tooltip 0x7f130452
 int style Widget_Support_CoordinatorLayout 0x7f130453
+int style circular 0x7f130454
 int[] styleable ActionBar { 0x7f040044, 0x7f04004b, 0x7f04004c, 0x7f040137, 0x7f040138, 0x7f040139, 0x7f04013a, 0x7f04013b, 0x7f04013c, 0x7f040163, 0x7f040176, 0x7f040177, 0x7f040196, 0x7f04020c, 0x7f040214, 0x7f04021a, 0x7f04021b, 0x7f04021f, 0x7f040232, 0x7f040248, 0x7f0402c3, 0x7f040355, 0x7f040386, 0x7f04038d, 0x7f04038e, 0x7f040405, 0x7f040409, 0x7f04048d, 0x7f04049b }
 int styleable ActionBar_background 0
 int styleable ActionBar_backgroundSplit 1

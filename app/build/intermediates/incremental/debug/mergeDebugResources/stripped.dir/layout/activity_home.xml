@@ -43,12 +43,16 @@
                         android:layout_weight="1"
                         android:orientation="horizontal">
 
-                        <ImageView
-                            android:id="@+id/btPerfil"
-                            android:layout_width="55dp"
-                            android:layout_height="55dp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/img_perfil"/>
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/btUsuario"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            app:shapeAppearance="@style/circular"
+                            app:strokeWidth="5dp"
+                            app:strokeColor="@color/verde_principal"
+                            android:padding="5dp"
+                            android:background="@color/verde_secundario"
+                            android:src="@drawable/ic_perfil"/>
 
                     </LinearLayout>
                     <!--Botão/Foto de Perfil-->

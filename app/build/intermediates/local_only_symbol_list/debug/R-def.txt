@@ -53,10 +53,10 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_notificacao
 drawable ic_perfil
+drawable ic_perfil_config
 drawable ic_sair
 drawable ic_voltar
 drawable img_logo
-drawable img_perfil
 drawable img_senha_enviada
 drawable logo_branca_500
 drawable logo_verde_500
@@ -71,6 +71,7 @@ font roboto_light
 font roboto_medium
 id btAdicionar
 id btAjuda
+id btAlterarFoto
 id btAnimacao
 id btCadastro
 id btCalculadora
@@ -83,7 +84,6 @@ id btExpandir_tipo
 id btLogin
 id btMinhasContas
 id btNotificacao
-id btPerfil
 id btRecuperar
 id btRegistro
 id btSair
@@ -92,6 +92,7 @@ id btSaldoGeralGuardado
 id btSaldoGeralPagar
 id btSaldoGeralReceber
 id btText
+id btUsuario
 id btValorGuardado
 id btValorPagar
 id btValorReceber
@@ -102,6 +103,7 @@ id contaEditText
 id emailUsuario
 id icFechar
 id icVoltar
+id imagemUsuario
 id nomeUsuario
 id saldoConta
 id senhaUsuario
@@ -150,5 +152,6 @@ string google_storage_bucket
 string project_id
 style Base.Theme.InovaFin
 style Theme.InovaFin
+style circular
 xml backup_rules
 xml data_extraction_rules

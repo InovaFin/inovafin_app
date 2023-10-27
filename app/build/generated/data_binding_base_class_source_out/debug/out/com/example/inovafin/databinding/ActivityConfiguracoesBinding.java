@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.inovafin.R;
+import com.google.android.material.imageview.ShapeableImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -34,16 +35,21 @@ public final class ActivityConfiguracoesBinding implements ViewBinding {
   public final ImageView icFechar;
 
   @NonNull
+  public final ShapeableImageView imagemUsuario;
+
+  @NonNull
   public final TextView nomeUsuario;
 
   private ActivityConfiguracoesBinding(@NonNull RelativeLayout rootView,
       @NonNull LinearLayout btEditarPerfil, @NonNull LinearLayout btSair,
-      @NonNull TextView emailUsuario, @NonNull ImageView icFechar, @NonNull TextView nomeUsuario) {
+      @NonNull TextView emailUsuario, @NonNull ImageView icFechar,
+      @NonNull ShapeableImageView imagemUsuario, @NonNull TextView nomeUsuario) {
     this.rootView = rootView;
     this.btEditarPerfil = btEditarPerfil;
     this.btSair = btSair;
     this.emailUsuario = emailUsuario;
     this.icFechar = icFechar;
+    this.imagemUsuario = imagemUsuario;
     this.nomeUsuario = nomeUsuario;
   }
 
@@ -98,6 +104,12 @@ public final class ActivityConfiguracoesBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.imagemUsuario;
+      ShapeableImageView imagemUsuario = ViewBindings.findChildViewById(rootView, id);
+      if (imagemUsuario == null) {
+        break missingId;
+      }
+
       id = R.id.nomeUsuario;
       TextView nomeUsuario = ViewBindings.findChildViewById(rootView, id);
       if (nomeUsuario == null) {
@@ -105,7 +117,7 @@ public final class ActivityConfiguracoesBinding implements ViewBinding {
       }
 
       return new ActivityConfiguracoesBinding((RelativeLayout) rootView, btEditarPerfil, btSair,
-          emailUsuario, icFechar, nomeUsuario);
+          emailUsuario, icFechar, imagemUsuario, nomeUsuario);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

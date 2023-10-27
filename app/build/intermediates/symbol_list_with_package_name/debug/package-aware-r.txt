@@ -3043,11 +3043,11 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_notificacao
 drawable ic_perfil
+drawable ic_perfil_config
 drawable ic_sair
 drawable ic_search_black_24
 drawable ic_voltar
 drawable img_logo
-drawable img_perfil
 drawable img_senha_enviada
 drawable logo_branca_500
 drawable logo_verde_500
@@ -3243,6 +3243,7 @@ id browser_actions_menu_items
 id browser_actions_menu_view
 id btAdicionar
 id btAjuda
+id btAlterarFoto
 id btAnimacao
 id btCadastro
 id btCalculadora
@@ -3255,7 +3256,6 @@ id btExpandir_tipo
 id btLogin
 id btMinhasContas
 id btNotificacao
-id btPerfil
 id btRecuperar
 id btRegistro
 id btSair
@@ -3264,6 +3264,7 @@ id btSaldoGeralGuardado
 id btSaldoGeralPagar
 id btSaldoGeralReceber
 id btText
+id btUsuario
 id btValorGuardado
 id btValorPagar
 id btValorReceber
@@ -3399,6 +3400,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imagemUsuario
 id immediateStop
 id included
 id indeterminate
@@ -5220,6 +5222,7 @@ style Widget_MaterialComponents_Toolbar_PrimarySurface
 style Widget_MaterialComponents_Toolbar_Surface
 style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
+style circular
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth

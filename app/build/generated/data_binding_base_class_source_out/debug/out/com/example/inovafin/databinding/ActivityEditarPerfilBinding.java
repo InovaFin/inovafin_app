@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,11 +21,21 @@ public final class ActivityEditarPerfilBinding implements ViewBinding {
   private final ScrollView rootView;
 
   @NonNull
+  public final LinearLayout btAlterarFoto;
+
+  @NonNull
   public final ImageView icFechar;
 
-  private ActivityEditarPerfilBinding(@NonNull ScrollView rootView, @NonNull ImageView icFechar) {
+  @NonNull
+  public final ImageView imagemUsuario;
+
+  private ActivityEditarPerfilBinding(@NonNull ScrollView rootView,
+      @NonNull LinearLayout btAlterarFoto, @NonNull ImageView icFechar,
+      @NonNull ImageView imagemUsuario) {
     this.rootView = rootView;
+    this.btAlterarFoto = btAlterarFoto;
     this.icFechar = icFechar;
+    this.imagemUsuario = imagemUsuario;
   }
 
   @Override
@@ -54,13 +65,26 @@ public final class ActivityEditarPerfilBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btAlterarFoto;
+      LinearLayout btAlterarFoto = ViewBindings.findChildViewById(rootView, id);
+      if (btAlterarFoto == null) {
+        break missingId;
+      }
+
       id = R.id.icFechar;
       ImageView icFechar = ViewBindings.findChildViewById(rootView, id);
       if (icFechar == null) {
         break missingId;
       }
 
-      return new ActivityEditarPerfilBinding((ScrollView) rootView, icFechar);
+      id = R.id.imagemUsuario;
+      ImageView imagemUsuario = ViewBindings.findChildViewById(rootView, id);
+      if (imagemUsuario == null) {
+        break missingId;
+      }
+
+      return new ActivityEditarPerfilBinding((ScrollView) rootView, btAlterarFoto, icFechar,
+          imagemUsuario);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

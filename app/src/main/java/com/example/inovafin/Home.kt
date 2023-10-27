@@ -26,7 +26,7 @@ class Home : AppCompatActivity() {
         autentificacao = ConfiguraBd.Firebaseautentificacao()
         firestore = ConfiguraBd.Firebasefirestore()
 
-        binding.btPerfil.setOnClickListener {
+        binding.btUsuario.setOnClickListener {
             var navegarTelaConfiguracoes = Intent(this, Configuracoes::class.java)
             startActivity(navegarTelaConfiguracoes)
         }

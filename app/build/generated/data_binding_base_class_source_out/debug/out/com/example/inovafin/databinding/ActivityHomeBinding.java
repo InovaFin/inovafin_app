@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.inovafin.R;
+import com.google.android.material.imageview.ShapeableImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -31,10 +32,10 @@ public final class ActivityHomeBinding implements ViewBinding {
   public final ImageView btNotificacao;
 
   @NonNull
-  public final ImageView btPerfil;
+  public final LinearLayout btSaldoGeral;
 
   @NonNull
-  public final LinearLayout btSaldoGeral;
+  public final ShapeableImageView btUsuario;
 
   @NonNull
   public final LinearLayout btValorGuardado;
@@ -50,15 +51,15 @@ public final class ActivityHomeBinding implements ViewBinding {
 
   private ActivityHomeBinding(@NonNull RelativeLayout rootView, @NonNull ImageView btCalculadora,
       @NonNull LinearLayout btMinhasContas, @NonNull ImageView btNotificacao,
-      @NonNull ImageView btPerfil, @NonNull LinearLayout btSaldoGeral,
+      @NonNull LinearLayout btSaldoGeral, @NonNull ShapeableImageView btUsuario,
       @NonNull LinearLayout btValorGuardado, @NonNull LinearLayout btValorPagar,
       @NonNull LinearLayout btValorReceber, @NonNull TextView nomeUsuario) {
     this.rootView = rootView;
     this.btCalculadora = btCalculadora;
     this.btMinhasContas = btMinhasContas;
     this.btNotificacao = btNotificacao;
-    this.btPerfil = btPerfil;
     this.btSaldoGeral = btSaldoGeral;
+    this.btUsuario = btUsuario;
     this.btValorGuardado = btValorGuardado;
     this.btValorPagar = btValorPagar;
     this.btValorReceber = btValorReceber;
@@ -110,15 +111,15 @@ public final class ActivityHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.btPerfil;
-      ImageView btPerfil = ViewBindings.findChildViewById(rootView, id);
-      if (btPerfil == null) {
-        break missingId;
-      }
-
       id = R.id.btSaldoGeral;
       LinearLayout btSaldoGeral = ViewBindings.findChildViewById(rootView, id);
       if (btSaldoGeral == null) {
+        break missingId;
+      }
+
+      id = R.id.btUsuario;
+      ShapeableImageView btUsuario = ViewBindings.findChildViewById(rootView, id);
+      if (btUsuario == null) {
         break missingId;
       }
 
@@ -147,7 +148,7 @@ public final class ActivityHomeBinding implements ViewBinding {
       }
 
       return new ActivityHomeBinding((RelativeLayout) rootView, btCalculadora, btMinhasContas,
-          btNotificacao, btPerfil, btSaldoGeral, btValorGuardado, btValorPagar, btValorReceber,
+          btNotificacao, btSaldoGeral, btUsuario, btValorGuardado, btValorPagar, btValorReceber,
           nomeUsuario);
     }
     String missingId = rootView.getResources().getResourceName(id);
