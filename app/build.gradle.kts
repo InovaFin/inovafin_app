@@ -62,6 +62,9 @@ dependencies {
     // Firebase Firestore
     implementation("com.google.firebase:firebase-firestore-ktx")
 
+    // Glide
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+
     // Lottie animation
     implementation("com.airbnb.android:lottie:5.2.0")
 }

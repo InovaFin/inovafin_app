@@ -8,6 +8,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.inovafin.Util.ConfiguraBd
 import com.example.inovafin.databinding.ActivityEditarPerfilBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -107,6 +108,12 @@ class EditarPerfil : AppCompatActivity() {
                 }
             }
         // Altera email
+
+        // Limpar campos
+        binding.nomeUsuario.text.clear()
+        binding.emailUsuario.text.clear()
+        binding.imagemUsuario.setImageURI(null)
+        // Limpar campos
     }
 
     private fun pickImage() {
@@ -147,6 +154,17 @@ class EditarPerfil : AppCompatActivity() {
                         // Aplica os dados no layout
                         binding.nomeUsuario.hint = document.getString("nome")
                         binding.emailUsuario.hint = emailUsuario
+
+                        if (selectedImageUri != null) {
+                            // Se uma imagem da galeria foi selecionada, exiba-a
+                            Glide.with(this).load(selectedImageUri).into(binding.imagemUsuario)
+                        } else {
+                            val foto = document.getString("foto")
+                            // Verifique se a foto do banco não é nula antes de carregar
+                            if (!foto.isNullOrEmpty()) {
+                                Glide.with(this).load(foto).into(binding.imagemUsuario)
+                            }
+                        }
                     }
                 }
         }

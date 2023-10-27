@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.inovafin.app-mergeDebugResources-35:/values-v23/values-v23.xml",
+            "outputFile": "com.example.inovafin.app-mergeDebugResources-36:/values-v23/values-v23.xml",
             "map": [
                 {
                     "source": "C:\\Users\\erick\\.gradle\\caches\\transforms-3\\cbb0957b673913d1c028927c03c1e7f9\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
