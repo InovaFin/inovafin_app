@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.inovafin.Util.AnimacaoDeLoad
 import com.example.inovafin.Util.ConfiguraBd
 import com.example.inovafin.databinding.ActivityLoginBinding
-import com.example.inovafin.model.Usuario
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
@@ -23,8 +22,6 @@ class Login : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
 
     private lateinit var animacaoDeLoad: AnimacaoDeLoad
-
-    private lateinit var usuario: Usuario
 
     private lateinit var autentificacao: FirebaseAuth
 
@@ -56,12 +53,10 @@ class Login : AppCompatActivity() {
     }
 
     fun validarCampos() {
-        val nome = ""
         val email = binding.emailUsuario.text.toString()
         val senha = binding.senhaUsuario.text.toString()
 
         if (email.isNotEmpty() && senha.isNotEmpty()) {
-            usuario = Usuario(nome, email, senha)
             logarUsuario()
         } else {
             if (email.isEmpty()) {
@@ -75,8 +70,11 @@ class Login : AppCompatActivity() {
     }
 
     private fun logarUsuario() {
+        val email = binding.emailUsuario.text.toString()
+        val senha = binding.senhaUsuario.text.toString()
+
         autentificacao.signInWithEmailAndPassword(
-            usuario.email, usuario.senha
+            email, senha
         ).addOnCompleteListener(this) {task ->
             if (task.isSuccessful) {
                 animacaoDeLoad.pararAnimacao()

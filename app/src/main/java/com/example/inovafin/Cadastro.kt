@@ -9,7 +9,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.inovafin.Util.ConfiguraBd
 import com.example.inovafin.databinding.ActivityCadastroBinding
-import com.example.inovafin.model.Usuario
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
@@ -21,8 +20,6 @@ class Cadastro : AppCompatActivity() {
     private lateinit var binding: ActivityCadastroBinding
 
     private lateinit var animacaoDeLoad: AnimacaoDeLoad
-
-    private lateinit var usuario: Usuario
 
     private lateinit var autentificacao: FirebaseAuth
 
@@ -59,7 +56,6 @@ class Cadastro : AppCompatActivity() {
         val senha = binding.senhaUsuario.text.toString()
 
         if (nome.isNotEmpty() && email.isNotEmpty() && senha.isNotEmpty()) {
-            usuario = Usuario(nome, email, senha)
             cadastrarUsuario()
         } else {
             animacaoDeLoad.pararAnimacao()
@@ -75,8 +71,11 @@ class Cadastro : AppCompatActivity() {
     }
 
     private fun cadastrarUsuario() {
+        val email = binding.emailUsuario.text.toString()
+        val senha = binding.senhaUsuario.text.toString()
+
         autentificacao.createUserWithEmailAndPassword(
-            usuario.email, usuario.senha
+            email, senha
         ).addOnCompleteListener(this) {task ->
             if (task.isSuccessful) {
                 animacaoDeLoad.pararAnimacao()
@@ -110,10 +109,11 @@ class Cadastro : AppCompatActivity() {
     }
 
     private fun salvaDados() {
+        val nome = binding.nomeUsuario.text.toString()
 
         val usuarioMasp = hashMapOf(
             "foto" to "",
-            "nome" to usuario.nome
+            "nome" to nome
         )
 
         val usuarioId = autentificacao.currentUser!!.uid

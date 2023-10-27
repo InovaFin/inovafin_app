@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.widget.Toast
 import com.example.inovafin.Util.ConfiguraBd
 import com.example.inovafin.databinding.ActivityEsqueceuSenhaBinding
-import com.example.inovafin.model.Usuario
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
@@ -20,8 +19,6 @@ class EsqueceuSenha : AppCompatActivity() {
     private lateinit var binding: ActivityEsqueceuSenhaBinding
 
     private lateinit var animacaoDeLoad: AnimacaoDeLoad
-
-    private lateinit var usuario: Usuario
 
     private lateinit var autentificacao: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,12 +41,9 @@ class EsqueceuSenha : AppCompatActivity() {
     }
 
     fun validarCampo() {
-        val nome = ""
-        val senha = ""
         val email = binding.emailUsuario.text.toString()
 
         if (email.isNotEmpty()) {
-            usuario = Usuario(nome, email, senha)
             recuperarSenha()
         } else {
             animacaoDeLoad.pararAnimacao()
@@ -58,9 +52,10 @@ class EsqueceuSenha : AppCompatActivity() {
     }
 
     fun recuperarSenha() {
+        val email = binding.emailUsuario.text.toString()
         autentificacao = ConfiguraBd.Firebaseautentificacao()
 
-        autentificacao.sendPasswordResetEmail(usuario.email)
+        autentificacao.sendPasswordResetEmail(email)
             .addOnCompleteListener(this) {task ->
             if (task.isSuccessful) {
                 animacaoDeLoad.pararAnimacao()
