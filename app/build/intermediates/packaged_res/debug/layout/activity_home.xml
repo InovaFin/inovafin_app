@@ -44,15 +44,24 @@
                         android:orientation="horizontal">
 
                         <com.google.android.material.imageview.ShapeableImageView
-                            android:id="@+id/btUsuario"
-                            android:layout_width="75dp"
-                            android:layout_height="75dp"
+                            android:id="@+id/imagemUsuario"
+                            android:layout_width="76dp"
+                            android:layout_height="76dp"
                             app:shapeAppearance="@style/circular"
-                            app:strokeWidth="5dp"
-                            app:strokeColor="@color/verde_principal"
+                            android:elevation="5dp"
+                            android:scaleType="centerCrop"
                             android:padding="5dp"
                             android:background="@color/verde_secundario"
                             android:src="@drawable/ic_perfil"/>
+
+<!--                        <com.google.android.material.imageview.ShapeableImageView-->
+<!--                            android:id="@+id/btUsuario"-->
+<!--                            android:layout_width="75dp"-->
+<!--                            android:layout_height="75dp"-->
+<!--                            app:shapeAppearance="@style/circular"-->
+<!--                            android:padding="5dp"-->
+<!--                            android:background="@color/verde_secundario"-->
+<!--                            android:src="@drawable/ic_perfil"/>-->
 
                     </LinearLayout>
                     <!--Botão/Foto de Perfil-->

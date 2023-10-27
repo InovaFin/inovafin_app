@@ -3264,7 +3264,6 @@ int id btSaldoGeralGuardado 0x7f0a007f
 int id btSaldoGeralPagar 0x7f0a0080
 int id btSaldoGeralReceber 0x7f0a0081
 int id btText 0x7f0a0082
-int id btUsuario 0x7f0a0083
 int id btValorGuardado 0x7f0a0084
 int id btValorPagar 0x7f0a0085
 int id btValorReceber 0x7f0a0086

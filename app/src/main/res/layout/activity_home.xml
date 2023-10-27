@@ -44,15 +44,24 @@
                         android:orientation="horizontal">
 
                         <com.google.android.material.imageview.ShapeableImageView
-                            android:id="@+id/btUsuario"
-                            android:layout_width="75dp"
-                            android:layout_height="75dp"
+                            android:id="@+id/imagemUsuario"
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
                             app:shapeAppearance="@style/circular"
-                            app:strokeWidth="5dp"
-                            app:strokeColor="@color/verde_principal"
+                            android:elevation="5dp"
+                            android:scaleType="centerCrop"
                             android:padding="5dp"
                             android:background="@color/verde_secundario"
                             android:src="@drawable/ic_perfil"/>
+
+<!--                        <com.google.android.material.imageview.ShapeableImageView-->
+<!--                            android:id="@+id/btUsuario"-->
+<!--                            android:layout_width="75dp"-->
+<!--                            android:layout_height="75dp"-->
+<!--                            app:shapeAppearance="@style/circular"-->
+<!--                            android:padding="5dp"-->
+<!--                            android:background="@color/verde_secundario"-->
+<!--                            android:src="@drawable/ic_perfil"/>-->
 
                     </LinearLayout>
                     <!--Botão/Foto de Perfil-->
@@ -88,6 +97,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -97,7 +107,7 @@
                         android:fontFamily="@font/roboto_bold"
                         android:textColor="@color/white"
                         android:textSize="18sp"
-                        android:layout_marginTop="30dp"/>
+                        android:layout_marginTop="20dp"/>
 
                     <!--Nome Usuário-->
                     <TextView
@@ -108,7 +118,7 @@
                         android:fontFamily="@font/roboto_bold"
                         android:textColor="@color/white"
                         android:textSize="18sp"
-                        android:layout_marginTop="30dp"/>
+                        android:layout_marginTop="20dp"/>
                     <!--Nome Usuário-->
 
                 </LinearLayout>

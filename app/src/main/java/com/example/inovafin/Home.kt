@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.inovafin.Util.ConfiguraBd
 import com.example.inovafin.databinding.ActivityHomeBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -26,7 +27,7 @@ class Home : AppCompatActivity() {
         autentificacao = ConfiguraBd.Firebaseautentificacao()
         firestore = ConfiguraBd.Firebasefirestore()
 
-        binding.btUsuario.setOnClickListener {
+        binding.imagemUsuario.setOnClickListener {
             var navegarTelaConfiguracoes = Intent(this, Configuracoes::class.java)
             startActivity(navegarTelaConfiguracoes)
         }
@@ -90,6 +91,11 @@ class Home : AppCompatActivity() {
                 .addSnapshotListener { document, error ->
                     if (document != null) {
                         binding.nomeUsuario.text = document.getString("nome")
+
+                        val foto = document.getString("foto")
+                        // Verifique se a foto do banco não é nula antes de carregar
+                        Glide.with(this).load(foto).into(binding.imagemUsuario)
+
                     }
                 }
         }

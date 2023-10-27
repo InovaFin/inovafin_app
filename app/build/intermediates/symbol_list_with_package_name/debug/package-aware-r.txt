@@ -3265,7 +3265,6 @@ id btSaldoGeralGuardado
 id btSaldoGeralPagar
 id btSaldoGeralReceber
 id btText
-id btUsuario
 id btValorGuardado
 id btValorPagar
 id btValorReceber
