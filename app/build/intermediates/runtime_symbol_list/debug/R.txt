@@ -3246,7 +3246,6 @@ int id btAdicionar 0x7f0a006b
 int id btAjuda 0x7f0a006c
 int id btAlterarDados 0x7f0a006d
 int id btAlterarFoto 0x7f0a006e
-int id btAlterarSenha 0x7f0a0231
 int id btAnimacao 0x7f0a006f
 int id btCadastro 0x7f0a0070
 int id btCalculadora 0x7f0a0071
@@ -3506,6 +3505,7 @@ int id north 0x7f0a0170
 int id notification_background 0x7f0a0171
 int id notification_main_column 0x7f0a0172
 int id notification_main_column_container 0x7f0a0173
+int id novaSenha 0x7f0a0232
 int id off 0x7f0a0174
 int id on 0x7f0a0175
 int id onInterceptTouchReturnSwipe 0x7f0a0176

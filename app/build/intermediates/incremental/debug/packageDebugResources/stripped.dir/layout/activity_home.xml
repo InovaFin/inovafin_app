@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/branco_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--Conteúdo Geral-->
+    <ScrollView
+        android:background="@color/branco_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--Conteúdo Filho ScrollView-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:orientation="vertical"
+            tools:context=".Home">
+
+            <!--Cabeçalho-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/verde_principal"
+                android:paddingStart="20dp"
+                android:paddingEnd="30dp"
+                android:paddingTop="40dp"
+                android:paddingBottom="25dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <!--Botão/Foto de Perfil-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/imagemUsuario"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            app:shapeAppearance="@style/circular"
+                            android:elevation="5dp"
+                            android:scaleType="centerCrop"
+                            android:padding="5dp"
+                            android:background="@color/verde_secundario"
+                            android:src="@drawable/ic_perfil"/>
+
+                    </LinearLayout>
+                    <!--Botão/Foto de Perfil-->
+
+                    <!--Botões Cabeçalho-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!--Botão Calculadora-->
+                        <ImageView
+                            android:id="@+id/btCalculadora"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/ic_calculadora"/>
+                        <!--Botão Calculadora-->
+
+                        <!--Botão Notificações-->
+                        <ImageView
+                            android:id="@+id/btNotificacao"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_notificacao"/>
+                        <!--Botão Notificações-->
+
+                    </LinearLayout>
+                    <!--Botões Cabeçalho-->
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Olá "
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="5dp"/>
+
+                    <!--Nome Usuário-->
+                    <TextView
+                        android:id="@+id/nomeUsuario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Usuário "
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:layout_marginTop="20dp"/>
+                    <!--Nome Usuário-->
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <!--Cabeçalho-->
+
+            <!--Saldo Geral-->
+            <LinearLayout
+                android:id="@+id/btSaldoGeral"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:background="@drawable/bg_botao_terciario_ripple"
+                android:paddingVertical="20dp"
+                android:gravity="center"
+                android:paddingHorizontal="30dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="Saldo Geral"
+                        android:textColor="@color/black_secundario"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textSize="17sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="R$ 00,00"
+                        android:textColor="@color/black_terciario"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textSize="17sp"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_avancar"/>
+
+            </LinearLayout>
+            <!--Saldo Geral-->
+
+            <!--Botão Minhas Contas-->
+            <LinearLayout
+                android:id="@+id/btMinhasContas"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginBottom="25dp"
+                android:paddingHorizontal="17dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:background="@drawable/bg_botao_secundario_ripple">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="15dp"
+                        android:src="@drawable/ic_banco"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Minhas Contas"
+                        android:textColor="@color/black_secundario"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/roboto_medium"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <!--Botão Minhas Contas-->
+
+            <!--Linha cinza-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_linha"/>
+            <!--Linha cinza-->
+
+            <!--Valores à Receber-->
+            <LinearLayout
+                android:id="@+id/btValorReceber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:background="@drawable/bg_botao_terciario_ripple"
+                android:gravity="center"
+                android:paddingVertical="25dp"
+                android:paddingHorizontal="30dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Valores à Receber"
+                        android:textColor="@color/black_secundario"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textSize="17sp"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_avancar"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <!--Valores à Receber-->
+
+            <!--Linha cinza-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_linha"/>
+            <!--Linha cinza-->
+
+            <!--Valores à Pagar-->
+            <LinearLayout
+                android:id="@+id/btValorPagar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:background="@drawable/bg_botao_terciario_ripple"
+                android:gravity="center"
+                android:paddingVertical="25dp"
+                android:paddingHorizontal="30dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Valores à Pagar"
+                        android:textColor="@color/black_secundario"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textSize="17sp"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_avancar"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <!--Valores à Receber-->
+
+            <!--Linha cinza-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_linha"/>
+            <!--Linha cinza-->
+
+            <!--Dinheiro Guardado/Investido-->
+            <LinearLayout
+                android:id="@+id/btValorGuardado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:background="@drawable/bg_botao_terciario_ripple"
+                android:gravity="center"
+                android:paddingVertical="25dp"
+                android:paddingHorizontal="30dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Dinheiro Guardado/Investido"
+                        android:textColor="@color/black_secundario"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textSize="17sp"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_avancar"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <!--Dinheiro Guardado/Investido-->
+
+            <!--Linha cinza-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_linha"/>
+            <!--Linha cinza-->
+
+        </LinearLayout>
+        <!--Conteúdo Filho ScrollView-->
+
+    </ScrollView>
+    <!--Conteúdo Geral-->
+
+    <!--Menu de Navegação-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="25dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/bg_menu_nav"
+            android:elevation="9dp"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="6dp">
+
+            <!--Botão Home-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:background="@drawable/bg_menu_nav_home_ripple"
+                android:paddingHorizontal="25dp"
+                android:paddingVertical="15dp">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_home" />
+
+            </LinearLayout>
+            <!--Botão Home-->
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <!--Menu de Navegação-->
+
+</RelativeLayout>

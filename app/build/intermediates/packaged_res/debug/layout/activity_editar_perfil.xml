@@ -147,79 +147,82 @@
         </LinearLayout>
         <!--Email-->
 
-        <!--        &lt;!&ndash;Senha&ndash;&gt;-->
-        <!--        <LinearLayout-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginHorizontal="30dp"-->
-        <!--            android:orientation="vertical">-->
+                <!--Senha-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:orientation="vertical">
 
-        <!--            <TextView-->
-        <!--                android:layout_width="wrap_content"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:text="Nova Senha"-->
-        <!--                android:textColor="@color/black"-->
-        <!--                android:layout_marginBottom="10dp"-->
-        <!--                android:textSize="15sp"-->
-        <!--                android:fontFamily="@font/roboto_medium"/>-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Senha Atual"
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="10dp"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/roboto_medium"/>
 
-        <!--&lt;!&ndash;            &lt;!&ndash;Nova Senha&ndash;&gt;&ndash;&gt;-->
-        <!--&lt;!&ndash;            <EditText&ndash;&gt;-->
-        <!--&lt;!&ndash;                android:id="@+id/senhaUsuario"&ndash;&gt;-->
-        <!--&lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;-->
-        <!--&lt;!&ndash;                android:ems="10"&ndash;&gt;-->
-        <!--&lt;!&ndash;                android:text=""&ndash;&gt;-->
-        <!--&lt;!&ndash;                android:inputType="textPassword"&ndash;&gt;-->
-        <!--&lt;!&ndash;                android:paddingVertical="15dp"&ndash;&gt;-->
-        <!--&lt;!&ndash;                android:paddingHorizontal="10dp"&ndash;&gt;-->
-        <!--&lt;!&ndash;                android:textColorHint="@color/black_terciario"&ndash;&gt;-->
-        <!--&lt;!&ndash;                android:layout_marginBottom="15dp"&ndash;&gt;-->
-        <!--&lt;!&ndash;                android:textColor="@color/black"&ndash;&gt;-->
-        <!--&lt;!&ndash;                android:textSize="15sp"&ndash;&gt;-->
-        <!--&lt;!&ndash;                android:background="@drawable/bg_edittext_secundario"&ndash;&gt;-->
-        <!--&lt;!&ndash;                android:textCursorDrawable="@drawable/custom_cursor"&ndash;&gt;-->
-        <!--&lt;!&ndash;                android:fontFamily="@font/roboto"/>&ndash;&gt;-->
-        <!--&lt;!&ndash;            &lt;!&ndash;Nova Senha&ndash;&gt;&ndash;&gt;-->
+                    <!--Nova Senha-->
+                    <EditText
+                        android:id="@+id/senhaUsuario"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:text=""
+                        android:hint="Confirme sua senha"
+                        android:inputType="textPassword"
+                        android:paddingVertical="15dp"
+                        android:paddingHorizontal="10dp"
+                        android:textColorHint="@color/black_terciario"
+                        android:layout_marginBottom="15dp"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:background="@drawable/bg_edittext_secundario"
+                        android:textCursorDrawable="@drawable/custom_cursor"
+                        android:fontFamily="@font/roboto"/>
+                    <!--Nova Senha-->
 
-        <!--        </LinearLayout>-->
-        <!--        &lt;!&ndash;Senha&ndash;&gt;-->
+                </LinearLayout>
+                <!--Senha-->
 
-        <!--        &lt;!&ndash;ConfirmSenha&ndash;&gt;-->
-        <!--        <LinearLayout-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginHorizontal="30dp"-->
-        <!--            android:orientation="vertical">-->
+                <!--ConfirmSenha-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:orientation="vertical">
 
-        <!--            <TextView-->
-        <!--                android:layout_width="wrap_content"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:text="Confirmar Senha"-->
-        <!--                android:textColor="@color/black"-->
-        <!--                android:layout_marginBottom="10dp"-->
-        <!--                android:textSize="15sp"-->
-        <!--                android:fontFamily="@font/roboto_medium"/>-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nova Senha"
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="10dp"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/roboto_medium"/>
 
-        <!--            &lt;!&ndash;Email&ndash;&gt;-->
-        <!--            <EditText-->
-        <!--                android:layout_width="match_parent"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:ems="10"-->
-        <!--                android:inputType="textPassword"-->
-        <!--                android:paddingVertical="15dp"-->
-        <!--                android:paddingHorizontal="10dp"-->
-        <!--                android:textColorHint="@color/black_terciario"-->
-        <!--                android:layout_marginBottom="15dp"-->
-        <!--                android:textColor="@color/black"-->
-        <!--                android:textSize="15sp"-->
-        <!--                android:background="@drawable/bg_edittext_secundario"-->
-        <!--                android:textCursorDrawable="@drawable/custom_cursor"-->
-        <!--                android:fontFamily="@font/roboto"/>-->
-        <!--            &lt;!&ndash;Email&ndash;&gt;-->
+                    <!--Email-->
+                    <EditText
+                        android:id="@+id/novaSenha"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPassword"
+                        android:paddingVertical="15dp"
+                        android:hint="Digite a nova senha"
+                        android:paddingHorizontal="10dp"
+                        android:textColorHint="@color/black_terciario"
+                        android:layout_marginBottom="15dp"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:background="@drawable/bg_edittext_secundario"
+                        android:textCursorDrawable="@drawable/custom_cursor"
+                        android:fontFamily="@font/roboto"/>
+                    <!--Email-->
 
-        <!--        </LinearLayout>-->
-        <!--        &lt;!&ndash;ConfirmSenha&ndash;&gt;-->
+                </LinearLayout>
+                <!--ConfirmSenha-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -387,42 +390,7 @@
                 android:paddingTop="15dp"
                 android:paddingBottom="40dp"
                 android:background="@color/branco_background"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:id="@+id/btAlterarSenha"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:clickable="true"
-                    android:background="@drawable/bg_botao_secundario_ripple">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="10dp"
-                            android:src="@drawable/ic_senha"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Alterar Senha"
-                            android:textColor="@color/black_secundario"
-                            android:textSize="13sp"
-                            android:fontFamily="@font/roboto_bold"/>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-            </LinearLayout>
+                android:orientation="vertical"/>
             <!--Botão Sair-->
 
         </LinearLayout>

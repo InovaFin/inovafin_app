@@ -16,6 +16,7 @@ import com.bumptech.glide.Glide
 import com.example.inovafin.Util.ConfiguraBd
 import com.example.inovafin.databinding.ActivityEditarPerfilBinding
 import com.google.firebase.Firebase
+import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.auth
@@ -33,6 +34,8 @@ class EditarPerfil : AppCompatActivity() {
 
     private var nomeAlterado = false
     private var emailAlterado = false
+    private var senhaAlterada = false
+    private var novaSenhaAlterada = false
     private var fotoAlterada = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,6 +49,8 @@ class EditarPerfil : AppCompatActivity() {
 
         configurarTextWatcherNome()
         configurarTextWatcherEmail()
+        configurarTextWatcherSenha()
+        configurarTextWatcherNovaSenha()
 
         binding.icFechar.setOnClickListener {
             onBackPressed()
@@ -62,43 +67,9 @@ class EditarPerfil : AppCompatActivity() {
         binding.btExcluir.setOnClickListener {
             limparFoto()
         }
-
-        binding.btAlterarSenha.setOnClickListener {
-            dialogConfirmacao()
-        }
-    }
-    fun dialogConfirmacao() {
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Confirmação")
-        builder.setMessage("Você quer receber um email para alterar sua senha?")
-
-        builder.setPositiveButton("Sim") { dialog, which ->
-            // Usuário confirmou a saída
-            enviarSenha()
-        }
-
-        builder.setNegativeButton("Não") { dialog, which ->
-            // Usuário cancelou a saída
-        }
-
-        val dialog = builder.create()
-        dialog.show()
     }
 
-    private fun enviarSenha() {
-        val user = autentificacao.currentUser
-        val newPassword = "1234567"
-
-        user!!.updatePassword(newPassword)
-            .addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    Toast.makeText(applicationContext, "Senha alterada", Toast.LENGTH_LONG).show()
-                } else {
-                    Toast.makeText(applicationContext, "Erro: ", Toast.LENGTH_LONG).show()
-                }
-            }
-    }
-
+    // Verifica o que está acontecendo com o EditText Nome
     private fun configurarTextWatcherNome() {
         binding.nomeUsuario.addTextChangedListener(object : TextWatcher {
             private var nomeAnterior: CharSequence? = null
@@ -124,21 +95,22 @@ class EditarPerfil : AppCompatActivity() {
         })
     }
 
+    // Verifica o que está acontecendo com o EditText Email
     private fun configurarTextWatcherEmail() {
         binding.emailUsuario.addTextChangedListener(object : TextWatcher {
-            private var nomeAnterior: CharSequence? = null
+            private var emailAnterior: CharSequence? = null
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                nomeAnterior = s?.toString() // Salva o texto anterior
+                emailAnterior = s?.toString() // Salva o texto anterior
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 // Quando o texto está sendo alterado
-                if (nomeAnterior.isNullOrEmpty() && !s.isNullOrEmpty()) {
-                    // Nome foi preenchido pela primeira vez ou o texto foi reescrito
+                if (emailAnterior.isNullOrEmpty() && !s.isNullOrEmpty()) {
+                    // Email foi preenchido pela primeira vez ou o texto foi reescrito
                     emailAlterado = true
-                } else if (!nomeAnterior.isNullOrEmpty() && s.isNullOrEmpty()) {
-                    // Nome foi apagado
+                } else if (!emailAnterior.isNullOrEmpty() && s.isNullOrEmpty()) {
+                    // Email foi apagado
                     emailAlterado = false
                 }
             }
@@ -149,15 +121,60 @@ class EditarPerfil : AppCompatActivity() {
         })
     }
 
-    private fun limparFoto() {
-        val placeholderImage = R.drawable.ic_perfil // Substitua 'seu_icone_padrao' pelo nome do seu recurso de imagem
-        binding.imagemUsuario.setImageResource(placeholderImage)
-        selectedImageUri = null
-        fotoAlterada = true
+    // Verifica o que está acontecendo com o EditText Senha
+    private fun configurarTextWatcherSenha() {
+        binding.senhaUsuario.addTextChangedListener(object : TextWatcher {
+            private var senhaAnterior: CharSequence? = null
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                senhaAnterior = s?.toString() // Salva o texto anterior
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                // Quando o texto está sendo alterado
+                if (senhaAnterior.isNullOrEmpty() && !s.isNullOrEmpty()) {
+                    // Senha foi preenchido pela primeira vez ou o texto foi reescrito
+                    senhaAlterada = true
+                } else if (!senhaAnterior.isNullOrEmpty() && s.isNullOrEmpty()) {
+                    // Senha foi apagado
+                    senhaAlterada = false
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                // Nada a fazer após a mudança
+            }
+        })
+    }
+
+    // Verifica o que está acontecendo com o EditText Senha
+    private fun configurarTextWatcherNovaSenha() {
+        binding.novaSenha.addTextChangedListener(object : TextWatcher {
+            private var senhaAnterior: CharSequence? = null
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                senhaAnterior = s?.toString() // Salva o texto anterior
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                // Quando o texto está sendo alterado
+                if (senhaAnterior.isNullOrEmpty() && !s.isNullOrEmpty()) {
+                    // Senha foi preenchido pela primeira vez ou o texto foi reescrito
+                    novaSenhaAlterada = true
+                } else if (!senhaAnterior.isNullOrEmpty() && s.isNullOrEmpty()) {
+                    // Senha foi apagado
+                    novaSenhaAlterada = false
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                // Nada a fazer após a mudança
+            }
+        })
     }
 
     fun validarCampos() {
-        if (nomeAlterado || emailAlterado || fotoAlterada) {
+        if (nomeAlterado || emailAlterado || fotoAlterada || senhaAlterada || novaSenhaAlterada) {
             if (nomeAlterado) {
                 alterarNome()
             }
@@ -167,15 +184,42 @@ class EditarPerfil : AppCompatActivity() {
             if (fotoAlterada) {
                 alterarFoto()
             }
+            if (senhaAlterada) {
+                alterarSenha()
+            }
+            if (novaSenhaAlterada) {
+                Toast.makeText(applicationContext, "Por favor, digite a senha atual", Toast.LENGTH_LONG).show()
+            }
             recarregarApp()
         } else {
             Toast.makeText(applicationContext, "Nenhum campo foi alterado", Toast.LENGTH_LONG).show()
         }
     }
 
-    private fun recarregarApp() {
-        val i = Intent(this, SplashScreen::class.java)
-        startActivity(i)
+    private fun alterarNome() {
+        val novoNome = binding.nomeUsuario.text.toString()
+        val usuarioId = autentificacao.currentUser!!.uid
+
+        val usuarioMap = hashMapOf(
+            "nome" to novoNome
+        )
+
+        firestore.collection("Usuarios").document(usuarioId)
+            .update(usuarioMap as Map<String, Any>).addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(applicationContext, "Nome Alterado!", Toast.LENGTH_LONG).show()
+                } else {
+                    var excecao = ""
+
+                    try {
+                        throw task.exception!!
+                    } catch (e: Exception) {
+                        excecao = "Erro ao alterar o nome! " + e.message
+                        e.printStackTrace()
+                    }
+                    Toast.makeText(applicationContext, excecao, Toast.LENGTH_LONG).show()
+                }
+            }
     }
 
     private fun alterarEmail() {
@@ -225,31 +269,46 @@ class EditarPerfil : AppCompatActivity() {
         return email.matches(emailRegex.toRegex())
     }
 
+    private fun alterarSenha() {
+        val usuarioAuth = autentificacao.currentUser
+        val senhaAtual = binding.senhaUsuario.text.toString()
+        val novaSenha = binding.novaSenha.text.toString()
 
-    private fun alterarNome() {
-        val novoNome = binding.nomeUsuario.text.toString()
-        val usuarioId = autentificacao.currentUser!!.uid
+        val credencial = EmailAuthProvider.getCredential(usuarioAuth!!.email!!, senhaAtual)
 
-        val usuarioMap = hashMapOf(
-            "nome" to novoNome
-        )
-
-        firestore.collection("Usuarios").document(usuarioId)
-            .update(usuarioMap as Map<String, Any>).addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    Toast.makeText(applicationContext, "Nome Alterado!", Toast.LENGTH_LONG).show()
-                } else {
-                    var excecao = ""
-
-                    try {
-                        throw task.exception!!
-                    } catch (e: Exception) {
-                        excecao = "Erro ao alterar o nome! " + e.message
-                        e.printStackTrace()
+        usuarioAuth.reauthenticate(credencial)
+            .addOnCompleteListener { reauthTask ->
+                if (reauthTask.isSuccessful) {
+                    // A reautenticação foi bem-sucedida, agora podemos alterar a senha
+                    if (validarNovaSenha()) {
+                        usuarioAuth.updatePassword(novaSenha)
+                            .addOnCompleteListener { updateTask ->
+                                if (updateTask.isSuccessful) {
+                                    Toast.makeText(applicationContext, "Senha alterada com sucesso!", Toast.LENGTH_LONG).show()
+                                } else {
+                                    val excecao = "Erro ao alterar a senha: ${updateTask.exception?.message}"
+                                    Toast.makeText(applicationContext, excecao, Toast.LENGTH_LONG).show()
+                                }
+                            }
                     }
-                    Toast.makeText(applicationContext, excecao, Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(applicationContext, "Senha atual incorreta", Toast.LENGTH_LONG).show()
                 }
             }
+    }
+
+    private fun validarNovaSenha(): Boolean {
+        val novaSenha = binding.novaSenha.text.toString()
+
+        if (novaSenha.isEmpty()) {
+            Toast.makeText(applicationContext, "Por favor, digite a nova senha.", Toast.LENGTH_LONG).show()
+            return false
+        } else if (novaSenha.length < 6) {
+            Toast.makeText(applicationContext, "A nova senha deve ter pelo menos 6 caracteres.", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        return true
     }
 
     private fun alterarFoto() {
@@ -277,6 +336,11 @@ class EditarPerfil : AppCompatActivity() {
             }
     }
 
+    private fun recarregarApp() {
+        val i = Intent(this, SplashScreen::class.java)
+        startActivity(i)
+    }
+
     private fun pickImage() {
         val i = Intent(Intent.ACTION_PICK)
         i.type = "image/*"
@@ -298,6 +362,13 @@ class EditarPerfil : AppCompatActivity() {
                 Toast.makeText(applicationContext, "Seleção de imagem cancelada", Toast.LENGTH_LONG).show()
             }
         }
+
+    private fun limparFoto() {
+        val placeholderImage = R.drawable.ic_perfil // Substitua 'seu_icone_padrao' pelo nome do seu recurso de imagem
+        binding.imagemUsuario.setImageResource(placeholderImage)
+        selectedImageUri = null
+        fotoAlterada = true
+    }
 
     override fun onStart() {
         super.onStart()

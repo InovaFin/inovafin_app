@@ -75,7 +75,6 @@ id btAdicionar
 id btAjuda
 id btAlterarDados
 id btAlterarFoto
-id btAlterarSenha
 id btAnimacao
 id btCadastro
 id btCalculadora
@@ -108,6 +107,7 @@ id icFechar
 id icVoltar
 id imagemUsuario
 id nomeUsuario
+id novaSenha
 id saldoConta
 id senhaUsuario
 id spinner

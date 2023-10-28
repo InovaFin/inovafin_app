@@ -29,9 +29,6 @@ public final class ActivityEditarPerfilBinding implements ViewBinding {
   public final LinearLayout btAlterarFoto;
 
   @NonNull
-  public final LinearLayout btAlterarSenha;
-
-  @NonNull
   public final LinearLayout btExcluir;
 
   @NonNull
@@ -46,20 +43,27 @@ public final class ActivityEditarPerfilBinding implements ViewBinding {
   @NonNull
   public final EditText nomeUsuario;
 
+  @NonNull
+  public final EditText novaSenha;
+
+  @NonNull
+  public final EditText senhaUsuario;
+
   private ActivityEditarPerfilBinding(@NonNull ScrollView rootView,
       @NonNull LinearLayout btAlterarDados, @NonNull LinearLayout btAlterarFoto,
-      @NonNull LinearLayout btAlterarSenha, @NonNull LinearLayout btExcluir,
-      @NonNull EditText emailUsuario, @NonNull ImageView icFechar,
-      @NonNull ShapeableImageView imagemUsuario, @NonNull EditText nomeUsuario) {
+      @NonNull LinearLayout btExcluir, @NonNull EditText emailUsuario, @NonNull ImageView icFechar,
+      @NonNull ShapeableImageView imagemUsuario, @NonNull EditText nomeUsuario,
+      @NonNull EditText novaSenha, @NonNull EditText senhaUsuario) {
     this.rootView = rootView;
     this.btAlterarDados = btAlterarDados;
     this.btAlterarFoto = btAlterarFoto;
-    this.btAlterarSenha = btAlterarSenha;
     this.btExcluir = btExcluir;
     this.emailUsuario = emailUsuario;
     this.icFechar = icFechar;
     this.imagemUsuario = imagemUsuario;
     this.nomeUsuario = nomeUsuario;
+    this.novaSenha = novaSenha;
+    this.senhaUsuario = senhaUsuario;
   }
 
   @Override
@@ -101,12 +105,6 @@ public final class ActivityEditarPerfilBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.btAlterarSenha;
-      LinearLayout btAlterarSenha = ViewBindings.findChildViewById(rootView, id);
-      if (btAlterarSenha == null) {
-        break missingId;
-      }
-
       id = R.id.btExcluir;
       LinearLayout btExcluir = ViewBindings.findChildViewById(rootView, id);
       if (btExcluir == null) {
@@ -137,8 +135,20 @@ public final class ActivityEditarPerfilBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.novaSenha;
+      EditText novaSenha = ViewBindings.findChildViewById(rootView, id);
+      if (novaSenha == null) {
+        break missingId;
+      }
+
+      id = R.id.senhaUsuario;
+      EditText senhaUsuario = ViewBindings.findChildViewById(rootView, id);
+      if (senhaUsuario == null) {
+        break missingId;
+      }
+
       return new ActivityEditarPerfilBinding((ScrollView) rootView, btAlterarDados, btAlterarFoto,
-          btAlterarSenha, btExcluir, emailUsuario, icFechar, imagemUsuario, nomeUsuario);
+          btExcluir, emailUsuario, icFechar, imagemUsuario, nomeUsuario, novaSenha, senhaUsuario);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

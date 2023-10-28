@@ -210,7 +210,7 @@
                         android:ems="10"
                         android:inputType="textPassword"
                         android:paddingVertical="15dp"
-                        android:hint="Altere a senha"
+                        android:hint="Digite a nova senha"
                         android:paddingHorizontal="10dp"
                         android:textColorHint="@color/black_terciario"
                         android:layout_marginBottom="15dp"
@@ -352,6 +352,7 @@
                 android:layout_height="50dp"
                 android:paddingHorizontal="17dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:clickable="true"
@@ -381,52 +382,6 @@
 
             </LinearLayout>
             <!--Botão Alterar Perfil-->
-
-            <!--Botão Sair-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:paddingTop="15dp"
-                android:paddingBottom="40dp"
-                android:background="@color/branco_background"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:id="@+id/btAlterarSenha"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:clickable="true"
-                    android:background="@drawable/bg_botao_secundario_ripple">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="10dp"
-                            android:src="@drawable/ic_senha"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Alterar Senha"
-                            android:textColor="@color/black_secundario"
-                            android:textSize="13sp"
-                            android:fontFamily="@font/roboto_bold"/>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-            </LinearLayout>
-            <!--Botão Sair-->
 
         </LinearLayout>
 

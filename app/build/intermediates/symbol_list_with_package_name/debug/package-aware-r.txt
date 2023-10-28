@@ -3247,7 +3247,6 @@ id btAdicionar
 id btAjuda
 id btAlterarDados
 id btAlterarFoto
-id btAlterarSenha
 id btAnimacao
 id btCadastro
 id btCalculadora
@@ -3507,6 +3506,7 @@ id north
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id novaSenha
 id off
 id on
 id onInterceptTouchReturnSwipe
