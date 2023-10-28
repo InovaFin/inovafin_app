@@ -4,7 +4,10 @@ import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
+import android.view.textclassifier.TextLanguage
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +27,10 @@ class EditarPerfil : AppCompatActivity() {
 
     private var selectedImageUri: Uri? = null
 
+    private var nomeAlterado = false
+    private var emailAlterado = false
+    private var fotoAlterada = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEditarPerfilBinding.inflate(layoutInflater)
@@ -32,6 +39,9 @@ class EditarPerfil : AppCompatActivity() {
 
         autentificacao = ConfiguraBd.Firebaseautentificacao()
         firestore = ConfiguraBd.Firebasefirestore()
+
+        configurarTextWatcherNome()
+        configurarTextWatcherEmail()
 
         binding.icFechar.setOnClickListener {
             onBackPressed()
@@ -44,55 +54,93 @@ class EditarPerfil : AppCompatActivity() {
         binding.btAlterarDados.setOnClickListener {
             validarCampos()
         }
-    }
 
-    fun validarCampos() {
-        val nome = binding.nomeUsuario.text.toString()
-        val email = binding.emailUsuario.text.toString()
-
-        if (nome.isNotEmpty() && email.isNotEmpty()) {
-            alterarDados()
-        } else {
-            if (nome.isEmpty()) {
-                Toast.makeText(applicationContext, "Preencha seu Nome", Toast.LENGTH_LONG).show()
-            } else if (email.isEmpty()) {
-                Toast.makeText(applicationContext, "Preencha seu Email", Toast.LENGTH_LONG).show()
-            } else if (nome.isEmpty() && email.isEmpty()) {
-                Toast.makeText(applicationContext, "Se quiser manter os dados preencha-os EXATAMENTE como são", Toast.LENGTH_LONG).show()
-            }
+        binding.btExcluir.setOnClickListener {
+            limparFoto()
         }
     }
 
-    private fun alterarDados() {
-        // Altera nome e foto
-        val nome = binding.nomeUsuario.text.toString()
+    private fun configurarTextWatcherNome() {
+        binding.nomeUsuario.addTextChangedListener(object : TextWatcher {
+            private var nomeAnterior: CharSequence? = null
 
-        val usuarioId = autentificacao.currentUser!!.uid
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                nomeAnterior = s?.toString() // Salva o texto anterior
+            }
 
-        val usuarioMasp = hashMapOf(
-            "foto" to selectedImageUri,
-            "nome" to nome
-        )
-
-        firestore.collection("Usuarios").document(usuarioId)
-            .update(usuarioMasp as Map<String, Any>).addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    Toast.makeText(applicationContext, "Dados Alterados!", Toast.LENGTH_LONG).show()
-                } else {
-                    var excecao = ""
-
-                    try {
-                        throw task.exception!!
-                    } catch (e: Exception) {
-                        excecao = "Erro ao alterar os dados! " + e.message
-                        e.printStackTrace()
-                    }
-                    Toast.makeText(applicationContext, "$excecao", Toast.LENGTH_LONG).show()
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                // Quando o texto está sendo alterado
+                if (nomeAnterior.isNullOrEmpty() && !s.isNullOrEmpty()) {
+                    // Nome foi preenchido pela primeira vez ou o texto foi reescrito
+                    nomeAlterado = true
+                } else if (!nomeAnterior.isNullOrEmpty() && s.isNullOrEmpty()) {
+                    // Nome foi apagado
+                    nomeAlterado = false
                 }
             }
-        // Altera nome e foto
 
-        // Altera email
+            override fun afterTextChanged(s: Editable?) {
+                // Nada a fazer após a mudança
+            }
+        })
+    }
+
+    private fun configurarTextWatcherEmail() {
+        binding.emailUsuario.addTextChangedListener(object : TextWatcher {
+            private var nomeAnterior: CharSequence? = null
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                nomeAnterior = s?.toString() // Salva o texto anterior
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                // Quando o texto está sendo alterado
+                if (nomeAnterior.isNullOrEmpty() && !s.isNullOrEmpty()) {
+                    // Nome foi preenchido pela primeira vez ou o texto foi reescrito
+                    emailAlterado = true
+                } else if (!nomeAnterior.isNullOrEmpty() && s.isNullOrEmpty()) {
+                    // Nome foi apagado
+                    emailAlterado = false
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                // Nada a fazer após a mudança
+            }
+        })
+    }
+
+
+    private fun limparFoto() {
+        val placeholderImage = R.drawable.ic_perfil // Substitua 'seu_icone_padrao' pelo nome do seu recurso de imagem
+        binding.imagemUsuario.setImageResource(placeholderImage)
+        selectedImageUri = null
+        fotoAlterada = true
+    }
+
+    fun validarCampos() {
+        if (nomeAlterado || emailAlterado || fotoAlterada) {
+            if (nomeAlterado) {
+                alterarNome()
+            }
+            if (emailAlterado) {
+                alterarEmail()
+            }
+            if (fotoAlterada) {
+                alterarFoto()
+            }
+            recarregarApp()
+        } else {
+            Toast.makeText(applicationContext, "Nenhum campo foi alterado", Toast.LENGTH_LONG).show()
+        }
+    }
+
+    private fun recarregarApp() {
+        val i = Intent(this, SplashScreen::class.java)
+        startActivity(i)
+    }
+
+    private fun alterarEmail() {
         val email = binding.emailUsuario.text.toString()
         val usuarioAuth = autentificacao.currentUser
 
@@ -107,14 +155,99 @@ class EditarPerfil : AppCompatActivity() {
                     binding.msgErro.text = excecao
                 }
             }
-        // Altera email
-
-        // Limpar campos
-        binding.nomeUsuario.text.clear()
-        binding.emailUsuario.text.clear()
-        binding.imagemUsuario.setImageURI(null)
-        // Limpar campos
     }
+
+    private fun alterarNome() {
+        val novoNome = binding.nomeUsuario.text.toString()
+        val usuarioId = autentificacao.currentUser!!.uid
+
+        val usuarioMap = hashMapOf(
+            "nome" to novoNome
+        )
+
+        firestore.collection("Usuarios").document(usuarioId)
+            .update(usuarioMap as Map<String, Any>).addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(applicationContext, "Nome Alterado!", Toast.LENGTH_LONG).show()
+                } else {
+                    var excecao = ""
+
+                    try {
+                        throw task.exception!!
+                    } catch (e: Exception) {
+                        excecao = "Erro ao alterar o nome! " + e.message
+                        e.printStackTrace()
+                    }
+                    Toast.makeText(applicationContext, excecao, Toast.LENGTH_LONG).show()
+                }
+            }
+    }
+
+
+    private fun alterarFoto() {
+        val usuarioId = autentificacao.currentUser!!.uid
+
+        val usuarioMasp = hashMapOf(
+            "foto" to selectedImageUri
+        )
+
+        firestore.collection("Usuarios").document(usuarioId)
+            .update(usuarioMasp as Map<String, Any>).addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(applicationContext, "Foto Alterada!", Toast.LENGTH_LONG).show()
+                } else {
+                    var excecao = ""
+
+                    try {
+                        throw task.exception!!
+                    } catch (e: Exception) {
+                        excecao = "Erro ao alterar Foto! " + e.message
+                        e.printStackTrace()
+                    }
+                    Toast.makeText(applicationContext, "$excecao", Toast.LENGTH_LONG).show()
+                }
+            }
+    }
+
+//    private fun alterarDados() {
+//        // Altera nome e foto
+//        val nome = binding.nomeUsuario.text.toString()
+//        val usuarioId = autentificacao.currentUser!!.uid
+//
+//        val usuarioMasp = hashMapOf(
+//            "foto" to selectedImageUri,
+//            "nome" to nome
+//        )
+//
+//        firestore.collection("Usuarios").document(usuarioId)
+//            .update(usuarioMasp as Map<String, Any>).addOnCompleteListener(this) { task ->
+//                if (task.isSuccessful) {
+//                    Toast.makeText(applicationContext, "Nome e Foto Alterados!", Toast.LENGTH_LONG).show()
+//                    alterarEmail()
+//                } else {
+//                    var excecao = ""
+//
+//                    try {
+//                        throw task.exception!!
+//                    } catch (e: Exception) {
+//                        excecao = "Erro ao alterar os dados! " + e.message
+//                        e.printStackTrace()
+//                    }
+//                    Toast.makeText(applicationContext, "$excecao", Toast.LENGTH_LONG).show()
+//                }
+//            }
+//        // Altera nome e foto
+//
+//        // Limpar campos
+//        binding.nomeUsuario.text.clear()
+//        binding.emailUsuario.text.clear()
+//        binding.imagemUsuario.setImageURI(null)
+//        // Limpar campos
+//
+//        // Redefinir as variável de alteração
+//        fotoAlterada = false
+//    }
+
 
     private fun pickImage() {
         val i = Intent(Intent.ACTION_PICK)
@@ -129,6 +262,7 @@ class EditarPerfil : AppCompatActivity() {
                 if (data != null) {
                     selectedImageUri = data.data
                     binding.imagemUsuario.setImageURI(selectedImageUri)
+                    fotoAlterada = true
                 } else {
                     Toast.makeText(applicationContext, "Nenhuma imagem selecionada", Toast.LENGTH_LONG).show()
                 }

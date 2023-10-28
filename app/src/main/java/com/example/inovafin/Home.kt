@@ -96,6 +96,8 @@ class Home : AppCompatActivity() {
                         // Verifique se a foto do banco não é nula antes de carregar
                         if (!foto.isNullOrEmpty()) {
                             Glide.with(this).load(foto).into(binding.imagemUsuario)
+                        } else {
+                            binding.imagemUsuario.setImageURI(null)
                         }
                     }
                 }
