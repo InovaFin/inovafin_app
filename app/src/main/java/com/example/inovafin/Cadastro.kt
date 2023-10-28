@@ -82,8 +82,7 @@ class Cadastro : AppCompatActivity() {
 
                 salvaDados()
 
-                var i = Intent(this, Login::class.java)
-                startActivity(i)
+                verificarEmail()
             } else {
                 animacaoDeLoad.pararAnimacao()
 
@@ -103,7 +102,21 @@ class Cadastro : AppCompatActivity() {
                 }
 
                 Toast.makeText(applicationContext, "$excecao", Toast.LENGTH_LONG).show()
+            }
+        }
+    }
 
+    private fun verificarEmail() {
+        val usuarioAuth = autentificacao.currentUser
+
+        // Envia um email de verificação para o usuario
+        usuarioAuth!!.sendEmailVerification().addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                var i = Intent(this, EmailEnviado::class.java)
+                startActivity(i)
+            }
+            else {
+                Toast.makeText(applicationContext, "Erro ao enviar email de verificação", Toast.LENGTH_LONG).show()
             }
         }
     }

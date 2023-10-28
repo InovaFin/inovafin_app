@@ -40,6 +40,10 @@
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\layout\\activity_editar_perfil.xml"
     },
     {
+        "merged": "com.example.inovafin.app-merged_res-38:/layout_activity_email_enviado.xml.flat",
+        "source": "com.example.inovafin.app-main-40:/layout/activity_email_enviado.xml"
+    },
+    {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\mipmap-xxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
@@ -90,10 +94,6 @@
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\mipmap-xhdpi_ic_launcher_foreground.webp.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\mipmap-xhdpi\\ic_launcher_foreground.webp"
-    },
-    {
-        "merged": "com.example.inovafin.app-merged_res-38:/layout_activity_home.xml.flat",
-        "source": "com.example.inovafin.app-main-40:/layout/activity_home.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\xml_data_extraction_rules.xml.flat",
@@ -176,10 +176,6 @@
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\drawable\\ic_banco.xml"
     },
     {
-        "merged": "com.example.inovafin.app-merged_res-38:/layout_activity_editar_perfil.xml.flat",
-        "source": "com.example.inovafin.app-main-40:/layout/activity_editar_perfil.xml"
-    },
-    {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\drawable_ic_launcher_foreground.xml.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\drawable\\ic_launcher_foreground.xml"
     },
@@ -230,6 +226,10 @@
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\drawable_img_senha_enviada.png.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\drawable\\img_senha_enviada.png"
+    },
+    {
+        "merged": "com.example.inovafin.app-merged_res-38:/drawable_ic_email_enviado.xml.flat",
+        "source": "com.example.inovafin.app-main-40:/drawable/ic_email_enviado.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\font_roboto.xml.flat",

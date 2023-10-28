@@ -70,6 +70,7 @@ class Login : AppCompatActivity() {
     }
 
     private fun logarUsuario() {
+        val emailVerificado = autentificacao.currentUser!!.isEmailVerified
         val email = binding.emailUsuario.text.toString()
         val senha = binding.senhaUsuario.text.toString()
 
@@ -77,10 +78,16 @@ class Login : AppCompatActivity() {
             email, senha
         ).addOnCompleteListener(this) {task ->
             if (task.isSuccessful) {
-                animacaoDeLoad.pararAnimacao()
 
-                var i = Intent(this, Home::class.java)
-                startActivity(i)
+                // Verifica se o email foi verificado
+                if (emailVerificado){
+                    val i = Intent(this, Home::class.java)
+                    startActivity(i)
+                } else {
+                    Toast.makeText(applicationContext, "Verifique seu email para prosseguir", Toast.LENGTH_LONG).show()
+                }
+
+                animacaoDeLoad.pararAnimacao()
             } else {
                 animacaoDeLoad.pararAnimacao()
 

@@ -352,6 +352,7 @@
                 android:layout_height="50dp"
                 android:paddingHorizontal="17dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:clickable="true"
@@ -381,17 +382,6 @@
 
             </LinearLayout>
             <!--Botão Alterar Perfil-->
-
-            <!--Botão Sair-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:paddingTop="15dp"
-                android:paddingBottom="40dp"
-                android:background="@color/branco_background"
-                android:orientation="vertical"/>
-            <!--Botão Sair-->
 
         </LinearLayout>
 

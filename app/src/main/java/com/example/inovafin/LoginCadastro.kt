@@ -3,6 +3,7 @@ package com.example.inovafin
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.inovafin.Util.ConfiguraBd
 import com.example.inovafin.databinding.ActivityLoginCadastroBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -36,8 +37,11 @@ class LoginCadastro : AppCompatActivity() {
         super.onStart()
         val usuarioAuth = autentificacao.currentUser
         if (usuarioAuth != null) {
-            var i = Intent(this, Home::class.java)
-            startActivity(i)
+            // Verifica se o email foi verificado
+            if (usuarioAuth!!.isEmailVerified){
+                val i = Intent(this, Home::class.java)
+                startActivity(i)
+            }
         }
     }
 }

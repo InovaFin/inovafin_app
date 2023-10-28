@@ -3026,6 +3026,7 @@ drawable ic_clock_black_24dp
 drawable ic_config
 drawable ic_duvida
 drawable ic_editar
+drawable ic_email_enviado
 drawable ic_excluir
 drawable ic_expandir
 drawable ic_fechar
@@ -3816,6 +3817,7 @@ layout activity_cadastro
 layout activity_configuracoes
 layout activity_conta_escolhida
 layout activity_editar_perfil
+layout activity_email_enviado
 layout activity_esqueceu_senha
 layout activity_excluir_guardado
 layout activity_excluir_pagar

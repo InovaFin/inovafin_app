@@ -16,6 +16,9 @@
         android:theme="@style/Theme.InovaFin"
         tools:targetApi="31">
         <activity
+            android:name=".EmailEnviado"
+            android:exported="false" />
+        <activity
             android:name=".ContaEscolhida"
             android:exported="false" />
         <activity
@@ -77,8 +80,7 @@
             android:exported="false" />
         <activity
             android:name=".Home"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".EsqueceuSenha"
             android:exported="false" />

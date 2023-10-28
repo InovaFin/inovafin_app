@@ -3025,6 +3025,7 @@ int drawable ic_clock_black_24dp 0x7f0800b9
 int drawable ic_config 0x7f0800ba
 int drawable ic_duvida 0x7f0800bb
 int drawable ic_editar 0x7f0800bc
+int drawable ic_email_enviado 0x7f080124
 int drawable ic_excluir 0x7f0800bd
 int drawable ic_expandir 0x7f0800be
 int drawable ic_fechar 0x7f0800bf
@@ -3815,6 +3816,7 @@ int layout activity_cadastro 0x7f0d001e
 int layout activity_configuracoes 0x7f0d001f
 int layout activity_conta_escolhida 0x7f0d0020
 int layout activity_editar_perfil 0x7f0d0021
+int layout activity_email_enviado 0x7f0d008e
 int layout activity_esqueceu_senha 0x7f0d0022
 int layout activity_excluir_guardado 0x7f0d0023
 int layout activity_excluir_pagar 0x7f0d0024
