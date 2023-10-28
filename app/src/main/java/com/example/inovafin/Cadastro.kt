@@ -111,12 +111,15 @@ class Cadastro : AppCompatActivity() {
     private fun salvaDados() {
         val nome = binding.nomeUsuario.text.toString()
 
+        val usuarioId = autentificacao.currentUser!!.uid
+        val email = autentificacao.currentUser!!.email
+
         val usuarioMasp = hashMapOf(
             "foto" to "",
-            "nome" to nome
+            "nome" to nome,
+            "email" to email,
+            "usuarioID" to usuarioId
         )
-
-        val usuarioId = autentificacao.currentUser!!.uid
 
         firestore.collection("Usuarios").document(usuarioId)
             .set(usuarioMasp).addOnCompleteListener(this) {task ->

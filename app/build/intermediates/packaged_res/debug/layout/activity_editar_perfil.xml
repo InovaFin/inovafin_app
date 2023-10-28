@@ -226,22 +226,29 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/imagemUsuario"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
-                        app:shapeAppearance="@style/circular"
-                        android:elevation="5dp"
-                        android:scaleType="centerCrop"
-                        android:padding="5dp"
-                        android:background="@color/verde_secundario"
-                        android:src="@drawable/ic_perfil"/>
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/imagemUsuario"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:shapeAppearance="@style/circular"
+                            android:elevation="5dp"
+                            android:scaleType="centerCrop"
+                            android:padding="5dp"
+                            android:background="@color/verde_secundario"
+                            android:src="@drawable/ic_perfil"/>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 

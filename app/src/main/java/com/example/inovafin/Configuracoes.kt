@@ -78,7 +78,9 @@ class Configuracoes : AppCompatActivity() {
 
                         val foto = document.getString("foto")
                         // Verifique se a foto do banco não é nula antes de carregar
-                        Glide.with(this).load(foto).into(binding.imagemUsuario)
+                        if (!foto.isNullOrEmpty()) {
+                            Glide.with(this).load(foto).into(binding.imagemUsuario)
+                        }
                     }
                 }
         }
