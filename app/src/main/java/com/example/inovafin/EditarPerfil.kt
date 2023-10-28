@@ -10,11 +10,15 @@ import android.util.Log
 import android.view.textclassifier.TextLanguage
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.inovafin.Util.ConfiguraBd
 import com.example.inovafin.databinding.ActivityEditarPerfilBinding
+import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
+import com.google.firebase.auth.auth
 import com.google.firebase.firestore.FirebaseFirestore
 
 class EditarPerfil : AppCompatActivity() {
@@ -58,6 +62,41 @@ class EditarPerfil : AppCompatActivity() {
         binding.btExcluir.setOnClickListener {
             limparFoto()
         }
+
+        binding.btAlterarSenha.setOnClickListener {
+            dialogConfirmacao()
+        }
+    }
+    fun dialogConfirmacao() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Confirmação")
+        builder.setMessage("Você quer receber um email para alterar sua senha?")
+
+        builder.setPositiveButton("Sim") { dialog, which ->
+            // Usuário confirmou a saída
+            enviarSenha()
+        }
+
+        builder.setNegativeButton("Não") { dialog, which ->
+            // Usuário cancelou a saída
+        }
+
+        val dialog = builder.create()
+        dialog.show()
+    }
+
+    private fun enviarSenha() {
+        val user = autentificacao.currentUser
+        val newPassword = "1234567"
+
+        user!!.updatePassword(newPassword)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(applicationContext, "Senha alterada", Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(applicationContext, "Erro: ", Toast.LENGTH_LONG).show()
+                }
+            }
     }
 
     private fun configurarTextWatcherNome() {
@@ -110,7 +149,6 @@ class EditarPerfil : AppCompatActivity() {
         })
     }
 
-
     private fun limparFoto() {
         val placeholderImage = R.drawable.ic_perfil // Substitua 'seu_icone_padrao' pelo nome do seu recurso de imagem
         binding.imagemUsuario.setImageResource(placeholderImage)
@@ -144,18 +182,49 @@ class EditarPerfil : AppCompatActivity() {
         val email = binding.emailUsuario.text.toString()
         val usuarioAuth = autentificacao.currentUser
 
-        usuarioAuth!!.updateEmail("$email")
-            .addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    Toast.makeText(applicationContext, "Email alterado", Toast.LENGTH_LONG).show()
+        if (emailValido(email)) {
+            usuarioAuth!!.updateEmail(email)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        alterarEmailFirestore()
+                        Toast.makeText(applicationContext, "Email alterado", Toast.LENGTH_LONG).show()
+                    } else {
+                        val excecao = "Erro ao alterar o email: ${task.exception?.message}"
+                        Toast.makeText(applicationContext, excecao, Toast.LENGTH_LONG).show()
+                    }
                 }
-                else {
-                    val excecao = "Erro ao alterar o email: ${task.exception?.message}"
+        } else {
+            Toast.makeText(applicationContext, "Email inválido", Toast.LENGTH_LONG).show()
+        }
+    }
+
+    private fun alterarEmailFirestore() {
+        val email = binding.emailUsuario.text.toString()
+        val usuarioId = autentificacao.currentUser!!.uid
+
+        firestore.collection("Usuarios").document(usuarioId)
+            .update("email", email).addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(applicationContext, "Email Firestore alterado!", Toast.LENGTH_LONG).show()
+                } else {
+                    var excecao = ""
+
+                    try {
+                        throw task.exception!!
+                    } catch (e: Exception) {
+                        excecao = "Erro ao alterar email Firestore! " + e.message
+                        e.printStackTrace()
+                    }
                     Toast.makeText(applicationContext, excecao, Toast.LENGTH_LONG).show()
-                    binding.msgErro.text = excecao
                 }
             }
     }
+
+    private fun emailValido(email: String): Boolean {
+        val emailRegex = "^[A-Za-z](.*)([@]{1})(.{1,})(\\.)(.{1,})"
+        return email.matches(emailRegex.toRegex())
+    }
+
 
     private fun alterarNome() {
         val novoNome = binding.nomeUsuario.text.toString()
@@ -183,7 +252,6 @@ class EditarPerfil : AppCompatActivity() {
             }
     }
 
-
     private fun alterarFoto() {
         val usuarioId = autentificacao.currentUser!!.uid
 
@@ -208,46 +276,6 @@ class EditarPerfil : AppCompatActivity() {
                 }
             }
     }
-
-//    private fun alterarDados() {
-//        // Altera nome e foto
-//        val nome = binding.nomeUsuario.text.toString()
-//        val usuarioId = autentificacao.currentUser!!.uid
-//
-//        val usuarioMasp = hashMapOf(
-//            "foto" to selectedImageUri,
-//            "nome" to nome
-//        )
-//
-//        firestore.collection("Usuarios").document(usuarioId)
-//            .update(usuarioMasp as Map<String, Any>).addOnCompleteListener(this) { task ->
-//                if (task.isSuccessful) {
-//                    Toast.makeText(applicationContext, "Nome e Foto Alterados!", Toast.LENGTH_LONG).show()
-//                    alterarEmail()
-//                } else {
-//                    var excecao = ""
-//
-//                    try {
-//                        throw task.exception!!
-//                    } catch (e: Exception) {
-//                        excecao = "Erro ao alterar os dados! " + e.message
-//                        e.printStackTrace()
-//                    }
-//                    Toast.makeText(applicationContext, "$excecao", Toast.LENGTH_LONG).show()
-//                }
-//            }
-//        // Altera nome e foto
-//
-//        // Limpar campos
-//        binding.nomeUsuario.text.clear()
-//        binding.emailUsuario.text.clear()
-//        binding.imagemUsuario.setImageURI(null)
-//        // Limpar campos
-//
-//        // Redefinir as variável de alteração
-//        fotoAlterada = false
-//    }
-
 
     private fun pickImage() {
         val i = Intent(Intent.ACTION_PICK)
@@ -303,5 +331,4 @@ class EditarPerfil : AppCompatActivity() {
                 }
         }
     }
-
 }

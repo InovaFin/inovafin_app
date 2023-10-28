@@ -8,7 +8,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -30,6 +29,9 @@ public final class ActivityEditarPerfilBinding implements ViewBinding {
   public final LinearLayout btAlterarFoto;
 
   @NonNull
+  public final LinearLayout btAlterarSenha;
+
+  @NonNull
   public final LinearLayout btExcluir;
 
   @NonNull
@@ -42,24 +44,21 @@ public final class ActivityEditarPerfilBinding implements ViewBinding {
   public final ShapeableImageView imagemUsuario;
 
   @NonNull
-  public final TextView msgErro;
-
-  @NonNull
   public final EditText nomeUsuario;
 
   private ActivityEditarPerfilBinding(@NonNull ScrollView rootView,
       @NonNull LinearLayout btAlterarDados, @NonNull LinearLayout btAlterarFoto,
-      @NonNull LinearLayout btExcluir, @NonNull EditText emailUsuario, @NonNull ImageView icFechar,
-      @NonNull ShapeableImageView imagemUsuario, @NonNull TextView msgErro,
-      @NonNull EditText nomeUsuario) {
+      @NonNull LinearLayout btAlterarSenha, @NonNull LinearLayout btExcluir,
+      @NonNull EditText emailUsuario, @NonNull ImageView icFechar,
+      @NonNull ShapeableImageView imagemUsuario, @NonNull EditText nomeUsuario) {
     this.rootView = rootView;
     this.btAlterarDados = btAlterarDados;
     this.btAlterarFoto = btAlterarFoto;
+    this.btAlterarSenha = btAlterarSenha;
     this.btExcluir = btExcluir;
     this.emailUsuario = emailUsuario;
     this.icFechar = icFechar;
     this.imagemUsuario = imagemUsuario;
-    this.msgErro = msgErro;
     this.nomeUsuario = nomeUsuario;
   }
 
@@ -102,6 +101,12 @@ public final class ActivityEditarPerfilBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btAlterarSenha;
+      LinearLayout btAlterarSenha = ViewBindings.findChildViewById(rootView, id);
+      if (btAlterarSenha == null) {
+        break missingId;
+      }
+
       id = R.id.btExcluir;
       LinearLayout btExcluir = ViewBindings.findChildViewById(rootView, id);
       if (btExcluir == null) {
@@ -126,12 +131,6 @@ public final class ActivityEditarPerfilBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.msgErro;
-      TextView msgErro = ViewBindings.findChildViewById(rootView, id);
-      if (msgErro == null) {
-        break missingId;
-      }
-
       id = R.id.nomeUsuario;
       EditText nomeUsuario = ViewBindings.findChildViewById(rootView, id);
       if (nomeUsuario == null) {
@@ -139,7 +138,7 @@ public final class ActivityEditarPerfilBinding implements ViewBinding {
       }
 
       return new ActivityEditarPerfilBinding((ScrollView) rootView, btAlterarDados, btAlterarFoto,
-          btExcluir, emailUsuario, icFechar, imagemUsuario, msgErro, nomeUsuario);
+          btAlterarSenha, btExcluir, emailUsuario, icFechar, imagemUsuario, nomeUsuario);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

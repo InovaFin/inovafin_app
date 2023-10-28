@@ -79,6 +79,5 @@ class EsqueceuSenha : AppCompatActivity() {
                 Toast.makeText(applicationContext, "$excecao", Toast.LENGTH_LONG).show()
             }
         }
-
     }
 }

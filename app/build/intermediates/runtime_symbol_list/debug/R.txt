@@ -3044,7 +3044,9 @@ int drawable ic_notificacao 0x7f0800cc
 int drawable ic_perfil 0x7f0800cd
 int drawable ic_perfil_config 0x7f0800ce
 int drawable ic_sair 0x7f0800cf
+int drawable ic_salvar 0x7f080122
 int drawable ic_search_black_24 0x7f0800d0
+int drawable ic_senha 0x7f080123
 int drawable ic_voltar 0x7f0800d1
 int drawable img_logo 0x7f0800d2
 int drawable img_senha_enviada 0x7f0800d3
@@ -3244,6 +3246,7 @@ int id btAdicionar 0x7f0a006b
 int id btAjuda 0x7f0a006c
 int id btAlterarDados 0x7f0a006d
 int id btAlterarFoto 0x7f0a006e
+int id btAlterarSenha 0x7f0a0231
 int id btAnimacao 0x7f0a006f
 int id btCadastro 0x7f0a0070
 int id btCalculadora 0x7f0a0071
@@ -3460,7 +3463,6 @@ int id month_navigation_next 0x7f0a0144
 int id month_navigation_previous 0x7f0a0145
 int id month_title 0x7f0a0146
 int id motion_base 0x7f0a0147
-int id msgErro 0x7f0a0148
 int id mtrl_anchor_parent 0x7f0a0149
 int id mtrl_calendar_day_selector_frame 0x7f0a014a
 int id mtrl_calendar_days_of_week 0x7f0a014b

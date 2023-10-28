@@ -3045,7 +3045,9 @@ drawable ic_notificacao
 drawable ic_perfil
 drawable ic_perfil_config
 drawable ic_sair
+drawable ic_salvar
 drawable ic_search_black_24
+drawable ic_senha
 drawable ic_voltar
 drawable img_logo
 drawable img_senha_enviada
@@ -3245,6 +3247,7 @@ id btAdicionar
 id btAjuda
 id btAlterarDados
 id btAlterarFoto
+id btAlterarSenha
 id btAnimacao
 id btCadastro
 id btCalculadora
@@ -3461,7 +3464,6 @@ id month_navigation_next
 id month_navigation_previous
 id month_title
 id motion_base
-id msgErro
 id mtrl_anchor_parent
 id mtrl_calendar_day_selector_frame
 id mtrl_calendar_days_of_week

@@ -55,6 +55,8 @@ drawable ic_notificacao
 drawable ic_perfil
 drawable ic_perfil_config
 drawable ic_sair
+drawable ic_salvar
+drawable ic_senha
 drawable ic_voltar
 drawable img_logo
 drawable img_senha_enviada
@@ -73,6 +75,7 @@ id btAdicionar
 id btAjuda
 id btAlterarDados
 id btAlterarFoto
+id btAlterarSenha
 id btAnimacao
 id btCadastro
 id btCalculadora
@@ -104,7 +107,6 @@ id emailUsuario
 id icFechar
 id icVoltar
 id imagemUsuario
-id msgErro
 id nomeUsuario
 id saldoConta
 id senhaUsuario
