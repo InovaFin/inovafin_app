@@ -8,9 +8,10 @@
     android:background="@color/branco_background"
     tools:context=".MinhasContas">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -60,6 +61,7 @@
                 android:id="@+id/listaContas"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginBottom="150dp"
                 tools:listitem="@layout/conta_item"/>
 
 <!--            &lt;!&ndash;Minha Conta&ndash;&gt;-->
@@ -107,16 +109,13 @@
 
         </LinearLayout>
         
-    </ScrollView>
+    </LinearLayout>
 
     <!--Botão Editar e Adicionar-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="30dp"
         android:layout_alignParentBottom="true"
-        android:paddingBottom="30dp"
-
         android:orientation="vertical">
 
         <LinearLayout
@@ -125,7 +124,9 @@
             android:paddingHorizontal="17dp"
             android:gravity="center"
             android:orientation="horizontal"
+            android:layout_marginHorizontal="30dp"
             android:clickable="true"
+            android:elevation="3dp"
             android:background="@drawable/bg_botao_secundario_ripple">
 
             <LinearLayout
@@ -157,7 +158,10 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="15dp"
+            android:layout_marginBottom="30dp"
+            android:elevation="10dp"
             android:background="@drawable/bg_botao_ripple"
+            android:layout_marginHorizontal="30dp"
             android:clickable="true"
             android:gravity="center"
             android:orientation="horizontal"

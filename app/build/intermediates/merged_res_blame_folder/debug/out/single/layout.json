@@ -96,6 +96,10 @@
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\layout\\activity_configuracoes.xml"
     },
     {
+        "merged": "com.example.inovafin.app-mergeDebugResources-37:/layout/activity_editar_perfil.xml",
+        "source": "com.example.inovafin.app-main-40:/layout/activity_editar_perfil.xml"
+    },
+    {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-37:\\layout\\activity_home.xml",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\layout\\activity_home.xml"
     },
@@ -114,9 +118,5 @@
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-37:\\layout\\activity_cadastro.xml",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\layout\\activity_cadastro.xml"
-    },
-    {
-        "merged": "com.example.inovafin.app-mergeDebugResources-37:/layout/conta_item.xml",
-        "source": "com.example.inovafin.app-main-40:/layout/conta_item.xml"
     }
 ]

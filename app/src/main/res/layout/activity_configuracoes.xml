@@ -156,9 +156,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="30dp"
         android:layout_alignParentBottom="true"
-        android:paddingBottom="40dp"
         android:background="@color/branco_background"
         android:orientation="vertical">
 
@@ -167,7 +165,11 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:paddingHorizontal="17dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="5dp"
             android:gravity="center"
+            android:elevation="5dp"
             android:orientation="horizontal"
             android:clickable="true"
             android:background="@drawable/bg_botao_secundario_ripple">

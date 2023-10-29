@@ -152,10 +152,6 @@
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\drawable\\ic_editar.xml"
     },
     {
-        "merged": "com.example.inovafin.app-merged_res-38:/layout_conta_item.xml.flat",
-        "source": "com.example.inovafin.app-main-40:/layout/conta_item.xml"
-    },
-    {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\drawable_ic_calculadora_black.xml.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\drawable\\ic_calculadora_black.xml"
     },
@@ -182,6 +178,10 @@
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\drawable_ic_banco.xml.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\drawable\\ic_banco.xml"
+    },
+    {
+        "merged": "com.example.inovafin.app-merged_res-38:/layout_activity_editar_perfil.xml.flat",
+        "source": "com.example.inovafin.app-main-40:/layout/activity_editar_perfil.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\drawable_ic_launcher_foreground.xml.flat",

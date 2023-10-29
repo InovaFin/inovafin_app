@@ -174,6 +174,7 @@
                 android:paddingHorizontal="17dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
+                android:elevation="5dp"
                 android:clickable="true"
                 android:background="@drawable/bg_botao_secundario_ripple">
 
