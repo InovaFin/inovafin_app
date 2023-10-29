@@ -205,19 +205,39 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <ImageView
+                <LinearLayout
+                    android:id="@+id/btText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="7dp"
-                    android:src="@drawable/ic_add"/>
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Adicionar"
-                    android:textColor="@color/white"
-                    android:textSize="13sp"
-                    android:fontFamily="@font/roboto_bold"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="7dp"
+                        android:src="@drawable/ic_add"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Adicionar"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/roboto_bold"/>
+
+                </LinearLayout>
+
+                <!--Animação do Botão-->
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/btAnimacao"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:lottie_rawRes="@raw/load_white"
+                    android:visibility="gone"
+                    app:lottie_loop="true"
+                    app:lottie_autoPlay="false"/>
+                <!--Animação do Botão-->
 
             </LinearLayout>
 

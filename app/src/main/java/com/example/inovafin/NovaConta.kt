@@ -10,6 +10,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Toast
+import com.example.inovafin.Util.AnimacaoDeLoad
 import com.example.inovafin.Util.ConfiguraBd
 import com.example.inovafin.databinding.ActivityNovaContaBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -26,6 +27,8 @@ class NovaConta : AppCompatActivity() {
 
     private lateinit var firestore: FirebaseFirestore
 
+    private lateinit var animacaoDeLoad: AnimacaoDeLoad
+
     private var numberFormat = NumberFormat.getCurrencyInstance()
 
     private var nomeAlterado = false
@@ -41,6 +44,7 @@ class NovaConta : AppCompatActivity() {
 
         autentificacao = ConfiguraBd.Firebaseautentificacao()
         firestore = ConfiguraBd.Firebasefirestore()
+        animacaoDeLoad = AnimacaoDeLoad(binding.btAnimacao, binding.btText, this)
 
         configurarTextWatcherNome()
         configurarTextWatcherSaldo()
@@ -53,6 +57,7 @@ class NovaConta : AppCompatActivity() {
         }
 
         binding.btAdicionar.setOnClickListener {
+            animacaoDeLoad.iniciarAnimacao()
             validarCampos()
         }
     }
@@ -125,11 +130,7 @@ class NovaConta : AppCompatActivity() {
     private fun verificarSpinner() {
         val valorSpinner = binding.spinner.selectedItem
 
-        if (valorSpinner == "Selecione uma opção") {
-            instituicaoAlterada = false
-        } else {
-            instituicaoAlterada = true
-        }
+        instituicaoAlterada = valorSpinner != "Selecione uma opção"
     }
 
     private fun formatandoSaldo() {
@@ -184,12 +185,15 @@ class NovaConta : AppCompatActivity() {
                 if (instituicaoAlterada) {
                     adicionarConta()
                 } else {
+                    animacaoDeLoad.pararAnimacao()
                     Toast.makeText(applicationContext, "Selecione uma instituição", Toast.LENGTH_LONG).show()
                 }
             } else {
-                Toast.makeText(applicationContext, "Saldo inválido. O saldo deve ser maior que zero.", Toast.LENGTH_LONG).show()
+                animacaoDeLoad.pararAnimacao()
+                Toast.makeText(applicationContext, "O saldo deve ser maior que zero", Toast.LENGTH_LONG).show()
             }
         } else {
+            animacaoDeLoad.pararAnimacao()
             Toast.makeText(applicationContext, "Preencha todos os campos", Toast.LENGTH_LONG).show()
         }
     }
@@ -233,10 +237,12 @@ class NovaConta : AppCompatActivity() {
                             excecao = "Erro ao salvar conta" + e.message
                             e.printStackTrace()
                         }
+                        animacaoDeLoad.pararAnimacao()
                         Toast.makeText(applicationContext, "$excecao", Toast.LENGTH_LONG).show()
                     }
                 }
         } catch (e: Exception) {
+            animacaoDeLoad.pararAnimacao()
             Toast.makeText(applicationContext, "$e", Toast.LENGTH_LONG).show()
         }
     }

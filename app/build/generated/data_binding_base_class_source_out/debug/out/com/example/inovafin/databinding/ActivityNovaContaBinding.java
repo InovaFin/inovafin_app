@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.inovafin.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -23,6 +24,12 @@ public final class ActivityNovaContaBinding implements ViewBinding {
 
   @NonNull
   public final LinearLayout btAdicionar;
+
+  @NonNull
+  public final LottieAnimationView btAnimacao;
+
+  @NonNull
+  public final LinearLayout btText;
 
   @NonNull
   public final ImageView icFechar;
@@ -37,10 +44,13 @@ public final class ActivityNovaContaBinding implements ViewBinding {
   public final Spinner spinner;
 
   private ActivityNovaContaBinding(@NonNull LinearLayout rootView,
-      @NonNull LinearLayout btAdicionar, @NonNull ImageView icFechar, @NonNull EditText nomeConta,
+      @NonNull LinearLayout btAdicionar, @NonNull LottieAnimationView btAnimacao,
+      @NonNull LinearLayout btText, @NonNull ImageView icFechar, @NonNull EditText nomeConta,
       @NonNull EditText saldoAtual, @NonNull Spinner spinner) {
     this.rootView = rootView;
     this.btAdicionar = btAdicionar;
+    this.btAnimacao = btAnimacao;
+    this.btText = btText;
     this.icFechar = icFechar;
     this.nomeConta = nomeConta;
     this.saldoAtual = saldoAtual;
@@ -80,6 +90,18 @@ public final class ActivityNovaContaBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btAnimacao;
+      LottieAnimationView btAnimacao = ViewBindings.findChildViewById(rootView, id);
+      if (btAnimacao == null) {
+        break missingId;
+      }
+
+      id = R.id.btText;
+      LinearLayout btText = ViewBindings.findChildViewById(rootView, id);
+      if (btText == null) {
+        break missingId;
+      }
+
       id = R.id.icFechar;
       ImageView icFechar = ViewBindings.findChildViewById(rootView, id);
       if (icFechar == null) {
@@ -104,8 +126,8 @@ public final class ActivityNovaContaBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityNovaContaBinding((LinearLayout) rootView, btAdicionar, icFechar, nomeConta,
-          saldoAtual, spinner);
+      return new ActivityNovaContaBinding((LinearLayout) rootView, btAdicionar, btAnimacao, btText,
+          icFechar, nomeConta, saldoAtual, spinner);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
