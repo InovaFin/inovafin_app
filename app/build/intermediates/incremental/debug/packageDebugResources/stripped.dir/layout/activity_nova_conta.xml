@@ -71,7 +71,7 @@
 
             <!--Nome-->
             <EditText
-                android:id="@+id/nomeUsuario"
+                android:id="@+id/nomeConta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"

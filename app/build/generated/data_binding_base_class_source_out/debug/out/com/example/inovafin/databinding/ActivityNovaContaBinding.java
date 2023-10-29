@@ -33,7 +33,7 @@ public final class ActivityNovaContaBinding implements ViewBinding {
   public final TextView msgErro;
 
   @NonNull
-  public final EditText nomeUsuario;
+  public final EditText nomeConta;
 
   @NonNull
   public final EditText saldoAtual;
@@ -43,12 +43,12 @@ public final class ActivityNovaContaBinding implements ViewBinding {
 
   private ActivityNovaContaBinding(@NonNull ScrollView rootView,
       @NonNull LinearLayout btAlterarDados, @NonNull ImageView icFechar, @NonNull TextView msgErro,
-      @NonNull EditText nomeUsuario, @NonNull EditText saldoAtual, @NonNull Spinner spinner) {
+      @NonNull EditText nomeConta, @NonNull EditText saldoAtual, @NonNull Spinner spinner) {
     this.rootView = rootView;
     this.btAlterarDados = btAlterarDados;
     this.icFechar = icFechar;
     this.msgErro = msgErro;
-    this.nomeUsuario = nomeUsuario;
+    this.nomeConta = nomeConta;
     this.saldoAtual = saldoAtual;
     this.spinner = spinner;
   }
@@ -98,9 +98,9 @@ public final class ActivityNovaContaBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.nomeUsuario;
-      EditText nomeUsuario = ViewBindings.findChildViewById(rootView, id);
-      if (nomeUsuario == null) {
+      id = R.id.nomeConta;
+      EditText nomeConta = ViewBindings.findChildViewById(rootView, id);
+      if (nomeConta == null) {
         break missingId;
       }
 
@@ -117,7 +117,7 @@ public final class ActivityNovaContaBinding implements ViewBinding {
       }
 
       return new ActivityNovaContaBinding((ScrollView) rootView, btAlterarDados, icFechar, msgErro,
-          nomeUsuario, saldoAtual, spinner);
+          nomeConta, saldoAtual, spinner);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

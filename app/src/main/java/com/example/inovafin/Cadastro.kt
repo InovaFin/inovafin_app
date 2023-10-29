@@ -123,7 +123,6 @@ class Cadastro : AppCompatActivity() {
 
     private fun salvaDados() {
         val nome = binding.nomeUsuario.text.toString()
-
         val usuarioId = autentificacao.currentUser!!.uid
         val email = autentificacao.currentUser!!.email
 

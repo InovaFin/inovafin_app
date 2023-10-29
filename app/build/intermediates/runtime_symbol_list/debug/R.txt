@@ -3499,6 +3499,7 @@ int id neverCompleteToEnd 0x7f0a0166
 int id neverCompleteToStart 0x7f0a0167
 int id noScroll 0x7f0a0168
 int id noState 0x7f0a0169
+int id nomeConta 0x7f0a022b
 int id nomeUsuario 0x7f0a016a
 int id none 0x7f0a016b
 int id normal 0x7f0a016c

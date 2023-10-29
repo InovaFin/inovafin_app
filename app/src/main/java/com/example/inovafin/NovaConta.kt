@@ -4,10 +4,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Toast
+import com.example.inovafin.Util.ConfiguraBd
 import com.example.inovafin.databinding.ActivityNovaContaBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import java.math.BigDecimal
 import java.text.NumberFormat
 import java.util.Locale
@@ -16,9 +21,16 @@ class NovaConta : AppCompatActivity() {
 
     private lateinit var binding: ActivityNovaContaBinding
 
+    private lateinit var autentificacao: FirebaseAuth
+
+    private lateinit var firestore: FirebaseFirestore
+
     private var numberFormat = NumberFormat.getCurrencyInstance()
 
-    private var saldoAtual = 0.00
+    private var nomeAlterado = false
+    private var instituicaoAlterada = false
+    private var saldoAlterado = false
+    private var saldoAtualFinal: BigDecimal = BigDecimal.ZERO // Inicializa com zero
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,22 +38,96 @@ class NovaConta : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        autentificacao = ConfiguraBd.Firebaseautentificacao()
+        firestore = ConfiguraBd.Firebasefirestore()
+
+        configurarTextWatcherNome()
+        configurarTextWatcherSaldo()
+
+        spinnerInstituicoes()
+        verificarSpinner()
+        formatandoSaldo()
+
         binding.icFechar.setOnClickListener {
             onBackPressed()
         }
 
+        binding.btAlterarDados.setOnClickListener {
+            validarCampos()
+        }
+    }
+
+    private fun configurarTextWatcherNome() {
+        binding.nomeConta.addTextChangedListener(object : TextWatcher {
+            private var nomeAnterior: CharSequence? = null
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                nomeAnterior = s?.toString() // Salva o texto anterior
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                // Quando o texto está sendo alterado
+                if (nomeAnterior.isNullOrEmpty() && !s.isNullOrEmpty()) {
+                    // Nome foi preenchido pela primeira vez ou o texto foi reescrito
+                    nomeAlterado = true
+                } else if (!nomeAnterior.isNullOrEmpty() && s.isNullOrEmpty()) {
+                    // Nome foi apagado
+                    nomeAlterado = false
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                // Nada a fazer após a mudança
+            }
+        })
+    }
+
+    private fun configurarTextWatcherSaldo() {
+        binding.saldoAtual.addTextChangedListener(object : TextWatcher {
+            private var saldoAnterior: CharSequence? = null
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                saldoAnterior = s?.toString() // Salva o texto anterior
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                // Quando o texto está sendo alterado
+                if (saldoAnterior.isNullOrEmpty() && !s.isNullOrEmpty()) {
+                    // Saldo foi preenchido pela primeira vez ou o texto foi reescrito
+                    saldoAlterado = true
+                } else if (!saldoAnterior.isNullOrEmpty() && s.isNullOrEmpty()) {
+                    // Saldo foi apagado
+                    saldoAlterado = false
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                // Nada a fazer após a mudança
+            }
+        })
+    }
+
+    private fun spinnerInstituicoes() {
         // Criando o array com opções
         val spinnerOP = listOf(
-            "Banco do Brasil", "Banco Inter", "Banco Safra", "Bradesco", "BTG Pactual",
+            "Selecione uma opção", "Banco do Brasil", "Banco Inter", "Banco Safra", "Bradesco", "BTG Pactual",
             "Caixa", "C6 Bank", "Itaú", "Mercado Pago", "Nubank", "PagBank", "PicPay",
-            "Santander", "Sicoob"
+            "Santander", "Sicoob", "Outro"
         )
 
         // Criando um adapter para o spinner
         val adapter = ArrayAdapter(this, R.layout.item_spinner_layout, spinnerOP)
 
         binding.spinner.adapter = adapter
+    }
 
+    private fun verificarSpinner() {
+        val valorSpinner = binding.spinner.selectedItem
+
+        instituicaoAlterada = valorSpinner != "Selecione uma opção"
+    }
+
+    private fun formatandoSaldo() {
         val editTextMonetario = binding.saldoAtual
 
         // Defina o texto inicial como "R$ "
@@ -52,13 +138,6 @@ class NovaConta : AppCompatActivity() {
 
         // Adicionando o MoneyTextWatcher ao Saldo Atual
         editTextMonetario.addTextChangedListener(MoneyTextWatcher(editTextMonetario))
-
-        binding.btAlterarDados.setOnClickListener {
-            validarCampos()
-            // Exibir o saldo atual no TextView ou realizar outras ações aqui
-            val saldoAtual = editTextMonetario.text.toString()
-            Toast.makeText(applicationContext, "Saldo atual: $saldoAtual", Toast.LENGTH_LONG).show()
-        }
     }
 
     inner class MoneyTextWatcher(private val editText: EditText) : TextWatcher {
@@ -83,7 +162,7 @@ class NovaConta : AppCompatActivity() {
             editText.addTextChangedListener(this)
         }
         override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            // Não é necessário implementar
+
         }
 
         override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
@@ -93,12 +172,55 @@ class NovaConta : AppCompatActivity() {
     }
 
     private fun validarCampos() {
-        if () {
+        verificarSaldo()
+        if (nomeAlterado || instituicaoAlterada || saldoAlterado) {
             adicionarConta()
+        } else {
+            Toast.makeText(applicationContext, "Preencha todos os campos", Toast.LENGTH_LONG).show()
         }
     }
 
+    private fun verificarSaldo() {
+        val saldoAtual = binding.saldoAtual.text.toString()
+
+        // Remova o símbolo da moeda, nesse caso "R$ "
+        val saldoSemSimbolo = saldoAtual.replace(NumberFormat.getCurrencyInstance().currency.symbol, "")
+
+        // Remova todos os caracteres que não são dígitos (0-9), incluindo pontos e vírgulas
+        val saldoSemFormatacao = saldoSemSimbolo.replace(Regex("[^\\d]"), "")
+
+        // Converta a string resultante em um valor BigDecimal e divida por 100
+        val saldoBigDecimal = saldoSemFormatacao.toBigDecimal().divide(BigDecimal(100))
+
+        saldoAtualFinal = saldoBigDecimal
+    }
+
     private fun adicionarConta() {
-        TODO("Not yet implemented")
+        val usuarioId = autentificacao.currentUser!!.uid
+        val nome = binding.nomeConta.text.toString()
+        val instituicao = binding.spinner.selectedItem
+
+        val usuarioMasp = hashMapOf(
+            "nome" to nome,
+            "instituicao" to instituicao,
+            "saldo" to saldoAtualFinal
+        )
+
+        firestore.collection("Usuarios").document(usuarioId)
+            .set(usuarioMasp).addOnCompleteListener(this) {task ->
+                if (task.isSuccessful) {
+
+                } else {
+                    var excecao = ""
+
+                    try {
+                        throw task.exception!!
+                    } catch (e: Exception) {
+                        excecao = "Erro ao salvar os dados! " + e.message
+                        e.printStackTrace()
+                    }
+                    Toast.makeText(applicationContext, "$excecao", Toast.LENGTH_LONG).show()
+                }
+            }
     }
 }
