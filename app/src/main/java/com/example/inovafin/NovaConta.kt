@@ -1,5 +1,6 @@
 package com.example.inovafin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -30,7 +31,7 @@ class NovaConta : AppCompatActivity() {
     private var nomeAlterado = false
     private var instituicaoAlterada = false
     private var saldoAlterado = false
-    private var saldoAtualFinal: BigDecimal = BigDecimal.ZERO // Inicializa com zero
+    private var saldoAtualFinal: Double = 0.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,14 +46,13 @@ class NovaConta : AppCompatActivity() {
         configurarTextWatcherSaldo()
 
         spinnerInstituicoes()
-        verificarSpinner()
         formatandoSaldo()
 
         binding.icFechar.setOnClickListener {
             onBackPressed()
         }
 
-        binding.btAlterarDados.setOnClickListener {
+        binding.btAdicionar.setOnClickListener {
             validarCampos()
         }
     }
@@ -94,7 +94,8 @@ class NovaConta : AppCompatActivity() {
                 // Quando o texto está sendo alterado
                 if (saldoAnterior.isNullOrEmpty() && !s.isNullOrEmpty()) {
                     // Saldo foi preenchido pela primeira vez ou o texto foi reescrito
-                    saldoAlterado = true
+                    val saldo = binding.saldoAtual.text
+                    saldoAlterado = saldo.toString() != "R$ 0,00"
                 } else if (!saldoAnterior.isNullOrEmpty() && s.isNullOrEmpty()) {
                     // Saldo foi apagado
                     saldoAlterado = false
@@ -124,7 +125,11 @@ class NovaConta : AppCompatActivity() {
     private fun verificarSpinner() {
         val valorSpinner = binding.spinner.selectedItem
 
-        instituicaoAlterada = valorSpinner != "Selecione uma opção"
+        if (valorSpinner == "Selecione uma opção") {
+            instituicaoAlterada = false
+        } else {
+            instituicaoAlterada = true
+        }
     }
 
     private fun formatandoSaldo() {
@@ -173,8 +178,17 @@ class NovaConta : AppCompatActivity() {
 
     private fun validarCampos() {
         verificarSaldo()
-        if (nomeAlterado || instituicaoAlterada || saldoAlterado) {
-            adicionarConta()
+        verificarSpinner()
+        if (nomeAlterado || saldoAlterado) {
+            if (saldoAtualFinal > 0.0) {
+                if (instituicaoAlterada) {
+                    adicionarConta()
+                } else {
+                    Toast.makeText(applicationContext, "Selecione uma instituição", Toast.LENGTH_LONG).show()
+                }
+            } else {
+                Toast.makeText(applicationContext, "Saldo inválido. O saldo deve ser maior que zero.", Toast.LENGTH_LONG).show()
+            }
         } else {
             Toast.makeText(applicationContext, "Preencha todos os campos", Toast.LENGTH_LONG).show()
         }
@@ -189,10 +203,7 @@ class NovaConta : AppCompatActivity() {
         // Remova todos os caracteres que não são dígitos (0-9), incluindo pontos e vírgulas
         val saldoSemFormatacao = saldoSemSimbolo.replace(Regex("[^\\d]"), "")
 
-        // Converta a string resultante em um valor BigDecimal e divida por 100
-        val saldoBigDecimal = saldoSemFormatacao.toBigDecimal().divide(BigDecimal(100))
-
-        saldoAtualFinal = saldoBigDecimal
+        saldoAtualFinal = saldoSemFormatacao.toDouble() / 100.0
     }
 
     private fun adicionarConta() {
@@ -206,21 +217,27 @@ class NovaConta : AppCompatActivity() {
             "saldo" to saldoAtualFinal
         )
 
-        firestore.collection("Usuarios").document(usuarioId)
-            .set(usuarioMasp).addOnCompleteListener(this) {task ->
-                if (task.isSuccessful) {
+        try {
+            firestore.collection("Usuarios").document(usuarioId)
+                .collection("ContasBancarias").document()
+                .set(usuarioMasp).addOnCompleteListener(this) {task ->
+                    if (task.isSuccessful) {
+                        val i = Intent(this, MinhasContas::class.java)
+                        startActivity(i)
+                    } else {
+                        var excecao = ""
 
-                } else {
-                    var excecao = ""
-
-                    try {
-                        throw task.exception!!
-                    } catch (e: Exception) {
-                        excecao = "Erro ao salvar os dados! " + e.message
-                        e.printStackTrace()
+                        try {
+                            throw task.exception!!
+                        } catch (e: Exception) {
+                            excecao = "Erro ao salvar conta" + e.message
+                            e.printStackTrace()
+                        }
+                        Toast.makeText(applicationContext, "$excecao", Toast.LENGTH_LONG).show()
                     }
-                    Toast.makeText(applicationContext, "$excecao", Toast.LENGTH_LONG).show()
                 }
-            }
+        } catch (e: Exception) {
+            Toast.makeText(applicationContext, "$e", Toast.LENGTH_LONG).show()
+        }
     }
 }

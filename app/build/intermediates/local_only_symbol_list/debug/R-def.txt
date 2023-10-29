@@ -106,7 +106,6 @@ id emailUsuario
 id icFechar
 id icVoltar
 id imagemUsuario
-id msgErro
 id nomeConta
 id nomeUsuario
 id novaSenha

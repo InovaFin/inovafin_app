@@ -1,194 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/branco_background"
+    android:orientation="vertical"
     tools:context=".NovaConta">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <!--Header-->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:layout_marginBottom="40dp"
-            android:paddingHorizontal="30dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:gravity="center_vertical"
-                android:orientation="vertical">
-
-                <!--Botão Voltar-->
-                <ImageView
-                    android:id="@+id/icFechar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_fechar"/>
-                <!--Botão Voltar-->
-
-            </LinearLayout>
-
-            <!--Título-->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:text="Nova Conta"
-                android:textSize="24sp"
-                android:fontFamily="@font/roboto_medium"
-                android:textColor="@color/black"/>
-            <!--Título-->
-
-        </RelativeLayout>
-        <!--Header-->
-
-        <!--Nome da Conta-->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="30dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nome da Conta"
-                android:textColor="@color/black"
-                android:layout_marginBottom="10dp"
-                android:textSize="15sp"
-                android:fontFamily="@font/roboto_medium"/>
-
-            <!--Nome-->
-            <EditText
-                android:id="@+id/nomeConta"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="text"
-                android:hint="Ex. Conta Principal"
-                android:paddingVertical="15dp"
-                android:paddingHorizontal="10dp"
-                android:textColorHint="@color/black_terciario"
-                android:layout_marginBottom="15dp"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:background="@drawable/bg_edittext_secundario"
-                android:textCursorDrawable="@drawable/custom_cursor"
-                android:fontFamily="@font/roboto"/>
-            <!--Nome-->
-
-        </LinearLayout>
-        <!--Nome da Conta-->
-
-        <!--Instituição bancária-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="30dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Instituição Bancária"
-                android:layout_weight="1"
-                android:layout_marginBottom="10dp"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:fontFamily="@font/roboto_medium"/>
-
+            <!--Header-->
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp"
+                android:paddingHorizontal="30dp">
 
-                <Spinner
-                    android:id="@+id/spinner"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_edittext_secundario"
-                    android:paddingHorizontal="3dp"
-                    android:paddingVertical="3dp"
-                    tools:ignore="TouchTargetSizeCheck" />
+                    android:layout_height="35dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
 
-                <ImageView
+                    <!--Botão Voltar-->
+                    <ImageView
+                        android:id="@+id/icFechar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_fechar"/>
+                    <!--Botão Voltar-->
+
+                </LinearLayout>
+
+                <!--Título-->
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/ic_expandir" />
+                    android:text="Nova Conta"
+                    android:textSize="24sp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/black"/>
+                <!--Título-->
 
             </RelativeLayout>
+            <!--Header-->
 
-        </LinearLayout>
-        <!--Instituição bancária-->
-
-        <!--Saldo Atual-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="30dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Saldo Atual"
-                android:textColor="@color/black"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="15dp"
-                android:textSize="15sp"
-                android:fontFamily="@font/roboto_medium"/>
-
-            <EditText
-                android:id="@+id/saldoAtual"
+            <!--Nome da Conta-->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal"
-                android:hint="Saldo da Conta"
-                android:paddingVertical="15dp"
-                android:paddingHorizontal="10dp"
-                android:textColorHint="@color/black_terciario"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:background="@drawable/bg_edittext_secundario"
-                android:textCursorDrawable="@drawable/custom_cursor"
-                android:fontFamily="@font/roboto"/>
+                android:layout_marginHorizontal="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nome da Conta"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/roboto_medium"/>
+
+                <!--Nome-->
+                <EditText
+                    android:id="@+id/nomeConta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:hint="Ex. Conta Principal"
+                    android:paddingVertical="15dp"
+                    android:paddingHorizontal="10dp"
+                    android:textColorHint="@color/black_terciario"
+                    android:layout_marginBottom="15dp"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:background="@drawable/bg_edittext_secundario"
+                    android:textCursorDrawable="@drawable/custom_cursor"
+                    android:fontFamily="@font/roboto"/>
+                <!--Nome-->
+
+            </LinearLayout>
+            <!--Nome da Conta-->
+
+            <!--Instituição bancária-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Instituição Bancária"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/roboto_medium"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Spinner
+                        android:id="@+id/spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_edittext_secundario"
+                        android:paddingHorizontal="3dp"
+                        android:paddingVertical="3dp"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_expandir" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+            <!--Instituição bancária-->
+
+            <!--Saldo Atual-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Saldo Atual"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="15dp"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/roboto_medium"/>
+
+                <EditText
+                    android:id="@+id/saldoAtual"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:hint="Saldo da Conta"
+                    android:paddingVertical="15dp"
+                    android:paddingHorizontal="10dp"
+                    android:layout_marginBottom="100dp"
+                    android:textColorHint="@color/black_terciario"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:background="@drawable/bg_edittext_secundario"
+                    android:textCursorDrawable="@drawable/custom_cursor"
+                    android:fontFamily="@font/roboto"/>
+
+            </LinearLayout>
+            <!--Saldo Atual-->
 
         </LinearLayout>
-        <!--Saldo Atual-->
 
-        <TextView
-            android:id="@+id/msgErro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Saldo Atual"
-            android:textColor="@color/black"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="15dp"
-            android:textSize="15sp"
-            android:fontFamily="@font/roboto_medium"/>
+    </ScrollView>
 
-        <!--Botão Alterar Perfil-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp">
+
+        <!--Botão Adicionar-->
         <LinearLayout
-            android:id="@+id/btAlterarDados"
+            android:id="@+id/btAdicionar"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:visibility="visible"
             android:paddingHorizontal="17dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_alignParentBottom="true"
             android:gravity="center"
             android:orientation="horizontal"
             android:clickable="true"
@@ -203,13 +208,13 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/ic_salvar"/>
+                    android:layout_marginEnd="7dp"
+                    android:src="@drawable/ic_add"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Salvar"
+                    android:text="Adicionar"
                     android:textColor="@color/white"
                     android:textSize="13sp"
                     android:fontFamily="@font/roboto_bold"/>
@@ -217,8 +222,8 @@
             </LinearLayout>
 
         </LinearLayout>
-        <!--Botão Alterar Perfil-->
+        <!--Botão Adicionar-->
 
-    </LinearLayout>
+    </RelativeLayout>
 
-</ScrollView>
+</LinearLayout>

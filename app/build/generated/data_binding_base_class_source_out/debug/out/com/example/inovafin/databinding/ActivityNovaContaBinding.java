@@ -7,9 +7,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -21,16 +19,13 @@ import java.lang.String;
 
 public final class ActivityNovaContaBinding implements ViewBinding {
   @NonNull
-  private final ScrollView rootView;
+  private final LinearLayout rootView;
 
   @NonNull
-  public final LinearLayout btAlterarDados;
+  public final LinearLayout btAdicionar;
 
   @NonNull
   public final ImageView icFechar;
-
-  @NonNull
-  public final TextView msgErro;
 
   @NonNull
   public final EditText nomeConta;
@@ -41,13 +36,12 @@ public final class ActivityNovaContaBinding implements ViewBinding {
   @NonNull
   public final Spinner spinner;
 
-  private ActivityNovaContaBinding(@NonNull ScrollView rootView,
-      @NonNull LinearLayout btAlterarDados, @NonNull ImageView icFechar, @NonNull TextView msgErro,
-      @NonNull EditText nomeConta, @NonNull EditText saldoAtual, @NonNull Spinner spinner) {
+  private ActivityNovaContaBinding(@NonNull LinearLayout rootView,
+      @NonNull LinearLayout btAdicionar, @NonNull ImageView icFechar, @NonNull EditText nomeConta,
+      @NonNull EditText saldoAtual, @NonNull Spinner spinner) {
     this.rootView = rootView;
-    this.btAlterarDados = btAlterarDados;
+    this.btAdicionar = btAdicionar;
     this.icFechar = icFechar;
-    this.msgErro = msgErro;
     this.nomeConta = nomeConta;
     this.saldoAtual = saldoAtual;
     this.spinner = spinner;
@@ -55,7 +49,7 @@ public final class ActivityNovaContaBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public ScrollView getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -80,21 +74,15 @@ public final class ActivityNovaContaBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btAlterarDados;
-      LinearLayout btAlterarDados = ViewBindings.findChildViewById(rootView, id);
-      if (btAlterarDados == null) {
+      id = R.id.btAdicionar;
+      LinearLayout btAdicionar = ViewBindings.findChildViewById(rootView, id);
+      if (btAdicionar == null) {
         break missingId;
       }
 
       id = R.id.icFechar;
       ImageView icFechar = ViewBindings.findChildViewById(rootView, id);
       if (icFechar == null) {
-        break missingId;
-      }
-
-      id = R.id.msgErro;
-      TextView msgErro = ViewBindings.findChildViewById(rootView, id);
-      if (msgErro == null) {
         break missingId;
       }
 
@@ -116,8 +104,8 @@ public final class ActivityNovaContaBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityNovaContaBinding((ScrollView) rootView, btAlterarDados, icFechar, msgErro,
-          nomeConta, saldoAtual, spinner);
+      return new ActivityNovaContaBinding((LinearLayout) rootView, btAdicionar, icFechar, nomeConta,
+          saldoAtual, spinner);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

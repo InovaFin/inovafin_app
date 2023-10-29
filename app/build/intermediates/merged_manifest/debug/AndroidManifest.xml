@@ -41,12 +41,8 @@
             android:exported="false" />
         <activity
             android:name="com.example.inovafin.NovaConta"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" >
         </activity>
         <activity
             android:name="com.example.inovafin.ExcluirPagar"
@@ -119,7 +115,12 @@
             android:exported="false" />
         <activity
             android:name="com.example.inovafin.SplashScreen"
-            android:exported="false" >
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <meta-data
