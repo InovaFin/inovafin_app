@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/branco_background"
     tools:context=".NovaConta">
 
     <LinearLayout
@@ -11,111 +12,369 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/btnConcluir"
-            android:layout_width="328dp"
-            android:layout_height="49dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="180dp"
-            android:layout_marginEnd="40dp"
-            android:background="@drawable/bg_botao_ripple"
-            android:clickable="true"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingHorizontal="17dp">
+        <!--Header-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="40dp"
+            android:paddingHorizontal="30dp">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
 
-                <TextView
+                <!--Botão Voltar-->
+                <ImageView
+                    android:id="@+id/icFechar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="Concluir"
-                    android:textColor="@color/white"
-                    android:textSize="13sp" />
+                    android:src="@drawable/ic_fechar"/>
+                <!--Botão Voltar-->
 
             </LinearLayout>
 
+            <!--Título-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:text="Nova Conta"
+                android:textSize="24sp"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/black"/>
+            <!--Título-->
+
+        </RelativeLayout>
+        <!--Header-->
+
+        <!--Nome da Conta-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nome da Conta"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"
+                android:textSize="15sp"
+                android:fontFamily="@font/roboto_medium"/>
+
+            <!--Nome-->
+            <EditText
+                android:id="@+id/nomeUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                android:hint="Ex. Conta Principal"
+                android:paddingVertical="15dp"
+                android:paddingHorizontal="10dp"
+                android:textColorHint="@color/black_terciario"
+                android:layout_marginBottom="15dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:background="@drawable/bg_edittext_secundario"
+                android:textCursorDrawable="@drawable/custom_cursor"
+                android:fontFamily="@font/roboto"/>
+            <!--Nome-->
+
         </LinearLayout>
+        <!--Nome da Conta-->
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
+        <!--Instituição bancária-->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="140dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="140dp"
-            android:fontFamily="@font/roboto"
-            android:text="Nova Conta"
-            android:textSize="30dp"
-            android:textStyle="bold" />
+            android:layout_marginHorizontal="30dp"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Instituição Bancária"
+                android:layout_weight="1"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:fontFamily="@font/roboto_medium"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edittext_secundario"
+                    android:paddingVertical="3dp"
+                    android:paddingHorizontal="3dp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/ic_expandir" />
+
+            </RelativeLayout>
+
+            <!--Email-->
+
+
+            <!--Email-->
+
+        </LinearLayout>
+        <!--Instituição bancária-->
+
+        <!--Senha-->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="41dp"
-            android:layout_marginTop="150dp"
-            android:layout_marginEnd="283dp"
-            android:fontFamily="@font/roboto"
-            android:text="Nome*"
-            android:textStyle="bold" />
+            android:layout_marginHorizontal="30dp"
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/contaEditText"
-            android:layout_width="328dp"
-            android:layout_height="62dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="40dp"
-            android:ems="10"
-            android:hint="Conta Principal"
-            android:inputType="text" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Senha Atual"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"
+                android:textSize="15sp"
+                android:fontFamily="@font/roboto_medium"/>
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
+            <!--Nova Senha-->
+            <EditText
+                android:id="@+id/senhaUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:text=""
+                android:hint="Confirme sua senha"
+                android:inputType="textPassword"
+                android:paddingVertical="15dp"
+                android:paddingHorizontal="10dp"
+                android:textColorHint="@color/black_terciario"
+                android:layout_marginBottom="15dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:background="@drawable/bg_edittext_secundario"
+                android:textCursorDrawable="@drawable/custom_cursor"
+                android:fontFamily="@font/roboto"/>
+            <!--Nova Senha-->
+
+        </LinearLayout>
+        <!--Senha-->
+
+        <!--ConfirmSenha-->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="27dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="286dp"
-            android:fontFamily="@font/roboto"
-            android:text="Instituição"
-            android:textStyle="bold"/>
+            android:layout_marginHorizontal="30dp"
+            android:orientation="vertical">
 
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="328dp"
-            android:layout_height="62dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="40dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nova Senha"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"
+                android:textSize="15sp"
+                android:fontFamily="@font/roboto_medium"/>
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
+            <!--Email-->
+            <EditText
+                android:id="@+id/novaSenha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:paddingVertical="15dp"
+                android:hint="Digite a nova senha"
+                android:paddingHorizontal="10dp"
+                android:textColorHint="@color/black_terciario"
+                android:layout_marginBottom="15dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:background="@drawable/bg_edittext_secundario"
+                android:textCursorDrawable="@drawable/custom_cursor"
+                android:fontFamily="@font/roboto"/>
+            <!--Email-->
+
+        </LinearLayout>
+        <!--ConfirmSenha-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="284dp"
-            android:fontFamily="@font/roboto"
-            android:text="Saldo da conta*"
-            android:textStyle="bold" />
+            android:layout_marginHorizontal="30dp"
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/saldoConta"
-            android:layout_width="328dp"
-            android:layout_height="62dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="40dp"
-            android:ems="10"
-            android:inputType="numberDecimal"
-            android:hint="4.000,00" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Foto"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"
+                android:textSize="15sp"
+                android:fontFamily="@font/roboto_medium"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/imagemUsuario"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:shapeAppearance="@style/circular"
+                            android:elevation="5dp"
+                            android:scaleType="centerCrop"
+                            android:padding="5dp"
+                            android:background="@color/verde_secundario"
+                            android:src="@drawable/ic_perfil"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="120dp"
+                    android:paddingHorizontal="10dp"
+                    android:gravity="center|end"
+                    android:orientation="vertical">
+
+                    <!--Botão Alterar-->
+                    <LinearLayout
+                        android:id="@+id/btAlterarFoto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:paddingVertical="10dp"
+                        android:paddingHorizontal="14dp"
+                        android:elevation="2dp"
+                        android:clickable="true"
+                        android:background="@drawable/bg_botao_secundario_ripple">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/ic_foto"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Alterar Foto"
+                            android:textColor="@color/black_secundario"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/roboto_medium"/>
+
+                    </LinearLayout>
+                    <!--Botão Alterar-->
+
+                    <!--Botão Excluir-->
+                    <LinearLayout
+                        android:id="@+id/btExcluir"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:paddingVertical="10dp"
+                        android:paddingHorizontal="14dp"
+                        android:elevation="2dp"
+                        android:clickable="true"
+                        android:background="@drawable/bg_botao_secundario_ripple">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/ic_excluir"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Excluir Foto"
+                            android:textColor="@color/black_secundario"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/roboto_medium"/>
+
+                    </LinearLayout>
+                    <!--Botão Excluir-->
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--Botão Alterar Perfil-->
+            <LinearLayout
+                android:id="@+id/btAlterarDados"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingHorizontal="17dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:background="@drawable/bg_botao_ripple">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_salvar"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Salvar"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/roboto_bold"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <!--Botão Alterar Perfil-->
+
+        </LinearLayout>
 
     </LinearLayout>
 

@@ -5,15 +5,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.inovafin.R;
+import com.google.android.material.imageview.ShapeableImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -23,42 +24,47 @@ public final class ActivityNovaContaBinding implements ViewBinding {
   private final ScrollView rootView;
 
   @NonNull
-  public final LinearLayout btnConcluir;
+  public final LinearLayout btAlterarDados;
 
   @NonNull
-  public final EditText contaEditText;
+  public final LinearLayout btAlterarFoto;
 
   @NonNull
-  public final EditText saldoConta;
+  public final LinearLayout btExcluir;
+
+  @NonNull
+  public final ImageView icFechar;
+
+  @NonNull
+  public final ShapeableImageView imagemUsuario;
+
+  @NonNull
+  public final EditText nomeUsuario;
+
+  @NonNull
+  public final EditText novaSenha;
+
+  @NonNull
+  public final EditText senhaUsuario;
 
   @NonNull
   public final Spinner spinner;
 
-  @NonNull
-  public final TextView textView;
-
-  @NonNull
-  public final TextView textView2;
-
-  @NonNull
-  public final TextView textView3;
-
-  @NonNull
-  public final TextView textView4;
-
-  private ActivityNovaContaBinding(@NonNull ScrollView rootView, @NonNull LinearLayout btnConcluir,
-      @NonNull EditText contaEditText, @NonNull EditText saldoConta, @NonNull Spinner spinner,
-      @NonNull TextView textView, @NonNull TextView textView2, @NonNull TextView textView3,
-      @NonNull TextView textView4) {
+  private ActivityNovaContaBinding(@NonNull ScrollView rootView,
+      @NonNull LinearLayout btAlterarDados, @NonNull LinearLayout btAlterarFoto,
+      @NonNull LinearLayout btExcluir, @NonNull ImageView icFechar,
+      @NonNull ShapeableImageView imagemUsuario, @NonNull EditText nomeUsuario,
+      @NonNull EditText novaSenha, @NonNull EditText senhaUsuario, @NonNull Spinner spinner) {
     this.rootView = rootView;
-    this.btnConcluir = btnConcluir;
-    this.contaEditText = contaEditText;
-    this.saldoConta = saldoConta;
+    this.btAlterarDados = btAlterarDados;
+    this.btAlterarFoto = btAlterarFoto;
+    this.btExcluir = btExcluir;
+    this.icFechar = icFechar;
+    this.imagemUsuario = imagemUsuario;
+    this.nomeUsuario = nomeUsuario;
+    this.novaSenha = novaSenha;
+    this.senhaUsuario = senhaUsuario;
     this.spinner = spinner;
-    this.textView = textView;
-    this.textView2 = textView2;
-    this.textView3 = textView3;
-    this.textView4 = textView4;
   }
 
   @Override
@@ -88,21 +94,51 @@ public final class ActivityNovaContaBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btnConcluir;
-      LinearLayout btnConcluir = ViewBindings.findChildViewById(rootView, id);
-      if (btnConcluir == null) {
+      id = R.id.btAlterarDados;
+      LinearLayout btAlterarDados = ViewBindings.findChildViewById(rootView, id);
+      if (btAlterarDados == null) {
         break missingId;
       }
 
-      id = R.id.contaEditText;
-      EditText contaEditText = ViewBindings.findChildViewById(rootView, id);
-      if (contaEditText == null) {
+      id = R.id.btAlterarFoto;
+      LinearLayout btAlterarFoto = ViewBindings.findChildViewById(rootView, id);
+      if (btAlterarFoto == null) {
         break missingId;
       }
 
-      id = R.id.saldoConta;
-      EditText saldoConta = ViewBindings.findChildViewById(rootView, id);
-      if (saldoConta == null) {
+      id = R.id.btExcluir;
+      LinearLayout btExcluir = ViewBindings.findChildViewById(rootView, id);
+      if (btExcluir == null) {
+        break missingId;
+      }
+
+      id = R.id.icFechar;
+      ImageView icFechar = ViewBindings.findChildViewById(rootView, id);
+      if (icFechar == null) {
+        break missingId;
+      }
+
+      id = R.id.imagemUsuario;
+      ShapeableImageView imagemUsuario = ViewBindings.findChildViewById(rootView, id);
+      if (imagemUsuario == null) {
+        break missingId;
+      }
+
+      id = R.id.nomeUsuario;
+      EditText nomeUsuario = ViewBindings.findChildViewById(rootView, id);
+      if (nomeUsuario == null) {
+        break missingId;
+      }
+
+      id = R.id.novaSenha;
+      EditText novaSenha = ViewBindings.findChildViewById(rootView, id);
+      if (novaSenha == null) {
+        break missingId;
+      }
+
+      id = R.id.senhaUsuario;
+      EditText senhaUsuario = ViewBindings.findChildViewById(rootView, id);
+      if (senhaUsuario == null) {
         break missingId;
       }
 
@@ -112,32 +148,8 @@ public final class ActivityNovaContaBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView;
-      TextView textView = ViewBindings.findChildViewById(rootView, id);
-      if (textView == null) {
-        break missingId;
-      }
-
-      id = R.id.textView2;
-      TextView textView2 = ViewBindings.findChildViewById(rootView, id);
-      if (textView2 == null) {
-        break missingId;
-      }
-
-      id = R.id.textView3;
-      TextView textView3 = ViewBindings.findChildViewById(rootView, id);
-      if (textView3 == null) {
-        break missingId;
-      }
-
-      id = R.id.textView4;
-      TextView textView4 = ViewBindings.findChildViewById(rootView, id);
-      if (textView4 == null) {
-        break missingId;
-      }
-
-      return new ActivityNovaContaBinding((ScrollView) rootView, btnConcluir, contaEditText,
-          saldoConta, spinner, textView, textView2, textView3, textView4);
+      return new ActivityNovaContaBinding((ScrollView) rootView, btAlterarDados, btAlterarFoto,
+          btExcluir, icFechar, imagemUsuario, nomeUsuario, novaSenha, senhaUsuario, spinner);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

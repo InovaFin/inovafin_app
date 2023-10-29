@@ -58,7 +58,7 @@
 
             <!--Minha Conta-->
             <LinearLayout
-                android:id="@+id/btnContaEscolhida1"
+                android:id="@+id/btnConta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_botao_terciario_ripple"

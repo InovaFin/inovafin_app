@@ -15,15 +15,14 @@ class MinhasContas : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        binding.btnContaEscolhida1.setOnClickListener{
-            val intent = Intent(this, ContaEscolhida::class.java);
-            startActivity(intent);
+        binding.btnConta.setOnClickListener{
+            val i = Intent(this, ContaEscolhida::class.java);
+            startActivity(i);
         }
 
         binding.btnAddContas.setOnClickListener{
-            val intent = Intent(this, NovaConta::class.java);
-
-            startActivity(intent);
+            val i = Intent(this, NovaConta::class.java);
+            startActivity(i);
         }
 
         binding.icFechar.setOnClickListener {

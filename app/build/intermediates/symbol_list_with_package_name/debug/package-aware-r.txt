@@ -78,6 +78,7 @@ animator mtrl_fab_transformation_sheet_expand_spec
 array com_google_android_gms_fonts_certs
 array com_google_android_gms_fonts_certs_dev
 array com_google_android_gms_fonts_certs_prod
+array nova_conta_spinner_instituicoes
 array preloaded_fonts
 attr SharedValue
 attr SharedValueId
@@ -3029,6 +3030,7 @@ drawable ic_editar
 drawable ic_email_enviado
 drawable ic_excluir
 drawable ic_expandir
+drawable ic_expandir_spinner
 drawable ic_fechar
 drawable ic_foto
 drawable ic_home
@@ -3272,8 +3274,7 @@ id btValorGuardado
 id btValorPagar
 id btValorReceber
 id btnAddContas
-id btnConcluir
-id btnContaEscolhida1
+id btnConta
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3301,7 +3302,6 @@ id collapseActionView
 id compress
 id confirm_button
 id constraint
-id contaEditText
 id container
 id content
 id contentPanel
@@ -3543,7 +3543,6 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
-id saldoConta
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3644,10 +3643,6 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
-id textView
-id textView2
-id textView3
-id textView4
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3856,6 +3851,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout item_spinner_layout
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
