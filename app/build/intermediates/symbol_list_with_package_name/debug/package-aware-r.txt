@@ -78,7 +78,6 @@ animator mtrl_fab_transformation_sheet_expand_spec
 array com_google_android_gms_fonts_certs
 array com_google_android_gms_fonts_certs_dev
 array com_google_android_gms_fonts_certs_prod
-array nova_conta_spinner_instituicoes
 array preloaded_fonts
 attr SharedValue
 attr SharedValueId
@@ -3464,6 +3463,7 @@ id month_navigation_next
 id month_navigation_previous
 id month_title
 id motion_base
+id msgErro
 id mtrl_anchor_parent
 id mtrl_calendar_day_selector_frame
 id mtrl_calendar_days_of_week
@@ -3543,6 +3543,7 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
+id saldoAtual
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth

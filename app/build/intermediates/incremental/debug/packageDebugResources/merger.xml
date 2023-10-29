@@ -20,22 +20,7 @@
         <item>@font/roboto_bold</item>
         <item>@font/roboto_light</item>
         <item>@font/roboto_medium</item>
-    </array></file><file path="C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\res\values\strings.xml" qualifiers=""><string name="app_name">InovaFin</string><string-array name="nova_conta_spinner_instituicoes">
-        <item>Banco do Brasil</item>
-        <item>Banco Inter</item>
-        <item>Banco Safra</item>
-        <item>Bradesco</item>
-        <item>BTG Pactual</item>
-        <item>Caixa</item>
-        <item>C6 Bank</item>
-        <item>Itaú</item>
-        <item>Mercado Pago</item>
-        <item>Nubank</item>
-        <item>PagBank</item>
-        <item>PicPay</item>
-        <item>Santander</item>
-        <item>Sicoob</item>
-    </string-array></file><file path="C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\res\values\themes.xml" qualifiers=""><style name="Base.Theme.InovaFin" parent="Theme.Material3.DayNight.NoActionBar">
+    </array></file><file path="C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\res\values\strings.xml" qualifiers=""><string name="app_name">InovaFin</string></file><file path="C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\res\values\themes.xml" qualifiers=""><style name="Base.Theme.InovaFin" parent="Theme.Material3.DayNight.NoActionBar">
         
         
         <item name="colorPrimary">@color/verde_principal</item>

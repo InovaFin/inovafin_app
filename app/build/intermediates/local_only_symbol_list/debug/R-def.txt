@@ -3,7 +3,6 @@ local
 array com_google_android_gms_fonts_certs
 array com_google_android_gms_fonts_certs_dev
 array com_google_android_gms_fonts_certs_prod
-array nova_conta_spinner_instituicoes
 array preloaded_fonts
 color azul
 color black
@@ -107,8 +106,10 @@ id emailUsuario
 id icFechar
 id icVoltar
 id imagemUsuario
+id msgErro
 id nomeUsuario
 id novaSenha
+id saldoAtual
 id senhaUsuario
 id spinner
 layout activity_adicionar_valor

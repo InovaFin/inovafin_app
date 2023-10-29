@@ -117,8 +117,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_edittext_secundario"
+                    android:paddingHorizontal="3dp"
                     android:paddingVertical="3dp"
-                    android:paddingHorizontal="3dp"/>
+                    tools:ignore="TouchTargetSizeCheck" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -130,15 +131,10 @@
 
             </RelativeLayout>
 
-            <!--Email-->
-
-
-            <!--Email-->
-
         </LinearLayout>
         <!--Instituição bancária-->
 
-        <!--Senha-->
+        <!--Saldo Atual-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -148,233 +144,80 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Senha Atual"
+                android:text="Saldo Atual"
                 android:textColor="@color/black"
                 android:layout_marginBottom="10dp"
+                android:layout_marginTop="15dp"
                 android:textSize="15sp"
                 android:fontFamily="@font/roboto_medium"/>
 
-            <!--Nova Senha-->
             <EditText
-                android:id="@+id/senhaUsuario"
+                android:id="@+id/saldoAtual"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:text=""
-                android:hint="Confirme sua senha"
-                android:inputType="textPassword"
+                android:inputType="numberDecimal"
+                android:hint="Saldo da Conta"
                 android:paddingVertical="15dp"
                 android:paddingHorizontal="10dp"
                 android:textColorHint="@color/black_terciario"
-                android:layout_marginBottom="15dp"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:background="@drawable/bg_edittext_secundario"
                 android:textCursorDrawable="@drawable/custom_cursor"
                 android:fontFamily="@font/roboto"/>
-            <!--Nova Senha-->
 
         </LinearLayout>
-        <!--Senha-->
+        <!--Saldo Atual-->
 
-        <!--ConfirmSenha-->
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/msgErro"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="30dp"
-            android:orientation="vertical">
+            android:text="Saldo Atual"
+            android:textColor="@color/black"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="15dp"
+            android:textSize="15sp"
+            android:fontFamily="@font/roboto_medium"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nova Senha"
-                android:textColor="@color/black"
-                android:layout_marginBottom="10dp"
-                android:textSize="15sp"
-                android:fontFamily="@font/roboto_medium"/>
-
-            <!--Email-->
-            <EditText
-                android:id="@+id/novaSenha"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPassword"
-                android:paddingVertical="15dp"
-                android:hint="Digite a nova senha"
-                android:paddingHorizontal="10dp"
-                android:textColorHint="@color/black_terciario"
-                android:layout_marginBottom="15dp"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:background="@drawable/bg_edittext_secundario"
-                android:textCursorDrawable="@drawable/custom_cursor"
-                android:fontFamily="@font/roboto"/>
-            <!--Email-->
-
-        </LinearLayout>
-        <!--ConfirmSenha-->
-
+        <!--Botão Alterar Perfil-->
         <LinearLayout
+            android:id="@+id/btAlterarDados"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="30dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Foto"
-                android:textColor="@color/black"
-                android:layout_marginBottom="10dp"
-                android:textSize="15sp"
-                android:fontFamily="@font/roboto_medium"/>
+            android:layout_height="50dp"
+            android:paddingHorizontal="17dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:clickable="true"
+            android:background="@drawable/bg_botao_ripple">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-                        <com.google.android.material.imageview.ShapeableImageView
-                            android:id="@+id/imagemUsuario"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            app:shapeAppearance="@style/circular"
-                            android:elevation="5dp"
-                            android:scaleType="centerCrop"
-                            android:padding="5dp"
-                            android:background="@color/verde_secundario"
-                            android:src="@drawable/ic_perfil"/>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="120dp"
-                    android:paddingHorizontal="10dp"
-                    android:gravity="center|end"
-                    android:orientation="vertical">
-
-                    <!--Botão Alterar-->
-                    <LinearLayout
-                        android:id="@+id/btAlterarFoto"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center"
-                        android:layout_marginBottom="10dp"
-                        android:paddingVertical="10dp"
-                        android:paddingHorizontal="14dp"
-                        android:elevation="2dp"
-                        android:clickable="true"
-                        android:background="@drawable/bg_botao_secundario_ripple">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="10dp"
-                            android:src="@drawable/ic_foto"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Alterar Foto"
-                            android:textColor="@color/black_secundario"
-                            android:textSize="12sp"
-                            android:fontFamily="@font/roboto_medium"/>
-
-                    </LinearLayout>
-                    <!--Botão Alterar-->
-
-                    <!--Botão Excluir-->
-                    <LinearLayout
-                        android:id="@+id/btExcluir"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center"
-                        android:paddingVertical="10dp"
-                        android:paddingHorizontal="14dp"
-                        android:elevation="2dp"
-                        android:clickable="true"
-                        android:background="@drawable/bg_botao_secundario_ripple">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="10dp"
-                            android:src="@drawable/ic_excluir"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Excluir Foto"
-                            android:textColor="@color/black_secundario"
-                            android:textSize="12sp"
-                            android:fontFamily="@font/roboto_medium"/>
-
-                    </LinearLayout>
-                    <!--Botão Excluir-->
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <!--Botão Alterar Perfil-->
-            <LinearLayout
-                android:id="@+id/btAlterarDados"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:paddingHorizontal="17dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="30dp"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:clickable="true"
-                android:background="@drawable/bg_botao_ripple">
-
-                <LinearLayout
+                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/ic_salvar"/>
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="10dp"
-                        android:src="@drawable/ic_salvar"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Salvar"
-                        android:textColor="@color/white"
-                        android:textSize="13sp"
-                        android:fontFamily="@font/roboto_bold"/>
-
-                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Salvar"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:fontFamily="@font/roboto_bold"/>
 
             </LinearLayout>
-            <!--Botão Alterar Perfil-->
 
         </LinearLayout>
+        <!--Botão Alterar Perfil-->
 
     </LinearLayout>
 

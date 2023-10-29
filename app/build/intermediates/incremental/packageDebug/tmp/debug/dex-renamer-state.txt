@@ -1,4 +1,4 @@
-#Sun Oct 29 08:02:15 BRT 2023
+#Sun Oct 29 10:37:30 BRT 2023
 base.0=C\:\\Users\\erick\\OneDrive\\Documentos\\repositorios\\inovafin_app\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\erick\\OneDrive\\Documentos\\repositorios\\inovafin_app\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.2=C\:\\Users\\erick\\OneDrive\\Documentos\\repositorios\\inovafin_app\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex
