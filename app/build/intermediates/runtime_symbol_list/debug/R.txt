@@ -3272,7 +3272,6 @@ int id btValorGuardado 0x7f0a0083
 int id btValorPagar 0x7f0a0084
 int id btValorReceber 0x7f0a0085
 int id btnAddContas 0x7f0a0086
-int id btnConta 0x7f0a0087
 int id buttonPanel 0x7f0a0088
 int id cache_measures 0x7f0a0089
 int id callMeasure 0x7f0a008a
@@ -3424,6 +3423,7 @@ int id line3 0x7f0a011b
 int id linear 0x7f0a011c
 int id listMode 0x7f0a011d
 int id list_item 0x7f0a011e
+int id listaContas 0x7f0a022c
 int id lottie_layer_name 0x7f0a011f
 int id m3_side_sheet 0x7f0a0120
 int id marquee 0x7f0a0121
@@ -3835,6 +3835,7 @@ int layout activity_valor_pagar 0x7f0d0035
 int layout activity_valor_receber 0x7f0d0036
 int layout browser_actions_context_menu_page 0x7f0d0037
 int layout browser_actions_context_menu_row 0x7f0d0038
+int layout conta_item 0x7f0d0090
 int layout custom_dialog 0x7f0d0039
 int layout design_bottom_navigation_item 0x7f0d003a
 int layout design_bottom_sheet_dialog 0x7f0d003b

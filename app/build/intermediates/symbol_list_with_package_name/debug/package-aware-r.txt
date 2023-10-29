@@ -3273,7 +3273,6 @@ id btValorGuardado
 id btValorPagar
 id btValorReceber
 id btnAddContas
-id btnConta
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3425,6 +3424,7 @@ id line3
 id linear
 id listMode
 id list_item
+id listaContas
 id lottie_layer_name
 id m3_side_sheet
 id marquee
@@ -3836,6 +3836,7 @@ layout activity_valor_pagar
 layout activity_valor_receber
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
+layout conta_item
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

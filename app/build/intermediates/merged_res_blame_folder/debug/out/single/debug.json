@@ -64,16 +64,16 @@
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\layout\\activity_esqueceu_senha.xml"
     },
     {
-        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\layout_activity_saldo_geral_receber.xml.flat",
-        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\layout\\activity_saldo_geral_receber.xml"
+        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\drawable_ic_fechar.xml.flat",
+        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\drawable\\ic_fechar.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\drawable_logo_branca_500.png.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\drawable\\logo_branca_500.png"
     },
     {
-        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\drawable_ic_fechar.xml.flat",
-        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\drawable\\ic_fechar.xml"
+        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\layout_activity_saldo_geral_receber.xml.flat",
+        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\layout\\activity_saldo_geral_receber.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\drawable_ic_checkbox.xml.flat",
@@ -128,28 +128,32 @@
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\drawable\\bg_botao_secundario_ripple.xml"
     },
     {
-        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
-        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\mipmap-xxxhdpi\\ic_launcher_foreground.webp"
-    },
-    {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\layout_activity_info_registro.xml.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\layout\\activity_info_registro.xml"
+    },
+    {
+        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\mipmap-xxxhdpi\\ic_launcher_foreground.webp"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\layout_activity_login.xml.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\layout\\activity_login.xml"
     },
     {
-        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\layout_activity_notificacoes.xml.flat",
-        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\layout\\activity_notificacoes.xml"
-    },
-    {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\layout_activity_valor_guardado.xml.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\layout\\activity_valor_guardado.xml"
     },
     {
+        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\layout_activity_notificacoes.xml.flat",
+        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\layout\\activity_notificacoes.xml"
+    },
+    {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\drawable_ic_editar.xml.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\drawable\\ic_editar.xml"
+    },
+    {
+        "merged": "com.example.inovafin.app-merged_res-38:/layout_conta_item.xml.flat",
+        "source": "com.example.inovafin.app-main-40:/layout/conta_item.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\drawable_ic_calculadora_black.xml.flat",
@@ -308,6 +312,10 @@
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
+        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\layout_conta_item.xml.flat",
+        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\layout\\conta_item.xml"
+    },
+    {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\drawable_ic_email_enviado.xml.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\drawable\\ic_email_enviado.xml"
     },
@@ -318,10 +326,6 @@
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\drawable_ic_calculadora.xml.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\drawable\\ic_calculadora.xml"
-    },
-    {
-        "merged": "com.example.inovafin.app-merged_res-38:/layout_activity_nova_conta.xml.flat",
-        "source": "com.example.inovafin.app-main-40:/layout/activity_nova_conta.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\mipmap-xxxhdpi_ic_launcher.webp.flat",

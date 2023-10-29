@@ -207,14 +207,14 @@ class EditarPerfil : AppCompatActivity() {
         firestore.collection("Usuarios").document(usuarioId)
             .update(usuarioMap as Map<String, Any>).addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(applicationContext, "Nome Alterado!", Toast.LENGTH_LONG).show()
+                    Toast.makeText(applicationContext, "Nome Alterado", Toast.LENGTH_LONG).show()
                 } else {
                     var excecao = ""
 
                     try {
                         throw task.exception!!
                     } catch (e: Exception) {
-                        excecao = "Erro ao alterar o nome! " + e.message
+                        excecao = "Erro ao alterar o nome " + e.message
                         e.printStackTrace()
                     }
                     Toast.makeText(applicationContext, excecao, Toast.LENGTH_LONG).show()
@@ -249,14 +249,14 @@ class EditarPerfil : AppCompatActivity() {
         firestore.collection("Usuarios").document(usuarioId)
             .update("email", email).addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(applicationContext, "Email Firestore alterado!", Toast.LENGTH_LONG).show()
+                    Toast.makeText(applicationContext, "Email Firestore alterado", Toast.LENGTH_LONG).show()
                 } else {
                     var excecao = ""
 
                     try {
                         throw task.exception!!
                     } catch (e: Exception) {
-                        excecao = "Erro ao alterar email Firestore! " + e.message
+                        excecao = "Erro ao alterar email Firestore " + e.message
                         e.printStackTrace()
                     }
                     Toast.makeText(applicationContext, excecao, Toast.LENGTH_LONG).show()
@@ -284,7 +284,7 @@ class EditarPerfil : AppCompatActivity() {
                         usuarioAuth.updatePassword(novaSenha)
                             .addOnCompleteListener { updateTask ->
                                 if (updateTask.isSuccessful) {
-                                    Toast.makeText(applicationContext, "Senha alterada com sucesso!", Toast.LENGTH_LONG).show()
+                                    Toast.makeText(applicationContext, "Senha alterada com sucesso", Toast.LENGTH_LONG).show()
                                 } else {
                                     val excecao = "Erro ao alterar a senha: ${updateTask.exception?.message}"
                                     Toast.makeText(applicationContext, excecao, Toast.LENGTH_LONG).show()
@@ -301,10 +301,10 @@ class EditarPerfil : AppCompatActivity() {
         val novaSenha = binding.novaSenha.text.toString()
 
         if (novaSenha.isEmpty()) {
-            Toast.makeText(applicationContext, "Por favor, digite a nova senha.", Toast.LENGTH_LONG).show()
+            Toast.makeText(applicationContext, "Por favor, digite a nova senha", Toast.LENGTH_LONG).show()
             return false
         } else if (novaSenha.length < 6) {
-            Toast.makeText(applicationContext, "A nova senha deve ter pelo menos 6 caracteres.", Toast.LENGTH_LONG).show()
+            Toast.makeText(applicationContext, "A nova senha deve ter pelo menos 6 caracteres", Toast.LENGTH_LONG).show()
             return false
         }
 
@@ -321,14 +321,14 @@ class EditarPerfil : AppCompatActivity() {
         firestore.collection("Usuarios").document(usuarioId)
             .update(usuarioMasp as Map<String, Any>).addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(applicationContext, "Foto Alterada!", Toast.LENGTH_LONG).show()
+                    Toast.makeText(applicationContext, "Foto Alterada", Toast.LENGTH_LONG).show()
                 } else {
                     var excecao = ""
 
                     try {
                         throw task.exception!!
                     } catch (e: Exception) {
-                        excecao = "Erro ao alterar Foto! " + e.message
+                        excecao = "Erro ao alterar Foto: " + e.message
                         e.printStackTrace()
                     }
                     Toast.makeText(applicationContext, "$excecao", Toast.LENGTH_LONG).show()
@@ -370,36 +370,39 @@ class EditarPerfil : AppCompatActivity() {
         fotoAlterada = true
     }
 
+    private fun resgatarDados() {
+        val usuarioId = autentificacao.currentUser!!.uid
+
+        val emailUsuario = autentificacao.currentUser!!.email
+
+        // Resgatar dados aqui!
+        firestore.collection("Usuarios").document(usuarioId)
+            .addSnapshotListener { document, error ->
+                if (document != null) {
+                    // Aplica os dados no layout
+                    binding.nomeUsuario.hint = document.getString("nome")
+                    binding.emailUsuario.hint = emailUsuario
+
+                    if (selectedImageUri != null) {
+                        // Se uma imagem da galeria foi selecionada, exiba-a
+                        Glide.with(this).load(selectedImageUri).into(binding.imagemUsuario)
+                    } else {
+                        val foto = document.getString("foto")
+                        // Verifique se a foto do banco não é nula antes de carregar
+                        if (!foto.isNullOrEmpty()) {
+                            Glide.with(this).load(foto).into(binding.imagemUsuario)
+                        }
+                    }
+                }
+            }
+    }
+
     override fun onStart() {
         super.onStart()
         val usuarioAuth = autentificacao.currentUser
 
         if (usuarioAuth != null) {
-
-            val usuarioId = autentificacao.currentUser!!.uid
-
-            val emailUsuario = autentificacao.currentUser!!.email
-
-            // Resgatar dados aqui!
-            firestore.collection("Usuarios").document(usuarioId)
-                .addSnapshotListener { document, error ->
-                    if (document != null) {
-                        // Aplica os dados no layout
-                        binding.nomeUsuario.hint = document.getString("nome")
-                        binding.emailUsuario.hint = emailUsuario
-
-                        if (selectedImageUri != null) {
-                            // Se uma imagem da galeria foi selecionada, exiba-a
-                            Glide.with(this).load(selectedImageUri).into(binding.imagemUsuario)
-                        } else {
-                            val foto = document.getString("foto")
-                            // Verifique se a foto do banco não é nula antes de carregar
-                            if (!foto.isNullOrEmpty()) {
-                                Glide.with(this).load(foto).into(binding.imagemUsuario)
-                            }
-                        }
-                    }
-                }
+            resgatarDados()
         }
     }
 }

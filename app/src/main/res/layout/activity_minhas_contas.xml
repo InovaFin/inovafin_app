@@ -56,48 +56,54 @@
             </RelativeLayout>
             <!--Header-->
 
-            <!--Minha Conta-->
-            <LinearLayout
-                android:id="@+id/btnConta"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listaContas"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_botao_terciario_ripple"
-                android:clickable="true"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:paddingHorizontal="30dp"
-                android:paddingVertical="25dp">
+                android:layout_height="match_parent"
+                tools:listitem="@layout/conta_item"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+<!--            &lt;!&ndash;Minha Conta&ndash;&gt;-->
+<!--            <LinearLayout-->
+<!--                android:id="@+id/btnConta"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/bg_botao_terciario_ripple"-->
+<!--                android:clickable="true"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="vertical"-->
+<!--                android:paddingHorizontal="30dp"-->
+<!--                android:paddingVertical="25dp">-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/roboto_medium"
-                        android:text="Conta Nubank"
-                        android:textColor="@color/black_secundario"
-                        android:textSize="15sp" />
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal">-->
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/ic_avancar" />
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:fontFamily="@font/roboto_medium"-->
+<!--                        android:text="Conta Nubank"-->
+<!--                        android:textColor="@color/black_secundario"-->
+<!--                        android:textSize="15sp" />-->
 
-                </LinearLayout>
+<!--                    <ImageView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:src="@drawable/ic_avancar" />-->
 
-            </LinearLayout>
-            <!--Minha Conta-->
+<!--                </LinearLayout>-->
 
-            <!--Linha cinza-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_linha"/>
-            <!--Linha cinza-->
+<!--            </LinearLayout>-->
+<!--            &lt;!&ndash;Minha Conta&ndash;&gt;-->
+
+<!--            &lt;!&ndash;Linha cinza&ndash;&gt;-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/bg_linha"/>-->
+<!--            &lt;!&ndash;Linha cinza&ndash;&gt;-->
 
         </LinearLayout>
         
@@ -109,8 +115,8 @@
         android:layout_height="wrap_content"
         android:paddingHorizontal="30dp"
         android:layout_alignParentBottom="true"
-        android:paddingBottom="40dp"
-        android:background="@color/branco_background"
+        android:paddingBottom="30dp"
+
         android:orientation="vertical">
 
         <LinearLayout
