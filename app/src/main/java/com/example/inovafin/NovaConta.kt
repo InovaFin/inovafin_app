@@ -228,6 +228,7 @@ class NovaConta : AppCompatActivity() {
                     if (task.isSuccessful) {
                         val i = Intent(this, MinhasContas::class.java)
                         startActivity(i)
+                        finish()
                     } else {
                         var excecao = ""
 
