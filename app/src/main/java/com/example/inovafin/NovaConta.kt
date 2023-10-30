@@ -223,7 +223,7 @@ class NovaConta : AppCompatActivity() {
 
         try {
             firestore.collection("Usuarios").document(usuarioId)
-                .collection("ContasBancarias").document()
+                .collection("ContasBancarias").document("$nome")
                 .set(usuarioMasp).addOnCompleteListener(this) {task ->
                     if (task.isSuccessful) {
                         val i = Intent(this, MinhasContas::class.java)

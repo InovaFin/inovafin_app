@@ -25,6 +25,8 @@ drawable bg_botao_terciario_ripple
 drawable bg_duvida
 drawable bg_edittext
 drawable bg_edittext_secundario
+drawable bg_icones
+drawable bg_icones_ripple
 drawable bg_linha
 drawable bg_menu_nav
 drawable bg_menu_nav_home
@@ -33,6 +35,7 @@ drawable bg_notificacao
 drawable custom_cursor
 drawable ic_add
 drawable ic_add_black
+drawable ic_android
 drawable ic_avancar
 drawable ic_banco
 drawable ic_calculadora
@@ -44,8 +47,10 @@ drawable ic_checkbox_receber
 drawable ic_config
 drawable ic_duvida
 drawable ic_editar
+drawable ic_editar_cinza
 drawable ic_email_enviado
 drawable ic_excluir
+drawable ic_excluir_cinza
 drawable ic_expandir
 drawable ic_expandir_spinner
 drawable ic_fechar
@@ -59,6 +64,7 @@ drawable ic_perfil_config
 drawable ic_sair
 drawable ic_salvar
 drawable ic_senha
+drawable ic_transacao
 drawable ic_voltar
 drawable img_logo
 drawable img_senha_enviada
@@ -105,13 +111,16 @@ id emailUsuario
 id icFechar
 id icVoltar
 id imagemUsuario
+id instituicao
 id listaContas
 id nomeConta
 id nomeUsuario
 id novaSenha
+id saldo
 id saldoAtual
 id senhaUsuario
 id spinner
+id titulo
 layout activity_adicionar_valor
 layout activity_ajuda_saldo_geral
 layout activity_cadastro
@@ -141,6 +150,7 @@ layout activity_valor_pagar
 layout activity_valor_receber
 layout conta_item
 layout item_spinner_layout
+layout registro_item
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round

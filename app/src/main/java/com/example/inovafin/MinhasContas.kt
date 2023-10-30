@@ -41,7 +41,11 @@ class MinhasContas : AppCompatActivity() {
         contaReyclerView.setHasFixedSize(true)
 
         contaArrayList = arrayListOf()
-        adapter = MyAdapter(contaArrayList)
+        adapter = MyAdapter(contaArrayList) { conta ->
+            val i = Intent(this, ContaEscolhida::class.java)
+            i.putExtra("contaNome", conta.nome)
+            startActivity(i)
+        }
 
         setupRecyclerView()
 
@@ -90,7 +94,6 @@ class MinhasContas : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() {
-        adapter = MyAdapter(contaArrayList) // Inicialize o adaptador com a lista de contas
         contaReyclerView.adapter = adapter // Defina o adaptador no RecyclerView
     }
 

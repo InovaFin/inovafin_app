@@ -247,19 +247,17 @@ ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\
 	android:name
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:19:13-41
 activity#com.example.inovafin.ContaEscolhida
-ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:21:9-23:40
+ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:21:9-24:20
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:23:13-37
 	android:name
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:22:13-43
 activity#com.example.inovafin.NovaConta
-ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:24:9-28:20
-	android:windowSoftInputMode
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:26:13-55
+ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:25:9-28:20
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:27:13-37
 	android:name
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:25:13-38
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:26:13-38
 activity#com.example.inovafin.ExcluirPagar
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:29:9-31:40
 	android:exported

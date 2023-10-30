@@ -2969,6 +2969,8 @@ int drawable bg_botao_terciario_ripple 0x7f080081
 int drawable bg_duvida 0x7f080082
 int drawable bg_edittext 0x7f080083
 int drawable bg_edittext_secundario 0x7f080084
+int drawable bg_icones 0x7f080126
+int drawable bg_icones_ripple 0x7f08012a
 int drawable bg_linha 0x7f080085
 int drawable bg_menu_nav 0x7f080086
 int drawable bg_menu_nav_home 0x7f080087
@@ -3011,6 +3013,7 @@ int drawable googleg_disabled_color_18 0x7f0800ab
 int drawable googleg_standard_color_18 0x7f0800ac
 int drawable ic_add 0x7f0800ad
 int drawable ic_add_black 0x7f0800ae
+int drawable ic_android 0x7f08012b
 int drawable ic_arrow_back_black_24 0x7f0800af
 int drawable ic_avancar 0x7f0800b0
 int drawable ic_banco 0x7f0800b1
@@ -3025,8 +3028,10 @@ int drawable ic_clock_black_24dp 0x7f0800b9
 int drawable ic_config 0x7f0800ba
 int drawable ic_duvida 0x7f0800bb
 int drawable ic_editar 0x7f0800bc
+int drawable ic_editar_cinza 0x7f080127
 int drawable ic_email_enviado 0x7f0800bd
 int drawable ic_excluir 0x7f0800be
+int drawable ic_excluir_cinza 0x7f080128
 int drawable ic_expandir 0x7f0800bf
 int drawable ic_expandir_spinner 0x7f0800c0
 int drawable ic_fechar 0x7f0800c1
@@ -3049,6 +3054,7 @@ int drawable ic_sair 0x7f0800d1
 int drawable ic_salvar 0x7f0800d2
 int drawable ic_search_black_24 0x7f0800d3
 int drawable ic_senha 0x7f0800d4
+int drawable ic_transacao 0x7f080129
 int drawable ic_voltar 0x7f0800d5
 int drawable img_logo 0x7f0800d6
 int drawable img_senha_enviada 0x7f0800d7
@@ -3406,6 +3412,7 @@ int id immediateStop 0x7f0a010a
 int id included 0x7f0a010b
 int id indeterminate 0x7f0a010c
 int id info 0x7f0a010d
+int id instituicao 0x7f0a022d
 int id invisible 0x7f0a010e
 int id inward 0x7f0a010f
 int id italic 0x7f0a0110
@@ -3542,6 +3549,7 @@ int id right_icon 0x7f0a0191
 int id right_side 0x7f0a0192
 int id rounded 0x7f0a0193
 int id row_index_key 0x7f0a0194
+int id saldo 0x7f0a022f
 int id saldoAtual 0x7f0a0195
 int id save_non_transition_alpha 0x7f0a0196
 int id save_overlay_view 0x7f0a0197
@@ -3656,6 +3664,7 @@ int id time 0x7f0a0203
 int id title 0x7f0a0204
 int id titleDividerNoCustom 0x7f0a0205
 int id title_template 0x7f0a0206
+int id titulo 0x7f0a022e
 int id toggle 0x7f0a0207
 int id top 0x7f0a0208
 int id topPanel 0x7f0a0209
@@ -3919,6 +3928,7 @@ int layout notification_template_media 0x7f0d0088
 int layout notification_template_media_custom 0x7f0d0089
 int layout notification_template_part_chronometer 0x7f0d008a
 int layout notification_template_part_time 0x7f0d008b
+int layout registro_item 0x7f0d0091
 int layout select_dialog_item_material 0x7f0d008c
 int layout select_dialog_multichoice_material 0x7f0d008d
 int layout select_dialog_singlechoice_material 0x7f0d008e

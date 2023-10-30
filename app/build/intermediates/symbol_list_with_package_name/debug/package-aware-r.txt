@@ -2970,6 +2970,8 @@ drawable bg_botao_terciario_ripple
 drawable bg_duvida
 drawable bg_edittext
 drawable bg_edittext_secundario
+drawable bg_icones
+drawable bg_icones_ripple
 drawable bg_linha
 drawable bg_menu_nav
 drawable bg_menu_nav_home
@@ -3012,6 +3014,7 @@ drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_add
 drawable ic_add_black
+drawable ic_android
 drawable ic_arrow_back_black_24
 drawable ic_avancar
 drawable ic_banco
@@ -3026,8 +3029,10 @@ drawable ic_clock_black_24dp
 drawable ic_config
 drawable ic_duvida
 drawable ic_editar
+drawable ic_editar_cinza
 drawable ic_email_enviado
 drawable ic_excluir
+drawable ic_excluir_cinza
 drawable ic_expandir
 drawable ic_expandir_spinner
 drawable ic_fechar
@@ -3050,6 +3055,7 @@ drawable ic_sair
 drawable ic_salvar
 drawable ic_search_black_24
 drawable ic_senha
+drawable ic_transacao
 drawable ic_voltar
 drawable img_logo
 drawable img_senha_enviada
@@ -3407,6 +3413,7 @@ id immediateStop
 id included
 id indeterminate
 id info
+id instituicao
 id invisible
 id inward
 id italic
@@ -3543,6 +3550,7 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
+id saldo
 id saldoAtual
 id save_non_transition_alpha
 id save_overlay_view
@@ -3657,6 +3665,7 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id titulo
 id toggle
 id top
 id topPanel
@@ -3920,6 +3929,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout registro_item
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material

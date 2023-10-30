@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.inovafin.R
 
-class MyAdapter(private val listaConta : ArrayList<ContaBancaria>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
+class MyAdapter(private val listaConta : ArrayList<ContaBancaria>, private val itemClickListener: (ContaBancaria) -> Unit) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
 
@@ -28,6 +28,7 @@ class MyAdapter(private val listaConta : ArrayList<ContaBancaria>) : RecyclerVie
         val currentItem = listaConta[position]
 
         holder.nome.text = currentItem.nome
+        holder.itemView.setOnClickListener { itemClickListener(currentItem) }
     }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

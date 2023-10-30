@@ -20,10 +20,10 @@
             android:exported="false" />
         <activity
             android:name=".ContaEscolhida"
-            android:exported="false" />
+            android:exported="false">
+        </activity>
         <activity
             android:name=".NovaConta"
-            android:windowSoftInputMode="adjustResize"
             android:exported="false">
         </activity>
         <activity

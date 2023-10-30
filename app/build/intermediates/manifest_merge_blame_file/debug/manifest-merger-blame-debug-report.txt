@@ -65,19 +65,18 @@
 38            android:exported="false" />
 38-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:20:13-37
 39        <activity
-39-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:21:9-23:40
+39-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:21:9-24:20
 40            android:name="com.example.inovafin.ContaEscolhida"
 40-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:22:13-43
-41            android:exported="false" />
+41            android:exported="false" >
 41-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:23:13-37
-42        <activity
-42-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:24:9-28:20
-43            android:name="com.example.inovafin.NovaConta"
-43-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:25:13-38
-44            android:exported="false"
-44-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:27:13-37
-45            android:windowSoftInputMode="adjustResize" >
-45-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:26:13-55
+42        </activity>
+43        <activity
+43-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:25:9-28:20
+44            android:name="com.example.inovafin.NovaConta"
+44-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:26:13-38
+45            android:exported="false" >
+45-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:27:13-37
 46        </activity>
 47        <activity
 47-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:29:9-31:40
