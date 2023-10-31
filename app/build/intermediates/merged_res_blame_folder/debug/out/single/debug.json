@@ -28,8 +28,8 @@
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-40:\\layout\\activity_saldo_geral_pagar.xml"
     },
     {
-        "merged": "com.example.inovafin.app-merged_res-38:/layout_activity_minhas_contas.xml.flat",
-        "source": "com.example.inovafin.app-main-40:/layout/activity_minhas_contas.xml"
+        "merged": "com.example.inovafin.app-merged_res-38:/layout_activity_conta_escolhida.xml.flat",
+        "source": "com.example.inovafin.app-main-40:/layout/activity_conta_escolhida.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-38:\\layout_activity_valor_pagar.xml.flat",

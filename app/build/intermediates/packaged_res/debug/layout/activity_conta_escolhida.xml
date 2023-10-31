@@ -45,16 +45,14 @@
                 android:id="@+id/titulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="5dp"
+                android:layout_marginHorizontal="40dp"
                 android:gravity="center"
                 android:text="Conta Escolhida"
-                android:textSize="24sp"
+                android:textSize="22sp"
                 android:fontFamily="@font/roboto_medium"
                 android:textColor="@color/black"/>
 
         </LinearLayout>
-
-
 
     </RelativeLayout>
     <!--Header-->
