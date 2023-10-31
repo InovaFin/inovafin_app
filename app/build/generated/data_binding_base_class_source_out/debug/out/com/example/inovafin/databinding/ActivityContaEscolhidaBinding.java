@@ -21,6 +21,15 @@ public final class ActivityContaEscolhidaBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final ImageView btEditar;
+
+  @NonNull
+  public final ImageView btExcluir;
+
+  @NonNull
+  public final ImageView btTransferir;
+
+  @NonNull
   public final ImageView icFechar;
 
   @NonNull
@@ -32,9 +41,13 @@ public final class ActivityContaEscolhidaBinding implements ViewBinding {
   @NonNull
   public final TextView titulo;
 
-  private ActivityContaEscolhidaBinding(@NonNull LinearLayout rootView, @NonNull ImageView icFechar,
+  private ActivityContaEscolhidaBinding(@NonNull LinearLayout rootView, @NonNull ImageView btEditar,
+      @NonNull ImageView btExcluir, @NonNull ImageView btTransferir, @NonNull ImageView icFechar,
       @NonNull TextView instituicao, @NonNull TextView saldo, @NonNull TextView titulo) {
     this.rootView = rootView;
+    this.btEditar = btEditar;
+    this.btExcluir = btExcluir;
+    this.btTransferir = btTransferir;
     this.icFechar = icFechar;
     this.instituicao = instituicao;
     this.saldo = saldo;
@@ -68,6 +81,24 @@ public final class ActivityContaEscolhidaBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btEditar;
+      ImageView btEditar = ViewBindings.findChildViewById(rootView, id);
+      if (btEditar == null) {
+        break missingId;
+      }
+
+      id = R.id.btExcluir;
+      ImageView btExcluir = ViewBindings.findChildViewById(rootView, id);
+      if (btExcluir == null) {
+        break missingId;
+      }
+
+      id = R.id.btTransferir;
+      ImageView btTransferir = ViewBindings.findChildViewById(rootView, id);
+      if (btTransferir == null) {
+        break missingId;
+      }
+
       id = R.id.icFechar;
       ImageView icFechar = ViewBindings.findChildViewById(rootView, id);
       if (icFechar == null) {
@@ -92,8 +123,8 @@ public final class ActivityContaEscolhidaBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityContaEscolhidaBinding((LinearLayout) rootView, icFechar, instituicao,
-          saldo, titulo);
+      return new ActivityContaEscolhidaBinding((LinearLayout) rootView, btEditar, btExcluir,
+          btTransferir, icFechar, instituicao, saldo, titulo);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

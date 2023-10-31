@@ -43,18 +43,18 @@ class MinhasContas : AppCompatActivity() {
         contaArrayList = arrayListOf()
         adapter = MyAdapter(contaArrayList) { conta ->
             val i = Intent(this, ContaEscolhida::class.java)
-            i.putExtra("contaNome", conta.nome)
+            i.putExtra("nomeConta", conta.nome)
             startActivity(i)
         }
 
         setupRecyclerView()
 
-//        binding.btnConta.setOnClickListener{
+//        binding.btConta.setOnClickListener{
 //            val i = Intent(this, ContaEscolhida::class.java);
 //            startActivity(i);
 //        }
 
-        binding.btnAddContas.setOnClickListener{
+        binding.btAddContas.setOnClickListener{
             val i = Intent(this, NovaConta::class.java);
             startActivity(i);
         }

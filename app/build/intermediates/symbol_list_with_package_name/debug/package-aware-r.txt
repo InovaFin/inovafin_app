@@ -3251,6 +3251,7 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
+id btAddContas
 id btAdicionar
 id btAjuda
 id btAlterarDados
@@ -3258,6 +3259,7 @@ id btAlterarFoto
 id btAnimacao
 id btCadastro
 id btCalculadora
+id btEditar
 id btEditarPerfil
 id btEsqueceuSenha
 id btExcluir
@@ -3275,10 +3277,10 @@ id btSaldoGeralGuardado
 id btSaldoGeralPagar
 id btSaldoGeralReceber
 id btText
+id btTransferir
 id btValorGuardado
 id btValorPagar
 id btValorReceber
-id btnAddContas
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3821,6 +3823,7 @@ layout activity_ajuda_saldo_geral
 layout activity_cadastro
 layout activity_configuracoes
 layout activity_conta_escolhida
+layout activity_editar_conta
 layout activity_editar_perfil
 layout activity_email_enviado
 layout activity_esqueceu_senha

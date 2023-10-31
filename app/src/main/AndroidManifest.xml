@@ -16,16 +16,17 @@
         android:theme="@style/Theme.InovaFin"
         tools:targetApi="31">
         <activity
+            android:name=".EditarConta"
+            android:exported="false" />
+        <activity
             android:name=".EmailEnviado"
             android:exported="false" />
         <activity
             android:name=".ContaEscolhida"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".NovaConta"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".ExcluirPagar"
             android:exported="false" />
@@ -82,7 +83,7 @@
             android:exported="false" />
         <activity
             android:name=".Home"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".EsqueceuSenha"
             android:exported="false" />

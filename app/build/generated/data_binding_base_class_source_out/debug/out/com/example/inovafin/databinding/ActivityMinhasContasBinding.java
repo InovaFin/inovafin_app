@@ -22,7 +22,7 @@ public final class ActivityMinhasContasBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
-  public final LinearLayout btnAddContas;
+  public final LinearLayout btAddContas;
 
   @NonNull
   public final ImageView icFechar;
@@ -31,10 +31,10 @@ public final class ActivityMinhasContasBinding implements ViewBinding {
   public final RecyclerView listaContas;
 
   private ActivityMinhasContasBinding(@NonNull RelativeLayout rootView,
-      @NonNull LinearLayout btnAddContas, @NonNull ImageView icFechar,
+      @NonNull LinearLayout btAddContas, @NonNull ImageView icFechar,
       @NonNull RecyclerView listaContas) {
     this.rootView = rootView;
-    this.btnAddContas = btnAddContas;
+    this.btAddContas = btAddContas;
     this.icFechar = icFechar;
     this.listaContas = listaContas;
   }
@@ -66,9 +66,9 @@ public final class ActivityMinhasContasBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btnAddContas;
-      LinearLayout btnAddContas = ViewBindings.findChildViewById(rootView, id);
-      if (btnAddContas == null) {
+      id = R.id.btAddContas;
+      LinearLayout btAddContas = ViewBindings.findChildViewById(rootView, id);
+      if (btAddContas == null) {
         break missingId;
       }
 
@@ -84,7 +84,7 @@ public final class ActivityMinhasContasBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMinhasContasBinding((RelativeLayout) rootView, btnAddContas, icFechar,
+      return new ActivityMinhasContasBinding((RelativeLayout) rootView, btAddContas, icFechar,
           listaContas);
     }
     String missingId = rootView.getResources().getResourceName(id);

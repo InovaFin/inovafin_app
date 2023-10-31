@@ -1,5 +1,6 @@
 package com.example.inovafin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -19,6 +20,10 @@ class ContaEscolhida : AppCompatActivity() {
     private lateinit var firestore: FirebaseFirestore
 
     private var numberFormat = NumberFormat.getCurrencyInstance(Locale("pt", "BR"))
+    private var nomeConta: String = ""
+    private var instituicao: String = ""
+    private var saldoConta: String = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityContaEscolhidaBinding.inflate(layoutInflater)
@@ -28,28 +33,40 @@ class ContaEscolhida : AppCompatActivity() {
         autentificacao = ConfiguraBd.Firebaseautentificacao()
         firestore = ConfiguraBd.Firebasefirestore()
 
+        nomeConta = intent.getStringExtra("nomeConta").toString()
+
         binding.icFechar.setOnClickListener {
             onBackPressed()
+        }
+
+        binding.btEditar.setOnClickListener {
+            val i = Intent(this, EditarConta::class.java)
+            i.putExtra("nomeConta", nomeConta)
+            i.putExtra("saldoConta", saldoConta)
+            i.putExtra("instituicao", instituicao)
+            startActivity(i)
         }
     }
 
     private fun resgatarDados() {
         val usuarioId = autentificacao.currentUser!!.uid
 
-        var contaNome = intent.getStringExtra("contaNome")
-
         // Resgatar dados aqui!
         firestore.collection("Usuarios").document(usuarioId)
-            .collection("ContasBancarias").document("$contaNome")
+            .collection("ContasBancarias").document("$nomeConta")
             .addSnapshotListener { document, error ->
                 if (document != null) {
                     val saldoResgatado = document.getDouble("saldo")
+                    val instituicaoResgatada = document.getString("instituicao")
 
                     val formatted = numberFormat.format(saldoResgatado)
+                    saldoConta = formatted
+
+                    instituicao = instituicaoResgatada.toString()
 
                     // Aplica os dados no layout
-                    binding.titulo.text = contaNome
-                    binding.instituicao.text = "Saldo atual " + document.getString("instituicao")
+                    binding.titulo.text = nomeConta
+                    binding.instituicao.text = "Saldo atual $instituicaoResgatada"
                     binding.saldo.text = formatted
                 } else {
                     Toast.makeText(applicationContext, "Erro ao resgatar", Toast.LENGTH_LONG).show()

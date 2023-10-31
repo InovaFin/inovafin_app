@@ -34,16 +34,17 @@
         android:testOnly="true"
         android:theme="@style/Theme.InovaFin" >
         <activity
+            android:name="com.example.inovafin.EditarConta"
+            android:exported="false" />
+        <activity
             android:name="com.example.inovafin.EmailEnviado"
             android:exported="false" />
         <activity
             android:name="com.example.inovafin.ContaEscolhida"
-            android:exported="false" >
-        </activity>
+            android:exported="false" />
         <activity
             android:name="com.example.inovafin.NovaConta"
-            android:exported="false" >
-        </activity>
+            android:exported="false" />
         <activity
             android:name="com.example.inovafin.ExcluirPagar"
             android:exported="false" />
