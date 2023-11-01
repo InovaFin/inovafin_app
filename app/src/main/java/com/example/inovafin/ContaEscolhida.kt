@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.example.inovafin.Util.ConfiguraBd
 import com.example.inovafin.databinding.ActivityContaEscolhidaBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -48,6 +49,10 @@ class ContaEscolhida : AppCompatActivity() {
             i.putExtra("instituicao", instituicao)
             startActivity(i)
         }
+
+        binding.btExcluir.setOnClickListener {
+            dialogConfirmacao()
+        }
     }
 
     private fun resgatarDados() {
@@ -74,6 +79,37 @@ class ContaEscolhida : AppCompatActivity() {
                 } else {
                     Toast.makeText(applicationContext, "Erro ao resgatar", Toast.LENGTH_LONG).show()
                 }
+            }
+    }
+
+    private fun dialogConfirmacao() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Confirmação")
+        builder.setMessage("Tem certeza de que deseja excluir a conta?")
+
+        builder.setPositiveButton("Sim") { dialog, which ->
+            // Usuário confirmou a saída
+            excluirConta()
+        }
+
+        builder.setNegativeButton("Não") { dialog, which ->
+            // Usuário cancelou a saída
+        }
+
+        val dialog = builder.create()
+        dialog.show()
+    }
+
+    private fun excluirConta() {
+        val usuarioId = autentificacao.currentUser!!.uid
+
+        firestore.collection("Usuarios").document(usuarioId)
+            .collection("ContasBancarias").document(contaId).delete()
+            .addOnSuccessListener {
+                Toast.makeText(applicationContext, "Conta excluída", Toast.LENGTH_LONG).show()
+            }
+            .addOnFailureListener {
+                Toast.makeText(applicationContext, "Erro ao excluir conta", Toast.LENGTH_LONG).show()
             }
     }
 }

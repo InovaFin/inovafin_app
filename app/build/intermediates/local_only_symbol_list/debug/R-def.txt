@@ -91,6 +91,7 @@ id btEditar
 id btEditarPerfil
 id btEsqueceuSenha
 id btExcluir
+id btExcluirConta
 id btExpandir
 id btExpandir_conta
 id btExpandir_tipo
@@ -132,6 +133,7 @@ layout activity_editar_conta
 layout activity_editar_perfil
 layout activity_email_enviado
 layout activity_esqueceu_senha
+layout activity_excluir_conta
 layout activity_excluir_guardado
 layout activity_excluir_pagar
 layout activity_excluir_receber

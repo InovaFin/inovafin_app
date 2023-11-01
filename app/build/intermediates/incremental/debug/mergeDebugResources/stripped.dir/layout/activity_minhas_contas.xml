@@ -61,57 +61,14 @@
                 android:id="@+id/listaContas"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="150dp"
+                android:layout_marginBottom="152dp"
                 tools:listitem="@layout/conta_item"/>
-
-<!--            &lt;!&ndash;Minha Conta&ndash;&gt;-->
-<!--            <LinearLayout-->
-<!--                android:id="@+id/btnConta"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:background="@drawable/bg_botao_terciario_ripple"-->
-<!--                android:clickable="true"-->
-<!--                android:gravity="center"-->
-<!--                android:orientation="vertical"-->
-<!--                android:paddingHorizontal="30dp"-->
-<!--                android:paddingVertical="25dp">-->
-
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:orientation="horizontal">-->
-
-<!--                    <TextView-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_weight="1"-->
-<!--                        android:fontFamily="@font/roboto_medium"-->
-<!--                        android:text="Conta Nubank"-->
-<!--                        android:textColor="@color/black_secundario"-->
-<!--                        android:textSize="15sp" />-->
-
-<!--                    <ImageView-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="match_parent"-->
-<!--                        android:src="@drawable/ic_avancar" />-->
-
-<!--                </LinearLayout>-->
-
-<!--            </LinearLayout>-->
-<!--            &lt;!&ndash;Minha Conta&ndash;&gt;-->
-
-<!--            &lt;!&ndash;Linha cinza&ndash;&gt;-->
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:background="@drawable/bg_linha"/>-->
-<!--            &lt;!&ndash;Linha cinza&ndash;&gt;-->
 
         </LinearLayout>
         
     </LinearLayout>
 
-    <!--Botão Editar e Adicionar-->
+    <!--Botão Excluir e Adicionar-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -119,35 +76,36 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:id="@+id/btExcluirConta"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:paddingHorizontal="17dp"
-            android:gravity="center"
-            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_botao_secundario_ripple"
             android:layout_marginHorizontal="30dp"
             android:clickable="true"
-            android:elevation="3dp"
-            android:background="@drawable/bg_botao_secundario_ripple">
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="17dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="15dp"
-                    android:src="@drawable/ic_editar"/>
+                    android:layout_marginEnd="5dp"
+                    android:src="@drawable/ic_excluir" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Editar Contas"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Excluir Contas"
                     android:textColor="@color/black_secundario"
-                    android:textSize="13sp"
-                    android:fontFamily="@font/roboto_bold"/>
+                    android:textSize="13sp" />
 
             </LinearLayout>
 
@@ -159,7 +117,6 @@
             android:layout_height="50dp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="30dp"
-            android:elevation="10dp"
             android:background="@drawable/bg_botao_ripple"
             android:layout_marginHorizontal="30dp"
             android:clickable="true"
@@ -176,7 +133,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="15dp"
+                    android:layout_marginEnd="5dp"
                     android:src="@drawable/ic_add" />
 
                 <TextView
@@ -192,6 +149,6 @@
         </LinearLayout>
 
     </LinearLayout>
-    <!--Botão Editar e Adicionar-->
+    <!--Botão Excluir e Adicionar-->
 
 </RelativeLayout>

@@ -34,6 +34,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.InovaFin" >
         <activity
+            android:name="com.example.inovafin.ExcluirConta"
+            android:exported="false" />
+        <activity
             android:name="com.example.inovafin.EditarConta"
             android:exported="false" />
         <activity

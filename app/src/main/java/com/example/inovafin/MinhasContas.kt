@@ -2,6 +2,7 @@ package com.example.inovafin
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -57,6 +58,11 @@ class MinhasContas : AppCompatActivity() {
 
         binding.icFechar.setOnClickListener {
             val i = Intent(this, Home::class.java)
+            startActivity(i)
+        }
+
+        binding.btExcluirConta.setOnClickListener {
+            val i = Intent(this, ExcluirConta::class.java)
             startActivity(i)
         }
     }

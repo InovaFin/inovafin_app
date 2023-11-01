@@ -25,16 +25,20 @@ public final class ActivityMinhasContasBinding implements ViewBinding {
   public final LinearLayout btAddContas;
 
   @NonNull
+  public final LinearLayout btExcluirConta;
+
+  @NonNull
   public final ImageView icFechar;
 
   @NonNull
   public final RecyclerView listaContas;
 
   private ActivityMinhasContasBinding(@NonNull RelativeLayout rootView,
-      @NonNull LinearLayout btAddContas, @NonNull ImageView icFechar,
-      @NonNull RecyclerView listaContas) {
+      @NonNull LinearLayout btAddContas, @NonNull LinearLayout btExcluirConta,
+      @NonNull ImageView icFechar, @NonNull RecyclerView listaContas) {
     this.rootView = rootView;
     this.btAddContas = btAddContas;
+    this.btExcluirConta = btExcluirConta;
     this.icFechar = icFechar;
     this.listaContas = listaContas;
   }
@@ -72,6 +76,12 @@ public final class ActivityMinhasContasBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btExcluirConta;
+      LinearLayout btExcluirConta = ViewBindings.findChildViewById(rootView, id);
+      if (btExcluirConta == null) {
+        break missingId;
+      }
+
       id = R.id.icFechar;
       ImageView icFechar = ViewBindings.findChildViewById(rootView, id);
       if (icFechar == null) {
@@ -84,8 +94,8 @@ public final class ActivityMinhasContasBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMinhasContasBinding((RelativeLayout) rootView, btAddContas, icFechar,
-          listaContas);
+      return new ActivityMinhasContasBinding((RelativeLayout) rootView, btAddContas, btExcluirConta,
+          icFechar, listaContas);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

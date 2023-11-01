@@ -3262,6 +3262,7 @@ int id btEditar 0x7f0a0073
 int id btEditarPerfil 0x7f0a0074
 int id btEsqueceuSenha 0x7f0a0075
 int id btExcluir 0x7f0a0076
+int id btExcluirConta 0x7f0a0231
 int id btExpandir 0x7f0a0077
 int id btExpandir_conta 0x7f0a0078
 int id btExpandir_tipo 0x7f0a0079
@@ -3826,6 +3827,7 @@ int layout activity_editar_conta 0x7f0d0021
 int layout activity_editar_perfil 0x7f0d0022
 int layout activity_email_enviado 0x7f0d0023
 int layout activity_esqueceu_senha 0x7f0d0024
+int layout activity_excluir_conta 0x7f0d0093
 int layout activity_excluir_guardado 0x7f0d0025
 int layout activity_excluir_pagar 0x7f0d0026
 int layout activity_excluir_receber 0x7f0d0027
