@@ -35,13 +35,15 @@ class ContaEscolhida : AppCompatActivity() {
 
         contaId = intent.getStringExtra("contaId").toString()
 
+        resgatarDados()
+
         binding.icFechar.setOnClickListener {
             onBackPressed()
         }
 
         binding.btEditar.setOnClickListener {
             val i = Intent(this, EditarConta::class.java)
-            i.putExtra("nomeConta", contaId)
+            i.putExtra("contaId", contaId)
             i.putExtra("saldoConta", saldoConta)
             i.putExtra("instituicao", instituicao)
             startActivity(i)
@@ -73,14 +75,5 @@ class ContaEscolhida : AppCompatActivity() {
                     Toast.makeText(applicationContext, "Erro ao resgatar", Toast.LENGTH_LONG).show()
                 }
             }
-    }
-
-    override fun onStart() {
-        super.onStart()
-        val usuarioAuth = autentificacao.currentUser
-
-        if (usuarioAuth != null) {
-            resgatarDados()
-        }
     }
 }

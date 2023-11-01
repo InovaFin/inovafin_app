@@ -51,12 +51,13 @@ class MinhasContas : AppCompatActivity() {
         setupRecyclerView()
 
         binding.btAddContas.setOnClickListener{
-            val i = Intent(this, NovaConta::class.java);
-            startActivity(i);
+            val i = Intent(this, NovaConta::class.java)
+            startActivity(i)
         }
 
         binding.icFechar.setOnClickListener {
-            onBackPressed()
+            val i = Intent(this, Home::class.java)
+            startActivity(i)
         }
     }
 

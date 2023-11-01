@@ -56,9 +56,6 @@ class EditarConta : AppCompatActivity() {
 
         resgatarNome()
 
-        // Insere o $nomeConta no EditText
-        binding.nomeConta.hint = nomeConta
-
         formatandoSaldo()
         spinnerInstituicoes()
 
@@ -223,6 +220,10 @@ class EditarConta : AppCompatActivity() {
 
                     val nomeResgatado = document.getString("nome")
                     nomeConta = nomeResgatado.toString()
+
+                    // Insere o $nomeConta no EditText
+                    binding.nomeConta.hint = nomeConta
+
 
                 } else {
                     Toast.makeText(applicationContext, "Erro ao resgatar nome", Toast.LENGTH_LONG).show()
