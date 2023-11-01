@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/branco_background"
+    tools:context=".AdicionarValor">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--Testando-->
+        <!--Header-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="40dp"
+            android:paddingHorizontal="30dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <!--Botão Voltar-->
+                <ImageView
+                    android:id="@+id/icFechar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_fechar"/>
+                <!--Botão Voltar-->
+
+            </LinearLayout>
+
+            <!--Título-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:text="Novo Registro"
+                android:textSize="24sp"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/black"/>
+            <!--Título-->
+
+        </RelativeLayout>
+        <!--Header-->
+
+        <!--Nome-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nome do Registro*"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"
+                android:textSize="15sp"
+                android:fontFamily="@font/roboto_medium"/>
+
+            <!--Nome-->
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                android:hint="Mercado..."
+                android:paddingVertical="15dp"
+                android:paddingHorizontal="10dp"
+                android:textColorHint="@color/black_terciario"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:background="@drawable/bg_edittext_secundario"
+                android:textCursorDrawable="@drawable/custom_cursor"
+                android:fontFamily="@font/roboto"/>
+            <!--Nome-->
+
+        </LinearLayout>
+        <!--Nome-->
+
+        <!--Conta-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Conta*"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"
+                android:textSize="15sp"
+                android:fontFamily="@font/roboto_medium"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edittext_secundario"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="10dp"
+                android:orientation="vertical">
+
+                <!--Selecione uma conta-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:text="Selecione uma conta"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/roboto"
+                        android:textColor="@color/black_secundario"/>
+
+                    <!--Botão Expandir-->
+                    <ImageView
+                        android:id="@+id/btExpandir_conta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_expandir"/>
+                    <!--Botão Expandir-->
+
+                </LinearLayout>
+                <!--Selecione uma conta-->
+
+                <!--Contas exemplo-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <!--Conta exemplo-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="10dp"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Conta Nubank"
+                            android:textColor="@color/black_secundario"
+                            android:fontFamily="@font/roboto"
+                            android:textSize="14sp"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_checkbox_receber"/>
+
+                    </LinearLayout>
+                    <!--Conta exemplo-->
+
+                    <!--Linha cinza-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_linha"/>
+                    <!--Linha cinza-->
+
+                    <!--Conta exemplo-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="10dp"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Conta PicPay"
+                            android:textColor="@color/black_secundario"
+                            android:fontFamily="@font/roboto"
+                            android:textSize="14sp"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_checkbox"/>
+
+                    </LinearLayout>
+                    <!--Conta exemplo-->
+
+                    <!--Linha cinza-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_linha"/>
+                    <!--Linha cinza-->
+
+                </LinearLayout>
+                <!--Contas exemplo-->
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <!--Conta-->
+
+        <!--Tipo-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tipo*"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"
+                android:textSize="15sp"
+                android:fontFamily="@font/roboto_medium"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edittext_secundario"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="10dp"
+                android:orientation="vertical">
+
+                <!--Selecione uma conta-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:text="Selecione o tipo do registro"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/roboto"
+                        android:textColor="@color/black_secundario"/>
+
+                    <!--Botão Expandir-->
+                    <ImageView
+                        android:id="@+id/btExpandir_tipo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_expandir"/>
+                    <!--Botão Expandir-->
+
+                </LinearLayout>
+                <!--Selecione uma conta-->
+
+                <!--Contas exemplo-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <!--Conta exemplo-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="10dp"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Valor a Receber"
+                            android:textColor="@color/black_secundario"
+                            android:fontFamily="@font/roboto"
+                            android:textSize="14sp"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_checkbox_receber"/>
+
+                    </LinearLayout>
+                    <!--Conta exemplo-->
+
+                    <!--Linha cinza-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_linha"/>
+                    <!--Linha cinza-->
+
+                    <!--Conta exemplo-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="10dp"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Dinheiro Guardado/Investido"
+                            android:textColor="@color/black_secundario"
+                            android:fontFamily="@font/roboto"
+                            android:textSize="14sp"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_checkbox"/>
+
+                    </LinearLayout>
+                    <!--Conta exemplo-->
+
+                    <!--Linha cinza-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_linha"/>
+                    <!--Linha cinza-->
+
+                    <!--Conta exemplo-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="10dp"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Valor a Pagar"
+                            android:textColor="@color/black_secundario"
+                            android:fontFamily="@font/roboto"
+                            android:textSize="14sp"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_checkbox"/>
+
+                    </LinearLayout>
+                    <!--Conta exemplo-->
+
+                    <!--Linha cinza-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_linha"/>
+                    <!--Linha cinza-->
+
+                </LinearLayout>
+                <!--Contas exemplo-->
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <!--Tipo-->
+
+        <!--Data-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Data de Vencimento"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"
+                android:textSize="15sp"
+                android:fontFamily="@font/roboto_medium"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:hint="00/00/00"
+                android:paddingVertical="15dp"
+                android:paddingHorizontal="10dp"
+                android:textColorHint="@color/black_terciario"
+                android:layout_marginBottom="15dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:background="@drawable/bg_edittext_secundario"
+                android:textCursorDrawable="@drawable/custom_cursor"
+                android:fontFamily="@font/roboto"/>
+
+        </LinearLayout>
+        <!--Data-->
+
+        <!--Descrição-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Descrição"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"
+                android:textSize="15sp"
+                android:fontFamily="@font/roboto_medium"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:gravity="start"
+                android:scrollbars="vertical"
+                android:hint="Descrição do Registro aqui..."
+                android:paddingVertical="15dp"
+                android:paddingHorizontal="10dp"
+                android:textColorHint="@color/black_terciario"
+                android:layout_marginBottom="15dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:background="@drawable/bg_edittext_secundario"
+                android:textCursorDrawable="@drawable/custom_cursor"
+                android:fontFamily="@font/roboto">
+            </EditText>
+
+        </LinearLayout>
+        <!--Descrição-->
+
+        <!--Nome-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Valor*"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"
+                android:textSize="15sp"
+                android:fontFamily="@font/roboto_medium"/>
+
+            <!--Valor-->
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                android:hint="R$ 00,00"
+                android:paddingVertical="15dp"
+                android:paddingHorizontal="10dp"
+                android:textColorHint="@color/black_terciario"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:background="@drawable/bg_edittext_secundario"
+                android:textCursorDrawable="@drawable/custom_cursor"
+                android:fontFamily="@font/roboto"/>
+            <!--Valor-->
+
+        </LinearLayout>
+        <!--Valor-->
+
+        <!--Botão Criar-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingHorizontal="17dp"
+            android:layout_marginVertical="30dp"
+            android:layout_marginHorizontal="30dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:clickable="true"
+            android:background="@drawable/bg_botao_ripple">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Criar Registro"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:fontFamily="@font/roboto_bold"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <!--Botão Criar-->
+
+    </LinearLayout>
+
+</ScrollView>

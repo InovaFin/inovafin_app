@@ -20,7 +20,7 @@ class ContaEscolhida : AppCompatActivity() {
     private lateinit var firestore: FirebaseFirestore
 
     private var numberFormat = NumberFormat.getCurrencyInstance(Locale("pt", "BR"))
-    private var nomeConta: String = ""
+    private var contaId: String = ""
     private var instituicao: String = ""
     private var saldoConta: String = ""
 
@@ -33,7 +33,7 @@ class ContaEscolhida : AppCompatActivity() {
         autentificacao = ConfiguraBd.Firebaseautentificacao()
         firestore = ConfiguraBd.Firebasefirestore()
 
-        nomeConta = intent.getStringExtra("nomeConta").toString()
+        contaId = intent.getStringExtra("contaId").toString()
 
         binding.icFechar.setOnClickListener {
             onBackPressed()
@@ -41,7 +41,7 @@ class ContaEscolhida : AppCompatActivity() {
 
         binding.btEditar.setOnClickListener {
             val i = Intent(this, EditarConta::class.java)
-            i.putExtra("nomeConta", nomeConta)
+            i.putExtra("nomeConta", contaId)
             i.putExtra("saldoConta", saldoConta)
             i.putExtra("instituicao", instituicao)
             startActivity(i)
@@ -53,11 +53,12 @@ class ContaEscolhida : AppCompatActivity() {
 
         // Resgatar dados aqui!
         firestore.collection("Usuarios").document(usuarioId)
-            .collection("ContasBancarias").document("$nomeConta")
+            .collection("ContasBancarias").document(contaId)
             .addSnapshotListener { document, error ->
                 if (document != null) {
                     val saldoResgatado = document.getDouble("saldo")
                     val instituicaoResgatada = document.getString("instituicao")
+                    val nomeResgatado = document.getString("nome")
 
                     val formatted = numberFormat.format(saldoResgatado)
                     saldoConta = formatted
@@ -65,7 +66,7 @@ class ContaEscolhida : AppCompatActivity() {
                     instituicao = instituicaoResgatada.toString()
 
                     // Aplica os dados no layout
-                    binding.titulo.text = nomeConta
+                    binding.titulo.text = nomeResgatado
                     binding.instituicao.text = "Saldo atual $instituicaoResgatada"
                     binding.saldo.text = formatted
                 } else {

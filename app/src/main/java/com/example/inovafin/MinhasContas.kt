@@ -2,7 +2,6 @@ package com.example.inovafin
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -42,17 +41,14 @@ class MinhasContas : AppCompatActivity() {
 
         contaArrayList = arrayListOf()
         adapter = MyAdapter(contaArrayList) { conta ->
-            val i = Intent(this, ContaEscolhida::class.java)
-            i.putExtra("nomeConta", conta.nome)
-            startActivity(i)
+            resgatarId(conta.nome) { documentoId ->
+                val i = Intent(this, ContaEscolhida::class.java)
+                i.putExtra("contaId", documentoId)
+                startActivity(i)
+            }
         }
 
         setupRecyclerView()
-
-//        binding.btConta.setOnClickListener{
-//            val i = Intent(this, ContaEscolhida::class.java);
-//            startActivity(i);
-//        }
 
         binding.btAddContas.setOnClickListener{
             val i = Intent(this, NovaConta::class.java);
@@ -62,6 +58,28 @@ class MinhasContas : AppCompatActivity() {
         binding.icFechar.setOnClickListener {
             onBackPressed()
         }
+    }
+
+    private fun resgatarId(nome: String?, callback: (String) -> Unit) {
+        val usuarioId = autentificacao.currentUser!!.uid
+
+        firestore.collection("Usuarios").document(usuarioId)
+            .collection("ContasBancarias")
+            .whereEqualTo("nome", nome)
+            .get()
+            .addOnSuccessListener { querySnapshot ->
+                if (!querySnapshot.isEmpty) {
+                    // Recupera o ID do primeiro documento correspondente
+                    val documentSnapshot = querySnapshot.documents[0]
+                    val documentoId = documentSnapshot.id
+                    callback(documentoId)
+                } else {
+                    // Tratar caso em que nenhum documento corresponde
+                }
+            }
+            .addOnFailureListener { e ->
+                // Tratar erro, se necessário
+            }
     }
 
     private fun resgatarDados() {

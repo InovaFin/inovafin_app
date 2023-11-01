@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Toast
@@ -30,10 +32,11 @@ class EditarConta : AppCompatActivity() {
 
     private var numberFormat = NumberFormat.getCurrencyInstance()
 
-    private var nomeAlterado = false
     private var instituicaoAlterada = false
-    private var saldoAlterado = false
     private var saldoAtualFinal: Double = 0.0
+    private var nomeFinal: String =""
+
+    private var contaId: String = ""
     private var nomeConta: String = ""
     private var instituicao: String = ""
     private var saldoConta: String = ""
@@ -47,76 +50,26 @@ class EditarConta : AppCompatActivity() {
         firestore = ConfiguraBd.Firebasefirestore()
         animacaoDeLoad = AnimacaoDeLoad(binding.btAnimacao, binding.btText, this)
 
-        nomeConta = intent.getStringExtra("nomeConta").toString()
+        contaId = intent.getStringExtra("contaId").toString()
         instituicao = intent.getStringExtra("instituicao").toString()
         saldoConta = intent.getStringExtra("saldoConta").toString()
 
-        configurarTextWatcherNome()
-        configurarTextWatcherSaldo()
+        resgatarNome()
 
-        spinnerInstituicoes()
+        // Insere o $nomeConta no EditText
+        binding.nomeConta.hint = nomeConta
+
         formatandoSaldo()
-
-        resgatarDados()
+        spinnerInstituicoes()
 
         binding.icFechar.setOnClickListener {
             onBackPressed()
         }
 
         binding.btAdicionar.setOnClickListener {
+            animacaoDeLoad.iniciarAnimacao()
             validarCampos()
         }
-    }
-
-    private fun configurarTextWatcherNome() {
-        binding.nomeConta.addTextChangedListener(object : TextWatcher {
-            private var nomeAnterior: CharSequence? = null
-
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                nomeAnterior = s?.toString() // Salva o texto anterior
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                // Quando o texto está sendo alterado
-                if (nomeAnterior.isNullOrEmpty() && !s.isNullOrEmpty()) {
-                    // Nome foi preenchido pela primeira vez ou o texto foi reescrito
-                    nomeAlterado = true
-                } else if (!nomeAnterior.isNullOrEmpty() && s.isNullOrEmpty()) {
-                    // Nome foi apagado
-                    nomeAlterado = false
-                }
-            }
-
-            override fun afterTextChanged(s: Editable?) {
-                // Nada a fazer após a mudança
-            }
-        })
-    }
-
-    private fun configurarTextWatcherSaldo() {
-        binding.saldoAtual.addTextChangedListener(object : TextWatcher {
-            private var saldoAnterior: CharSequence? = null
-
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                saldoAnterior = s?.toString() // Salva o texto anterior
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                // Quando o texto está sendo alterado
-                if (saldoAnterior.isNullOrEmpty() && !s.isNullOrEmpty()) {
-                    // Saldo foi preenchido pela primeira vez ou o texto foi reescrito
-                    val saldo = binding.saldoAtual.text
-                    saldoAlterado = saldo.toString() != saldoConta
-                } else if (!saldoAnterior.isNullOrEmpty() && s.isNullOrEmpty()) {
-                    // Saldo foi apagado
-                    saldoAlterado = false
-                }
-            }
-
-            override fun afterTextChanged(s: Editable?) {
-                // Nada a fazer após a mudança
-            }
-        })
     }
 
     private fun spinnerInstituicoes() {
@@ -131,14 +84,6 @@ class EditarConta : AppCompatActivity() {
         val adapter = ArrayAdapter(this, R.layout.item_spinner_layout, spinnerOP)
 
         binding.spinner.adapter = adapter
-
-        // Índice da instituição atual do usuário
-        val instituicaoIndex = spinnerOP.indexOf(instituicao)
-
-        // Se a instituição atual do usuário estiver na lista, defina-a como selecionada no Spinner
-        if (instituicaoIndex >= 0) {
-            binding.spinner.setSelection(instituicaoIndex)
-        }
     }
 
     private fun verificarSpinner() {
@@ -151,7 +96,7 @@ class EditarConta : AppCompatActivity() {
         val editTextMonetario = binding.saldoAtual
 
         // Defina o texto inicial como "R$ "
-        editTextMonetario.setText("R$ 0,00")
+        editTextMonetario.setText(saldoConta)
 
         // Posicione o cursor no final do texto
         editTextMonetario.setSelection(editTextMonetario.text.length)
@@ -191,27 +136,6 @@ class EditarConta : AppCompatActivity() {
 
     }
 
-    private fun validarCampos() {
-        verificarSaldo()
-        verificarSpinner()
-        if (nomeAlterado || saldoAlterado) {
-            if (saldoAtualFinal > 0.0) {
-                if (instituicaoAlterada) {
-                    adicionarConta()
-                } else {
-                    animacaoDeLoad.pararAnimacao()
-                    Toast.makeText(applicationContext, "Selecione uma instituição", Toast.LENGTH_LONG).show()
-                }
-            } else {
-                animacaoDeLoad.pararAnimacao()
-                Toast.makeText(applicationContext, "O saldo deve ser maior que zero", Toast.LENGTH_LONG).show()
-            }
-        } else {
-            animacaoDeLoad.pararAnimacao()
-            Toast.makeText(applicationContext, "Preencha todos os campos", Toast.LENGTH_LONG).show()
-        }
-    }
-
     private fun verificarSaldo() {
         val saldoAtual = binding.saldoAtual.text.toString()
 
@@ -224,32 +148,59 @@ class EditarConta : AppCompatActivity() {
         saldoAtualFinal = saldoSemFormatacao.toDouble() / 100.0
     }
 
-    private fun adicionarConta() {
+    private fun validarCampos() {
+        verificarSpinner()
+        verificarSaldo()
+        if (instituicaoAlterada) {
+            if (saldoAtualFinal > 0.0){
+                alterarConta()
+            } else {
+                animacaoDeLoad.pararAnimacao()
+                Toast.makeText(applicationContext, "O saldo deve ser maior que R$ 0,00", Toast.LENGTH_LONG).show()
+            }
+        } else {
+            animacaoDeLoad.pararAnimacao()
+            Toast.makeText(applicationContext, "Selecione uma instituição", Toast.LENGTH_LONG).show()
+        }
+    }
+
+    private fun alterarConta() {
         val usuarioId = autentificacao.currentUser!!.uid
+
         val nome = binding.nomeConta.text.toString()
+
+        // Verifica se deve alterar ou manter o nome da conta
+        if (nome != "") {
+            nomeFinal = nome
+        } else {
+            nomeFinal = nomeConta
+        }
+
         val instituicao = binding.spinner.selectedItem
 
         val usuarioMasp = hashMapOf(
-            "nome" to nome,
+            "nome" to nomeFinal,
             "instituicao" to instituicao,
             "saldo" to saldoAtualFinal
         )
 
         try {
             firestore.collection("Usuarios").document(usuarioId)
-                .collection("ContasBancarias").document("$nome")
-                .set(usuarioMasp).addOnCompleteListener(this) {task ->
+                .collection("ContasBancarias").document(contaId)
+                .update(usuarioMasp).addOnCompleteListener(this) {task ->
                     if (task.isSuccessful) {
+                        animacaoDeLoad.pararAnimacao()
+                        Toast.makeText(applicationContext, "Conta alterada", Toast.LENGTH_LONG).show()
                         val i = Intent(this, MinhasContas::class.java)
                         startActivity(i)
-                        finish()
                     } else {
+                        animacaoDeLoad.pararAnimacao()
                         var excecao = ""
 
                         try {
                             throw task.exception!!
                         } catch (e: Exception) {
-                            excecao = "Erro ao salvar conta" + e.message
+                            excecao = "Erro ao alterar conta" + e.message
                             e.printStackTrace()
                         }
                         animacaoDeLoad.pararAnimacao()
@@ -262,25 +213,19 @@ class EditarConta : AppCompatActivity() {
         }
     }
 
-    private fun resgatarDados() {
+    private fun resgatarNome() {
         val usuarioId = autentificacao.currentUser!!.uid
 
-        // Resgatar dados aqui!
         firestore.collection("Usuarios").document(usuarioId)
-            .collection("ContasBancarias").document("$nomeConta")
+            .collection("ContasBancarias").document(contaId)
             .addSnapshotListener { document, error ->
                 if (document != null) {
-                    val saldoResgatado = document.getDouble("saldo")
 
-                    binding.nomeConta.hint = document.getString("nome")
+                    val nomeResgatado = document.getString("nome")
+                    nomeConta = nomeResgatado.toString()
 
-                    if (saldoResgatado != null) {
-                        // Converter o saldo para a formatação desejada
-                        val formattedSaldo = numberFormat.format(saldoResgatado)
-
-                        // Definir o texto no EditText
-                        binding.saldoAtual.setText(formattedSaldo)
-                    }
+                } else {
+                    Toast.makeText(applicationContext, "Erro ao resgatar nome", Toast.LENGTH_LONG).show()
                 }
             }
     }

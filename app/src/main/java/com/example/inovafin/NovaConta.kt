@@ -221,9 +221,10 @@ class NovaConta : AppCompatActivity() {
             "saldo" to saldoAtualFinal
         )
 
+        // Alterei para criar um ID do documento de cada conta
         try {
             firestore.collection("Usuarios").document(usuarioId)
-                .collection("ContasBancarias").document("$nome")
+                .collection("ContasBancarias").document()
                 .set(usuarioMasp).addOnCompleteListener(this) {task ->
                     if (task.isSuccessful) {
                         val i = Intent(this, MinhasContas::class.java)
