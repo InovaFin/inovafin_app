@@ -20,12 +20,12 @@
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\font\\roboto_bold.xml"
     },
     {
-        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\xml_data_extraction_rules.xml.flat",
-        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\xml\\data_extraction_rules.xml"
-    },
-    {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\drawable_bg_edittext.xml.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\drawable\\bg_edittext.xml"
+    },
+    {
+        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\xml\\data_extraction_rules.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\drawable_bg_botao.xml.flat",

@@ -39,6 +39,10 @@ class TransferirValor : AppCompatActivity() {
         resgatarDados()
 
         formatandoSaldo()
+
+        binding.btTransferir.setOnClickListener {
+            verificarConta()
+        }
     }
 
     private fun resgatarDados() {
@@ -107,5 +111,34 @@ class TransferirValor : AppCompatActivity() {
 
         // Adicionando o MoneyTextWatcher ao Saldo Atual
         editTextMonetario.addTextChangedListener(MoneyTextWatcher(editTextMonetario))
+    }
+
+    private fun verificarConta() {
+        val usuarioId = autentificacao.currentUser!!.uid
+        val nome = binding.nomeConta.text.toString()
+
+        // Verificar dados aqui!
+        firestore.collection("Usuarios").document(usuarioId)
+            .collection("ContasBancarias")
+            .whereEqualTo("nome", nome.trim())
+            .get()
+            .addOnSuccessListener { documents ->
+                if (documents.isEmpty) {
+                    // Nenhum documento correspondente foi encontrado
+                    Toast.makeText(applicationContext, "Essa conta não existe", Toast.LENGTH_LONG).show()
+                } else {
+                    // Documentos correspondentes foram encontrados
+                    for (document in documents) {
+                        transferirValor(document.id)
+                    }
+                }
+            }
+            .addOnFailureListener { exception ->
+                Toast.makeText(applicationContext, "Erro ao resgatar documento: $exception", Toast.LENGTH_LONG).show()
+            }
+    }
+
+    private fun transferirValor(id: String) {
+        
     }
 }
