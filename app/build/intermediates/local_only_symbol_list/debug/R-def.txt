@@ -124,6 +124,7 @@ id saldoAtual
 id senhaUsuario
 id spinner
 id titulo
+id valorTranferir
 layout activity_adicionar_valor
 layout activity_ajuda_saldo_geral
 layout activity_cadastro

@@ -23,42 +23,38 @@ public final class ActivityTransferirValorBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final LinearLayout btAdicionar;
-
-  @NonNull
   public final LottieAnimationView btAnimacao;
 
   @NonNull
   public final LinearLayout btText;
 
   @NonNull
-  public final EditText emailUsuario;
+  public final LinearLayout btTransferir;
 
   @NonNull
   public final ImageView icFechar;
 
   @NonNull
-  public final TextView instituicao;
+  public final EditText nomeConta;
 
   @NonNull
   public final TextView saldo;
 
   @NonNull
-  public final EditText saldoAtual;
+  public final EditText valorTranferir;
 
   private ActivityTransferirValorBinding(@NonNull LinearLayout rootView,
-      @NonNull LinearLayout btAdicionar, @NonNull LottieAnimationView btAnimacao,
-      @NonNull LinearLayout btText, @NonNull EditText emailUsuario, @NonNull ImageView icFechar,
-      @NonNull TextView instituicao, @NonNull TextView saldo, @NonNull EditText saldoAtual) {
+      @NonNull LottieAnimationView btAnimacao, @NonNull LinearLayout btText,
+      @NonNull LinearLayout btTransferir, @NonNull ImageView icFechar, @NonNull EditText nomeConta,
+      @NonNull TextView saldo, @NonNull EditText valorTranferir) {
     this.rootView = rootView;
-    this.btAdicionar = btAdicionar;
     this.btAnimacao = btAnimacao;
     this.btText = btText;
-    this.emailUsuario = emailUsuario;
+    this.btTransferir = btTransferir;
     this.icFechar = icFechar;
-    this.instituicao = instituicao;
+    this.nomeConta = nomeConta;
     this.saldo = saldo;
-    this.saldoAtual = saldoAtual;
+    this.valorTranferir = valorTranferir;
   }
 
   @Override
@@ -88,12 +84,6 @@ public final class ActivityTransferirValorBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btAdicionar;
-      LinearLayout btAdicionar = ViewBindings.findChildViewById(rootView, id);
-      if (btAdicionar == null) {
-        break missingId;
-      }
-
       id = R.id.btAnimacao;
       LottieAnimationView btAnimacao = ViewBindings.findChildViewById(rootView, id);
       if (btAnimacao == null) {
@@ -106,9 +96,9 @@ public final class ActivityTransferirValorBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.emailUsuario;
-      EditText emailUsuario = ViewBindings.findChildViewById(rootView, id);
-      if (emailUsuario == null) {
+      id = R.id.btTransferir;
+      LinearLayout btTransferir = ViewBindings.findChildViewById(rootView, id);
+      if (btTransferir == null) {
         break missingId;
       }
 
@@ -118,9 +108,9 @@ public final class ActivityTransferirValorBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.instituicao;
-      TextView instituicao = ViewBindings.findChildViewById(rootView, id);
-      if (instituicao == null) {
+      id = R.id.nomeConta;
+      EditText nomeConta = ViewBindings.findChildViewById(rootView, id);
+      if (nomeConta == null) {
         break missingId;
       }
 
@@ -130,14 +120,14 @@ public final class ActivityTransferirValorBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.saldoAtual;
-      EditText saldoAtual = ViewBindings.findChildViewById(rootView, id);
-      if (saldoAtual == null) {
+      id = R.id.valorTranferir;
+      EditText valorTranferir = ViewBindings.findChildViewById(rootView, id);
+      if (valorTranferir == null) {
         break missingId;
       }
 
-      return new ActivityTransferirValorBinding((LinearLayout) rootView, btAdicionar, btAnimacao,
-          btText, emailUsuario, icFechar, instituicao, saldo, saldoAtual);
+      return new ActivityTransferirValorBinding((LinearLayout) rootView, btAnimacao, btText,
+          btTransferir, icFechar, nomeConta, saldo, valorTranferir);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

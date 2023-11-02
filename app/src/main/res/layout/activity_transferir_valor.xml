@@ -68,7 +68,6 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/instituicao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -126,7 +125,7 @@
 
                 <!--Email-->
                 <EditText
-                    android:id="@+id/emailUsuario"
+                    android:id="@+id/nomeConta"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -164,7 +163,7 @@
                     android:fontFamily="@font/roboto_medium"/>
 
                 <EditText
-                    android:id="@+id/saldoAtual"
+                    android:id="@+id/valorTranferir"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -194,7 +193,7 @@
 
         <!--Botão Transferir-->
         <LinearLayout
-            android:id="@+id/btAdicionar"
+            android:id="@+id/btTransferir"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:visibility="visible"
