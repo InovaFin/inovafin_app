@@ -34,6 +34,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.InovaFin" >
         <activity
+            android:name="com.example.inovafin.TransferirValor"
+            android:exported="false" />
+        <activity
             android:name="com.example.inovafin.ConfirmarExcluirConta"
             android:exported="false" />
         <activity

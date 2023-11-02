@@ -3056,6 +3056,7 @@ drawable ic_salvar
 drawable ic_search_black_24
 drawable ic_senha
 drawable ic_transacao
+drawable ic_transacao_branco
 drawable ic_voltar
 drawable img_logo
 drawable img_senha_enviada
@@ -3843,6 +3844,7 @@ layout activity_saldo_geral_guardado
 layout activity_saldo_geral_pagar
 layout activity_saldo_geral_receber
 layout activity_senha_enviada
+layout activity_transferir_valor
 layout activity_valor_guardado
 layout activity_valor_pagar
 layout activity_valor_receber

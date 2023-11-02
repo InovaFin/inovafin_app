@@ -3055,6 +3055,7 @@ int drawable ic_salvar 0x7f0800d7
 int drawable ic_search_black_24 0x7f0800d8
 int drawable ic_senha 0x7f0800d9
 int drawable ic_transacao 0x7f0800da
+int drawable ic_transacao_branco 0x7f08012c
 int drawable ic_voltar 0x7f0800db
 int drawable img_logo 0x7f0800dc
 int drawable img_senha_enviada 0x7f0800dd
@@ -3842,6 +3843,7 @@ int layout activity_saldo_geral_guardado 0x7f0d0032
 int layout activity_saldo_geral_pagar 0x7f0d0033
 int layout activity_saldo_geral_receber 0x7f0d0034
 int layout activity_senha_enviada 0x7f0d0035
+int layout activity_transferir_valor 0x7f0d0095
 int layout activity_valor_guardado 0x7f0d0036
 int layout activity_valor_pagar 0x7f0d0037
 int layout activity_valor_receber 0x7f0d0038
