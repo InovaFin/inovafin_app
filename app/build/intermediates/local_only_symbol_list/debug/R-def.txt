@@ -150,6 +150,7 @@ layout activity_saldo_geral_guardado
 layout activity_saldo_geral_pagar
 layout activity_saldo_geral_receber
 layout activity_senha_enviada
+layout activity_splash_transferir
 layout activity_transferir_valor
 layout activity_valor_guardado
 layout activity_valor_pagar

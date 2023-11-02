@@ -1,5 +1,6 @@
 package com.example.inovafin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -25,6 +26,8 @@ class TransferirValor : AppCompatActivity() {
     private var numberFormat = NumberFormat.getCurrencyInstance(Locale("pt", "BR"))
 
     private var contaId: String = ""
+    private var saldoAtual: Double = 0.0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTransferirValorBinding.inflate(layoutInflater)
@@ -38,7 +41,11 @@ class TransferirValor : AppCompatActivity() {
 
         resgatarDados()
 
-        formatandoSaldo()
+        formatandoValor()
+
+        binding.icFechar.setOnClickListener {
+            onBackPressed()
+        }
 
         binding.btTransferir.setOnClickListener {
             verificarConta()
@@ -55,6 +62,10 @@ class TransferirValor : AppCompatActivity() {
                 .addSnapshotListener { document, error ->
                     if (document != null) {
                         val saldoResgatado = document.getDouble("saldo")
+
+                        if (saldoResgatado != null) {
+                            saldoAtual = saldoResgatado
+                        }
 
                         val formatted = numberFormat.format(saldoResgatado)
 
@@ -100,7 +111,7 @@ class TransferirValor : AppCompatActivity() {
 
     }
 
-    private fun formatandoSaldo() {
+    private fun formatandoValor() {
         val editTextMonetario = binding.valorTranferir
 
         // Defina o texto inicial como "R$ "
@@ -113,11 +124,21 @@ class TransferirValor : AppCompatActivity() {
         editTextMonetario.addTextChangedListener(MoneyTextWatcher(editTextMonetario))
     }
 
+    private fun parseDoubleValor(valor: String): Double {
+        // Remova o símbolo da moeda, nesse caso "R$ "
+        val valorSemSimbolo = valor.replace(NumberFormat.getCurrencyInstance().currency.symbol, "")
+
+        // Remova todos os caracteres que não são dígitos (0-9), incluindo pontos e vírgulas
+        val valorSemFormatacao = valorSemSimbolo.replace(Regex("[^\\d]"), "")
+
+        return valorSemFormatacao.toDouble() / 100.0
+    }
+
     private fun verificarConta() {
         val usuarioId = autentificacao.currentUser!!.uid
         val nome = binding.nomeConta.text.toString()
 
-        // Verificar dados aqui!
+        // Verificar conta aqui!
         firestore.collection("Usuarios").document(usuarioId)
             .collection("ContasBancarias")
             .whereEqualTo("nome", nome.trim())
@@ -138,7 +159,68 @@ class TransferirValor : AppCompatActivity() {
             }
     }
 
-    private fun transferirValor(id: String) {
-        
+    private fun transferirValor(contaDestId: String) {
+        val usuarioId = autentificacao.currentUser!!.uid
+
+        // Verificar conta aqui!
+        firestore.collection("Usuarios").document(usuarioId)
+            .collection("ContasBancarias").document(contaDestId)
+            .get()
+            .addOnSuccessListener { document ->
+                if (document.exists()) {
+                    var valorAtual = document.getDouble("saldo")
+                    if (valorAtual != null) {
+                        val valorTransferir = binding.valorTranferir.text.toString()
+                        valorAtual += parseDoubleValor(valorTransferir)
+
+                        atualizarContaRemetente()
+                        atualizarContaDestinatario(valorAtual, contaDestId)
+
+                        val i = Intent(this, SplashTransferir::class.java)
+                        startActivity(i)
+                    }
+                }
+            }
+            .addOnFailureListener { exception ->
+                Toast.makeText(applicationContext, "Erro ao buscar documento: $exception", Toast.LENGTH_LONG).show()
+            }
+    }
+
+    private fun atualizarContaRemetente() {
+        val usuarioId = autentificacao.currentUser!!.uid
+        val valorTransferir = binding.valorTranferir.text.toString()
+
+        val novoSaldo = saldoAtual - parseDoubleValor(valorTransferir)
+
+        val usuarioMasp = hashMapOf(
+            "saldo" to novoSaldo
+        )
+
+        firestore.collection("Usuarios").document(usuarioId)
+            .collection("ContasBancarias").document(contaId)
+            .update(usuarioMasp as Map<String, Any>)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+//                    Toast.makeText(applicationContext, "Conta atual alterada", Toast.LENGTH_LONG).show()
+                }
+            }
+
+    }
+
+    private fun atualizarContaDestinatario(valorAtual: Double, contaDestId: String) {
+        val usuarioId = autentificacao.currentUser!!.uid
+
+        val usuarioMasp = hashMapOf(
+            "saldo" to valorAtual
+        )
+
+        firestore.collection("Usuarios").document(usuarioId)
+            .collection("ContasBancarias").document(contaDestId)
+            .update(usuarioMasp as Map<String, Any>)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(applicationContext, "Conta dest alterada", Toast.LENGTH_LONG).show()
+                }
+            }
     }
 }

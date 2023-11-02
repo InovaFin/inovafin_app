@@ -3844,6 +3844,7 @@ int layout activity_saldo_geral_guardado 0x7f0d0032
 int layout activity_saldo_geral_pagar 0x7f0d0033
 int layout activity_saldo_geral_receber 0x7f0d0034
 int layout activity_senha_enviada 0x7f0d0035
+int layout activity_splash_transferir 0x7f0d0096
 int layout activity_transferir_valor 0x7f0d0095
 int layout activity_valor_guardado 0x7f0d0036
 int layout activity_valor_pagar 0x7f0d0037

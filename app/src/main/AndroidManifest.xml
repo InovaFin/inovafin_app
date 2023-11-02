@@ -16,6 +16,9 @@
         android:theme="@style/Theme.InovaFin"
         tools:targetApi="31">
         <activity
+            android:name=".SplashTransferir"
+            android:exported="false" />
+        <activity
             android:name=".TransferirValor"
             android:exported="false" />
         <activity

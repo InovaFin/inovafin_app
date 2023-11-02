@@ -44,10 +44,6 @@
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\layout\\activity_conta_escolhida.xml"
     },
     {
-        "merged": "com.example.inovafin.app-merged_res-39:/layout_activity_transferir_valor.xml.flat",
-        "source": "com.example.inovafin.app-main-41:/layout/activity_transferir_valor.xml"
-    },
-    {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\drawable_ic_perfil_config.png.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\drawable\\ic_perfil_config.png"
     },
@@ -296,6 +292,10 @@
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\layout\\activity_senha_enviada.xml"
     },
     {
+        "merged": "com.example.inovafin.app-merged_res-39:/layout_activity_splash_transferir.xml.flat",
+        "source": "com.example.inovafin.app-main-41:/layout/activity_splash_transferir.xml"
+    },
+    {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\drawable_ic_editar_cinza.xml.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\drawable\\ic_editar_cinza.xml"
     },
@@ -434,6 +434,10 @@
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\drawable_ic_calculadora_black.xml.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\drawable\\ic_calculadora_black.xml"
+    },
+    {
+        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\layout_activity_splash_transferir.xml.flat",
+        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\layout\\activity_splash_transferir.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\font_roboto.xml.flat",
