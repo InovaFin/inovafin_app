@@ -216,36 +216,52 @@ class NovaConta : AppCompatActivity() {
         val instituicao = binding.spinner.selectedItem
 
         val usuarioMasp = hashMapOf(
-            "nome" to nome,
+            "nome" to nome.trim(),
             "instituicao" to instituicao,
             "saldo" to saldoAtualFinal
         )
 
-        // Alterei para criar um ID do documento de cada conta
-        try {
-            firestore.collection("Usuarios").document(usuarioId)
-                .collection("ContasBancarias").document()
-                .set(usuarioMasp).addOnCompleteListener(this) {task ->
-                    if (task.isSuccessful) {
-                        val i = Intent(this, MinhasContas::class.java)
-                        startActivity(i)
-                        finish()
-                    } else {
-                        var excecao = ""
-
-                        try {
-                            throw task.exception!!
-                        } catch (e: Exception) {
-                            excecao = "Erro ao salvar conta" + e.message
-                            e.printStackTrace()
-                        }
+        // Primeiro, verifique se o nome já está em uso
+        firestore.collection("Usuarios").document(usuarioId)
+            .collection("ContasBancarias")
+            .whereEqualTo("nome", nome.trim())
+            .get()
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    if (!task.result.isEmpty) {
+                        // O nome já está em uso, exiba uma mensagem de erro
                         animacaoDeLoad.pararAnimacao()
-                        Toast.makeText(applicationContext, "$excecao", Toast.LENGTH_LONG).show()
+                        Toast.makeText(applicationContext, "Este nome de conta já está em uso", Toast.LENGTH_LONG).show()
+                    } else {
+                        // O nome não está em uso, add conta
+                        firestore.collection("Usuarios").document(usuarioId)
+                            .collection("ContasBancarias").document()
+                            .set(usuarioMasp)
+                            .addOnCompleteListener(this) { task ->
+                                if (task.isSuccessful) {
+                                    val i = Intent(this, MinhasContas::class.java)
+                                    startActivity(i)
+                                    finish()
+                                } else {
+                                    var excecao = ""
+
+                                    try {
+                                        throw task.exception!!
+                                    } catch (e: Exception) {
+                                        excecao = "Erro ao salvar conta" + e.message
+                                        e.printStackTrace()
+                                    }
+                                    animacaoDeLoad.pararAnimacao()
+                                    Toast.makeText(applicationContext, "$excecao", Toast.LENGTH_LONG).show()
+                                }
+                            }
                     }
+                } else {
+                    // Trate erros na consulta, se necessário
+                    animacaoDeLoad.pararAnimacao()
+                    Toast.makeText(applicationContext, "Erro ao verificar o nome da conta", Toast.LENGTH_LONG).show()
                 }
-        } catch (e: Exception) {
-            animacaoDeLoad.pararAnimacao()
-            Toast.makeText(applicationContext, "$e", Toast.LENGTH_LONG).show()
-        }
+            }
+
     }
 }
