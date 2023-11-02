@@ -65,6 +65,8 @@ dependencies {
     // Glide
     implementation("com.github.bumptech.glide:glide:4.16.0")
 
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
+
     // Lottie animation
     implementation("com.airbnb.android:lottie:5.2.0")
 }

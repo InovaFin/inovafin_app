@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.inovafin.app-mergeDebugResources-36:/values-ko/values-ko.xml",
+            "outputFile": "com.example.inovafin.app-mergeDebugResources-37:/values-ko/values-ko.xml",
             "map": [
                 {
                     "source": "C:\\Users\\erick\\.gradle\\caches\\transforms-3\\505da5826076f57c2968e02349495c0c\\transformed\\play-services-base-18.0.1\\res\\values-ko\\values.xml",

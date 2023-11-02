@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.inovafin.app-mergeDebugResources-36:/values/values.xml",
+            "outputFile": "com.example.inovafin.app-mergeDebugResources-37:/values/values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\erick\\.gradle\\caches\\transforms-3\\505da5826076f57c2968e02349495c0c\\transformed\\play-services-base-18.0.1\\res\\values\\values.xml",
@@ -499,9 +499,9 @@
                     "from": {
                         "startLines": "1",
                         "startColumns": "4",
-                        "startOffsets": "17",
+                        "startOffsets": "16",
                         "endColumns": "45",
-                        "endOffsets": "58"
+                        "endOffsets": "57"
                     },
                     "to": {
                         "startLines": "1995",

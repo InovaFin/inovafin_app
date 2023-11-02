@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.inovafin.app-mergeDebugResources-36:/values-gu/values-gu.xml",
+            "outputFile": "com.example.inovafin.app-mergeDebugResources-37:/values-gu/values-gu.xml",
             "map": [
                 {
                     "source": "C:\\Users\\erick\\.gradle\\caches\\transforms-3\\505da5826076f57c2968e02349495c0c\\transformed\\play-services-base-18.0.1\\res\\values-gu\\values.xml",

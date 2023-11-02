@@ -5,12 +5,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.lifecycle.lifecycleScope
 import com.example.inovafin.Util.ConfiguraBd
 import com.example.inovafin.databinding.ActivityContaEscolhidaBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.tasks.await
 import java.text.NumberFormat
 import java.util.Locale
+import kotlinx.coroutines.*
 
 class ContaEscolhida : AppCompatActivity() {
 
@@ -58,38 +61,52 @@ class ContaEscolhida : AppCompatActivity() {
     private fun resgatarDados() {
         val usuarioId = autentificacao.currentUser!!.uid
 
-        // Resgatar dados aqui!
-        firestore.collection("Usuarios").document(usuarioId)
-            .collection("ContasBancarias").document(contaId)
-            .addSnapshotListener { document, error ->
-                if (document != null) {
-                    val saldoResgatado = document.getDouble("saldo")
-                    val instituicaoResgatada = document.getString("instituicao")
-                    val nomeResgatado = document.getString("nome")
+        try {
+            // Resgatar dados aqui!
+            firestore.collection("Usuarios").document(usuarioId)
+                .collection("ContasBancarias").document(contaId)
+                .addSnapshotListener { document, error ->
+                    if (document != null) {
+                        val saldoResgatado = document.getDouble("saldo")
+                        val instituicaoResgatada = document.getString("instituicao")
+                        val nomeResgatado = document.getString("nome")
 
-                    val formatted = numberFormat.format(saldoResgatado)
-                    saldoConta = formatted
+                        val formatted = numberFormat.format(saldoResgatado)
+                        saldoConta = formatted
 
-                    instituicao = instituicaoResgatada.toString()
+                        instituicao = instituicaoResgatada.toString()
 
-                    // Aplica os dados no layout
-                    binding.titulo.text = nomeResgatado
-                    binding.instituicao.text = "Saldo atual $instituicaoResgatada"
-                    binding.saldo.text = formatted
-                } else {
-                    Toast.makeText(applicationContext, "Erro ao resgatar", Toast.LENGTH_LONG).show()
+                        // Aplica os dados no layout
+                        binding.titulo.text = nomeResgatado
+                        binding.instituicao.text = "Saldo atual $instituicaoResgatada"
+                        binding.saldo.text = formatted
+                    } else {
+                        Toast.makeText(applicationContext, "Erro ao resgatar", Toast.LENGTH_LONG).show()
+                    }
                 }
-            }
+        } catch (e: Exception) {
+            Toast.makeText(applicationContext, "Erro ao resgatar dados", Toast.LENGTH_LONG).show()
+        }
+
     }
 
-    private fun dialogConfirmacao() {
+    fun dialogConfirmacao() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Confirmação")
-        builder.setMessage("Tem certeza de que deseja excluir a conta?")
+        builder.setMessage("Tem certeza de que deseja excluir a conta bancaria?")
 
         builder.setPositiveButton("Sim") { dialog, which ->
             // Usuário confirmou a saída
-            excluirConta()
+            // Agora, inicie uma coroutine para excluir a conta
+            lifecycleScope.launch {
+                try {
+                    excluirConta()
+                } catch (e: Exception) {
+                    // Lida com exceções que podem ocorrer na exclusão
+                    Toast.makeText(applicationContext, "Erro ao excluir conta", Toast.LENGTH_LONG).show()
+                }
+            }
+
         }
 
         builder.setNegativeButton("Não") { dialog, which ->
@@ -100,16 +117,16 @@ class ContaEscolhida : AppCompatActivity() {
         dialog.show()
     }
 
-    private fun excluirConta() {
+    private suspend fun excluirConta() = CoroutineScope(Dispatchers.IO).launch {
         val usuarioId = autentificacao.currentUser!!.uid
 
-        firestore.collection("Usuarios").document(usuarioId)
-            .collection("ContasBancarias").document(contaId).delete()
-            .addOnSuccessListener {
-                Toast.makeText(applicationContext, "Conta excluída", Toast.LENGTH_LONG).show()
-            }
-            .addOnFailureListener {
-                Toast.makeText(applicationContext, "Erro ao excluir conta", Toast.LENGTH_LONG).show()
-            }
+        try {
+            firestore.collection("Usuarios").document(usuarioId)
+                .collection("ContasBancarias").document(contaId).delete().await()
+
+            Toast.makeText(applicationContext, "Conta excluída", Toast.LENGTH_LONG).show()
+        } catch (e: Exception) {
+            Toast.makeText(applicationContext, "Erro ao excluir conta", Toast.LENGTH_LONG).show()
+        }
     }
 }

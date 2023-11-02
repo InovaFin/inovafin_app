@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@color/branco_background"
+    tools:context=".LoginCadastro">
+
+    <!--Conteúdo Geral-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="40dp"
+        android:orientation="vertical">
+
+        <!--Logo-->
+        <ImageView
+            android:layout_width="181dp"
+            android:layout_height="40dp"
+            android:src="@drawable/logo_verde_500"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="100dp"/>
+        <!--Logo-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <!--Título-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seja bem-vindo!"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginBottom="5dp"/>
+            <!--Título-->
+
+            <!--Subtitulo-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vamos começar!"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="26sp"
+                android:textColor="@color/black_secundario"
+                android:layout_marginBottom="100dp"/>
+            <!--Subtitulo-->
+
+            <!--Botão Login-->
+            <Button
+                android:id="@+id/btLogin"
+                android:clickable="true"
+                android:layout_width="250dp"
+                android:layout_height="55dp"
+                android:background="@drawable/bg_botao_ripple"
+                android:text="Login"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingVertical="10dp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="15dp"/>
+            <!--Botão Login-->
+
+            <!--Botão Cadastro-->
+            <Button
+                android:id="@+id/btCadastro"
+                android:clickable="true"
+                android:layout_width="250dp"
+                android:layout_height="55dp"
+                android:background="@drawable/bg_botao_ripple"
+                android:text="Cadastro"
+                android:textStyle="bold"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingVertical="10dp"
+                android:textColor="@color/white"
+                android:textSize="15sp"/>
+            <!--Botão Cadastro-->
+
+        </LinearLayout>
+        
+    </LinearLayout>
+    <!--Conteúdo Geral-->
+
+</LinearLayout>

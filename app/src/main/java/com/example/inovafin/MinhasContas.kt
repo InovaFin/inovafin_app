@@ -61,10 +61,10 @@ class MinhasContas : AppCompatActivity() {
             startActivity(i)
         }
 
-        binding.btExcluirConta.setOnClickListener {
-            val i = Intent(this, ExcluirConta::class.java)
-            startActivity(i)
-        }
+//        binding.btExcluirConta.setOnClickListener {
+//            val i = Intent(this, ExcluirConta::class.java)
+//            startActivity(i)
+//        }
     }
 
     private fun resgatarId(nome: String?, callback: (String) -> Unit) {

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.inovafin.app-mergeDebugResources-36:/values-si/values-si.xml",
+            "outputFile": "com.example.inovafin.app-mergeDebugResources-37:/values-si/values-si.xml",
             "map": [
                 {
                     "source": "C:\\Users\\erick\\.gradle\\caches\\transforms-3\\fec2e55f830ebfdd0822c02afd5ff96e\\transformed\\material-1.9.0\\res\\values-si\\values-si.xml",

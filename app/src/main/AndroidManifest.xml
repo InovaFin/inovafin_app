@@ -16,6 +16,9 @@
         android:theme="@style/Theme.InovaFin"
         tools:targetApi="31">
         <activity
+            android:name=".ConfirmarExcluirConta"
+            android:exported="false" />
+        <activity
             android:name=".ExcluirConta"
             android:exported="false" />
         <activity
