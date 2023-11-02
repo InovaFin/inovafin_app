@@ -53,6 +53,12 @@ class ContaEscolhida : AppCompatActivity() {
             startActivity(i)
         }
 
+        binding.btTransferir.setOnClickListener {
+            val i = Intent(this, TransferirValor::class.java)
+            i.putExtra("contaId", contaId)
+            startActivity(i)
+        }
+
         binding.btExcluir.setOnClickListener {
             dialogConfirmacao()
         }
