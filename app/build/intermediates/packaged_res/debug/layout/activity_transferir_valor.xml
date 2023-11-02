@@ -70,11 +70,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:fontFamily="@font/roboto_medium"
                     android:text="Saldo atual"
                     android:textColor="@color/black_terciario"
-                    android:textSize="17sp" />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/saldo"
@@ -84,6 +83,15 @@
                     android:text="R$ 00,00"
                     android:fontFamily="@font/roboto_bold"
                     android:textSize="41dp"/>
+
+                <TextView
+                    android:id="@+id/nomeRemetente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Conta Corrente"
+                    android:textColor="@color/black_terciario"
+                    android:textSize="15sp" />
 
             </LinearLayout>
             <!--Saldo-->

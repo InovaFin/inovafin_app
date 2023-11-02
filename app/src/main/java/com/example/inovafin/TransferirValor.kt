@@ -7,6 +7,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
 import android.widget.Toast
+import com.example.inovafin.Util.AnimacaoDeLoad
 import com.example.inovafin.Util.ConfiguraBd
 import com.example.inovafin.databinding.ActivityTransferirValorBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -23,10 +24,16 @@ class TransferirValor : AppCompatActivity() {
 
     private lateinit var firestore: FirebaseFirestore
 
+    private lateinit var animacaoDeLoad: AnimacaoDeLoad
+
     private var numberFormat = NumberFormat.getCurrencyInstance(Locale("pt", "BR"))
 
     private var contaId: String = ""
     private var saldoAtual: Double = 0.0
+
+    private var nomeRemetente: String = ""
+    private var nomeDestinatario: String = ""
+    private var valorTransferido: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +43,7 @@ class TransferirValor : AppCompatActivity() {
 
         autentificacao = ConfiguraBd.Firebaseautentificacao()
         firestore = ConfiguraBd.Firebasefirestore()
+        animacaoDeLoad = AnimacaoDeLoad(binding.btAnimacao, binding.btText, this)
 
         contaId = intent.getStringExtra("contaId").toString()
 
@@ -48,6 +56,7 @@ class TransferirValor : AppCompatActivity() {
         }
 
         binding.btTransferir.setOnClickListener {
+            animacaoDeLoad.iniciarAnimacao()
             verificarConta()
         }
     }
@@ -61,6 +70,11 @@ class TransferirValor : AppCompatActivity() {
                 .collection("ContasBancarias").document(contaId)
                 .addSnapshotListener { document, error ->
                     if (document != null) {
+                        val nomeResgatado = document.getString("nome").toString()
+
+                        binding.nomeRemetente.text = nomeResgatado
+                        nomeRemetente = nomeResgatado
+
                         val saldoResgatado = document.getDouble("saldo")
 
                         if (saldoResgatado != null) {
@@ -138,31 +152,47 @@ class TransferirValor : AppCompatActivity() {
         val usuarioId = autentificacao.currentUser!!.uid
         val nome = binding.nomeConta.text.toString()
 
-        // Verificar conta aqui!
-        firestore.collection("Usuarios").document(usuarioId)
-            .collection("ContasBancarias")
-            .whereEqualTo("nome", nome.trim())
-            .get()
-            .addOnSuccessListener { documents ->
-                if (documents.isEmpty) {
-                    // Nenhum documento correspondente foi encontrado
-                    Toast.makeText(applicationContext, "Essa conta não existe", Toast.LENGTH_LONG).show()
-                } else {
-                    // Documentos correspondentes foram encontrados
-                    for (document in documents) {
-                        transferirValor(document.id)
+        if (nome.isNotEmpty()) {
+            // Verificar conta aqui!
+            firestore.collection("Usuarios").document(usuarioId)
+                .collection("ContasBancarias")
+                .whereEqualTo("nome", nome.trim())
+                .get()
+                .addOnSuccessListener { documents ->
+                    if (documents.isEmpty) {
+                        animacaoDeLoad.pararAnimacao()
+                        // Nenhum documento correspondente foi encontrado
+                        Toast.makeText(applicationContext, "Essa conta não existe", Toast.LENGTH_LONG).show()
+
+                    } else {
+                        // Documentos correspondentes foram encontrados
+                        for (document in documents) {
+                            transferirValor(document.id)
+
+                            // Resgatar nome aqui!
+                            firestore.collection("Usuarios").document(usuarioId)
+                                .collection("ContasBancarias").document(document.id)
+                                .addSnapshotListener { document, error ->
+                                    if (document != null) {
+                                        val nomeResgatado = document.getString("nome").toString()
+                                        nomeDestinatario = nomeResgatado
+                                    }
+                                }
+                        }
                     }
                 }
-            }
-            .addOnFailureListener { exception ->
-                Toast.makeText(applicationContext, "Erro ao resgatar documento: $exception", Toast.LENGTH_LONG).show()
-            }
+                .addOnFailureListener { exception ->
+                    Toast.makeText(applicationContext, "Erro ao verificar: $exception", Toast.LENGTH_LONG).show()
+                }
+        } else {
+            animacaoDeLoad.pararAnimacao()
+            Toast.makeText(applicationContext, "Digite o nome da conta", Toast.LENGTH_LONG).show()
+        }
     }
 
     private fun transferirValor(contaDestId: String) {
         val usuarioId = autentificacao.currentUser!!.uid
 
-        // Verificar conta aqui!
         firestore.collection("Usuarios").document(usuarioId)
             .collection("ContasBancarias").document(contaDestId)
             .get()
@@ -173,15 +203,22 @@ class TransferirValor : AppCompatActivity() {
                         val valorTransferir = binding.valorTranferir.text.toString()
                         valorAtual += parseDoubleValor(valorTransferir)
 
+                        animacaoDeLoad.pararAnimacao()
+
                         atualizarContaRemetente()
                         atualizarContaDestinatario(valorAtual, contaDestId)
 
                         val i = Intent(this, SplashTransferir::class.java)
+                        valorTransferido = binding.valorTranferir.text.toString()
+                        i.putExtra("nomeRemetente", nomeRemetente)
+                        i.putExtra("nomeDestinatario", nomeDestinatario)
+                        i.putExtra("valorTransferido", valorTransferido)
                         startActivity(i)
                     }
                 }
             }
             .addOnFailureListener { exception ->
+                animacaoDeLoad.pararAnimacao()
                 Toast.makeText(applicationContext, "Erro ao buscar documento: $exception", Toast.LENGTH_LONG).show()
             }
     }
@@ -201,7 +238,7 @@ class TransferirValor : AppCompatActivity() {
             .update(usuarioMasp as Map<String, Any>)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-//                    Toast.makeText(applicationContext, "Conta atual alterada", Toast.LENGTH_LONG).show()
+
                 }
             }
 
@@ -219,7 +256,7 @@ class TransferirValor : AppCompatActivity() {
             .update(usuarioMasp as Map<String, Any>)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(applicationContext, "Conta dest alterada", Toast.LENGTH_LONG).show()
+
                 }
             }
     }

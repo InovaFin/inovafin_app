@@ -3510,6 +3510,8 @@ id neverCompleteToStart
 id noScroll
 id noState
 id nomeConta
+id nomeDestinatario
+id nomeRemetente
 id nomeUsuario
 id none
 id normal
@@ -3687,6 +3689,7 @@ id unlabeled
 id up
 id useLogo
 id valorTranferir
+id valorTransferido
 id vertical_only
 id view_offset_helper
 id view_transition

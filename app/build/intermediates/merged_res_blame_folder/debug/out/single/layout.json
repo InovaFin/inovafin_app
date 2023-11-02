@@ -12,12 +12,12 @@
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\layout\\activity_info_registro.xml"
     },
     {
-        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-38:\\layout\\activity_valor_guardado.xml",
-        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\layout\\activity_valor_guardado.xml"
-    },
-    {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-38:\\layout\\activity_excluir_guardado.xml",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\layout\\activity_excluir_guardado.xml"
+    },
+    {
+        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-38:\\layout\\activity_valor_guardado.xml",
+        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\layout\\activity_valor_guardado.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-38:\\layout\\activity_email_enviado.xml",
@@ -54,6 +54,10 @@
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-38:\\layout\\activity_login.xml",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "com.example.inovafin.app-mergeDebugResources-38:/layout/activity_transferir_valor.xml",
+        "source": "com.example.inovafin.app-main-41:/layout/activity_transferir_valor.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-38:\\layout\\activity_valor_pagar.xml",
@@ -110,10 +114,6 @@
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-38:\\layout\\activity_ajuda_saldo_geral.xml",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\layout\\activity_ajuda_saldo_geral.xml"
-    },
-    {
-        "merged": "com.example.inovafin.app-mergeDebugResources-38:/layout/activity_splash_transferir.xml",
-        "source": "com.example.inovafin.app-main-41:/layout/activity_splash_transferir.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-38:\\layout\\activity_splash_transferir.xml",

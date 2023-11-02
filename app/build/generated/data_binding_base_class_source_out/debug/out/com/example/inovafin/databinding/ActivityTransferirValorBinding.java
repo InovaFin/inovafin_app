@@ -38,6 +38,9 @@ public final class ActivityTransferirValorBinding implements ViewBinding {
   public final EditText nomeConta;
 
   @NonNull
+  public final TextView nomeRemetente;
+
+  @NonNull
   public final TextView saldo;
 
   @NonNull
@@ -46,13 +49,14 @@ public final class ActivityTransferirValorBinding implements ViewBinding {
   private ActivityTransferirValorBinding(@NonNull LinearLayout rootView,
       @NonNull LottieAnimationView btAnimacao, @NonNull LinearLayout btText,
       @NonNull LinearLayout btTransferir, @NonNull ImageView icFechar, @NonNull EditText nomeConta,
-      @NonNull TextView saldo, @NonNull EditText valorTranferir) {
+      @NonNull TextView nomeRemetente, @NonNull TextView saldo, @NonNull EditText valorTranferir) {
     this.rootView = rootView;
     this.btAnimacao = btAnimacao;
     this.btText = btText;
     this.btTransferir = btTransferir;
     this.icFechar = icFechar;
     this.nomeConta = nomeConta;
+    this.nomeRemetente = nomeRemetente;
     this.saldo = saldo;
     this.valorTranferir = valorTranferir;
   }
@@ -114,6 +118,12 @@ public final class ActivityTransferirValorBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.nomeRemetente;
+      TextView nomeRemetente = ViewBindings.findChildViewById(rootView, id);
+      if (nomeRemetente == null) {
+        break missingId;
+      }
+
       id = R.id.saldo;
       TextView saldo = ViewBindings.findChildViewById(rootView, id);
       if (saldo == null) {
@@ -127,7 +137,7 @@ public final class ActivityTransferirValorBinding implements ViewBinding {
       }
 
       return new ActivityTransferirValorBinding((LinearLayout) rootView, btAnimacao, btText,
-          btTransferir, icFechar, nomeConta, saldo, valorTranferir);
+          btTransferir, icFechar, nomeConta, nomeRemetente, saldo, valorTranferir);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

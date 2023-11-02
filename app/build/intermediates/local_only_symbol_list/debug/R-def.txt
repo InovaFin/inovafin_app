@@ -117,6 +117,8 @@ id imagemUsuario
 id instituicao
 id listaContas
 id nomeConta
+id nomeDestinatario
+id nomeRemetente
 id nomeUsuario
 id novaSenha
 id saldo
@@ -125,6 +127,7 @@ id senhaUsuario
 id spinner
 id titulo
 id valorTranferir
+id valorTransferido
 layout activity_adicionar_valor
 layout activity_ajuda_saldo_geral
 layout activity_cadastro
