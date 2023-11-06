@@ -12,6 +12,8 @@ import com.example.inovafin.Util.RegistroValorReceber
 import com.example.inovafin.databinding.ActivityValorReceberBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import java.text.NumberFormat
+import java.util.Locale
 
 class ValorReceber : AppCompatActivity() {
 
@@ -26,6 +28,9 @@ class ValorReceber : AppCompatActivity() {
     private lateinit var receberArrayList: ArrayList<RegistroValorReceber>
 
     private lateinit var adapter: MyAdapterReceber
+
+    private var numberFormat = NumberFormat.getCurrencyInstance(Locale("pt", "BR"))
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityValorReceberBinding.inflate(layoutInflater)
@@ -84,11 +89,13 @@ class ValorReceber : AppCompatActivity() {
                         val nome = document.getString("nome")
 //                        val vencimento = document.getString("vencimento").toString()
                         val vencimento = "datinha"
-                        val valor = document.getDouble("valor").toString()
+
+                        val valorResgatado = document.getDouble("valor")
+                        val valorFormatado = numberFormat.format(valorResgatado)
 
 
                         if (nome != null) {
-                            val registro = RegistroValorReceber(nome, vencimento, valor)
+                            val registro = RegistroValorReceber(nome, vencimento, valorFormatado)
                             receberArrayList.add(registro)
                         }
                     }
