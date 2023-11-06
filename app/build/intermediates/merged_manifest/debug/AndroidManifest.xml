@@ -70,7 +70,7 @@
             android:name="com.example.inovafin.InfoRegistro"
             android:exported="false" />
         <activity
-            android:name="com.example.inovafin.AdicionarValor"
+            android:name="com.example.inovafin.AddReceber"
             android:exported="false" />
         <activity
             android:name="com.example.inovafin.SaldoGeralPagar"

@@ -44,10 +44,6 @@
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\layout\\activity_conta_escolhida.xml"
     },
     {
-        "merged": "com.example.inovafin.app-merged_res-39:/layout_activity_transferir_valor.xml.flat",
-        "source": "com.example.inovafin.app-main-41:/layout/activity_transferir_valor.xml"
-    },
-    {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\drawable_ic_perfil_config.png.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\drawable\\ic_perfil_config.png"
     },
@@ -82,6 +78,10 @@
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\font_poppins_bold.xml.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\font\\poppins_bold.xml"
+    },
+    {
+        "merged": "com.example.inovafin.app-merged_res-39:/layout_activity_add_receber.xml.flat",
+        "source": "com.example.inovafin.app-main-41:/layout/activity_add_receber.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\drawable_bg_botao_ripple.xml.flat",
@@ -338,6 +338,10 @@
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\layout_activity_excluir_receber.xml.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\layout\\activity_excluir_receber.xml"
+    },
+    {
+        "merged": "com.example.inovafin.app-merged_res-39:/drawable_ic_calendario.xml.flat",
+        "source": "com.example.inovafin.app-main-41:/drawable/ic_calendario.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\mipmap-xxhdpi_ic_launcher_foreground.webp.flat",

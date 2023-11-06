@@ -19,7 +19,7 @@ class ValorGuardado : AppCompatActivity() {
         }
 
         binding.btAdicionar.setOnClickListener {
-            val navegarTelaAddValor = Intent (this, AdicionarValor::class.java)
+            val navegarTelaAddValor = Intent (this, AddReceber::class.java)
             startActivity(navegarTelaAddValor)
         }
 

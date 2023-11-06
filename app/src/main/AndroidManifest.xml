@@ -52,7 +52,7 @@
             android:name=".InfoRegistro"
             android:exported="false" />
         <activity
-            android:name=".AdicionarValor"
+            android:name=".AddReceber"
             android:exported="false" />
         <activity
             android:name=".SaldoGeralPagar"

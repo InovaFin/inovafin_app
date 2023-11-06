@@ -40,6 +40,7 @@ drawable ic_avancar
 drawable ic_banco
 drawable ic_calculadora
 drawable ic_calculadora_black
+drawable ic_calendario
 drawable ic_checkbox
 drawable ic_checkbox_guardado
 drawable ic_checkbox_pagar
@@ -88,13 +89,13 @@ id btAlterarFoto
 id btAnimacao
 id btCadastro
 id btCalculadora
+id btCalendario
 id btEditar
 id btEditarPerfil
 id btEsqueceuSenha
 id btExcluir
 id btExpandir
 id btExpandir_conta
-id btExpandir_tipo
 id btLogin
 id btMinhasContas
 id btNotificacao
@@ -110,6 +111,9 @@ id btTransferir
 id btValorGuardado
 id btValorPagar
 id btValorReceber
+id contaRelacionada
+id criarRegistro
+id descricao
 id emailUsuario
 id icFechar
 id icVoltar
@@ -118,6 +122,7 @@ id instituicao
 id listaContas
 id nomeConta
 id nomeDestinatario
+id nomeReceber
 id nomeRemetente
 id nomeUsuario
 id novaSenha
@@ -126,9 +131,11 @@ id saldoAtual
 id senhaUsuario
 id spinner
 id titulo
+id txtData
+id valorReceber
 id valorTranferir
 id valorTransferido
-layout activity_adicionar_valor
+layout activity_add_receber
 layout activity_ajuda_saldo_geral
 layout activity_cadastro
 layout activity_configuracoes

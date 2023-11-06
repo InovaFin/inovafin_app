@@ -3020,6 +3020,7 @@ drawable ic_avancar
 drawable ic_banco
 drawable ic_calculadora
 drawable ic_calculadora_black
+drawable ic_calendario
 drawable ic_checkbox
 drawable ic_checkbox_guardado
 drawable ic_checkbox_pagar
@@ -3260,13 +3261,13 @@ id btAlterarFoto
 id btAnimacao
 id btCadastro
 id btCalculadora
+id btCalendario
 id btEditar
 id btEditarPerfil
 id btEsqueceuSenha
 id btExcluir
 id btExpandir
 id btExpandir_conta
-id btExpandir_tipo
 id btLogin
 id btMinhasContas
 id btNotificacao
@@ -3309,6 +3310,7 @@ id collapseActionView
 id compress
 id confirm_button
 id constraint
+id contaRelacionada
 id container
 id content
 id contentPanel
@@ -3318,6 +3320,7 @@ id coordinator
 id cos
 id counterclockwise
 id cradle
+id criarRegistro
 id currentState
 id custom
 id customPanel
@@ -3330,6 +3333,7 @@ id decor_content_parent
 id default_activity_button
 id deltaRelative
 id dependency_ordering
+id descricao
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -3511,6 +3515,7 @@ id noScroll
 id noState
 id nomeConta
 id nomeDestinatario
+id nomeReceber
 id nomeRemetente
 id nomeUsuario
 id none
@@ -3683,11 +3688,13 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id txtData
 id unchecked
 id uniform
 id unlabeled
 id up
 id useLogo
+id valorReceber
 id valorTranferir
 id valorTransferido
 id vertical_only
@@ -3823,7 +3830,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_adicionar_valor
+layout activity_add_receber
 layout activity_ajuda_saldo_geral
 layout activity_cadastro
 layout activity_configuracoes
