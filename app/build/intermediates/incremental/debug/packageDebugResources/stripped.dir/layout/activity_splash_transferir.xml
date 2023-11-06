@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/verde_secundario"
+    tools:context=".SplashTransferir"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--Conteúdo Geral-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/verde_secundario"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <!--Título-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Valor enviado!"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:textColor="@color/verde_principal"
+                android:layout_marginBottom="15dp"/>
+            <!--Título-->
+
+            <!--Subtitulo-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tranferência realizada\ncom sucesso."
+                android:fontFamily="@font/roboto_medium"
+                android:textSize="16sp"
+                android:textAlignment="center"
+                android:textColor="@color/black"/>
+            <!--Subtitulo-->
+
+            <!--Linha cinza-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:layout_marginVertical="15dp"
+                android:background="@color/black_terciario"/>
+            <!--Linha cinza-->
+
+            <!--Subtitulo-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Valor transferido"
+                android:fontFamily="@font/roboto"
+                android:textSize="16sp"
+                android:textAlignment="center"
+                android:textColor="@color/verde_principal"/>
+            <!--Subtitulo-->
+
+            <!--Valor-->
+            <TextView
+                android:id="@+id/valorTransferido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="R$ 300,00"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="30sp"
+                android:textAlignment="center"
+                android:textColor="@color/black"/>
+            <!--Valor-->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!--Subtitulo-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="de: "
+                    android:fontFamily="@font/roboto"
+                    android:textSize="13sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"/>
+                <!--Subtitulo-->
+
+                <!--Subtitulo-->
+                <TextView
+                    android:id="@+id/nomeRemetente"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Conta Poupança"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="13sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/verde_principal"/>
+                <!--Subtitulo-->
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!--Subtitulo-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="para: "
+                    android:fontFamily="@font/roboto"
+                    android:textSize="13sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"/>
+                <!--Subtitulo-->
+
+                <!--Subtitulo-->
+                <TextView
+                    android:id="@+id/nomeDestinatario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Conta Corrente"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="13sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/verde_principal"/>
+                <!--Subtitulo-->
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <!--Conteúdo Geral-->
+
+</RelativeLayout>

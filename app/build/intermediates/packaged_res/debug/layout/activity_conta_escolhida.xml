@@ -209,7 +209,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/registro_item"/>
+            tools:listitem="@layout/valor_receber_item"/>
 
     </LinearLayout>
     <!--Lista Registros-->

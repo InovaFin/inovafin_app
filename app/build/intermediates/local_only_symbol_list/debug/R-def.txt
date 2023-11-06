@@ -113,11 +113,15 @@ id btValorReceber
 id criarRegistro
 id descricao
 id emailUsuario
+id exibirDataReceber
+id exibirNomeReceber
+id exibirValorReceber
 id icFechar
 id icVoltar
 id imagemUsuario
 id instituicao
 id listaContas
+id listaReceber
 id nomeConta
 id nomeDestinatario
 id nomeReceber
@@ -138,6 +142,7 @@ layout activity_ajuda_saldo_geral
 layout activity_cadastro
 layout activity_configuracoes
 layout activity_conta_escolhida
+layout activity_conta_pagar
 layout activity_editar_conta
 layout activity_editar_perfil
 layout activity_email_enviado
@@ -161,11 +166,10 @@ layout activity_senha_enviada
 layout activity_splash_transferir
 layout activity_transferir_valor
 layout activity_valor_guardado
-layout activity_valor_pagar
 layout activity_valor_receber
 layout conta_item
 layout item_spinner_layout
-layout registro_item
+layout valor_receber_item
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round

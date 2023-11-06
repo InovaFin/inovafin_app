@@ -3368,6 +3368,9 @@ id endToStart
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id exibirDataReceber
+id exibirNomeReceber
+id exibirValorReceber
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3437,6 +3440,7 @@ id linear
 id listMode
 id list_item
 id listaContas
+id listaReceber
 id lottie_layer_name
 id m3_side_sheet
 id marquee
@@ -3833,6 +3837,7 @@ layout activity_ajuda_saldo_geral
 layout activity_cadastro
 layout activity_configuracoes
 layout activity_conta_escolhida
+layout activity_conta_pagar
 layout activity_editar_conta
 layout activity_editar_perfil
 layout activity_email_enviado
@@ -3856,7 +3861,6 @@ layout activity_senha_enviada
 layout activity_splash_transferir
 layout activity_transferir_valor
 layout activity_valor_guardado
-layout activity_valor_pagar
 layout activity_valor_receber
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
@@ -3944,11 +3948,11 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
-layout registro_item
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout valor_receber_item
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round

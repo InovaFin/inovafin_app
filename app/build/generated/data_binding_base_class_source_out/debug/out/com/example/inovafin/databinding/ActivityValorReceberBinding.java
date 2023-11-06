@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.inovafin.R;
@@ -26,19 +27,19 @@ public final class ActivityValorReceberBinding implements ViewBinding {
   public final LinearLayout btExcluir;
 
   @NonNull
-  public final LinearLayout btRegistro;
+  public final ImageView icFechar;
 
   @NonNull
-  public final ImageView icFechar;
+  public final RecyclerView listaReceber;
 
   private ActivityValorReceberBinding(@NonNull LinearLayout rootView,
       @NonNull LinearLayout btAdicionar, @NonNull LinearLayout btExcluir,
-      @NonNull LinearLayout btRegistro, @NonNull ImageView icFechar) {
+      @NonNull ImageView icFechar, @NonNull RecyclerView listaReceber) {
     this.rootView = rootView;
     this.btAdicionar = btAdicionar;
     this.btExcluir = btExcluir;
-    this.btRegistro = btRegistro;
     this.icFechar = icFechar;
+    this.listaReceber = listaReceber;
   }
 
   @Override
@@ -80,20 +81,20 @@ public final class ActivityValorReceberBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.btRegistro;
-      LinearLayout btRegistro = ViewBindings.findChildViewById(rootView, id);
-      if (btRegistro == null) {
-        break missingId;
-      }
-
       id = R.id.icFechar;
       ImageView icFechar = ViewBindings.findChildViewById(rootView, id);
       if (icFechar == null) {
         break missingId;
       }
 
+      id = R.id.listaReceber;
+      RecyclerView listaReceber = ViewBindings.findChildViewById(rootView, id);
+      if (listaReceber == null) {
+        break missingId;
+      }
+
       return new ActivityValorReceberBinding((LinearLayout) rootView, btAdicionar, btExcluir,
-          btRegistro, icFechar);
+          icFechar, listaReceber);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

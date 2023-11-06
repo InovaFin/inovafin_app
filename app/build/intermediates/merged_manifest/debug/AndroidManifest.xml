@@ -88,7 +88,7 @@
             android:name="com.example.inovafin.EditarPerfil"
             android:exported="false" />
         <activity
-            android:name="com.example.inovafin.ValorPagar"
+            android:name="com.example.inovafin.ContaPagar"
             android:exported="false" />
         <activity
             android:name="com.example.inovafin.ValorGuardado"
