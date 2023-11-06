@@ -3,14 +3,14 @@ package com.example.inovafin
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.inovafin.databinding.ActivityValorReceberBinding
+import com.example.inovafin.databinding.ActivityContaPagarBinding
 
-class ValorReceber : AppCompatActivity() {
+class ContaPagar : AppCompatActivity() {
 
-    private lateinit var binding: ActivityValorReceberBinding
+    private lateinit var binding: ActivityContaPagarBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityValorReceberBinding.inflate(layoutInflater)
+        binding = ActivityContaPagarBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 
@@ -29,7 +29,7 @@ class ValorReceber : AppCompatActivity() {
         }
 
         binding.btExcluir.setOnClickListener {
-            val i = Intent (this, ExcluirReceber::class.java)
+            val i = Intent (this, ExcluirPagar::class.java)
             startActivity(i)
         }
     }
