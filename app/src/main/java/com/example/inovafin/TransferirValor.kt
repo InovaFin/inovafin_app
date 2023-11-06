@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Toast
 import com.example.inovafin.Util.AnimacaoDeLoad
@@ -35,6 +36,8 @@ class TransferirValor : AppCompatActivity() {
     private var nomeDestinatario: String = ""
     private var valorTransferido: String = ""
 
+    private var contaAlterada: Boolean = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTransferirValorBinding.inflate(layoutInflater)
@@ -48,7 +51,7 @@ class TransferirValor : AppCompatActivity() {
         contaId = intent.getStringExtra("contaId").toString()
 
         resgatarDados()
-
+        resgatarContas()
         formatandoValor()
 
         binding.icFechar.setOnClickListener {
@@ -148,37 +151,63 @@ class TransferirValor : AppCompatActivity() {
         return valorSemFormatacao.toDouble() / 100.0
     }
 
+    private fun resgatarContas() {
+        val usuarioId = autentificacao.currentUser!!.uid
+
+        firestore.collection("Usuarios").document(usuarioId)
+            .collection("ContasBancarias")
+            .get()
+            .addOnSuccessListener { documents ->
+                val nomesContas = mutableListOf<String>()
+
+                for (document in documents) {
+                    val nomeConta = document.getString("nome")
+                    if (nomeConta != null && nomeConta != nomeRemetente) {
+                        nomesContas.add(nomeConta)
+                    }
+                }
+
+                // Agora você tem a lista de nomes das contas bancárias
+                configurarSpinner(nomesContas)
+            }
+            .addOnFailureListener { exception ->
+                Toast.makeText(applicationContext, "Erro: $exception", Toast.LENGTH_LONG).show()
+            }
+    }
+
+    private fun configurarSpinner(nomesContas: MutableList<String>) {
+        val spinnerOP = mutableListOf("Selecione uma conta")
+        spinnerOP.addAll(nomesContas)
+
+        // Cria um adapter para o spinner com a lista de nomes
+        val adapter = ArrayAdapter(this, R.layout.item_spinner_layout, spinnerOP)
+
+        binding.spinner.adapter = adapter
+    }
+
+    private fun verificarSpinner() {
+        val valorSpinner = binding.spinner.selectedItem
+
+        contaAlterada = valorSpinner != "Selecione uma conta"
+    }
+
     private fun verificarConta() {
         val usuarioId = autentificacao.currentUser!!.uid
-        val nome = binding.nomeConta.text.toString()
 
-        if (nome.isNotEmpty()) {
+        verificarSpinner()
+
+        if (contaAlterada) {
+            nomeDestinatario = binding.spinner.selectedItem.toString()
+
             // Verificar conta aqui!
             firestore.collection("Usuarios").document(usuarioId)
                 .collection("ContasBancarias")
-                .whereEqualTo("nome", nome.trim())
+                .whereEqualTo("nome", nomeDestinatario)
                 .get()
                 .addOnSuccessListener { documents ->
-                    if (documents.isEmpty) {
-                        animacaoDeLoad.pararAnimacao()
-                        // Nenhum documento correspondente foi encontrado
-                        Toast.makeText(applicationContext, "Essa conta não existe", Toast.LENGTH_LONG).show()
-
-                    } else {
-                        // Documentos correspondentes foram encontrados
-                        for (document in documents) {
-                            transferirValor(document.id)
-
-                            // Resgatar nome aqui!
-                            firestore.collection("Usuarios").document(usuarioId)
-                                .collection("ContasBancarias").document(document.id)
-                                .addSnapshotListener { document, error ->
-                                    if (document != null) {
-                                        val nomeResgatado = document.getString("nome").toString()
-                                        nomeDestinatario = nomeResgatado
-                                    }
-                                }
-                        }
+                    // Documentos correspondentes foram encontrados
+                    for (document in documents) {
+                        transferirValor(document.id)
                     }
                 }
                 .addOnFailureListener { exception ->
@@ -186,7 +215,7 @@ class TransferirValor : AppCompatActivity() {
                 }
         } else {
             animacaoDeLoad.pararAnimacao()
-            Toast.makeText(applicationContext, "Digite o nome da conta", Toast.LENGTH_LONG).show()
+            Toast.makeText(applicationContext, "Selecione uma conta", Toast.LENGTH_LONG).show()
         }
     }
 

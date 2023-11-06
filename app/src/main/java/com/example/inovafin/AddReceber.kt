@@ -4,6 +4,7 @@ import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.example.inovafin.Util.ConfiguraBd
 import com.example.inovafin.databinding.ActivityAddReceberBinding
@@ -23,6 +24,7 @@ class AddReceber : AppCompatActivity() {
 
     private var timestamp: Timestamp? = null
     private var selectedDate: Calendar = Calendar.getInstance()
+    private var contaAlterada: Boolean = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddReceberBinding.inflate(layoutInflater)
@@ -48,6 +50,8 @@ class AddReceber : AppCompatActivity() {
         val minDate = Calendar.getInstance()
         minDate.set(2023, 0, 1) // Janeiro de 2023
         datePickerDialog.datePicker.minDate = minDate.timeInMillis
+
+        resgatarContas()
 
         binding.icFechar.setOnClickListener {
             onBackPressed()
@@ -80,8 +84,48 @@ class AddReceber : AppCompatActivity() {
         timePickerDialog.show()
     }
 
+    private fun resgatarContas() {
+        val usuarioId = autentificacao.currentUser!!.uid
+
+        firestore.collection("Usuarios").document(usuarioId)
+            .collection("ContasBancarias")
+            .get()
+            .addOnSuccessListener { documents ->
+                val nomesContas = mutableListOf<String>()
+
+                for (document in documents) {
+                    val nomeConta = document.getString("nome")
+                    if (nomeConta != null) {
+                        nomesContas.add(nomeConta)
+                    }
+                }
+
+                // Agora você tem a lista de nomes das contas bancárias
+                configurarSpinner(nomesContas)
+            }
+            .addOnFailureListener { exception ->
+                Toast.makeText(applicationContext, "Erro: $exception", Toast.LENGTH_LONG).show()
+            }
+    }
+
+    private fun configurarSpinner(nomesContas: MutableList<String>) {
+        val spinnerOP = mutableListOf("Selecione uma conta")
+        spinnerOP.addAll(nomesContas)
+
+        // Cria um adapter para o spinner com a lista de nomes
+        val adapter = ArrayAdapter(this, R.layout.item_spinner_layout, spinnerOP)
+
+        binding.spinner.adapter = adapter
+    }
+
+    private fun verificarSpinner() {
+        val valorSpinner = binding.spinner.selectedItem
+
+        contaAlterada = valorSpinner != "Selecione uma conta"
+    }
+
     private fun validarCampos() {
-        
+
     }
 
     private fun adicionarRegistro() {

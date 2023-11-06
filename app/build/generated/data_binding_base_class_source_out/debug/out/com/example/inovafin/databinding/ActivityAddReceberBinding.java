@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,12 +27,6 @@ public final class ActivityAddReceberBinding implements ViewBinding {
   public final ImageView btCalendario;
 
   @NonNull
-  public final ImageView btExpandirConta;
-
-  @NonNull
-  public final TextView contaRelacionada;
-
-  @NonNull
   public final LinearLayout criarRegistro;
 
   @NonNull
@@ -44,23 +39,25 @@ public final class ActivityAddReceberBinding implements ViewBinding {
   public final EditText nomeReceber;
 
   @NonNull
+  public final Spinner spinner;
+
+  @NonNull
   public final TextView txtData;
 
   @NonNull
   public final EditText valorReceber;
 
   private ActivityAddReceberBinding(@NonNull ScrollView rootView, @NonNull ImageView btCalendario,
-      @NonNull ImageView btExpandirConta, @NonNull TextView contaRelacionada,
       @NonNull LinearLayout criarRegistro, @NonNull EditText descricao, @NonNull ImageView icFechar,
-      @NonNull EditText nomeReceber, @NonNull TextView txtData, @NonNull EditText valorReceber) {
+      @NonNull EditText nomeReceber, @NonNull Spinner spinner, @NonNull TextView txtData,
+      @NonNull EditText valorReceber) {
     this.rootView = rootView;
     this.btCalendario = btCalendario;
-    this.btExpandirConta = btExpandirConta;
-    this.contaRelacionada = contaRelacionada;
     this.criarRegistro = criarRegistro;
     this.descricao = descricao;
     this.icFechar = icFechar;
     this.nomeReceber = nomeReceber;
+    this.spinner = spinner;
     this.txtData = txtData;
     this.valorReceber = valorReceber;
   }
@@ -98,18 +95,6 @@ public final class ActivityAddReceberBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.btExpandir_conta;
-      ImageView btExpandirConta = ViewBindings.findChildViewById(rootView, id);
-      if (btExpandirConta == null) {
-        break missingId;
-      }
-
-      id = R.id.contaRelacionada;
-      TextView contaRelacionada = ViewBindings.findChildViewById(rootView, id);
-      if (contaRelacionada == null) {
-        break missingId;
-      }
-
       id = R.id.criarRegistro;
       LinearLayout criarRegistro = ViewBindings.findChildViewById(rootView, id);
       if (criarRegistro == null) {
@@ -134,6 +119,12 @@ public final class ActivityAddReceberBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.spinner;
+      Spinner spinner = ViewBindings.findChildViewById(rootView, id);
+      if (spinner == null) {
+        break missingId;
+      }
+
       id = R.id.txtData;
       TextView txtData = ViewBindings.findChildViewById(rootView, id);
       if (txtData == null) {
@@ -146,8 +137,8 @@ public final class ActivityAddReceberBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityAddReceberBinding((ScrollView) rootView, btCalendario, btExpandirConta,
-          contaRelacionada, criarRegistro, descricao, icFechar, nomeReceber, txtData, valorReceber);
+      return new ActivityAddReceberBinding((ScrollView) rootView, btCalendario, criarRegistro,
+          descricao, icFechar, nomeReceber, spinner, txtData, valorReceber);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

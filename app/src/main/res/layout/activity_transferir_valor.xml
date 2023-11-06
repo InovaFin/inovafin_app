@@ -96,18 +96,19 @@
             </LinearLayout>
             <!--Saldo-->
 
-            <!--Email-->
+            <!--Conta Relacionada-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="30dp"
+                android:layout_marginBottom="10dp"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
                     android:layout_marginBottom="10dp"
+                    android:gravity="center"
                     android:orientation="horizontal">
 
                     <TextView
@@ -115,6 +116,7 @@
                         android:layout_height="wrap_content"
                         android:text="Conta"
                         android:layout_weight="1"
+
                         android:textColor="@color/black"
                         android:textSize="15sp"
                         android:fontFamily="@font/roboto_medium"/>
@@ -124,33 +126,36 @@
                         android:layout_height="wrap_content"
                         android:text="Nome da conta que receberá o valor"
                         android:textColor="@color/black_secundario"
-                        android:layout_marginStart="10dp"
                         android:textSize="12sp"
                         android:fontFamily="@font/roboto_light"/>
 
                 </LinearLayout>
 
-
-                <!--Email-->
-                <EditText
-                    android:id="@+id/nomeConta"
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="text"
-                    android:hint="Nome da conta"
-                    android:paddingVertical="15dp"
-                    android:paddingHorizontal="10dp"
-                    android:textColorHint="@color/black_terciario"
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-                    android:background="@drawable/bg_edittext_secundario"
-                    android:textCursorDrawable="@drawable/custom_cursor"
-                    android:fontFamily="@font/roboto"/>
-                <!--Email-->
+                    android:layout_height="wrap_content">
+
+                    <Spinner
+                        android:id="@+id/spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_edittext_secundario"
+                        android:paddingHorizontal="3dp"
+                        android:paddingVertical="3dp"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_expandir" />
+
+                </RelativeLayout>
 
             </LinearLayout>
-            <!--Email-->
+            <!--Conta Relacionada-->
 
             <!--Saldo Atual-->
             <LinearLayout
@@ -165,7 +170,6 @@
                     android:text="Valor"
                     android:textColor="@color/black"
                     android:layout_marginBottom="10dp"
-                    android:layout_marginTop="15dp"
                     android:textSize="15sp"
                     android:fontFamily="@font/roboto_medium"/>
 

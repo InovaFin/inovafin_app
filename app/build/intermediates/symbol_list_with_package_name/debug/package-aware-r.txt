@@ -3267,7 +3267,6 @@ id btEditarPerfil
 id btEsqueceuSenha
 id btExcluir
 id btExpandir
-id btExpandir_conta
 id btLogin
 id btMinhasContas
 id btNotificacao
@@ -3310,7 +3309,6 @@ id collapseActionView
 id compress
 id confirm_button
 id constraint
-id contaRelacionada
 id container
 id content
 id contentPanel

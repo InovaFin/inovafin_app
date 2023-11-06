@@ -92,143 +92,49 @@
         </LinearLayout>
         <!--Nome-->
 
-        <!--Conta-->
+        <!--Conta Relacionada-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="10dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Conta"
-                android:textColor="@color/black"
+                android:text="Conta Relacionada"
+                android:layout_weight="1"
                 android:layout_marginBottom="10dp"
+                android:textColor="@color/black"
                 android:textSize="15sp"
                 android:fontFamily="@font/roboto_medium"/>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_edittext_secundario"
-                android:paddingVertical="10dp"
-                android:paddingHorizontal="10dp"
-                android:orientation="vertical">
+                android:layout_height="wrap_content">
 
-                <!--Selecione uma conta-->
-                <LinearLayout
+                <Spinner
+                    android:id="@+id/spinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                    android:background="@drawable/bg_edittext_secundario"
+                    android:paddingHorizontal="3dp"
+                    android:paddingVertical="3dp"
+                    tools:ignore="TouchTargetSizeCheck" />
 
-                    <TextView
-                        android:id="@+id/contaRelacionada"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="5dp"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentEnd="true"
-                        android:text="Selecione uma conta"
-                        android:textSize="15sp"
-                        android:fontFamily="@font/roboto"
-                        android:textColor="@color/black_secundario"/>
-
-                    <!--Botão Expandir-->
-                    <ImageView
-                        android:id="@+id/btExpandir_conta"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_expandir"/>
-                    <!--Botão Expandir-->
-
-                </LinearLayout>
-                <!--Selecione uma conta-->
-
-                <!--Contas exemplo-->
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    android:orientation="vertical">
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/ic_expandir" />
 
-                    <!--Conta exemplo-->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingVertical="10dp"
-                        android:gravity="center"
-                        android:clickable="true"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Conta Nubank"
-                            android:textColor="@color/black_secundario"
-                            android:fontFamily="@font/roboto"
-                            android:textSize="14sp"/>
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_checkbox_receber"/>
-
-                    </LinearLayout>
-                    <!--Conta exemplo-->
-
-                    <!--Linha cinza-->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bg_linha"/>
-                    <!--Linha cinza-->
-
-                    <!--Conta exemplo-->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingVertical="10dp"
-                        android:gravity="center"
-                        android:clickable="true"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Conta PicPay"
-                            android:textColor="@color/black_secundario"
-                            android:fontFamily="@font/roboto"
-                            android:textSize="14sp"/>
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_checkbox"/>
-
-                    </LinearLayout>
-                    <!--Conta exemplo-->
-
-                    <!--Linha cinza-->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bg_linha"/>
-                    <!--Linha cinza-->
-
-                </LinearLayout>
-                <!--Contas exemplo-->
-
-            </LinearLayout>
+            </RelativeLayout>
 
         </LinearLayout>
-        <!--Conta-->
+        <!--Conta Relacionada-->
 
         <!--        &lt;!&ndash;Tipo&ndash;&gt;-->
         <!--        <LinearLayout-->

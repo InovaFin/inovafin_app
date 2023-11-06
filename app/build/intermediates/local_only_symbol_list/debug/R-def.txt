@@ -95,7 +95,6 @@ id btEditarPerfil
 id btEsqueceuSenha
 id btExcluir
 id btExpandir
-id btExpandir_conta
 id btLogin
 id btMinhasContas
 id btNotificacao
@@ -111,7 +110,6 @@ id btTransferir
 id btValorGuardado
 id btValorPagar
 id btValorReceber
-id contaRelacionada
 id criarRegistro
 id descricao
 id emailUsuario

@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -35,29 +36,30 @@ public final class ActivityTransferirValorBinding implements ViewBinding {
   public final ImageView icFechar;
 
   @NonNull
-  public final EditText nomeConta;
-
-  @NonNull
   public final TextView nomeRemetente;
 
   @NonNull
   public final TextView saldo;
 
   @NonNull
+  public final Spinner spinner;
+
+  @NonNull
   public final EditText valorTranferir;
 
   private ActivityTransferirValorBinding(@NonNull LinearLayout rootView,
       @NonNull LottieAnimationView btAnimacao, @NonNull LinearLayout btText,
-      @NonNull LinearLayout btTransferir, @NonNull ImageView icFechar, @NonNull EditText nomeConta,
-      @NonNull TextView nomeRemetente, @NonNull TextView saldo, @NonNull EditText valorTranferir) {
+      @NonNull LinearLayout btTransferir, @NonNull ImageView icFechar,
+      @NonNull TextView nomeRemetente, @NonNull TextView saldo, @NonNull Spinner spinner,
+      @NonNull EditText valorTranferir) {
     this.rootView = rootView;
     this.btAnimacao = btAnimacao;
     this.btText = btText;
     this.btTransferir = btTransferir;
     this.icFechar = icFechar;
-    this.nomeConta = nomeConta;
     this.nomeRemetente = nomeRemetente;
     this.saldo = saldo;
+    this.spinner = spinner;
     this.valorTranferir = valorTranferir;
   }
 
@@ -112,12 +114,6 @@ public final class ActivityTransferirValorBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.nomeConta;
-      EditText nomeConta = ViewBindings.findChildViewById(rootView, id);
-      if (nomeConta == null) {
-        break missingId;
-      }
-
       id = R.id.nomeRemetente;
       TextView nomeRemetente = ViewBindings.findChildViewById(rootView, id);
       if (nomeRemetente == null) {
@@ -130,6 +126,12 @@ public final class ActivityTransferirValorBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.spinner;
+      Spinner spinner = ViewBindings.findChildViewById(rootView, id);
+      if (spinner == null) {
+        break missingId;
+      }
+
       id = R.id.valorTranferir;
       EditText valorTranferir = ViewBindings.findChildViewById(rootView, id);
       if (valorTranferir == null) {
@@ -137,7 +139,7 @@ public final class ActivityTransferirValorBinding implements ViewBinding {
       }
 
       return new ActivityTransferirValorBinding((LinearLayout) rootView, btAnimacao, btText,
-          btTransferir, icFechar, nomeConta, nomeRemetente, saldo, valorTranferir);
+          btTransferir, icFechar, nomeRemetente, saldo, spinner, valorTranferir);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
