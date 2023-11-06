@@ -1,6 +1,7 @@
 package com.example.inovafin
 
 import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -21,6 +22,7 @@ class AddReceber : AppCompatActivity() {
     private lateinit var firestore: FirebaseFirestore
 
     private var timestamp: Timestamp? = null
+    private var selectedDate: Calendar = Calendar.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddReceberBinding.inflate(layoutInflater)
@@ -36,16 +38,11 @@ class AddReceber : AppCompatActivity() {
         val day = calendar.get(Calendar.DAY_OF_MONTH)
 
         val datePickerDialog = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
-            val selectedDate = Calendar.getInstance()
             selectedDate.set(year, month, dayOfMonth)
 
-            timestamp = Timestamp(selectedDate.time)
+            showTimePicker()
 
-            // Faça algo com a data selecionada (por exemplo, exiba-a em um TextView)
-            binding.txtData.text = SimpleDateFormat("dd/MM/yyyy").format(selectedDate.time)
         }, year, month, day)
-
-
 
         // Defina uma data mínima (opcional)
         val minDate = Calendar.getInstance()
@@ -61,8 +58,30 @@ class AddReceber : AppCompatActivity() {
         }
 
         binding.criarRegistro.setOnClickListener {
-            adicionarRegistro()
+            validarCampos()
         }
+    }
+
+    private fun showTimePicker() {
+        val hour = selectedDate.get(Calendar.HOUR_OF_DAY)
+        val minute = selectedDate.get(Calendar.MINUTE)
+
+        val timePickerDialog = TimePickerDialog(this, TimePickerDialog.OnTimeSetListener { _, hourOfDay, minute ->
+            selectedDate.set(Calendar.HOUR_OF_DAY, hourOfDay)
+            selectedDate.set(Calendar.MINUTE, minute)
+            selectedDate.set(Calendar.SECOND, 0)
+
+            timestamp = Timestamp(selectedDate.time)
+
+            // Exibir a data e hora selecionadas no TextView
+            binding.txtData.text = SimpleDateFormat("dd/MM/yyyy 'às' HH:mm").format(selectedDate.time)
+        }, hour, minute, true)
+
+        timePickerDialog.show()
+    }
+
+    private fun validarCampos() {
+        
     }
 
     private fun adicionarRegistro() {
