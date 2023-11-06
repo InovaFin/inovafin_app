@@ -13,6 +13,7 @@ import com.example.inovafin.databinding.ActivityValorReceberBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.text.NumberFormat
+import java.text.SimpleDateFormat
 import java.util.Locale
 
 class ValorReceber : AppCompatActivity() {
@@ -87,15 +88,21 @@ class ValorReceber : AppCompatActivity() {
 
                     for (document in querySnapshot) {
                         val nome = document.getString("nome")
-//                        val vencimento = document.getString("vencimento").toString()
-                        val vencimento = "datinha"
+                        val vencimento = document.getTimestamp("vencimento")
+                        val vencimentoString = if (vencimento != null) {
+                            val date = vencimento.toDate()
+                            val dateFormat = SimpleDateFormat("dd/MM/yyyy 'às' HH:mm:ss", Locale.getDefault())
+                            dateFormat.format(date)
+                        } else {
+                            "" // Caso o timestamp seja nulo, não aparecerá nada
+                        }
 
                         val valorResgatado = document.getDouble("valor")
                         val valorFormatado = numberFormat.format(valorResgatado)
 
 
                         if (nome != null) {
-                            val registro = RegistroValorReceber(nome, vencimento, valorFormatado)
+                            val registro = RegistroValorReceber(nome, vencimentoString, valorFormatado)
                             receberArrayList.add(registro)
                         }
                     }
