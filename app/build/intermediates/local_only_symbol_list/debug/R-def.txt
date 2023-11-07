@@ -69,6 +69,7 @@ drawable ic_transacao
 drawable ic_transacao_branco
 drawable ic_voltar
 drawable img_logo
+drawable img_receber_256
 drawable img_senha_enviada
 drawable logo_branca_500
 drawable logo_verde_500
@@ -151,13 +152,13 @@ layout activity_excluir_guardado
 layout activity_excluir_pagar
 layout activity_excluir_receber
 layout activity_home
-layout activity_info_registro
 layout activity_login
 layout activity_login_cadastro
 layout activity_main
 layout activity_minhas_contas
 layout activity_notificacoes
 layout activity_nova_conta
+layout activity_registro_receber
 layout activity_saldo_geral
 layout activity_saldo_geral_guardado
 layout activity_saldo_geral_pagar

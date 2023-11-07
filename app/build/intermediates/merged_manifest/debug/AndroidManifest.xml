@@ -67,7 +67,7 @@
             android:name="com.example.inovafin.ExcluirReceber"
             android:exported="false" />
         <activity
-            android:name="com.example.inovafin.InfoRegistro"
+            android:name="com.example.inovafin.RegistroReceber"
             android:exported="false" />
         <activity
             android:name="com.example.inovafin.AddReceber"

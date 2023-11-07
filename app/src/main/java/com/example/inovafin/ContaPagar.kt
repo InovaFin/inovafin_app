@@ -24,7 +24,7 @@ class ContaPagar : AppCompatActivity() {
         }
 
         binding.btRegistro.setOnClickListener {
-            val i = Intent (this, InfoRegistro::class.java)
+            val i = Intent (this, RegistroReceber::class.java)
             startActivity(i)
         }
 

@@ -126,8 +126,8 @@
 68-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:50:13-37
 69        <activity
 69-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:51:9-53:40
-70            android:name="com.example.inovafin.InfoRegistro"
-70-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:52:13-41
+70            android:name="com.example.inovafin.RegistroReceber"
+70-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:52:13-44
 71            android:exported="false" />
 71-->C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:53:13-37
 72        <activity

@@ -49,7 +49,8 @@ class ValorReceber : AppCompatActivity() {
 
         receberArrayList = arrayListOf()
         adapter = MyAdapterReceber(receberArrayList) { registro ->
-            Toast.makeText(applicationContext, "Click", Toast.LENGTH_LONG).show()
+            val i = Intent(this, RegistroReceber::class.java)
+            startActivity(i)
         }
 
         setupRecyclerView()

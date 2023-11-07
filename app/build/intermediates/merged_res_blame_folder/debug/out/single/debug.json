@@ -1,5 +1,9 @@
 [
     {
+        "merged": "com.example.inovafin.app-merged_res-39:/layout_activity_registro_receber.xml.flat",
+        "source": "com.example.inovafin.app-main-41:/layout/activity_registro_receber.xml"
+    },
+    {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\drawable_ic_android.xml.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\drawable\\ic_android.xml"
     },
@@ -164,10 +168,6 @@
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "com.example.inovafin.app-merged_res-39:/layout_activity_valor_receber.xml.flat",
-        "source": "com.example.inovafin.app-main-41:/layout/activity_valor_receber.xml"
-    },
-    {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\drawable_bg_menu_nav.xml.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\drawable\\bg_menu_nav.xml"
     },
@@ -242,6 +242,10 @@
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\drawable_bg_duvida.xml.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\drawable\\bg_duvida.xml"
+    },
+    {
+        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\layout_activity_registro_receber.xml.flat",
+        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\layout\\activity_registro_receber.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\layout_activity_valor_receber.xml.flat",
@@ -450,6 +454,10 @@
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\drawable_ic_foto.xml.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\drawable\\ic_foto.xml"
+    },
+    {
+        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\drawable_img_receber_256.png.flat",
+        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\drawable\\img_receber_256.png"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\drawable_ic_add.xml.flat",

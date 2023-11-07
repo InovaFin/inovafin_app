@@ -109,7 +109,7 @@
                 android:id="@+id/listaReceber"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="100dp"
+                android:layout_marginBottom="80dp"
                 tools:listitem="@layout/valor_receber_item"/>
 
         </LinearLayout>
@@ -127,8 +127,8 @@
             android:id="@+id/btAdicionar"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/bg_botao_ripple"
             android:layout_marginHorizontal="30dp"
             android:clickable="true"

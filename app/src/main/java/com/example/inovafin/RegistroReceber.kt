@@ -2,14 +2,14 @@ package com.example.inovafin
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.inovafin.databinding.ActivityInfoRegistroBinding
+import com.example.inovafin.databinding.ActivityRegistroReceberBinding
 
-class InfoRegistro : AppCompatActivity() {
+class RegistroReceber : AppCompatActivity() {
 
-    private lateinit var binding: ActivityInfoRegistroBinding
+    private lateinit var binding: ActivityRegistroReceberBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityInfoRegistroBinding.inflate(layoutInflater)
+        binding = ActivityRegistroReceberBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 

@@ -49,7 +49,7 @@
             android:name=".ExcluirReceber"
             android:exported="false" />
         <activity
-            android:name=".InfoRegistro"
+            android:name=".RegistroReceber"
             android:exported="false" />
         <activity
             android:name=".AddReceber"

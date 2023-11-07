@@ -19,7 +19,7 @@ class SaldoGeralGuardado : AppCompatActivity() {
         }
 
         binding.btRegistro.setOnClickListener {
-            val navegarTelaRegistro = Intent (this, InfoRegistro::class.java)
+            val navegarTelaRegistro = Intent (this, RegistroReceber::class.java)
             startActivity(navegarTelaRegistro)
         }
     }
