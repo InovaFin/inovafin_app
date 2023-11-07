@@ -3318,7 +3318,6 @@ id coordinator
 id cos
 id counterclockwise
 id cradle
-id criarRegistro
 id currentState
 id custom
 id customPanel

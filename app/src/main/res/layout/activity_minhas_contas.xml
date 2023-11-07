@@ -75,42 +75,6 @@
         android:layout_alignParentBottom="true"
         android:orientation="vertical">
 
-<!--        <LinearLayout-->
-<!--            android:id="@+id/btExcluirConta"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:layout_marginTop="15dp"-->
-<!--            android:background="@drawable/bg_botao_secundario_ripple"-->
-<!--            android:layout_marginHorizontal="30dp"-->
-<!--            android:clickable="true"-->
-<!--            android:gravity="center"-->
-<!--            android:orientation="horizontal"-->
-<!--            android:paddingHorizontal="17dp">-->
-
-<!--            <LinearLayout-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:gravity="center"-->
-<!--                android:orientation="horizontal">-->
-
-<!--                <ImageView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginEnd="5dp"-->
-<!--                    android:src="@drawable/ic_excluir" />-->
-
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:fontFamily="@font/roboto_bold"-->
-<!--                    android:text="Excluir Contas"-->
-<!--                    android:textColor="@color/black_secundario"-->
-<!--                    android:textSize="13sp" />-->
-
-<!--            </LinearLayout>-->
-
-<!--        </LinearLayout>-->
-
         <LinearLayout
             android:id="@+id/btAddContas"
             android:layout_width="match_parent"

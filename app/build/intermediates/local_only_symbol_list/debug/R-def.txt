@@ -110,7 +110,6 @@ id btTransferir
 id btValorGuardado
 id btValorPagar
 id btValorReceber
-id criarRegistro
 id descricao
 id emailUsuario
 id exibirDataReceber

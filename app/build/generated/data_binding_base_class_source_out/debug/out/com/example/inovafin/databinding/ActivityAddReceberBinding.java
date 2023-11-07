@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.inovafin.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -24,10 +25,16 @@ public final class ActivityAddReceberBinding implements ViewBinding {
   private final ScrollView rootView;
 
   @NonNull
+  public final LinearLayout btAdicionar;
+
+  @NonNull
+  public final LottieAnimationView btAnimacao;
+
+  @NonNull
   public final ImageView btCalendario;
 
   @NonNull
-  public final LinearLayout criarRegistro;
+  public final LinearLayout btText;
 
   @NonNull
   public final EditText descricao;
@@ -47,13 +54,16 @@ public final class ActivityAddReceberBinding implements ViewBinding {
   @NonNull
   public final EditText valorReceber;
 
-  private ActivityAddReceberBinding(@NonNull ScrollView rootView, @NonNull ImageView btCalendario,
-      @NonNull LinearLayout criarRegistro, @NonNull EditText descricao, @NonNull ImageView icFechar,
+  private ActivityAddReceberBinding(@NonNull ScrollView rootView, @NonNull LinearLayout btAdicionar,
+      @NonNull LottieAnimationView btAnimacao, @NonNull ImageView btCalendario,
+      @NonNull LinearLayout btText, @NonNull EditText descricao, @NonNull ImageView icFechar,
       @NonNull EditText nomeReceber, @NonNull Spinner spinner, @NonNull TextView txtData,
       @NonNull EditText valorReceber) {
     this.rootView = rootView;
+    this.btAdicionar = btAdicionar;
+    this.btAnimacao = btAnimacao;
     this.btCalendario = btCalendario;
-    this.criarRegistro = criarRegistro;
+    this.btText = btText;
     this.descricao = descricao;
     this.icFechar = icFechar;
     this.nomeReceber = nomeReceber;
@@ -89,15 +99,27 @@ public final class ActivityAddReceberBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btAdicionar;
+      LinearLayout btAdicionar = ViewBindings.findChildViewById(rootView, id);
+      if (btAdicionar == null) {
+        break missingId;
+      }
+
+      id = R.id.btAnimacao;
+      LottieAnimationView btAnimacao = ViewBindings.findChildViewById(rootView, id);
+      if (btAnimacao == null) {
+        break missingId;
+      }
+
       id = R.id.btCalendario;
       ImageView btCalendario = ViewBindings.findChildViewById(rootView, id);
       if (btCalendario == null) {
         break missingId;
       }
 
-      id = R.id.criarRegistro;
-      LinearLayout criarRegistro = ViewBindings.findChildViewById(rootView, id);
-      if (criarRegistro == null) {
+      id = R.id.btText;
+      LinearLayout btText = ViewBindings.findChildViewById(rootView, id);
+      if (btText == null) {
         break missingId;
       }
 
@@ -137,8 +159,8 @@ public final class ActivityAddReceberBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityAddReceberBinding((ScrollView) rootView, btCalendario, criarRegistro,
-          descricao, icFechar, nomeReceber, spinner, txtData, valorReceber);
+      return new ActivityAddReceberBinding((ScrollView) rootView, btAdicionar, btAnimacao,
+          btCalendario, btText, descricao, icFechar, nomeReceber, spinner, txtData, valorReceber);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

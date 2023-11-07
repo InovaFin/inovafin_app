@@ -61,11 +61,6 @@ class ValorReceber : AppCompatActivity() {
             val i = Intent (this, AddReceber::class.java)
             startActivity(i)
         }
-
-        binding.btExcluir.setOnClickListener {
-            val i = Intent (this, ExcluirReceber::class.java)
-            startActivity(i)
-        }
     }
 
     private fun setupRecyclerView() {
@@ -91,7 +86,7 @@ class ValorReceber : AppCompatActivity() {
                         val vencimento = document.getTimestamp("vencimento")
                         val vencimentoString = if (vencimento != null) {
                             val date = vencimento.toDate()
-                            val dateFormat = SimpleDateFormat("dd/MM/yyyy 'às' HH:mm:ss", Locale.getDefault())
+                            val dateFormat = SimpleDateFormat("dd/MM/yyyy 'às' HH:mm", Locale.getDefault())
                             dateFormat.format(date)
                         } else {
                             "" // Caso o timestamp seja nulo, não aparecerá nada
@@ -111,5 +106,10 @@ class ValorReceber : AppCompatActivity() {
                     adapter.notifyDataSetChanged()
                 }
             }
+    }
+
+    override fun onBackPressed() {
+        val i = Intent(this, Home::class.java)
+        startActivity(i)
     }
 }

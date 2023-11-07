@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,13 +19,10 @@ import java.lang.String;
 
 public final class ActivityValorReceberBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final RelativeLayout rootView;
 
   @NonNull
   public final LinearLayout btAdicionar;
-
-  @NonNull
-  public final LinearLayout btExcluir;
 
   @NonNull
   public final ImageView icFechar;
@@ -32,19 +30,18 @@ public final class ActivityValorReceberBinding implements ViewBinding {
   @NonNull
   public final RecyclerView listaReceber;
 
-  private ActivityValorReceberBinding(@NonNull LinearLayout rootView,
-      @NonNull LinearLayout btAdicionar, @NonNull LinearLayout btExcluir,
-      @NonNull ImageView icFechar, @NonNull RecyclerView listaReceber) {
+  private ActivityValorReceberBinding(@NonNull RelativeLayout rootView,
+      @NonNull LinearLayout btAdicionar, @NonNull ImageView icFechar,
+      @NonNull RecyclerView listaReceber) {
     this.rootView = rootView;
     this.btAdicionar = btAdicionar;
-    this.btExcluir = btExcluir;
     this.icFechar = icFechar;
     this.listaReceber = listaReceber;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public RelativeLayout getRoot() {
     return rootView;
   }
 
@@ -75,12 +72,6 @@ public final class ActivityValorReceberBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.btExcluir;
-      LinearLayout btExcluir = ViewBindings.findChildViewById(rootView, id);
-      if (btExcluir == null) {
-        break missingId;
-      }
-
       id = R.id.icFechar;
       ImageView icFechar = ViewBindings.findChildViewById(rootView, id);
       if (icFechar == null) {
@@ -93,8 +84,8 @@ public final class ActivityValorReceberBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityValorReceberBinding((LinearLayout) rootView, btAdicionar, btExcluir,
-          icFechar, listaReceber);
+      return new ActivityValorReceberBinding((RelativeLayout) rootView, btAdicionar, icFechar,
+          listaReceber);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

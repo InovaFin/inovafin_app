@@ -3317,7 +3317,6 @@ int id coordinator 0x7f0a00a8
 int id cos 0x7f0a00a9
 int id counterclockwise 0x7f0a00aa
 int id cradle 0x7f0a00ab
-int id criarRegistro 0x7f0a00ac
 int id currentState 0x7f0a00ad
 int id custom 0x7f0a00ae
 int id customPanel 0x7f0a00af

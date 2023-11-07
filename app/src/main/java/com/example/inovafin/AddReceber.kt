@@ -2,6 +2,7 @@ package com.example.inovafin
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -9,6 +10,7 @@ import android.text.TextWatcher
 import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Toast
+import com.example.inovafin.Util.AnimacaoDeLoad
 import com.example.inovafin.Util.ConfiguraBd
 import com.example.inovafin.databinding.ActivityAddReceberBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -27,6 +29,8 @@ class AddReceber : AppCompatActivity() {
 
     private lateinit var firestore: FirebaseFirestore
 
+    private lateinit var animacaoDeLoad: AnimacaoDeLoad
+
     private var numberFormat = NumberFormat.getCurrencyInstance()
 
     private var timestamp: Timestamp? = null
@@ -41,6 +45,7 @@ class AddReceber : AppCompatActivity() {
 
         autentificacao = ConfiguraBd.Firebaseautentificacao()
         firestore = ConfiguraBd.Firebasefirestore()
+        animacaoDeLoad = AnimacaoDeLoad(binding.btAnimacao, binding.btText, this)
 
         val calendar = Calendar.getInstance()
         val year = calendar.get(Calendar.YEAR)
@@ -70,7 +75,8 @@ class AddReceber : AppCompatActivity() {
             datePickerDialog.show()
         }
 
-        binding.criarRegistro.setOnClickListener {
+        binding.btAdicionar.setOnClickListener {
+            animacaoDeLoad.iniciarAnimacao()
             validarCampos()
         }
     }
@@ -199,12 +205,15 @@ class AddReceber : AppCompatActivity() {
                 if (valorAtualFinal > 0.0) {
                     adicionarRegistro()
                 } else {
+                    animacaoDeLoad.pararAnimacao()
                     Toast.makeText(applicationContext, "O valor deve ser maior que 0", Toast.LENGTH_LONG).show()
                 }
             } else {
+                animacaoDeLoad.pararAnimacao()
                 Toast.makeText(applicationContext, "Selecione uma conta", Toast.LENGTH_LONG).show()
             }
         } else {
+            animacaoDeLoad.pararAnimacao()
             Toast.makeText(applicationContext, "Digite o nome do registro", Toast.LENGTH_LONG).show()
         }
     }
@@ -227,10 +236,13 @@ class AddReceber : AppCompatActivity() {
             .collection("ValoresReceber").document()
             .set(registroMasp)
             .addOnSuccessListener {
-                Toast.makeText(applicationContext, "Boa Zero6", Toast.LENGTH_LONG).show()
+                animacaoDeLoad.pararAnimacao()
+                val i = Intent(this, ValorReceber::class.java)
+                startActivity(i)
             }
             .addOnFailureListener{
-                Toast.makeText(applicationContext, "Rapa menó", Toast.LENGTH_LONG).show()
+                animacaoDeLoad.pararAnimacao()
+                Toast.makeText(applicationContext, "Erro ao adicionar", Toast.LENGTH_LONG).show()
             }
     }
 }
