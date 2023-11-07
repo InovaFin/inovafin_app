@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,13 +31,17 @@ public final class ActivityValorReceberBinding implements ViewBinding {
   @NonNull
   public final RecyclerView listaReceber;
 
+  @NonNull
+  public final TextView valorTotalReceber;
+
   private ActivityValorReceberBinding(@NonNull RelativeLayout rootView,
       @NonNull LinearLayout btAdicionar, @NonNull ImageView icFechar,
-      @NonNull RecyclerView listaReceber) {
+      @NonNull RecyclerView listaReceber, @NonNull TextView valorTotalReceber) {
     this.rootView = rootView;
     this.btAdicionar = btAdicionar;
     this.icFechar = icFechar;
     this.listaReceber = listaReceber;
+    this.valorTotalReceber = valorTotalReceber;
   }
 
   @Override
@@ -84,8 +89,14 @@ public final class ActivityValorReceberBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.valorTotalReceber;
+      TextView valorTotalReceber = ViewBindings.findChildViewById(rootView, id);
+      if (valorTotalReceber == null) {
+        break missingId;
+      }
+
       return new ActivityValorReceberBinding((RelativeLayout) rootView, btAdicionar, icFechar,
-          listaReceber);
+          listaReceber, valorTotalReceber);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

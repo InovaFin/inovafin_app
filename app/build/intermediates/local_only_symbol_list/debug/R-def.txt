@@ -134,6 +134,7 @@ id spinner
 id titulo
 id txtData
 id valorReceber
+id valorTotalReceber
 id valorTranferir
 id valorTransferido
 layout activity_add_receber

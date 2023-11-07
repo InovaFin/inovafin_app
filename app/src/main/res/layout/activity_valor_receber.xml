@@ -78,6 +78,7 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/valorTotalReceber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -100,7 +101,7 @@
                 android:layout_marginHorizontal="30dp"
                 android:layout_marginVertical="8dp"
                 android:textColor="@color/black_terciario"
-                android:text="*Ao atingir a data, os ganhos listados serão somados ao Saldo Geral."
+                android:text="*Ao atingir a data, os ganhos listados serão somados ao Saldo da conta relacionada ao registro."
                 android:fontFamily="@font/roboto_light"
                 android:textSize="12dp"/>
 

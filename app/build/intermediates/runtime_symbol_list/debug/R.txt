@@ -3695,6 +3695,7 @@ int id unlabeled 0x7f0a0223
 int id up 0x7f0a0224
 int id useLogo 0x7f0a0225
 int id valorReceber 0x7f0a0226
+int id valorTotalReceber 0x7f0a023c
 int id valorTranferir 0x7f0a0227
 int id valorTransferido 0x7f0a0228
 int id vertical_only 0x7f0a0229

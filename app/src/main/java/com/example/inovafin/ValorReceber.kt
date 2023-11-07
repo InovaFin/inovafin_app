@@ -32,6 +32,8 @@ class ValorReceber : AppCompatActivity() {
 
     private var numberFormat = NumberFormat.getCurrencyInstance(Locale("pt", "BR"))
 
+    private var valorTotalReceber: Double = 0.0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityValorReceberBinding.inflate(layoutInflater)
@@ -93,6 +95,9 @@ class ValorReceber : AppCompatActivity() {
                         }
 
                         val valorResgatado = document.getDouble("valor")
+                        if (valorResgatado != null) {
+                            valorTotalReceber += valorResgatado
+                        }
                         val valorFormatado = numberFormat.format(valorResgatado)
 
 
@@ -101,6 +106,10 @@ class ValorReceber : AppCompatActivity() {
                             receberArrayList.add(registro)
                         }
                     }
+
+                    val valorTotalFormatado = numberFormat.format(valorTotalReceber)
+
+                    binding.valorTotalReceber.text = valorTotalFormatado
 
                     // Notifica o adaptador que os dados foram alterados
                     adapter.notifyDataSetChanged()

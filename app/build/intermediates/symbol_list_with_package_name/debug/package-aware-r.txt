@@ -3696,6 +3696,7 @@ id unlabeled
 id up
 id useLogo
 id valorReceber
+id valorTotalReceber
 id valorTranferir
 id valorTransferido
 id vertical_only

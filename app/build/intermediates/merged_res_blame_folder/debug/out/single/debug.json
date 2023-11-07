@@ -16,12 +16,12 @@
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\font\\roboto_bold.xml"
     },
     {
-        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\drawable_bg_edittext.xml.flat",
-        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\drawable\\bg_edittext.xml"
-    },
-    {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\xml_data_extraction_rules.xml.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\drawable_bg_edittext.xml.flat",
+        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\drawable\\bg_edittext.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\drawable_bg_botao.xml.flat",
@@ -74,10 +74,6 @@
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\font_poppins_bold.xml.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\font\\poppins_bold.xml"
-    },
-    {
-        "merged": "com.example.inovafin.app-merged_res-39:/layout_activity_add_receber.xml.flat",
-        "source": "com.example.inovafin.app-main-41:/layout/activity_add_receber.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\drawable_bg_botao_ripple.xml.flat",
@@ -166,6 +162,10 @@
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.inovafin.app-merged_res-39:/layout_activity_valor_receber.xml.flat",
+        "source": "com.example.inovafin.app-main-41:/layout/activity_valor_receber.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\drawable_bg_menu_nav.xml.flat",
