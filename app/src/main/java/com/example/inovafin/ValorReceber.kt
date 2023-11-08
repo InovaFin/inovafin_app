@@ -115,7 +115,7 @@ class ValorReceber : AppCompatActivity() {
                         val vencimento = document.getTimestamp("vencimento")
                         val vencimentoString = if (vencimento != null) {
                             val date = vencimento.toDate()
-                            val dateFormat = SimpleDateFormat("dd/MM/yyyy 'às' HH:mm", Locale.getDefault())
+                            val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
                             dateFormat.format(date)
                         } else {
                             "" // Caso o timestamp seja nulo, não aparecerá nada

@@ -52,12 +52,25 @@ class AddReceber : AppCompatActivity() {
         val month = calendar.get(Calendar.MONTH)
         val day = calendar.get(Calendar.DAY_OF_MONTH)
 
-        val datePickerDialog = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
-            selectedDate.set(year, month, dayOfMonth)
+        val datePickerDialog = DatePickerDialog(
+            this,
+            DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
+                selectedDate.set(year, month, dayOfMonth)
 
-            showTimePicker()
+                val currentDate = Calendar.getInstance() // Obtem a data atual
+                if (selectedDate.after(currentDate)) {
+                    timestamp = Timestamp(selectedDate.time)
+                    binding.txtData.text = SimpleDateFormat("dd/MM/yyyy").format(selectedDate.time)
+                } else {
+                    // Data selecionada não é válida (anterior ao dia atual)
+                    Toast.makeText(applicationContext, "Selecione uma data futura", Toast.LENGTH_LONG).show()
+                }
 
-        }, year, month, day)
+            },
+            year,
+            month,
+            day
+        )
 
         // Defina uma data mínima (opcional)
         val minDate = Calendar.getInstance()
@@ -79,24 +92,6 @@ class AddReceber : AppCompatActivity() {
             animacaoDeLoad.iniciarAnimacao()
             validarCampos()
         }
-    }
-
-    private fun showTimePicker() {
-        val hour = selectedDate.get(Calendar.HOUR_OF_DAY)
-        val minute = selectedDate.get(Calendar.MINUTE)
-
-        val timePickerDialog = TimePickerDialog(this, TimePickerDialog.OnTimeSetListener { _, hourOfDay, minute ->
-            selectedDate.set(Calendar.HOUR_OF_DAY, hourOfDay)
-            selectedDate.set(Calendar.MINUTE, minute)
-            selectedDate.set(Calendar.SECOND, 0)
-
-            timestamp = Timestamp(selectedDate.time)
-
-            // Exibir a data e hora selecionadas no TextView
-            binding.txtData.text = SimpleDateFormat("dd/MM/yyyy 'às' HH:mm").format(selectedDate.time)
-        }, hour, minute, true)
-
-        timePickerDialog.show()
     }
 
     private fun resgatarContas() {
