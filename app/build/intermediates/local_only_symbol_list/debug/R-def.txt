@@ -62,6 +62,7 @@ drawable ic_launcher_foreground
 drawable ic_notificacao
 drawable ic_perfil
 drawable ic_perfil_config
+drawable ic_receber
 drawable ic_sair
 drawable ic_salvar
 drawable ic_senha
@@ -111,6 +112,8 @@ id btTransferir
 id btValorGuardado
 id btValorPagar
 id btValorReceber
+id contaRegistro
+id descRegistro
 id descricao
 id emailUsuario
 id exibirDataReceber
@@ -125,6 +128,7 @@ id listaReceber
 id nomeConta
 id nomeDestinatario
 id nomeReceber
+id nomeRegistro
 id nomeRemetente
 id nomeUsuario
 id novaSenha
@@ -135,9 +139,11 @@ id spinner
 id titulo
 id txtData
 id valorReceber
+id valorRegistro
 id valorTotalReceber
 id valorTranferir
 id valorTransferido
+id vencimentoRegistro
 layout activity_add_receber
 layout activity_ajuda_saldo_geral
 layout activity_cadastro

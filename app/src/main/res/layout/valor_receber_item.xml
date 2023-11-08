@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="30dp"
+        android:paddingHorizontal="20dp"
         android:paddingVertical="17dp"
         android:gravity="center|start"
         android:orientation="horizontal">
@@ -18,10 +18,10 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginEnd="10dp"
-            android:src="@drawable/ic_android"
-            android:background="@drawable/bg_icones_ripple"
-            android:padding="13dp"/>
+            android:layout_marginEnd="13dp"
+            android:src="@drawable/ic_receber"
+            android:padding="12dp"
+            android:background="@drawable/bg_icones"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -46,27 +46,19 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/roboto"
                 android:text="00/00/00 às 00:00"
-                android:textColor="@color/verde_principal"
+                android:textColor="@color/black_terciario"
                 android:textSize="11sp" />
 
         </LinearLayout>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto"
-            android:text="+ "
-            android:textColor="@color/verde_principal"
-            android:textSize="15sp" />
-
-        <TextView
             android:id="@+id/exibirValorReceber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto"
+            android:fontFamily="@font/roboto_medium"
             android:text="R$ 0,00"
             android:textColor="@color/verde_principal"
-            android:textSize="14sp" />
+            android:textSize="15sp" />
 
     </LinearLayout>
 

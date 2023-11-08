@@ -46,6 +46,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/nomeRegistro"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="5dp"
@@ -63,6 +64,7 @@
                         android:textSize="15sp"/>
 
                     <TextView
+                        android:id="@+id/vencimentoRegistro"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="00/00/00 às 00:00"
@@ -82,12 +84,12 @@
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
-                android:layout_marginBottom="30dp"
                 android:paddingVertical="20dp"
                 android:paddingHorizontal="15dp"
                 android:background="@drawable/bg_botao_secundario">
 
                 <TextView
+                    android:id="@+id/descRegistro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto"
@@ -97,6 +99,16 @@
 
             </ScrollView>
 
+            <TextView
+                android:id="@+id/contaRegistro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="7dp"
+                android:text="Conta Relacionada"
+                android:fontFamily="@font/roboto"
+                android:textColor="@color/black_secundario"
+                android:textSize="15sp"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -104,6 +116,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/valorRegistro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="R$ 0,00"

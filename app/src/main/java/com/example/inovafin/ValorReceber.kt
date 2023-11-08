@@ -49,8 +49,11 @@ class ValorReceber : AppCompatActivity() {
 
         receberArrayList = arrayListOf()
         adapter = MyAdapterReceber(receberArrayList) { registro ->
-            val i = Intent(this, RegistroReceber::class.java)
-            startActivity(i)
+            resgatarId(registro.nome) { documentoId ->
+                val i = Intent(this, RegistroReceber::class.java)
+                i.putExtra("registroId", documentoId)
+                startActivity(i)
+            }
         }
 
         setupRecyclerView()
@@ -69,6 +72,29 @@ class ValorReceber : AppCompatActivity() {
     private fun setupRecyclerView() {
         receberReyclerView.adapter = adapter // Defina o adaptador no RecyclerView
     }
+
+    private fun resgatarId(nome: String?, callback: (String) -> Unit) {
+        val usuarioId = autentificacao.currentUser!!.uid
+
+        firestore.collection("Usuarios").document(usuarioId)
+            .collection("ValoresReceber")
+            .whereEqualTo("nome", nome)
+            .get()
+            .addOnSuccessListener { querySnapshot ->
+                if (!querySnapshot.isEmpty) {
+                    // Recupera o ID do primeiro documento correspondente
+                    val documentSnapshot = querySnapshot.documents[0]
+                    val documentoId = documentSnapshot.id
+                    callback(documentoId)
+                } else {
+                    // Tratar caso em que nenhum documento corresponde
+                }
+            }
+            .addOnFailureListener { e ->
+                Toast.makeText(applicationContext, "Erro ao buscar dados: $e", Toast.LENGTH_LONG).show()
+            }
+    }
+
 
     private fun resgatarDados() {
 

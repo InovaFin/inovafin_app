@@ -3052,6 +3052,7 @@ drawable ic_mtrl_chip_close_circle
 drawable ic_notificacao
 drawable ic_perfil
 drawable ic_perfil_config
+drawable ic_receber
 drawable ic_sair
 drawable ic_salvar
 drawable ic_search_black_24
@@ -3310,6 +3311,7 @@ id collapseActionView
 id compress
 id confirm_button
 id constraint
+id contaRegistro
 id container
 id content
 id contentPanel
@@ -3331,6 +3333,7 @@ id decor_content_parent
 id default_activity_button
 id deltaRelative
 id dependency_ordering
+id descRegistro
 id descricao
 id design_bottom_sheet
 id design_menu_item_action_area
@@ -3518,6 +3521,7 @@ id noState
 id nomeConta
 id nomeDestinatario
 id nomeReceber
+id nomeRegistro
 id nomeRemetente
 id nomeUsuario
 id none
@@ -3697,9 +3701,11 @@ id unlabeled
 id up
 id useLogo
 id valorReceber
+id valorRegistro
 id valorTotalReceber
 id valorTranferir
 id valorTransferido
+id vencimentoRegistro
 id vertical_only
 id view_offset_helper
 id view_transition

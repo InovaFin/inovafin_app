@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -26,14 +27,36 @@ public final class ActivityRegistroReceberBinding implements ViewBinding {
   public final ImageView btExcluir;
 
   @NonNull
+  public final TextView contaRegistro;
+
+  @NonNull
+  public final TextView descRegistro;
+
+  @NonNull
   public final ImageView icFechar;
 
+  @NonNull
+  public final TextView nomeRegistro;
+
+  @NonNull
+  public final TextView valorRegistro;
+
+  @NonNull
+  public final TextView vencimentoRegistro;
+
   private ActivityRegistroReceberBinding(@NonNull RelativeLayout rootView,
-      @NonNull ImageView btEditar, @NonNull ImageView btExcluir, @NonNull ImageView icFechar) {
+      @NonNull ImageView btEditar, @NonNull ImageView btExcluir, @NonNull TextView contaRegistro,
+      @NonNull TextView descRegistro, @NonNull ImageView icFechar, @NonNull TextView nomeRegistro,
+      @NonNull TextView valorRegistro, @NonNull TextView vencimentoRegistro) {
     this.rootView = rootView;
     this.btEditar = btEditar;
     this.btExcluir = btExcluir;
+    this.contaRegistro = contaRegistro;
+    this.descRegistro = descRegistro;
     this.icFechar = icFechar;
+    this.nomeRegistro = nomeRegistro;
+    this.valorRegistro = valorRegistro;
+    this.vencimentoRegistro = vencimentoRegistro;
   }
 
   @Override
@@ -75,14 +98,44 @@ public final class ActivityRegistroReceberBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.contaRegistro;
+      TextView contaRegistro = ViewBindings.findChildViewById(rootView, id);
+      if (contaRegistro == null) {
+        break missingId;
+      }
+
+      id = R.id.descRegistro;
+      TextView descRegistro = ViewBindings.findChildViewById(rootView, id);
+      if (descRegistro == null) {
+        break missingId;
+      }
+
       id = R.id.icFechar;
       ImageView icFechar = ViewBindings.findChildViewById(rootView, id);
       if (icFechar == null) {
         break missingId;
       }
 
+      id = R.id.nomeRegistro;
+      TextView nomeRegistro = ViewBindings.findChildViewById(rootView, id);
+      if (nomeRegistro == null) {
+        break missingId;
+      }
+
+      id = R.id.valorRegistro;
+      TextView valorRegistro = ViewBindings.findChildViewById(rootView, id);
+      if (valorRegistro == null) {
+        break missingId;
+      }
+
+      id = R.id.vencimentoRegistro;
+      TextView vencimentoRegistro = ViewBindings.findChildViewById(rootView, id);
+      if (vencimentoRegistro == null) {
+        break missingId;
+      }
+
       return new ActivityRegistroReceberBinding((RelativeLayout) rootView, btEditar, btExcluir,
-          icFechar);
+          contaRegistro, descRegistro, icFechar, nomeRegistro, valorRegistro, vencimentoRegistro);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
