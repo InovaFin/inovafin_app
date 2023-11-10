@@ -3257,6 +3257,7 @@ int id browser_actions_menu_view 0x7f0a006a
 int id btAddContas 0x7f0a006b
 int id btAdicionar 0x7f0a006c
 int id btAjuda 0x7f0a006d
+int id btAlterar 0x7f0a0242
 int id btAlterarDados 0x7f0a006e
 int id btAlterarFoto 0x7f0a006f
 int id btAnimacao 0x7f0a0070
@@ -3846,6 +3847,7 @@ int layout activity_conta_escolhida 0x7f0d0020
 int layout activity_conta_pagar 0x7f0d0021
 int layout activity_editar_conta 0x7f0d0022
 int layout activity_editar_perfil 0x7f0d0023
+int layout activity_editar_receber 0x7f0d0096
 int layout activity_email_enviado 0x7f0d0024
 int layout activity_esqueceu_senha 0x7f0d0025
 int layout activity_excluir_guardado 0x7f0d0026

@@ -1,5 +1,6 @@
 package com.example.inovafin
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -37,6 +38,12 @@ class RegistroReceber : AppCompatActivity() {
 
         binding.icFechar.setOnClickListener {
             onBackPressed()
+        }
+
+        binding.btEditar.setOnClickListener {
+            val i = Intent(this, EditarReceber::class.java)
+            i.putExtra("registroId", registroId)
+            startActivity(i)
         }
     }
 

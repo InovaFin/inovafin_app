@@ -1,7 +1,6 @@
 package com.example.inovafin
 
 import android.app.DatePickerDialog
-import android.app.TimePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -72,9 +71,9 @@ class AddReceber : AppCompatActivity() {
             day
         )
 
-        // Defina uma data mínima (opcional)
+        // Defina uma data mínima
         val minDate = Calendar.getInstance()
-        minDate.set(2023, 0, 1) // Janeiro de 2023
+        minDate.set(2023, 0, 1)
         datePickerDialog.datePicker.minDate = minDate.timeInMillis
 
         resgatarContas()

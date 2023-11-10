@@ -3258,6 +3258,7 @@ id browser_actions_menu_view
 id btAddContas
 id btAdicionar
 id btAjuda
+id btAlterar
 id btAlterarDados
 id btAlterarFoto
 id btAnimacao
@@ -3847,6 +3848,7 @@ layout activity_conta_escolhida
 layout activity_conta_pagar
 layout activity_editar_conta
 layout activity_editar_perfil
+layout activity_editar_receber
 layout activity_email_enviado
 layout activity_esqueceu_senha
 layout activity_excluir_guardado
