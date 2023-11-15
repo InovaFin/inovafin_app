@@ -55,9 +55,7 @@ class ContaEscolhida : AppCompatActivity() {
         }
 
         binding.btTransferir.setOnClickListener {
-            val i = Intent(this, TransferirValor::class.java)
-            i.putExtra("contaId", contaId)
-            startActivity(i)
+            verificarContas()
         }
 
         binding.btExcluir.setOnClickListener {
@@ -79,7 +77,7 @@ class ContaEscolhida : AppCompatActivity() {
                         val nomeResgatado = document.getString("nome")
 
                         if (nomeResgatado != null) {
-                            nome = nomeResgatado
+                            nome = nomeResgatado.toString()
                         }
 
                         val formatted = numberFormat.format(saldoResgatado)
@@ -101,6 +99,24 @@ class ContaEscolhida : AppCompatActivity() {
             Toast.makeText(applicationContext, "Erro ao resgatar dados", Toast.LENGTH_LONG).show()
         }
 
+    }
+
+    private fun verificarContas() {
+        val usuarioId = autentificacao.currentUser!!.uid
+
+        firestore.collection("Usuarios").document(usuarioId)
+            .collection("ContasBancarias")
+            .get()
+            .addOnSuccessListener { documents ->
+                // Verifica se há algum documento na coleção
+                if (documents.size() > 1) {
+                    val i = Intent(this, TransferirValor::class.java)
+                    i.putExtra("contaId", contaId)
+                    startActivity(i)
+                } else {
+                    Toast.makeText(applicationContext, "Antes, adicione mais uma Conta Bancária", Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 
     fun dialogConfirmacao() {

@@ -124,7 +124,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nome da conta que receberá o valor"
+                        android:text="Conta que receberá o valor"
                         android:textColor="@color/black_secundario"
                         android:textSize="12sp"
                         android:fontFamily="@font/roboto_light"/>
