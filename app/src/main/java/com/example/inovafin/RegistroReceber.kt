@@ -52,6 +52,10 @@ class RegistroReceber : AppCompatActivity() {
             i.putExtra("registroId", registroId)
             startActivity(i)
         }
+
+        binding.btExcluir.setOnClickListener {
+            dialogConfirmacaoEx()
+        }
     }
 
     fun dialogConfirmacao() {
@@ -60,16 +64,7 @@ class RegistroReceber : AppCompatActivity() {
         builder.setMessage("Você deseja atribuir o registro à conta relacionada?")
 
         builder.setPositiveButton("Sim") { dialog, which ->
-            // Usuário confirmou a saída
-            // Agora, inicie uma coroutine para excluir a conta
-
-            try {
-                navegar()
-                receberRegistro()
-            } catch (e: Exception) {
-                // Lida com exceções que podem ocorrer na exclusão
-                Toast.makeText(applicationContext, "Erro: $e", Toast.LENGTH_LONG).show()
-            }
+            receberRegistro()
         }
 
         builder.setNegativeButton("Não") { dialog, which ->
@@ -80,9 +75,21 @@ class RegistroReceber : AppCompatActivity() {
         dialog.show()
     }
 
-    private fun navegar() {
-        val i = Intent(this, ValorReceber::class.java)
-        startActivity(i)
+    fun dialogConfirmacaoEx() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Confirmação")
+        builder.setMessage("Você deseja excluir esse registro?")
+
+        builder.setPositiveButton("Sim") { dialog, which ->
+            excluirRegistro()
+        }
+
+        builder.setNegativeButton("Não") { dialog, which ->
+            // Usuário cancelou a saída
+        }
+
+        val dialog = builder.create()
+        dialog.show()
     }
 
     private fun receberRegistro() {
@@ -93,24 +100,43 @@ class RegistroReceber : AppCompatActivity() {
             .collection("ContasBancarias").whereEqualTo("nome", contaVinculada)
             .get()
             .addOnSuccessListener { documents ->
-                for (document in documents) {
-                    val contaId = document.id
+                if (documents.isEmpty) {
+                    // A conta não existe mais
+                    Toast.makeText(applicationContext, "Conta relacionada não existe", Toast.LENGTH_LONG).show()
+                } else {
+                    for (document in documents) {
+                        val contaId = document.id
 
-                    val valorConta = document.getDouble("saldo")
-                    val soma = valorConta?.plus(valorRegistro)
+                        val valorConta = document.getDouble("saldo")
+                        val soma = valorConta?.plus(valorRegistro)
 
-                    // soma o registro ao saldo da conta
-                    firestore.collection("Usuarios").document(usuarioId)
-                        .collection("ContasBancarias").document(contaId)
-                        .update("saldo", soma)
-                        .addOnSuccessListener {
+                        // soma o registro ao saldo da conta
+                        firestore.collection("Usuarios").document(usuarioId)
+                            .collection("ContasBancarias").document(contaId)
+                            .update("saldo", soma)
+                            .addOnSuccessListener {
 
-                            // exclui registro
-                            firestore.collection("Usuarios").document(usuarioId)
-                                .collection("ValoresReceber").document(registroId)
-                                .delete()
-                        }
+                                excluirRegistro()
+                            }
+                    }
                 }
+            }
+            .addOnFailureListener {
+                Toast.makeText(applicationContext, "Erro ao buscar conta relacionada", Toast.LENGTH_LONG).show()
+            }
+    }
+
+    private fun excluirRegistro() {
+        val usuarioId = autentificacao.currentUser!!.uid
+
+        firestore.collection("Usuarios").document(usuarioId)
+            .collection("ValoresReceber").document(registroId)
+            .delete()
+            .addOnSuccessListener {
+                finish() // Encerra a atividade
+            }
+            .addOnFailureListener {
+                Toast.makeText(applicationContext, "Erro ao excluir registro", Toast.LENGTH_LONG).show()
             }
     }
 
@@ -157,7 +183,7 @@ class RegistroReceber : AppCompatActivity() {
                     }
                     else {
                         // Registro foi deletado
-                        Toast.makeText(applicationContext, "Registro deletado", Toast.LENGTH_LONG).show()
+                        Toast.makeText(applicationContext, "Registro recebido e/ou excluído", Toast.LENGTH_LONG).show()
                         finish() // Encerra a atividade
                     }
                 }

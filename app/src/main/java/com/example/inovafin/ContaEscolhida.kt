@@ -25,6 +25,7 @@ class ContaEscolhida : AppCompatActivity() {
 
     private var numberFormat = NumberFormat.getCurrencyInstance(Locale("pt", "BR"))
     private var contaId: String = ""
+    private var nome: String = ""
     private var instituicao: String = ""
     private var saldoConta: String = ""
 
@@ -72,10 +73,14 @@ class ContaEscolhida : AppCompatActivity() {
             firestore.collection("Usuarios").document(usuarioId)
                 .collection("ContasBancarias").document(contaId)
                 .addSnapshotListener { document, error ->
-                    if (document != null) {
+                    if (document != null && document.exists()) {
                         val saldoResgatado = document.getDouble("saldo")
                         val instituicaoResgatada = document.getString("instituicao")
                         val nomeResgatado = document.getString("nome")
+
+                        if (nomeResgatado != null) {
+                            nome = nomeResgatado
+                        }
 
                         val formatted = numberFormat.format(saldoResgatado)
                         saldoConta = formatted
@@ -87,7 +92,9 @@ class ContaEscolhida : AppCompatActivity() {
                         binding.instituicao.text = "Saldo atual $instituicaoResgatada"
                         binding.saldo.text = formatted
                     } else {
-                        Toast.makeText(applicationContext, "Erro ao resgatar", Toast.LENGTH_LONG).show()
+                        // Conta foi deletada
+                        Toast.makeText(applicationContext, "Conta excluída", Toast.LENGTH_LONG).show()
+                        finish() // Encerra a atividade
                     }
                 }
         } catch (e: Exception) {
@@ -102,17 +109,7 @@ class ContaEscolhida : AppCompatActivity() {
         builder.setMessage("Tem certeza de que deseja excluir a conta bancaria?")
 
         builder.setPositiveButton("Sim") { dialog, which ->
-            // Usuário confirmou a saída
-            // Agora, inicie uma coroutine para excluir a conta
-            lifecycleScope.launch {
-                try {
-                    excluirConta()
-                } catch (e: Exception) {
-                    // Lida com exceções que podem ocorrer na exclusão
-                    Toast.makeText(applicationContext, "Erro ao excluir conta", Toast.LENGTH_LONG).show()
-                }
-            }
-
+            dialogAtencao()
         }
 
         builder.setNegativeButton("Não") { dialog, which ->
@@ -123,14 +120,101 @@ class ContaEscolhida : AppCompatActivity() {
         dialog.show()
     }
 
-    private suspend fun excluirConta() = CoroutineScope(Dispatchers.IO).launch {
+    fun dialogAtencao() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Atenção!")
+        builder.setMessage("Ao excluir a conta você deseja excluir os registros relacionados a ela?\n\n- Valores a Receber\n- Contas a Pagar\n- Dinheiro Guardado/Investidos")
+
+        builder.setPositiveButton("Sim") { dialog, which ->
+            excluirRegistros()
+        }
+
+        builder.setNegativeButton("Não") { dialog, which ->
+            excluirConta()
+        }
+
+        val dialog = builder.create()
+        dialog.show()
+    }
+
+    private fun excluirRegistros() {
+        val usuarioId = autentificacao.currentUser!!.uid
+
+        // Registros ValoresReceber
+        firestore.collection("Usuarios").document(usuarioId)
+            .collection("ValoresReceber").whereEqualTo("conta", nome)
+            .get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    val registroId = document.id
+                    excluirReceber(usuarioId, registroId)
+                }
+                excluirConta()
+            }
+
+//        // Registros ContasPagar
+//        firestore.collection("Usuarios").document(usuarioId)
+//            .collection("ContasPagar").whereEqualTo("nome", nome)
+//            .get()
+//            .addOnSuccessListener { documents ->
+//                for (document in documents) {
+//                    val registroId = document.id
+//                    excluirPagar(usuarioId, registroId)
+//                }
+//            }
+
+//        // Registros Guardado/Investido
+//        firestore.collection("Usuarios").document(usuarioId)
+//            .collection("Guardado/Investido").whereEqualTo("nome", nome)
+//            .get()
+//            .addOnSuccessListener { documents ->
+//                for (document in documents) {
+//                    val registroId = document.id
+//                    excluirGuardado(usuarioId, registroId)
+//                }
+//            }
+    }
+
+    private fun excluirReceber(usuarioId: String, registroId: String) {
+        firestore.collection("Usuarios").document(usuarioId)
+            .collection("ValoresReceber").document(registroId).delete()
+            .addOnSuccessListener {
+//                Toast.makeText(applicationContext, "Registro excluído", Toast.LENGTH_SHORT).show()
+
+            }
+            .addOnFailureListener {
+                Toast.makeText(applicationContext, "Erro ao excluir receber", Toast.LENGTH_LONG).show()
+            }
+    }
+
+    private fun excluirPagar(usuarioId: String, registroId: String) {
+        firestore.collection("Usuarios").document(usuarioId)
+            .collection("ContasPagar").document(registroId).delete()
+            .addOnSuccessListener {
+//                Toast.makeText(applicationContext, "Registro excluído", Toast.LENGTH_SHORT).show()
+            }
+            .addOnFailureListener {
+                Toast.makeText(applicationContext, "Erro ao excluir pagar", Toast.LENGTH_LONG).show()
+            }
+    }
+
+    private fun excluirGuardado(usuarioId: String, registroId: String) {
+        firestore.collection("Usuarios").document(usuarioId)
+            .collection("Guardado/Investido").document(registroId).delete()
+            .addOnSuccessListener {
+//                Toast.makeText(applicationContext, "Registro excluído", Toast.LENGTH_SHORT).show()
+            }
+            .addOnFailureListener {
+                Toast.makeText(applicationContext, "Erro ao excluir guardado/investido", Toast.LENGTH_LONG).show()
+            }
+    }
+
+    private fun excluirConta() {
         val usuarioId = autentificacao.currentUser!!.uid
 
         try {
             firestore.collection("Usuarios").document(usuarioId)
-                .collection("ContasBancarias").document(contaId).delete().await()
-
-            Toast.makeText(applicationContext, "Conta excluída", Toast.LENGTH_LONG).show()
+                .collection("ContasBancarias").document(contaId).delete()
         } catch (e: Exception) {
             Toast.makeText(applicationContext, "Erro ao excluir conta", Toast.LENGTH_LONG).show()
         }
