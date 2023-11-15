@@ -5,14 +5,10 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.lifecycleScope
 import com.example.inovafin.Util.ConfiguraBd
 import com.example.inovafin.databinding.ActivityRegistroReceberBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import java.text.NumberFormat
 import java.text.SimpleDateFormat
 import java.util.Locale
@@ -66,16 +62,14 @@ class RegistroReceber : AppCompatActivity() {
         builder.setPositiveButton("Sim") { dialog, which ->
             // Usuário confirmou a saída
             // Agora, inicie uma coroutine para excluir a conta
-            lifecycleScope.launch {
-                try {
-                    navegar()
-                    receberRegistro()
-                } catch (e: Exception) {
-                    // Lida com exceções que podem ocorrer na exclusão
-                    Toast.makeText(applicationContext, "Erro: $e", Toast.LENGTH_LONG).show()
-                }
-            }
 
+            try {
+                navegar()
+                receberRegistro()
+            } catch (e: Exception) {
+                // Lida com exceções que podem ocorrer na exclusão
+                Toast.makeText(applicationContext, "Erro: $e", Toast.LENGTH_LONG).show()
+            }
         }
 
         builder.setNegativeButton("Não") { dialog, which ->
@@ -91,7 +85,7 @@ class RegistroReceber : AppCompatActivity() {
         startActivity(i)
     }
 
-    private fun receberRegistro() = CoroutineScope(Dispatchers.IO).launch{
+    private fun receberRegistro() {
         val usuarioId = autentificacao.currentUser!!.uid
 
         // resgata a conta relacionada
@@ -162,9 +156,9 @@ class RegistroReceber : AppCompatActivity() {
 
                     }
                     else {
-                        // Se o documento não existe, você pode lidar com isso aqui
-                        Toast.makeText(applicationContext, "Registro não encontrado", Toast.LENGTH_LONG).show()
-                        finish() // Encerra a atividade, já que o registro não existe mais
+                        // Registro foi deletado
+                        Toast.makeText(applicationContext, "Registro deletado", Toast.LENGTH_LONG).show()
+                        finish() // Encerra a atividade
                     }
                 }
         } catch (e: Exception) {
