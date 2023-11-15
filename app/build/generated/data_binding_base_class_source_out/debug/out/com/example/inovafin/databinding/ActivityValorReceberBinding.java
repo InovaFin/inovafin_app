@@ -29,19 +29,19 @@ public final class ActivityValorReceberBinding implements ViewBinding {
   public final ImageView icFechar;
 
   @NonNull
-  public final RecyclerView listaReceber;
+  public final RecyclerView listaPagar;
 
   @NonNull
-  public final TextView valorTotalReceber;
+  public final TextView valorTotalPagar;
 
   private ActivityValorReceberBinding(@NonNull RelativeLayout rootView,
       @NonNull LinearLayout btAdicionar, @NonNull ImageView icFechar,
-      @NonNull RecyclerView listaReceber, @NonNull TextView valorTotalReceber) {
+      @NonNull RecyclerView listaPagar, @NonNull TextView valorTotalPagar) {
     this.rootView = rootView;
     this.btAdicionar = btAdicionar;
     this.icFechar = icFechar;
-    this.listaReceber = listaReceber;
-    this.valorTotalReceber = valorTotalReceber;
+    this.listaPagar = listaPagar;
+    this.valorTotalPagar = valorTotalPagar;
   }
 
   @Override
@@ -83,20 +83,20 @@ public final class ActivityValorReceberBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.listaReceber;
-      RecyclerView listaReceber = ViewBindings.findChildViewById(rootView, id);
-      if (listaReceber == null) {
+      id = R.id.listaPagar;
+      RecyclerView listaPagar = ViewBindings.findChildViewById(rootView, id);
+      if (listaPagar == null) {
         break missingId;
       }
 
-      id = R.id.valorTotalReceber;
-      TextView valorTotalReceber = ViewBindings.findChildViewById(rootView, id);
-      if (valorTotalReceber == null) {
+      id = R.id.valorTotalPagar;
+      TextView valorTotalPagar = ViewBindings.findChildViewById(rootView, id);
+      if (valorTotalPagar == null) {
         break missingId;
       }
 
       return new ActivityValorReceberBinding((RelativeLayout) rootView, btAdicionar, icFechar,
-          listaReceber, valorTotalReceber);
+          listaPagar, valorTotalPagar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

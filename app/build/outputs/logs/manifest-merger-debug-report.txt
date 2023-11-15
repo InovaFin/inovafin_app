@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:2:1-123:12
-INJECTED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:2:1-123:12
-INJECTED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:2:1-123:12
-INJECTED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:2:1-123:12
+ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:2:1-132:12
+INJECTED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:2:1-132:12
+INJECTED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:2:1-132:12
+INJECTED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:2:1-132:12
 MERGED from [androidx.databinding:viewbinding:8.1.1] C:\Users\erick\.gradle\caches\transforms-3\ae9868568b2d6c1f7b76c495398b4330\transformed\viewbinding-8.1.1\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:firebase-firestore-ktx:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\6f7e68fbb2b3d4910893db9cd38aafe0\transformed\firebase-firestore-ktx-24.9.0\AndroidManifest.xml:2:1-18:12
 MERGED from [com.google.firebase:firebase-analytics-ktx:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\fc39f18687c7d5579853bcc156ce65a3\transformed\firebase-analytics-ktx-21.4.0\AndroidManifest.xml:2:1-17:12
@@ -149,8 +149,8 @@ MERGED from [io.grpc:grpc-android:1.52.1] C:\Users\erick\.gradle\caches\transfor
 	android:name
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:6:22-76
 application
-ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:8:5-121:19
-INJECTED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:8:5-121:19
+ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:8:5-130:19
+INJECTED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:8:5-130:19
 MERGED from [com.google.firebase:firebase-firestore-ktx:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\6f7e68fbb2b3d4910893db9cd38aafe0\transformed\firebase-firestore-ktx-24.9.0\AndroidManifest.xml:8:5-16:19
 MERGED from [com.google.firebase:firebase-firestore-ktx:24.9.0] C:\Users\erick\.gradle\caches\transforms-3\6f7e68fbb2b3d4910893db9cd38aafe0\transformed\firebase-firestore-ktx-24.9.0\AndroidManifest.xml:8:5-16:19
 MERGED from [com.google.firebase:firebase-analytics-ktx:21.4.0] C:\Users\erick\.gradle\caches\transforms-3\fc39f18687c7d5579853bcc156ce65a3\transformed\firebase-analytics-ktx-21.4.0\AndroidManifest.xml:7:5-15:19
@@ -241,208 +241,226 @@ MERGED from [com.koushikdutta.async:androidasync:3.1.0] C:\Users\erick\.gradle\c
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:16:9-46
 	android:dataExtractionRules
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:10:9-65
-activity#com.example.inovafin.EditarReceber
-ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:18:9-20:36
+activity#com.example.inovafin.EditarPagar
+ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:18:9-20:40
 	android:exported
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:20:9-33
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:20:13-37
 	android:name
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:19:9-38
-activity#com.example.inovafin.SplashTransferir
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:19:13-40
+activity#com.example.inovafin.AddPagar
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:21:9-23:40
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:23:13-37
 	android:name
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:22:13-45
-activity#com.example.inovafin.TransferirValor
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:22:13-37
+activity#com.example.inovafin.RegistroPagar
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:24:9-26:40
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:26:13-37
 	android:name
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:25:13-44
-activity#com.example.inovafin.EditarConta
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:25:13-42
+activity#com.example.inovafin.EditarReceber
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:27:9-29:40
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:29:13-37
 	android:name
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:28:13-40
-activity#com.example.inovafin.EmailEnviado
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:28:13-42
+activity#com.example.inovafin.SplashTransferir
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:30:9-32:40
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:32:13-37
 	android:name
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:31:13-41
-activity#com.example.inovafin.ContaEscolhida
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:31:13-45
+activity#com.example.inovafin.TransferirValor
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:33:9-35:40
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:35:13-37
 	android:name
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:34:13-43
-activity#com.example.inovafin.NovaConta
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:34:13-44
+activity#com.example.inovafin.EditarConta
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:36:9-38:40
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:38:13-37
 	android:name
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:37:13-38
-activity#com.example.inovafin.ExcluirPagar
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:37:13-40
+activity#com.example.inovafin.EmailEnviado
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:39:9-41:40
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:41:13-37
 	android:name
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:40:13-41
-activity#com.example.inovafin.ExcluirGuardado
+activity#com.example.inovafin.ContaEscolhida
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:42:9-44:40
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:44:13-37
 	android:name
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:43:13-44
-activity#com.example.inovafin.ExcluirReceber
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:43:13-43
+activity#com.example.inovafin.NovaConta
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:45:9-47:40
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:47:13-37
 	android:name
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:46:13-43
-activity#com.example.inovafin.RegistroReceber
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:46:13-38
+activity#com.example.inovafin.ExcluirPagar
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:48:9-50:40
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:50:13-37
 	android:name
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:49:13-44
-activity#com.example.inovafin.AddReceber
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:49:13-41
+activity#com.example.inovafin.ExcluirGuardado
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:51:9-53:40
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:53:13-37
 	android:name
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:52:13-39
-activity#com.example.inovafin.SaldoGeralPagar
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:52:13-44
+activity#com.example.inovafin.ExcluirReceber
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:54:9-56:40
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:56:13-37
 	android:name
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:55:13-44
-activity#com.example.inovafin.SaldoGeralGuardado
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:55:13-43
+activity#com.example.inovafin.RegistroReceber
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:57:9-59:40
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:59:13-37
 	android:name
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:58:13-47
-activity#com.example.inovafin.SaldoGeralReceber
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:58:13-44
+activity#com.example.inovafin.AddReceber
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:60:9-62:40
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:62:13-37
 	android:name
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:61:13-46
-activity#com.example.inovafin.AjudaSaldoGeral
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:61:13-39
+activity#com.example.inovafin.SaldoGeralPagar
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:63:9-65:40
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:65:13-37
 	android:name
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:64:13-44
-activity#com.example.inovafin.EditarPerfil
+activity#com.example.inovafin.SaldoGeralGuardado
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:66:9-68:40
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:68:13-37
 	android:name
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:67:13-41
-activity#com.example.inovafin.ContaPagar
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:67:13-47
+activity#com.example.inovafin.SaldoGeralReceber
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:69:9-71:40
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:71:13-37
 	android:name
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:70:13-39
-activity#com.example.inovafin.ValorGuardado
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:70:13-46
+activity#com.example.inovafin.AjudaSaldoGeral
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:72:9-74:40
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:74:13-37
 	android:name
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:73:13-42
-activity#com.example.inovafin.ValorReceber
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:73:13-44
+activity#com.example.inovafin.EditarPerfil
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:75:9-77:40
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:77:13-37
 	android:name
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:76:13-41
-activity#com.example.inovafin.MinhasContas
+activity#com.example.inovafin.ContaPagar
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:78:9-80:40
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:80:13-37
 	android:name
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:79:13-41
-activity#com.example.inovafin.SaldoGeral
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:79:13-39
+activity#com.example.inovafin.ValorGuardado
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:81:9-83:40
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:83:13-37
 	android:name
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:82:13-39
-activity#com.example.inovafin.Notificacoes
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:82:13-42
+activity#com.example.inovafin.ValorReceber
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:84:9-86:40
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:86:13-37
 	android:name
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:85:13-41
-activity#com.example.inovafin.Configuracoes
+activity#com.example.inovafin.MinhasContas
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:87:9-89:40
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:89:13-37
 	android:name
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:88:13-42
-activity#com.example.inovafin.SenhaEnviada
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:88:13-41
+activity#com.example.inovafin.SaldoGeral
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:90:9-92:40
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:92:13-37
 	android:name
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:91:13-41
-activity#com.example.inovafin.Home
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:91:13-39
+activity#com.example.inovafin.Notificacoes
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:93:9-95:40
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:95:13-37
 	android:name
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:94:13-33
-activity#com.example.inovafin.EsqueceuSenha
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:94:13-41
+activity#com.example.inovafin.Configuracoes
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:96:9-98:40
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:98:13-37
 	android:name
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:97:13-42
-activity#com.example.inovafin.Cadastro
+activity#com.example.inovafin.SenhaEnviada
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:99:9-101:40
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:101:13-37
 	android:name
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:100:13-37
-activity#com.example.inovafin.Login
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:100:13-41
+activity#com.example.inovafin.Home
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:102:9-104:40
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:104:13-37
 	android:name
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:103:13-34
-activity#com.example.inovafin.LoginCadastro
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:103:13-33
+activity#com.example.inovafin.EsqueceuSenha
 ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:105:9-107:40
 	android:exported
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:107:13-37
 	android:name
 		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:106:13-42
-activity#com.example.inovafin.SplashScreen
-ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:108:9-116:20
+activity#com.example.inovafin.Cadastro
+ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:108:9-110:40
 	android:exported
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:110:13-36
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:110:13-37
 	android:name
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:109:13-41
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:109:13-37
+activity#com.example.inovafin.Login
+ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:111:9-113:40
+	android:exported
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:113:13-37
+	android:name
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:112:13-34
+activity#com.example.inovafin.LoginCadastro
+ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:114:9-116:40
+	android:exported
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:116:13-37
+	android:name
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:115:13-42
+activity#com.example.inovafin.SplashScreen
+ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:117:9-125:20
+	android:exported
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:119:13-36
+	android:name
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:118:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:111:13-115:29
+ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:120:13-124:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:112:17-69
+ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:121:17-69
 	android:name
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:112:25-66
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:121:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:114:17-77
+ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:123:17-77
 	android:name
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:114:27-74
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:123:27-74
 meta-data#preloaded_fonts
-ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:118:9-120:57
+ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:127:9-129:57
 	android:resource
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:120:13-54
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:129:13-54
 	android:name
-		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:119:13-43
+		ADDED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml:128:13-43
 uses-sdk
 INJECTED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\erick\OneDrive\Documentos\repositorios\inovafin_app\app\src\main\AndroidManifest.xml

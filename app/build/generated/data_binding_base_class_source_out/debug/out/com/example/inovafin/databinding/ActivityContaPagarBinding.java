@@ -6,8 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.inovafin.R;
@@ -17,33 +20,33 @@ import java.lang.String;
 
 public final class ActivityContaPagarBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final RelativeLayout rootView;
 
   @NonNull
   public final LinearLayout btAdicionar;
 
   @NonNull
-  public final LinearLayout btExcluir;
-
-  @NonNull
-  public final LinearLayout btRegistro;
-
-  @NonNull
   public final ImageView icFechar;
 
-  private ActivityContaPagarBinding(@NonNull LinearLayout rootView,
-      @NonNull LinearLayout btAdicionar, @NonNull LinearLayout btExcluir,
-      @NonNull LinearLayout btRegistro, @NonNull ImageView icFechar) {
+  @NonNull
+  public final RecyclerView listaPagar;
+
+  @NonNull
+  public final TextView valorTotalPagar;
+
+  private ActivityContaPagarBinding(@NonNull RelativeLayout rootView,
+      @NonNull LinearLayout btAdicionar, @NonNull ImageView icFechar,
+      @NonNull RecyclerView listaPagar, @NonNull TextView valorTotalPagar) {
     this.rootView = rootView;
     this.btAdicionar = btAdicionar;
-    this.btExcluir = btExcluir;
-    this.btRegistro = btRegistro;
     this.icFechar = icFechar;
+    this.listaPagar = listaPagar;
+    this.valorTotalPagar = valorTotalPagar;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public RelativeLayout getRoot() {
     return rootView;
   }
 
@@ -74,26 +77,26 @@ public final class ActivityContaPagarBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.btExcluir;
-      LinearLayout btExcluir = ViewBindings.findChildViewById(rootView, id);
-      if (btExcluir == null) {
-        break missingId;
-      }
-
-      id = R.id.btRegistro;
-      LinearLayout btRegistro = ViewBindings.findChildViewById(rootView, id);
-      if (btRegistro == null) {
-        break missingId;
-      }
-
       id = R.id.icFechar;
       ImageView icFechar = ViewBindings.findChildViewById(rootView, id);
       if (icFechar == null) {
         break missingId;
       }
 
-      return new ActivityContaPagarBinding((LinearLayout) rootView, btAdicionar, btExcluir,
-          btRegistro, icFechar);
+      id = R.id.listaPagar;
+      RecyclerView listaPagar = ViewBindings.findChildViewById(rootView, id);
+      if (listaPagar == null) {
+        break missingId;
+      }
+
+      id = R.id.valorTotalPagar;
+      TextView valorTotalPagar = ViewBindings.findChildViewById(rootView, id);
+      if (valorTotalPagar == null) {
+        break missingId;
+      }
+
+      return new ActivityContaPagarBinding((RelativeLayout) rootView, btAdicionar, icFechar,
+          listaPagar, valorTotalPagar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

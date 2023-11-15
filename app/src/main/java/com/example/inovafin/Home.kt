@@ -68,8 +68,8 @@ class Home : AppCompatActivity() {
         }
 
         binding.btValorPagar.setOnClickListener {
-            val navegarTelaValorPagar = Intent(this, ContaPagar::class.java)
-            startActivity(navegarTelaValorPagar)
+            val i = Intent(this, ContaPagar::class.java)
+            startActivity(i)
         }
 
         binding.btValorGuardado.setOnClickListener {

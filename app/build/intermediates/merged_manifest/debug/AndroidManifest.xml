@@ -34,6 +34,15 @@
         android:testOnly="true"
         android:theme="@style/Theme.InovaFin" >
         <activity
+            android:name="com.example.inovafin.EditarPagar"
+            android:exported="false" />
+        <activity
+            android:name="com.example.inovafin.AddPagar"
+            android:exported="false" />
+        <activity
+            android:name="com.example.inovafin.RegistroPagar"
+            android:exported="false" />
+        <activity
             android:name="com.example.inovafin.EditarReceber"
             android:exported="false" />
         <activity

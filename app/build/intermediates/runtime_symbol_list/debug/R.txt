@@ -3049,6 +3049,7 @@ int drawable ic_mtrl_chip_checked_black 0x7f0800d1
 int drawable ic_mtrl_chip_checked_circle 0x7f0800d2
 int drawable ic_mtrl_chip_close_circle 0x7f0800d3
 int drawable ic_notificacao 0x7f0800d4
+int drawable ic_pagar 0x7f080133
 int drawable ic_perfil 0x7f0800d5
 int drawable ic_perfil_config 0x7f0800d6
 int drawable ic_receber 0x7f080131
@@ -3061,6 +3062,7 @@ int drawable ic_transacao 0x7f0800db
 int drawable ic_transacao_branco 0x7f0800dc
 int drawable ic_voltar 0x7f0800dd
 int drawable img_logo 0x7f0800de
+int drawable img_pagar_256 0x7f080134
 int drawable img_receber_256 0x7f08012e
 int drawable img_senha_enviada 0x7f0800df
 int drawable logo_branca_500 0x7f0800e0
@@ -3273,6 +3275,7 @@ int id btExpandir 0x7f0a0078
 int id btLogin 0x7f0a0079
 int id btMinhasContas 0x7f0a007a
 int id btNotificacao 0x7f0a007b
+int id btPagar 0x7f0a0244
 int id btReceber 0x7f0a0243
 int id btRecuperar 0x7f0a007c
 int id btRegistro 0x7f0a007d
@@ -3373,8 +3376,11 @@ int id endToStart 0x7f0a00da
 int id end_padder 0x7f0a00db
 int id enterAlways 0x7f0a00dc
 int id enterAlwaysCollapsed 0x7f0a00dd
+int id exibirDataPagar 0x7f0a0245
 int id exibirDataReceber 0x7f0a00de
+int id exibirNomePagar 0x7f0a0246
 int id exibirNomeReceber 0x7f0a00df
+int id exibirValorPagar 0x7f0a0247
 int id exibirValorReceber 0x7f0a00e0
 int id exitUntilCollapsed 0x7f0a00e1
 int id expand_activities_button 0x7f0a00e2
@@ -3445,7 +3451,7 @@ int id linear 0x7f0a0122
 int id listMode 0x7f0a0123
 int id list_item 0x7f0a0124
 int id listaContas 0x7f0a0125
-int id listaReceber 0x7f0a0126
+int id listaPagar 0x7f0a0248
 int id lottie_layer_name 0x7f0a0127
 int id m3_side_sheet 0x7f0a0128
 int id marquee 0x7f0a0129
@@ -3522,6 +3528,7 @@ int id noScroll 0x7f0a016f
 int id noState 0x7f0a0170
 int id nomeConta 0x7f0a0171
 int id nomeDestinatario 0x7f0a0172
+int id nomePagar 0x7f0a024a
 int id nomeReceber 0x7f0a0173
 int id nomeRegistro 0x7f0a023e
 int id nomeRemetente 0x7f0a0174
@@ -3702,9 +3709,10 @@ int id uniform 0x7f0a0222
 int id unlabeled 0x7f0a0223
 int id up 0x7f0a0224
 int id useLogo 0x7f0a0225
+int id valorPagar 0x7f0a024b
 int id valorReceber 0x7f0a0226
 int id valorRegistro 0x7f0a023f
-int id valorTotalReceber 0x7f0a023c
+int id valorTotalPagar 0x7f0a0249
 int id valorTranferir 0x7f0a0227
 int id valorTransferido 0x7f0a0228
 int id vencimentoRegistro 0x7f0a0240
@@ -3841,6 +3849,7 @@ int layout abc_search_dropdown_item_icons_2line 0x7f0d0018
 int layout abc_search_view 0x7f0d0019
 int layout abc_select_dialog_material 0x7f0d001a
 int layout abc_tooltip 0x7f0d001b
+int layout activity_add_pagar 0x7f0d0099
 int layout activity_add_receber 0x7f0d001c
 int layout activity_ajuda_saldo_geral 0x7f0d001d
 int layout activity_cadastro 0x7f0d001e
@@ -3848,6 +3857,7 @@ int layout activity_configuracoes 0x7f0d001f
 int layout activity_conta_escolhida 0x7f0d0020
 int layout activity_conta_pagar 0x7f0d0021
 int layout activity_editar_conta 0x7f0d0022
+int layout activity_editar_pagar 0x7f0d009a
 int layout activity_editar_perfil 0x7f0d0023
 int layout activity_editar_receber 0x7f0d0096
 int layout activity_email_enviado 0x7f0d0024
@@ -3862,6 +3872,7 @@ int layout activity_main 0x7f0d002d
 int layout activity_minhas_contas 0x7f0d002e
 int layout activity_notificacoes 0x7f0d002f
 int layout activity_nova_conta 0x7f0d0030
+int layout activity_registro_pagar 0x7f0d0097
 int layout activity_registro_receber 0x7f0d0095
 int layout activity_saldo_geral 0x7f0d0031
 int layout activity_saldo_geral_guardado 0x7f0d0032
@@ -3962,6 +3973,7 @@ int layout select_dialog_item_material 0x7f0d0090
 int layout select_dialog_multichoice_material 0x7f0d0091
 int layout select_dialog_singlechoice_material 0x7f0d0092
 int layout support_simple_spinner_dropdown_item 0x7f0d0093
+int layout valor_pagar_item 0x7f0d0098
 int layout valor_receber_item 0x7f0d0094
 int mipmap ic_launcher 0x7f0f0000
 int mipmap ic_launcher_foreground 0x7f0f0001

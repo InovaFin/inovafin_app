@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,795 +7,160 @@
     android:background="@color/branco_background"
     tools:context=".ContaPagar">
 
-    <!--Header-->
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="40dp"
-        android:paddingHorizontal="30dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:gravity="center_vertical"
-            android:orientation="vertical">
-
-            <!--Botão Voltar-->
-            <ImageView
-                android:id="@+id/icFechar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_fechar"/>
-            <!--Botão Voltar-->
-
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:text="Valores a Pagar"
-            android:textSize="24sp"
-            android:fontFamily="@font/roboto_medium"
-            android:textColor="@color/black"/>
-
-    </RelativeLayout>
-    <!--Header-->
-
-    <!--Valor Total-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        android:paddingHorizontal="22dp"
-        android:paddingVertical="20dp"
-        android:background="@drawable/bg_borda_simples"
         android:orientation="vertical">
 
-        <LinearLayout
+        <!--Header-->
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="40dp"
+            android:paddingHorizontal="30dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <!--Botão Voltar-->
+                <ImageView
+                    android:id="@+id/icFechar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_fechar"/>
+                <!--Botão Voltar-->
+
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Valor total a Pagar"
-                android:textSize="15sp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:text="Contas a Pagar"
+                android:textSize="24sp"
                 android:fontFamily="@font/roboto_medium"
                 android:textColor="@color/black"/>
 
-        </LinearLayout>
+        </RelativeLayout>
+        <!--Header-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:textColor="@color/vermelho"
-            android:text="R$ 00,00"
-            android:fontFamily="@font/roboto_bold"
-            android:textSize="30dp"/>
-
-    </LinearLayout>
-    <!--Valor Total-->
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginTop="8dp"
-        android:textColor="@color/black_terciario"
-        android:text="*Ao atingir a data, os ganhos listados serão subtraídos do Saldo Geral."
-        android:fontFamily="@font/roboto_light"
-        android:textSize="12dp"/>
-
-    <!--Botão Excluir e Adicionar-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <!--Botão Excluir-->
+        <!--Valor Total-->
         <LinearLayout
-            android:id="@+id/btExcluir"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginVertical="20dp"
-            android:layout_marginEnd="15dp"
-            android:paddingVertical="11dp"
-            android:paddingHorizontal="18dp"
-            android:elevation="2dp"
-            android:clickable="true"
-            android:background="@drawable/bg_botao_secundario_ripple">
+            android:layout_marginHorizontal="30dp"
+            android:paddingHorizontal="22dp"
+            android:paddingVertical="20dp"
+            android:background="@drawable/bg_borda_simples"
+            android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:src="@drawable/ic_excluir"/>
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Valor total a Pagar"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
 
             <TextView
+                android:id="@+id/valorTotalPagar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Excluir"
-                android:textColor="@color/black_secundario"
-                android:textSize="13sp"
-                android:fontFamily="@font/roboto_bold"/>
+                android:layout_marginTop="10dp"
+                android:textColor="@color/vermelho"
+                android:text="R$ 00,00"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="30dp"/>
 
         </LinearLayout>
-        <!--Botão Excluir-->
-
-        <!--Botão Adicionar-->
-        <LinearLayout
-            android:id="@+id/btAdicionar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginVertical="20dp"
-            android:paddingVertical="11dp"
-            android:paddingHorizontal="18dp"
-            android:elevation="2dp"
-            android:clickable="true"
-            android:background="@drawable/bg_botao_secundario_ripple">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:src="@drawable/ic_add_black"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Adicionar"
-                android:textColor="@color/black_secundario"
-                android:textSize="13sp"
-                android:fontFamily="@font/roboto_bold"/>
-
-        </LinearLayout>
-        <!--Botão Adicionar-->
-
-    </LinearLayout>
-    <!--Botão Excluir e Adicionar-->
-
-    <!--Lista de Valores-->
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        <!--Valor Total-->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!--Valor a Pagar-->
-            <LinearLayout
-                android:id="@+id/btRegistro"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:clickable="true"
-                android:background="@drawable/bg_botao_terciario_ripple"
-                android:gravity="center"
-                android:paddingVertical="25dp"
-                android:paddingHorizontal="30dp">
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="15dp"
+                android:textColor="@color/black_terciario"
+                android:text="*Ao atingir a data, os ganhos listados serão somados ao Saldo da conta relacionada ao registro."
+                android:fontFamily="@font/roboto_light"
+                android:textSize="12dp"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Estaff"
-                        android:textColor="@color/black_secundario"
-                        android:fontFamily="@font/roboto_medium"
-                        android:textSize="16sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:layout_weight="1"
-                        android:text="14/08/23"
-                        android:textColor="@color/vermelho"
-                        android:fontFamily="@font/roboto_light"
-                        android:textSize="12sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:text="R$150,00"
-                        android:textColor="@color/black_secundario"
-                        android:fontFamily="@font/roboto_light"
-                        android:textSize="14sp"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
-            <!--Valor a Pagar-->
-
-            <!--Linha cinza-->
-            <LinearLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listaPagar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_linha"/>
-            <!--Linha cinza-->
-
-            <!--Valor a Pagar-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:clickable="true"
-                android:background="@drawable/bg_botao_terciario_ripple"
-                android:gravity="center"
-                android:paddingVertical="25dp"
-                android:paddingHorizontal="30dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Estaff"
-                        android:textColor="@color/black_secundario"
-                        android:fontFamily="@font/roboto_medium"
-                        android:textSize="16sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:layout_weight="1"
-                        android:text="14/08/23"
-                        android:textColor="@color/vermelho"
-                        android:fontFamily="@font/roboto_light"
-                        android:textSize="12sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:text="R$150,00"
-                        android:textColor="@color/black_secundario"
-                        android:fontFamily="@font/roboto_light"
-                        android:textSize="14sp"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
-            <!--Valor a Pagar-->
-
-            <!--Linha cinza-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_linha"/>
-            <!--Linha cinza-->
-
-            <!--Valor a Pagar-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:clickable="true"
-                android:background="@drawable/bg_botao_terciario_ripple"
-                android:gravity="center"
-                android:paddingVertical="25dp"
-                android:paddingHorizontal="30dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Estaff"
-                        android:textColor="@color/black_secundario"
-                        android:fontFamily="@font/roboto_medium"
-                        android:textSize="16sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:layout_weight="1"
-                        android:text="14/08/23"
-                        android:textColor="@color/vermelho"
-                        android:fontFamily="@font/roboto_light"
-                        android:textSize="12sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:text="R$150,00"
-                        android:textColor="@color/black_secundario"
-                        android:fontFamily="@font/roboto_light"
-                        android:textSize="14sp"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
-            <!--Valor a Pagar-->
-
-            <!--Linha cinza-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_linha"/>
-            <!--Linha cinza-->
-
-            <!--Valor a Pagar-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:clickable="true"
-                android:background="@drawable/bg_botao_terciario_ripple"
-                android:gravity="center"
-                android:paddingVertical="25dp"
-                android:paddingHorizontal="30dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Estaff"
-                        android:textColor="@color/black_secundario"
-                        android:fontFamily="@font/roboto_medium"
-                        android:textSize="16sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:layout_weight="1"
-                        android:text="14/08/23"
-                        android:textColor="@color/vermelho"
-                        android:fontFamily="@font/roboto_light"
-                        android:textSize="12sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:text="R$150,00"
-                        android:textColor="@color/black_secundario"
-                        android:fontFamily="@font/roboto_light"
-                        android:textSize="14sp"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
-            <!--Valor a Pagar-->
-
-            <!--Linha cinza-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_linha"/>
-            <!--Linha cinza-->
-
-            <!--Valor a Pagar-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:clickable="true"
-                android:background="@drawable/bg_botao_terciario_ripple"
-                android:gravity="center"
-                android:paddingVertical="25dp"
-                android:paddingHorizontal="30dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Estaff"
-                        android:textColor="@color/black_secundario"
-                        android:fontFamily="@font/roboto_medium"
-                        android:textSize="16sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:layout_weight="1"
-                        android:text="14/08/23"
-                        android:textColor="@color/vermelho"
-                        android:fontFamily="@font/roboto_light"
-                        android:textSize="12sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:text="R$150,00"
-                        android:textColor="@color/black_secundario"
-                        android:fontFamily="@font/roboto_light"
-                        android:textSize="14sp"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
-            <!--Valor a Pagar-->
-
-            <!--Linha cinza-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_linha"/>
-            <!--Linha cinza-->
-
-            <!--Valor a Pagar-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:clickable="true"
-                android:background="@drawable/bg_botao_terciario_ripple"
-                android:gravity="center"
-                android:paddingVertical="25dp"
-                android:paddingHorizontal="30dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Estaff"
-                        android:textColor="@color/black_secundario"
-                        android:fontFamily="@font/roboto_medium"
-                        android:textSize="16sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:layout_weight="1"
-                        android:text="14/08/23"
-                        android:textColor="@color/vermelho"
-                        android:fontFamily="@font/roboto_light"
-                        android:textSize="12sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:text="R$150,00"
-                        android:textColor="@color/black_secundario"
-                        android:fontFamily="@font/roboto_light"
-                        android:textSize="14sp"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
-            <!--Valor a Pagar-->
-
-            <!--Linha cinza-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_linha"/>
-            <!--Linha cinza-->
-
-            <!--Valor a Pagar-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:clickable="true"
-                android:background="@drawable/bg_botao_terciario_ripple"
-                android:gravity="center"
-                android:paddingVertical="25dp"
-                android:paddingHorizontal="30dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Estaff"
-                        android:textColor="@color/black_secundario"
-                        android:fontFamily="@font/roboto_medium"
-                        android:textSize="16sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:layout_weight="1"
-                        android:text="14/08/23"
-                        android:textColor="@color/vermelho"
-                        android:fontFamily="@font/roboto_light"
-                        android:textSize="12sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:text="R$150,00"
-                        android:textColor="@color/black_secundario"
-                        android:fontFamily="@font/roboto_light"
-                        android:textSize="14sp"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
-            <!--Valor a Pagar-->
-
-            <!--Linha cinza-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_linha"/>
-            <!--Linha cinza-->
-
-            <!--Valor a Pagar-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:clickable="true"
-                android:background="@drawable/bg_botao_terciario_ripple"
-                android:gravity="center"
-                android:paddingVertical="25dp"
-                android:paddingHorizontal="30dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Estaff"
-                        android:textColor="@color/black_secundario"
-                        android:fontFamily="@font/roboto_medium"
-                        android:textSize="16sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:layout_weight="1"
-                        android:text="14/08/23"
-                        android:textColor="@color/vermelho"
-                        android:fontFamily="@font/roboto_light"
-                        android:textSize="12sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:text="R$150,00"
-                        android:textColor="@color/black_secundario"
-                        android:fontFamily="@font/roboto_light"
-                        android:textSize="14sp"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
-            <!--Valor a Pagar-->
-
-            <!--Linha cinza-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_linha"/>
-            <!--Linha cinza-->
-
-            <!--Valor a Pagar-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:clickable="true"
-                android:background="@drawable/bg_botao_terciario_ripple"
-                android:gravity="center"
-                android:paddingVertical="25dp"
-                android:paddingHorizontal="30dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Estaff"
-                        android:textColor="@color/black_secundario"
-                        android:fontFamily="@font/roboto_medium"
-                        android:textSize="16sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:layout_weight="1"
-                        android:text="14/08/23"
-                        android:textColor="@color/vermelho"
-                        android:fontFamily="@font/roboto_light"
-                        android:textSize="12sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:text="R$150,00"
-                        android:textColor="@color/black_secundario"
-                        android:fontFamily="@font/roboto_light"
-                        android:textSize="14sp"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
-            <!--Valor a Pagar-->
-
-            <!--Linha cinza-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_linha"/>
-            <!--Linha cinza-->
-
-            <!--Valor a Pagar-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:clickable="true"
-                android:background="@drawable/bg_botao_terciario_ripple"
-                android:gravity="center"
-                android:paddingVertical="25dp"
-                android:paddingHorizontal="30dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Estaff"
-                        android:textColor="@color/black_secundario"
-                        android:fontFamily="@font/roboto_medium"
-                        android:textSize="16sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:layout_weight="1"
-                        android:text="14/08/23"
-                        android:textColor="@color/vermelho"
-                        android:fontFamily="@font/roboto_light"
-                        android:textSize="12sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:text="R$150,00"
-                        android:textColor="@color/black_secundario"
-                        android:fontFamily="@font/roboto_light"
-                        android:textSize="14sp"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
-            <!--Valor a Pagar-->
-
-            <!--Linha cinza-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_linha"/>
-            <!--Linha cinza-->
-
-            <!--Valor a Pagar-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:clickable="true"
-                android:background="@drawable/bg_botao_terciario_ripple"
-                android:gravity="center"
-                android:paddingVertical="25dp"
-                android:paddingHorizontal="30dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Estaff"
-                        android:textColor="@color/black_secundario"
-                        android:fontFamily="@font/roboto_medium"
-                        android:textSize="16sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:layout_weight="1"
-                        android:text="14/08/23"
-                        android:textColor="@color/vermelho"
-                        android:fontFamily="@font/roboto_light"
-                        android:textSize="12sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:text="R$150,00"
-                        android:textColor="@color/black_secundario"
-                        android:fontFamily="@font/roboto_light"
-                        android:textSize="14sp"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
-            <!--Valor a Pagar-->
-
-            <!--Linha cinza-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_linha"/>
-            <!--Linha cinza-->
+                android:layout_height="match_parent"
+                android:layout_marginBottom="85dp"
+                tools:listitem="@layout/valor_pagar_item"/>
 
         </LinearLayout>
 
-    </ScrollView>
-    <!--Lista de Valores-->
+    </LinearLayout>
 
-</LinearLayout>
+    <!--Botão Excluir e Adicionar-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/btAdicionar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_botao_ripple"
+            android:layout_marginHorizontal="30dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="17dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:src="@drawable/ic_add" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Adicionar"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <!--Botão Excluir e Adicionar-->
+
+</RelativeLayout>

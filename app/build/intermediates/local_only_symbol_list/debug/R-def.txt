@@ -60,6 +60,7 @@ drawable ic_home
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_notificacao
+drawable ic_pagar
 drawable ic_perfil
 drawable ic_perfil_config
 drawable ic_receber
@@ -71,6 +72,7 @@ drawable ic_transacao
 drawable ic_transacao_branco
 drawable ic_voltar
 drawable img_logo
+drawable img_pagar_256
 drawable img_receber_256
 drawable img_senha_enviada
 drawable logo_branca_500
@@ -102,6 +104,7 @@ id btExpandir
 id btLogin
 id btMinhasContas
 id btNotificacao
+id btPagar
 id btReceber
 id btRecuperar
 id btRegistro
@@ -119,17 +122,21 @@ id contaRegistro
 id descRegistro
 id descricao
 id emailUsuario
+id exibirDataPagar
 id exibirDataReceber
+id exibirNomePagar
 id exibirNomeReceber
+id exibirValorPagar
 id exibirValorReceber
 id icFechar
 id icVoltar
 id imagemUsuario
 id instituicao
 id listaContas
-id listaReceber
+id listaPagar
 id nomeConta
 id nomeDestinatario
+id nomePagar
 id nomeReceber
 id nomeRegistro
 id nomeRemetente
@@ -141,12 +148,14 @@ id senhaUsuario
 id spinner
 id titulo
 id txtData
+id valorPagar
 id valorReceber
 id valorRegistro
-id valorTotalReceber
+id valorTotalPagar
 id valorTranferir
 id valorTransferido
 id vencimentoRegistro
+layout activity_add_pagar
 layout activity_add_receber
 layout activity_ajuda_saldo_geral
 layout activity_cadastro
@@ -154,6 +163,7 @@ layout activity_configuracoes
 layout activity_conta_escolhida
 layout activity_conta_pagar
 layout activity_editar_conta
+layout activity_editar_pagar
 layout activity_editar_perfil
 layout activity_editar_receber
 layout activity_email_enviado
@@ -168,6 +178,7 @@ layout activity_main
 layout activity_minhas_contas
 layout activity_notificacoes
 layout activity_nova_conta
+layout activity_registro_pagar
 layout activity_registro_receber
 layout activity_saldo_geral
 layout activity_saldo_geral_guardado
@@ -180,6 +191,7 @@ layout activity_valor_guardado
 layout activity_valor_receber
 layout conta_item
 layout item_spinner_layout
+layout valor_pagar_item
 layout valor_receber_item
 mipmap ic_launcher
 mipmap ic_launcher_foreground

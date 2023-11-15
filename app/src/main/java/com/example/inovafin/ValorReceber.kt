@@ -43,7 +43,7 @@ class ValorReceber : AppCompatActivity() {
         autentificacao = ConfiguraBd.Firebaseautentificacao()
         firestore = ConfiguraBd.Firebasefirestore()
 
-        receberReyclerView = binding.listaReceber
+        receberReyclerView = binding.listaPagar
         receberReyclerView.layoutManager = LinearLayoutManager(this)
         receberReyclerView.setHasFixedSize(true)
 
@@ -152,7 +152,7 @@ class ValorReceber : AppCompatActivity() {
 
                     val valorTotalFormatado = numberFormat.format(valorTotalReceber)
 
-                    binding.valorTotalReceber.text = valorTotalFormatado
+                    binding.valorTotalPagar.text = valorTotalFormatado
 
                     // Notifica o adaptador que os dados foram alterados
                     adapter.notifyDataSetChanged()

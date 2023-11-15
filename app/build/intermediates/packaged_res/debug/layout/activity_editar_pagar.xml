@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/branco_background"
-    android:orientation="vertical"
-    tools:context=".TransferirValor">
+    tools:context=".EditarPagar"
+    android:orientation="vertical">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!--Testando-->
             <!--Header-->
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -49,7 +51,7 @@
                     android:gravity="center"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
-                    android:text="Transferir"
+                    android:text="Editar Registro"
                     android:textSize="24sp"
                     android:fontFamily="@font/roboto_medium"
                     android:textColor="@color/black"/>
@@ -58,43 +60,43 @@
             </RelativeLayout>
             <!--Header-->
 
-            <!--Saldo-->
+            <!--Nome-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginBottom="30dp"
-                android:gravity="start"
+                android:layout_marginBottom="15dp"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_medium"
-                    android:text="Saldo atual"
-                    android:textColor="@color/black_terciario"
-                    android:textSize="15sp" />
+                    android:text="Nome"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/roboto_medium"/>
 
-                <TextView
-                    android:id="@+id/saldo"
-                    android:layout_width="wrap_content"
+                <!--Nome-->
+                <EditText
+                    android:id="@+id/nomePagar"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/verde_principal"
-                    android:text="R$ 00,00"
-                    android:fontFamily="@font/roboto_bold"
-                    android:textSize="41dp"/>
-
-                <TextView
-                    android:id="@+id/nomeRemetente"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_medium"
-                    android:text="Conta Corrente"
-                    android:textColor="@color/black_terciario"
-                    android:textSize="15sp" />
+                    android:ems="10"
+                    android:inputType="text"
+                    android:hint="Ex. Aluguel"
+                    android:paddingVertical="15dp"
+                    android:paddingHorizontal="10dp"
+                    android:textColorHint="@color/black_terciario"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:background="@drawable/bg_edittext_secundario"
+                    android:textCursorDrawable="@drawable/custom_cursor"
+                    android:fontFamily="@font/roboto"/>
+                <!--Nome-->
 
             </LinearLayout>
-            <!--Saldo-->
+            <!--Nome-->
 
             <!--Conta Relacionada-->
             <LinearLayout
@@ -104,32 +106,15 @@
                 android:layout_marginBottom="10dp"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="Conta Relacionada"
+                    android:layout_weight="1"
                     android:layout_marginBottom="10dp"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Conta"
-                        android:layout_weight="1"
-
-                        android:textColor="@color/black"
-                        android:textSize="15sp"
-                        android:fontFamily="@font/roboto_medium"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Conta que receberá o valor"
-                        android:textColor="@color/black_secundario"
-                        android:textSize="12sp"
-                        android:fontFamily="@font/roboto_light"/>
-
-                </LinearLayout>
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/roboto_medium"/>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -157,7 +142,103 @@
             </LinearLayout>
             <!--Conta Relacionada-->
 
-            <!--Saldo Atual-->
+            <!--Data-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Data de Pagamento"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/roboto_medium"/>
+
+                <!--            <EditText-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:inputType="date"-->
+                <!--                android:hint="00/00/00"-->
+                <!--                android:paddingVertical="15dp"-->
+                <!--                android:paddingHorizontal="10dp"-->
+                <!--                android:textColorHint="@color/black_terciario"-->
+                <!--                android:layout_marginBottom="15dp"-->
+                <!--                android:textColor="@color/black"-->
+                <!--                android:textSize="15sp"-->
+                <!--                android:background="@drawable/bg_edittext_secundario"-->
+                <!--                android:textCursorDrawable="@drawable/custom_cursor"-->
+                <!--                android:fontFamily="@font/roboto"/>-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|start"
+                    android:paddingVertical="14dp"
+                    android:paddingHorizontal="10dp"
+                    android:background="@drawable/bg_edittext_secundario">
+
+                    <TextView
+                        android:id="@+id/txtData"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/black_secundario"
+                        android:text="00/00/00"/>
+
+                    <ImageView
+                        android:id="@+id/btCalendario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_calendario"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <!--Data-->
+
+            <!--Descrição-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Descrição"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/roboto_medium"/>
+
+                <EditText
+                    android:id="@+id/descricao"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:gravity="start"
+                    android:scrollbars="vertical"
+                    android:hint="Descrição do Registro aqui..."
+                    android:paddingVertical="15dp"
+                    android:paddingHorizontal="10dp"
+                    android:textColorHint="@color/black_terciario"
+                    android:layout_marginBottom="15dp"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:background="@drawable/bg_edittext_secundario"
+                    android:textCursorDrawable="@drawable/custom_cursor"
+                    android:fontFamily="@font/roboto">
+                </EditText>
+
+            </LinearLayout>
+            <!--Descrição-->
+
+            <!--Valor-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -173,44 +254,38 @@
                     android:textSize="15sp"
                     android:fontFamily="@font/roboto_medium"/>
 
+                <!--Valor-->
                 <EditText
-                    android:id="@+id/valorTranferir"
+                    android:id="@+id/valorPagar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="numberDecimal"
-                    android:hint="Saldo da Conta"
+                    android:inputType="number"
+                    android:hint="R$ 00,00"
                     android:paddingVertical="15dp"
                     android:paddingHorizontal="10dp"
-                    android:layout_marginBottom="100dp"
                     android:textColorHint="@color/black_terciario"
                     android:textColor="@color/black"
                     android:textSize="15sp"
                     android:background="@drawable/bg_edittext_secundario"
                     android:textCursorDrawable="@drawable/custom_cursor"
                     android:fontFamily="@font/roboto"/>
+                <!--Valor-->
 
             </LinearLayout>
-            <!--Saldo Atual-->
+            <!--Valor-->
 
         </LinearLayout>
 
-    </ScrollView>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp">
-
-        <!--Botão Transferir-->
+        <!--Botão Add-->
         <LinearLayout
-            android:id="@+id/btTransferir"
+            android:id="@+id/btAlterar"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:visibility="visible"
             android:paddingHorizontal="17dp"
             android:layout_marginHorizontal="30dp"
-            android:layout_alignParentBottom="true"
+            android:layout_marginVertical="30dp"
             android:gravity="center"
             android:orientation="horizontal"
             android:clickable="true"
@@ -233,12 +308,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="7dp"
-                        android:src="@drawable/ic_transacao_branco"/>
+                        android:src="@drawable/ic_salvar"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Transferir"
+                        android:text="Salvar"
                         android:textColor="@color/white"
                         android:textSize="13sp"
                         android:fontFamily="@font/roboto_bold"/>
@@ -259,8 +334,8 @@
             </LinearLayout>
 
         </LinearLayout>
-        <!--Botão Transferir-->
+        <!--Botão Add-->
 
-    </RelativeLayout>
+    </LinearLayout>
 
-</LinearLayout>
+</ScrollView>

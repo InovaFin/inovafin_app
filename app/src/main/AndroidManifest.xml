@@ -16,8 +16,17 @@
         android:theme="@style/Theme.InovaFin"
         tools:targetApi="31">
         <activity
-        android:name=".EditarReceber"
-        android:exported="false" />
+            android:name=".EditarPagar"
+            android:exported="false" />
+        <activity
+            android:name=".AddPagar"
+            android:exported="false" />
+        <activity
+            android:name=".RegistroPagar"
+            android:exported="false" />
+        <activity
+            android:name=".EditarReceber"
+            android:exported="false" />
         <activity
             android:name=".SplashTransferir"
             android:exported="false" />
