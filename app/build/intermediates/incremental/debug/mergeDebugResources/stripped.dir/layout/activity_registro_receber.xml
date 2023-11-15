@@ -142,6 +142,34 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:id="@+id/btReceber"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:clickable="true"
+                        android:src="@drawable/ic_recebi_cinza"
+                        android:background="@drawable/bg_icones_ripple"
+                        android:padding="14dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto"
+                        android:text="Recebi"
+                        android:layout_marginTop="2dp"
+                        android:textColor="@color/black_terciario"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
                         android:id="@+id/btEditar"
                         android:layout_width="50dp"
                         android:layout_height="50dp"

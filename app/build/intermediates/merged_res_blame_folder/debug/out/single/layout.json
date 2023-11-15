@@ -24,10 +24,6 @@
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\layout\\activity_valor_guardado.xml"
     },
     {
-        "merged": "com.example.inovafin.app-mergeDebugResources-38:/layout/activity_add_receber.xml",
-        "source": "com.example.inovafin.app-main-41:/layout/activity_add_receber.xml"
-    },
-    {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-38:\\layout\\valor_receber_item.xml",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\layout\\valor_receber_item.xml"
     },
@@ -88,10 +84,6 @@
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\layout\\activity_minhas_contas.xml"
     },
     {
-        "merged": "com.example.inovafin.app-mergeDebugResources-38:/layout/activity_editar_receber.xml",
-        "source": "com.example.inovafin.app-main-41:/layout/activity_editar_receber.xml"
-    },
-    {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-38:\\layout\\activity_editar_perfil.xml",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\layout\\activity_editar_perfil.xml"
     },
@@ -122,10 +114,6 @@
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-38:\\layout\\activity_registro_receber.xml",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\layout\\activity_registro_receber.xml"
-    },
-    {
-        "merged": "com.example.inovafin.app-mergeDebugResources-38:/layout/activity_valor_receber.xml",
-        "source": "com.example.inovafin.app-main-41:/layout/activity_valor_receber.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-38:\\layout\\activity_splash_transferir.xml",

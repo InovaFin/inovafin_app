@@ -63,6 +63,7 @@ drawable ic_notificacao
 drawable ic_perfil
 drawable ic_perfil_config
 drawable ic_receber
+drawable ic_recebi_cinza
 drawable ic_sair
 drawable ic_salvar
 drawable ic_senha
@@ -101,6 +102,7 @@ id btExpandir
 id btLogin
 id btMinhasContas
 id btNotificacao
+id btReceber
 id btRecuperar
 id btRegistro
 id btSair

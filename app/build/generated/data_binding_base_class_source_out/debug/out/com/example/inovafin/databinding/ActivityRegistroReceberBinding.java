@@ -27,6 +27,9 @@ public final class ActivityRegistroReceberBinding implements ViewBinding {
   public final ImageView btExcluir;
 
   @NonNull
+  public final ImageView btReceber;
+
+  @NonNull
   public final TextView contaRegistro;
 
   @NonNull
@@ -45,12 +48,14 @@ public final class ActivityRegistroReceberBinding implements ViewBinding {
   public final TextView vencimentoRegistro;
 
   private ActivityRegistroReceberBinding(@NonNull RelativeLayout rootView,
-      @NonNull ImageView btEditar, @NonNull ImageView btExcluir, @NonNull TextView contaRegistro,
-      @NonNull TextView descRegistro, @NonNull ImageView icFechar, @NonNull TextView nomeRegistro,
-      @NonNull TextView valorRegistro, @NonNull TextView vencimentoRegistro) {
+      @NonNull ImageView btEditar, @NonNull ImageView btExcluir, @NonNull ImageView btReceber,
+      @NonNull TextView contaRegistro, @NonNull TextView descRegistro, @NonNull ImageView icFechar,
+      @NonNull TextView nomeRegistro, @NonNull TextView valorRegistro,
+      @NonNull TextView vencimentoRegistro) {
     this.rootView = rootView;
     this.btEditar = btEditar;
     this.btExcluir = btExcluir;
+    this.btReceber = btReceber;
     this.contaRegistro = contaRegistro;
     this.descRegistro = descRegistro;
     this.icFechar = icFechar;
@@ -98,6 +103,12 @@ public final class ActivityRegistroReceberBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btReceber;
+      ImageView btReceber = ViewBindings.findChildViewById(rootView, id);
+      if (btReceber == null) {
+        break missingId;
+      }
+
       id = R.id.contaRegistro;
       TextView contaRegistro = ViewBindings.findChildViewById(rootView, id);
       if (contaRegistro == null) {
@@ -135,7 +146,8 @@ public final class ActivityRegistroReceberBinding implements ViewBinding {
       }
 
       return new ActivityRegistroReceberBinding((RelativeLayout) rootView, btEditar, btExcluir,
-          contaRegistro, descRegistro, icFechar, nomeRegistro, valorRegistro, vencimentoRegistro);
+          btReceber, contaRegistro, descRegistro, icFechar, nomeRegistro, valorRegistro,
+          vencimentoRegistro);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

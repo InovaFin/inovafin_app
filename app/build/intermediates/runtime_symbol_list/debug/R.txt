@@ -3052,6 +3052,7 @@ int drawable ic_notificacao 0x7f0800d4
 int drawable ic_perfil 0x7f0800d5
 int drawable ic_perfil_config 0x7f0800d6
 int drawable ic_receber 0x7f080131
+int drawable ic_recebi_cinza 0x7f080132
 int drawable ic_sair 0x7f0800d7
 int drawable ic_salvar 0x7f0800d8
 int drawable ic_search_black_24 0x7f0800d9
@@ -3272,6 +3273,7 @@ int id btExpandir 0x7f0a0078
 int id btLogin 0x7f0a0079
 int id btMinhasContas 0x7f0a007a
 int id btNotificacao 0x7f0a007b
+int id btReceber 0x7f0a0243
 int id btRecuperar 0x7f0a007c
 int id btRegistro 0x7f0a007d
 int id btSair 0x7f0a007e
