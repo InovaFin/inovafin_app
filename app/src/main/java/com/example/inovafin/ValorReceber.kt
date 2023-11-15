@@ -64,9 +64,25 @@ class ValorReceber : AppCompatActivity() {
         }
 
         binding.btAdicionar.setOnClickListener {
-            val i = Intent (this, AddReceber::class.java)
-            startActivity(i)
+            verificarContas()
         }
+    }
+
+    private fun verificarContas() {
+        val usuarioId = autentificacao.currentUser!!.uid
+
+        firestore.collection("Usuarios").document(usuarioId)
+            .collection("ContasBancarias")
+            .get()
+            .addOnSuccessListener { documents ->
+                // Verifica se há algum documento na coleção
+                if (documents.size() > 0) {
+                    val i = Intent(this, AddReceber::class.java)
+                    startActivity(i)
+                } else {
+                    Toast.makeText(applicationContext, "Antes, adicione uma Conta Bancária", Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 
     private fun setupRecyclerView() {
