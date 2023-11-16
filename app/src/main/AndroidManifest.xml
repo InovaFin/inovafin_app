@@ -16,6 +16,15 @@
         android:theme="@style/Theme.InovaFin"
         tools:targetApi="31">
         <activity
+            android:name=".RegistroGuardado"
+            android:exported="false" />
+        <activity
+            android:name=".EditarGuardado"
+            android:exported="false" />
+        <activity
+            android:name=".AddGuardado"
+            android:exported="false" />
+        <activity
             android:name=".EditarPagar"
             android:exported="false" />
         <activity

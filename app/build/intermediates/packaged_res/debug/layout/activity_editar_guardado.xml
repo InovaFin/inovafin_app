@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/branco_background"
-    tools:context=".EditarPagar"
+    tools:context=".EditarGuardado"
     android:orientation="vertical">
 
     <LinearLayout
@@ -79,7 +79,7 @@
 
                 <!--Nome-->
                 <EditText
-                    android:id="@+id/nomePagar"
+                    android:id="@+id/nomeGuardado"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -142,65 +142,6 @@
             </LinearLayout>
             <!--Conta Relacionada-->
 
-            <!--Data-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="30dp"
-                android:layout_marginBottom="10dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Data de Pagamento"
-                    android:textColor="@color/black"
-                    android:layout_marginBottom="10dp"
-                    android:textSize="15sp"
-                    android:fontFamily="@font/roboto_medium"/>
-
-                <!--            <EditText-->
-                <!--                android:layout_width="wrap_content"-->
-                <!--                android:layout_height="wrap_content"-->
-                <!--                android:inputType="date"-->
-                <!--                android:hint="00/00/00"-->
-                <!--                android:paddingVertical="15dp"-->
-                <!--                android:paddingHorizontal="10dp"-->
-                <!--                android:textColorHint="@color/black_terciario"-->
-                <!--                android:layout_marginBottom="15dp"-->
-                <!--                android:textColor="@color/black"-->
-                <!--                android:textSize="15sp"-->
-                <!--                android:background="@drawable/bg_edittext_secundario"-->
-                <!--                android:textCursorDrawable="@drawable/custom_cursor"-->
-                <!--                android:fontFamily="@font/roboto"/>-->
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center|start"
-                    android:paddingVertical="14dp"
-                    android:paddingHorizontal="10dp"
-                    android:background="@drawable/bg_edittext_secundario">
-
-                    <TextView
-                        android:id="@+id/txtData"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textColor="@color/black_secundario"
-                        android:text="00/00/00"/>
-
-                    <ImageView
-                        android:id="@+id/btCalendario"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_calendario"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
-            <!--Data-->
-
             <!--Descrição-->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -256,7 +197,7 @@
 
                 <!--Valor-->
                 <EditText
-                    android:id="@+id/valorPagar"
+                    android:id="@+id/valorGuardado"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"

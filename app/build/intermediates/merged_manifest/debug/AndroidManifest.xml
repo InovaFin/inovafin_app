@@ -34,6 +34,15 @@
         android:testOnly="true"
         android:theme="@style/Theme.InovaFin" >
         <activity
+            android:name="com.example.inovafin.RegistroGuardado"
+            android:exported="false" />
+        <activity
+            android:name="com.example.inovafin.EditarGuardado"
+            android:exported="false" />
+        <activity
+            android:name="com.example.inovafin.AddGuardado"
+            android:exported="false" />
+        <activity
             android:name="com.example.inovafin.EditarPagar"
             android:exported="false" />
         <activity

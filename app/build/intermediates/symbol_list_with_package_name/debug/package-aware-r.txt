@@ -3038,6 +3038,7 @@ drawable ic_expandir
 drawable ic_expandir_spinner
 drawable ic_fechar
 drawable ic_foto
+drawable ic_guardado
 drawable ic_home
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
@@ -3062,6 +3063,7 @@ drawable ic_senha
 drawable ic_transacao
 drawable ic_transacao_branco
 drawable ic_voltar
+drawable img_guardado_256
 drawable img_logo
 drawable img_pagar_256
 drawable img_receber_256
@@ -3379,8 +3381,10 @@ id enterAlways
 id enterAlwaysCollapsed
 id exibirDataPagar
 id exibirDataReceber
+id exibirNomeGuardado
 id exibirNomePagar
 id exibirNomeReceber
+id exibirValorGuardado
 id exibirValorPagar
 id exibirValorReceber
 id exitUntilCollapsed
@@ -3452,6 +3456,7 @@ id linear
 id listMode
 id list_item
 id listaContas
+id listaGuardado
 id listaPagar
 id lottie_layer_name
 id m3_side_sheet
@@ -3529,6 +3534,7 @@ id noScroll
 id noState
 id nomeConta
 id nomeDestinatario
+id nomeGuardado
 id nomePagar
 id nomeReceber
 id nomeRegistro
@@ -3710,9 +3716,11 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id valorGuardado
 id valorPagar
 id valorReceber
 id valorRegistro
+id valorTotalGuardado
 id valorTotalPagar
 id valorTranferir
 id valorTransferido
@@ -3850,6 +3858,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_add_guardado
 layout activity_add_pagar
 layout activity_add_receber
 layout activity_ajuda_saldo_geral
@@ -3858,6 +3867,7 @@ layout activity_configuracoes
 layout activity_conta_escolhida
 layout activity_conta_pagar
 layout activity_editar_conta
+layout activity_editar_guardado
 layout activity_editar_pagar
 layout activity_editar_perfil
 layout activity_editar_receber
@@ -3873,6 +3883,7 @@ layout activity_main
 layout activity_minhas_contas
 layout activity_notificacoes
 layout activity_nova_conta
+layout activity_registro_guardado
 layout activity_registro_pagar
 layout activity_registro_receber
 layout activity_saldo_geral
@@ -3974,6 +3985,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout valor_guardado_item
 layout valor_pagar_item
 layout valor_receber_item
 mipmap ic_launcher

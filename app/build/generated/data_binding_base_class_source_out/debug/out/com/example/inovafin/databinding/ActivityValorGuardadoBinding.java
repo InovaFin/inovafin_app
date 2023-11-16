@@ -6,8 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.inovafin.R;
@@ -17,33 +20,33 @@ import java.lang.String;
 
 public final class ActivityValorGuardadoBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final RelativeLayout rootView;
 
   @NonNull
   public final LinearLayout btAdicionar;
 
   @NonNull
-  public final LinearLayout btExcluir;
-
-  @NonNull
-  public final LinearLayout btRegistro;
-
-  @NonNull
   public final ImageView icFechar;
 
-  private ActivityValorGuardadoBinding(@NonNull LinearLayout rootView,
-      @NonNull LinearLayout btAdicionar, @NonNull LinearLayout btExcluir,
-      @NonNull LinearLayout btRegistro, @NonNull ImageView icFechar) {
+  @NonNull
+  public final RecyclerView listaGuardado;
+
+  @NonNull
+  public final TextView valorTotalGuardado;
+
+  private ActivityValorGuardadoBinding(@NonNull RelativeLayout rootView,
+      @NonNull LinearLayout btAdicionar, @NonNull ImageView icFechar,
+      @NonNull RecyclerView listaGuardado, @NonNull TextView valorTotalGuardado) {
     this.rootView = rootView;
     this.btAdicionar = btAdicionar;
-    this.btExcluir = btExcluir;
-    this.btRegistro = btRegistro;
     this.icFechar = icFechar;
+    this.listaGuardado = listaGuardado;
+    this.valorTotalGuardado = valorTotalGuardado;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public RelativeLayout getRoot() {
     return rootView;
   }
 
@@ -74,26 +77,26 @@ public final class ActivityValorGuardadoBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.btExcluir;
-      LinearLayout btExcluir = ViewBindings.findChildViewById(rootView, id);
-      if (btExcluir == null) {
-        break missingId;
-      }
-
-      id = R.id.btRegistro;
-      LinearLayout btRegistro = ViewBindings.findChildViewById(rootView, id);
-      if (btRegistro == null) {
-        break missingId;
-      }
-
       id = R.id.icFechar;
       ImageView icFechar = ViewBindings.findChildViewById(rootView, id);
       if (icFechar == null) {
         break missingId;
       }
 
-      return new ActivityValorGuardadoBinding((LinearLayout) rootView, btAdicionar, btExcluir,
-          btRegistro, icFechar);
+      id = R.id.listaGuardado;
+      RecyclerView listaGuardado = ViewBindings.findChildViewById(rootView, id);
+      if (listaGuardado == null) {
+        break missingId;
+      }
+
+      id = R.id.valorTotalGuardado;
+      TextView valorTotalGuardado = ViewBindings.findChildViewById(rootView, id);
+      if (valorTotalGuardado == null) {
+        break missingId;
+      }
+
+      return new ActivityValorGuardadoBinding((RelativeLayout) rootView, btAdicionar, icFechar,
+          listaGuardado, valorTotalGuardado);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
