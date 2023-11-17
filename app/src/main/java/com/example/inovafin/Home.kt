@@ -36,10 +36,6 @@ class Home : AppCompatActivity() {
             startActivity(i)
         }
 
-        binding.nomeUsuario.setOnClickListener {
-            Toast.makeText(applicationContext, "Nome Usuario", Toast.LENGTH_SHORT).show()
-        }
-
         binding.btCalculadora.setOnClickListener {
             try {
                 val intent = Intent()

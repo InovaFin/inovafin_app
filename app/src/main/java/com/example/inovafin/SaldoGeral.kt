@@ -137,6 +137,7 @@ class SaldoGeral : AppCompatActivity() {
                 } else {
                     val formatted = numberFormat.format(saldoGeral)
                     binding.saldoGeral.text = formatted
+                    alterarSaldoTemporario(saldoGeral)
                 }
             }
 
@@ -163,6 +164,23 @@ class SaldoGeral : AppCompatActivity() {
                 val formatted = numberFormat.format(saldo)
                 binding.saldoGeral.text = formatted
 
+                alterarSaldoTemporario(saldo)
+            }
+    }
+
+    private fun alterarSaldoTemporario(saldo: Double) {
+        val usuarioId = autentificacao.currentUser!!.uid
+
+        val registroMasp = hashMapOf(
+            "saldoGeral" to saldo
+        )
+
+        firestore.collection("Usuarios").document(usuarioId)
+            .collection("saldoGeralTemporario")
+            .document("temporario")
+            .update(registroMasp as Map<String, Any>)
+            .addOnSuccessListener {
+
             }
     }
 
@@ -175,7 +193,7 @@ class SaldoGeral : AppCompatActivity() {
 
         firestore.collection("Usuarios").document(usuarioId)
             .collection("saldoGeralTemporario")
-            .document()
+            .document("temporario")
             .set(registroMasp)
             .addOnSuccessListener {
                 val formatted = numberFormat.format(saldoGeral)
