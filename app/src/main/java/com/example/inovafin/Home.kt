@@ -31,6 +31,8 @@ class Home : AppCompatActivity() {
         autentificacao = ConfiguraBd.Firebaseautentificacao()
         firestore = ConfiguraBd.Firebasefirestore()
 
+        verificarSaldoGeralTemporario()
+
         binding.imagemUsuario.setOnClickListener {
             var i = Intent(this, Configuracoes::class.java)
             startActivity(i)
@@ -120,5 +122,33 @@ class Home : AppCompatActivity() {
                     binding.saldoGeral.text = formatted
                 }
         }
+    }
+
+    private fun verificarSaldoGeralTemporario() {
+        val usuarioId = autentificacao.currentUser!!.uid
+
+        firestore.collection("Usuarios").document(usuarioId)
+            .collection("saldoGeralTemporario")
+            .get()
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    val documents = task.result
+                    if (documents != null && !documents.isEmpty) {
+                        excluirSaldoGeralTemporario()
+                    }
+                } else {
+                    // Trate o erro, se necessário
+                    Toast.makeText(applicationContext, "Erro ao verificar a coleção: ${task.exception}", Toast.LENGTH_SHORT).show()
+                }
+            }
+    }
+
+    private fun excluirSaldoGeralTemporario() {
+        val usuarioId = autentificacao.currentUser!!.uid
+
+        firestore.collection("Usuarios").document(usuarioId)
+            .collection("saldoGeralTemporario")
+            .document("temporario")
+            .delete()
     }
 }
