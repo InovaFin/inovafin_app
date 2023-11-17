@@ -3458,6 +3458,8 @@ id list_item
 id listaContas
 id listaGuardado
 id listaPagar
+id listaReceber
+id listaRegistros
 id lottie_layer_name
 id m3_side_sheet
 id marquee

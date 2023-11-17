@@ -29,18 +29,18 @@ public final class ActivityValorReceberBinding implements ViewBinding {
   public final ImageView icFechar;
 
   @NonNull
-  public final RecyclerView listaPagar;
+  public final RecyclerView listaReceber;
 
   @NonNull
   public final TextView valorTotalPagar;
 
   private ActivityValorReceberBinding(@NonNull RelativeLayout rootView,
       @NonNull LinearLayout btAdicionar, @NonNull ImageView icFechar,
-      @NonNull RecyclerView listaPagar, @NonNull TextView valorTotalPagar) {
+      @NonNull RecyclerView listaReceber, @NonNull TextView valorTotalPagar) {
     this.rootView = rootView;
     this.btAdicionar = btAdicionar;
     this.icFechar = icFechar;
-    this.listaPagar = listaPagar;
+    this.listaReceber = listaReceber;
     this.valorTotalPagar = valorTotalPagar;
   }
 
@@ -83,9 +83,9 @@ public final class ActivityValorReceberBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.listaPagar;
-      RecyclerView listaPagar = ViewBindings.findChildViewById(rootView, id);
-      if (listaPagar == null) {
+      id = R.id.listaReceber;
+      RecyclerView listaReceber = ViewBindings.findChildViewById(rootView, id);
+      if (listaReceber == null) {
         break missingId;
       }
 
@@ -96,7 +96,7 @@ public final class ActivityValorReceberBinding implements ViewBinding {
       }
 
       return new ActivityValorReceberBinding((RelativeLayout) rootView, btAdicionar, icFechar,
-          listaPagar, valorTotalPagar);
+          listaReceber, valorTotalPagar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

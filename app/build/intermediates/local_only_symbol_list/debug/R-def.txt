@@ -139,6 +139,8 @@ id instituicao
 id listaContas
 id listaGuardado
 id listaPagar
+id listaReceber
+id listaRegistros
 id nomeConta
 id nomeDestinatario
 id nomeGuardado

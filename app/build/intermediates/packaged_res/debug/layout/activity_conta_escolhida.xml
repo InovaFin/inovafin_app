@@ -193,7 +193,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto_medium"
-            android:text="Contas"
+            android:text="Registros"
             android:layout_marginStart="30dp"
             android:textColor="@color/black"
             android:textSize="16sp" />
@@ -207,6 +207,7 @@
         android:orientation="vertical">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listaRegistros"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:listitem="@layout/valor_receber_item"/>

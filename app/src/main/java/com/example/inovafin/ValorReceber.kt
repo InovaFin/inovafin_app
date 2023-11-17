@@ -43,7 +43,7 @@ class ValorReceber : AppCompatActivity() {
         autentificacao = ConfiguraBd.Firebaseautentificacao()
         firestore = ConfiguraBd.Firebasefirestore()
 
-        receberReyclerView = binding.listaPagar
+        receberReyclerView = binding.listaReceber
         receberReyclerView.layoutManager = LinearLayoutManager(this)
         receberReyclerView.setHasFixedSize(true)
 

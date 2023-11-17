@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.inovafin.R;
@@ -36,6 +37,9 @@ public final class ActivityContaEscolhidaBinding implements ViewBinding {
   public final TextView instituicao;
 
   @NonNull
+  public final RecyclerView listaRegistros;
+
+  @NonNull
   public final TextView saldo;
 
   @NonNull
@@ -43,13 +47,15 @@ public final class ActivityContaEscolhidaBinding implements ViewBinding {
 
   private ActivityContaEscolhidaBinding(@NonNull LinearLayout rootView, @NonNull ImageView btEditar,
       @NonNull ImageView btExcluir, @NonNull ImageView btTransferir, @NonNull ImageView icFechar,
-      @NonNull TextView instituicao, @NonNull TextView saldo, @NonNull TextView titulo) {
+      @NonNull TextView instituicao, @NonNull RecyclerView listaRegistros, @NonNull TextView saldo,
+      @NonNull TextView titulo) {
     this.rootView = rootView;
     this.btEditar = btEditar;
     this.btExcluir = btExcluir;
     this.btTransferir = btTransferir;
     this.icFechar = icFechar;
     this.instituicao = instituicao;
+    this.listaRegistros = listaRegistros;
     this.saldo = saldo;
     this.titulo = titulo;
   }
@@ -111,6 +117,12 @@ public final class ActivityContaEscolhidaBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.listaRegistros;
+      RecyclerView listaRegistros = ViewBindings.findChildViewById(rootView, id);
+      if (listaRegistros == null) {
+        break missingId;
+      }
+
       id = R.id.saldo;
       TextView saldo = ViewBindings.findChildViewById(rootView, id);
       if (saldo == null) {
@@ -124,7 +136,7 @@ public final class ActivityContaEscolhidaBinding implements ViewBinding {
       }
 
       return new ActivityContaEscolhidaBinding((LinearLayout) rootView, btEditar, btExcluir,
-          btTransferir, icFechar, instituicao, saldo, titulo);
+          btTransferir, icFechar, instituicao, listaRegistros, saldo, titulo);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

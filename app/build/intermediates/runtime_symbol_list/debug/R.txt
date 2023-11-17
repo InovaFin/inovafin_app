@@ -3457,6 +3457,8 @@ int id list_item 0x7f0a012d
 int id listaContas 0x7f0a012e
 int id listaGuardado 0x7f0a012f
 int id listaPagar 0x7f0a0130
+int id listaReceber 0x7f0a024f
+int id listaRegistros 0x7f0a0250
 int id lottie_layer_name 0x7f0a0131
 int id m3_side_sheet 0x7f0a0132
 int id marquee 0x7f0a0133

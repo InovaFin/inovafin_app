@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/branco_background"
+    android:orientation="vertical"
+    tools:context=".TransferirValor">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--Header-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp"
+                android:paddingHorizontal="30dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <!--Botão Voltar-->
+                    <ImageView
+                        android:id="@+id/icFechar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_fechar"/>
+                    <!--Botão Voltar-->
+
+                </LinearLayout>
+
+                <!--Título-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:text="Transferir"
+                    android:textSize="24sp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/black"/>
+                <!--Título-->
+
+            </RelativeLayout>
+            <!--Header-->
+
+            <!--Saldo-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginBottom="30dp"
+                android:gravity="start"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Saldo atual"
+                    android:textColor="@color/black_terciario"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/saldo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/verde_principal"
+                    android:text="R$ 00,00"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textSize="41dp"/>
+
+                <TextView
+                    android:id="@+id/nomeRemetente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Conta Corrente"
+                    android:textColor="@color/black_terciario"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+            <!--Saldo-->
+
+            <!--Conta Relacionada-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Conta"
+                        android:layout_weight="1"
+
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/roboto_medium"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Conta que receberá o valor"
+                        android:textColor="@color/black_secundario"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/roboto_light"/>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Spinner
+                        android:id="@+id/spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_edittext_secundario"
+                        android:paddingHorizontal="3dp"
+                        android:paddingVertical="3dp"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_expandir" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+            <!--Conta Relacionada-->
+
+            <!--Saldo Atual-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Valor"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/roboto_medium"/>
+
+                <EditText
+                    android:id="@+id/valorTranferir"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:hint="Saldo da Conta"
+                    android:paddingVertical="15dp"
+                    android:paddingHorizontal="10dp"
+                    android:layout_marginBottom="100dp"
+                    android:textColorHint="@color/black_terciario"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:background="@drawable/bg_edittext_secundario"
+                    android:textCursorDrawable="@drawable/custom_cursor"
+                    android:fontFamily="@font/roboto"/>
+
+            </LinearLayout>
+            <!--Saldo Atual-->
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp">
+
+        <!--Botão Transferir-->
+        <LinearLayout
+            android:id="@+id/btTransferir"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:visibility="visible"
+            android:paddingHorizontal="17dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:clickable="true"
+            android:background="@drawable/bg_botao_ripple">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/btText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="7dp"
+                        android:src="@drawable/ic_transacao_branco"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Transferir"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/roboto_bold"/>
+
+                </LinearLayout>
+
+                <!--Animação do Botão-->
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/btAnimacao"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:lottie_rawRes="@raw/load_white"
+                    android:visibility="gone"
+                    app:lottie_loop="true"
+                    app:lottie_autoPlay="false"/>
+                <!--Animação do Botão-->
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <!--Botão Transferir-->
+
+    </RelativeLayout>
+
+</LinearLayout>

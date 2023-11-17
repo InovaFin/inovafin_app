@@ -107,7 +107,7 @@
                 android:textSize="12dp"/>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/listaPagar"
+                android:id="@+id/listaReceber"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="85dp"
