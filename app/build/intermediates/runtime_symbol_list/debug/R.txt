@@ -2976,6 +2976,7 @@ int drawable bg_menu_nav 0x7f080088
 int drawable bg_menu_nav_home 0x7f080089
 int drawable bg_menu_nav_home_ripple 0x7f08008a
 int drawable bg_notificacao 0x7f08008b
+int drawable bg_spinner_saldo_geral 0x7f080135
 int drawable btn_checkbox_checked_mtrl 0x7f08008c
 int drawable btn_checkbox_checked_to_unchecked_mtrl_animation 0x7f08008d
 int drawable btn_checkbox_unchecked_mtrl 0x7f08008e
@@ -3273,7 +3274,6 @@ int id btEditar 0x7f0a0075
 int id btEditarPerfil 0x7f0a0076
 int id btEsqueceuSenha 0x7f0a0077
 int id btExcluir 0x7f0a0078
-int id btExpandir 0x7f0a0079
 int id btLogin 0x7f0a007a
 int id btMinhasContas 0x7f0a007b
 int id btNotificacao 0x7f0a007c
@@ -3644,6 +3644,7 @@ int id south 0x7f0a01e4
 int id spacer 0x7f0a01e5
 int id special_effects_controller_view_tag 0x7f0a01e6
 int id spinner 0x7f0a01e7
+int id spinnerContas 0x7f0a0253
 int id spline 0x7f0a01e8
 int id split_action_bar 0x7f0a01e9
 int id spread 0x7f0a01ea

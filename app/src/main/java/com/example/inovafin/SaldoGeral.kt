@@ -3,6 +3,8 @@ package com.example.inovafin
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.inovafin.Util.ConfiguraBd
@@ -23,6 +25,7 @@ class SaldoGeral : AppCompatActivity() {
     private var numberFormat = NumberFormat.getCurrencyInstance(Locale("pt", "BR"))
 
     private var saldoGeral: Double = 0.0
+    private lateinit var nomesContas: MutableList<String>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySaldoGeralBinding.inflate(layoutInflater)
@@ -31,6 +34,8 @@ class SaldoGeral : AppCompatActivity() {
 
         autentificacao = ConfiguraBd.Firebaseautentificacao()
         firestore = ConfiguraBd.Firebasefirestore()
+
+        verificarSpinner()
 
         binding.icFechar.setOnClickListener {
             onBackPressed()
@@ -79,7 +84,7 @@ class SaldoGeral : AppCompatActivity() {
             .collection("ContasBancarias")
             .get()
             .addOnSuccessListener { documents ->
-                val nomesContas = mutableListOf<String>()
+                nomesContas = mutableListOf<String>()
                 var soma = 0.0
 
                 for (document in documents) {
@@ -99,11 +104,65 @@ class SaldoGeral : AppCompatActivity() {
                 saldoGeralTemporario()
 
                 // Agora você tem a lista de nomes das contas bancárias
-//                configurarSpinner(nomesContas)
+                configurarSpinner(nomesContas)
+
+                binding.spinnerContas.visibility = View.VISIBLE
 
             }
             .addOnFailureListener { exception ->
                 Toast.makeText(applicationContext, "Erro: $exception", Toast.LENGTH_LONG).show()
+            }
+    }
+
+    private fun configurarSpinner(nomesContas: MutableList<String>) {
+        val spinnerOP = mutableListOf("Saldo Geral")
+        spinnerOP.addAll(nomesContas)
+
+        // Cria um adapter para o spinner com a lista de nomes
+        val adapter = ArrayAdapter(this, R.layout.item_spinner_layout, spinnerOP)
+
+        binding.spinner.adapter = adapter
+    }
+
+    private fun verificarSpinner() {
+        binding.spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parentView: AdapterView<*>?, selectedItemView: View?, position: Int, id: Long) {
+                // Verifica se a posição selecionada não é a posição padrão "Selecione uma conta"
+                if (position > 0) {
+                    // Recupera o nome da conta selecionada
+                    val contaSelecionada = nomesContas[position - 1]
+
+                    // Aqui você pode adicionar o código para exibir o saldo da conta selecionada
+                    exibirSaldoContaSelecionada(contaSelecionada)
+                } else {
+                    val formatted = numberFormat.format(saldoGeral)
+                    binding.saldoGeral.text = formatted
+                }
+            }
+
+            override fun onNothingSelected(parentView: AdapterView<*>?) {
+                // Aqui você pode adicionar o código para lidar com nenhum item selecionado, se necessário
+            }
+        }
+    }
+
+    private fun exibirSaldoContaSelecionada(nomeConta: String) {
+        val usuarioId = autentificacao.currentUser!!.uid
+
+        firestore.collection("Usuarios").document(usuarioId)
+            .collection("ContasBancarias")
+            .whereEqualTo("nome", nomeConta)
+            .get()
+            .addOnSuccessListener { documents ->
+                var saldo = 0.0
+
+                for (document in documents) {
+                    saldo = document.getDouble("saldo")!!
+                }
+
+                val formatted = numberFormat.format(saldo)
+                binding.saldoGeral.text = formatted
+
             }
     }
 

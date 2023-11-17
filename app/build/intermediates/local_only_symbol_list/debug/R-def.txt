@@ -32,6 +32,7 @@ drawable bg_menu_nav
 drawable bg_menu_nav_home
 drawable bg_menu_nav_home_ripple
 drawable bg_notificacao
+drawable bg_spinner_saldo_geral
 drawable custom_cursor
 drawable ic_add
 drawable ic_add_black
@@ -102,7 +103,6 @@ id btEditar
 id btEditarPerfil
 id btEsqueceuSenha
 id btExcluir
-id btExpandir
 id btLogin
 id btMinhasContas
 id btNotificacao
@@ -156,6 +156,7 @@ id saldoAtual
 id saldoGeral
 id senhaUsuario
 id spinner
+id spinnerContas
 id titulo
 id txtData
 id valorGuardado

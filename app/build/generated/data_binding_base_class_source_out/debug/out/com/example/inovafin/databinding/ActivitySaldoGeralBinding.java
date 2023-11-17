@@ -6,7 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -28,9 +30,6 @@ public final class ActivitySaldoGeralBinding implements ViewBinding {
   public final ImageView btCalculadora;
 
   @NonNull
-  public final ImageView btExpandir;
-
-  @NonNull
   public final LinearLayout btSaldoGeralGuardado;
 
   @NonNull
@@ -48,21 +47,28 @@ public final class ActivitySaldoGeralBinding implements ViewBinding {
   @NonNull
   public final TextView saldoGeral;
 
+  @NonNull
+  public final Spinner spinner;
+
+  @NonNull
+  public final RelativeLayout spinnerContas;
+
   private ActivitySaldoGeralBinding(@NonNull ScrollView rootView, @NonNull ImageView btAjuda,
-      @NonNull ImageView btCalculadora, @NonNull ImageView btExpandir,
-      @NonNull LinearLayout btSaldoGeralGuardado, @NonNull LinearLayout btSaldoGeralPagar,
-      @NonNull LinearLayout btSaldoGeralReceber, @NonNull LinearLayout exibirSaldo,
-      @NonNull ImageView icFechar, @NonNull TextView saldoGeral) {
+      @NonNull ImageView btCalculadora, @NonNull LinearLayout btSaldoGeralGuardado,
+      @NonNull LinearLayout btSaldoGeralPagar, @NonNull LinearLayout btSaldoGeralReceber,
+      @NonNull LinearLayout exibirSaldo, @NonNull ImageView icFechar, @NonNull TextView saldoGeral,
+      @NonNull Spinner spinner, @NonNull RelativeLayout spinnerContas) {
     this.rootView = rootView;
     this.btAjuda = btAjuda;
     this.btCalculadora = btCalculadora;
-    this.btExpandir = btExpandir;
     this.btSaldoGeralGuardado = btSaldoGeralGuardado;
     this.btSaldoGeralPagar = btSaldoGeralPagar;
     this.btSaldoGeralReceber = btSaldoGeralReceber;
     this.exibirSaldo = exibirSaldo;
     this.icFechar = icFechar;
     this.saldoGeral = saldoGeral;
+    this.spinner = spinner;
+    this.spinnerContas = spinnerContas;
   }
 
   @Override
@@ -104,12 +110,6 @@ public final class ActivitySaldoGeralBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.btExpandir;
-      ImageView btExpandir = ViewBindings.findChildViewById(rootView, id);
-      if (btExpandir == null) {
-        break missingId;
-      }
-
       id = R.id.btSaldoGeralGuardado;
       LinearLayout btSaldoGeralGuardado = ViewBindings.findChildViewById(rootView, id);
       if (btSaldoGeralGuardado == null) {
@@ -146,9 +146,21 @@ public final class ActivitySaldoGeralBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.spinner;
+      Spinner spinner = ViewBindings.findChildViewById(rootView, id);
+      if (spinner == null) {
+        break missingId;
+      }
+
+      id = R.id.spinnerContas;
+      RelativeLayout spinnerContas = ViewBindings.findChildViewById(rootView, id);
+      if (spinnerContas == null) {
+        break missingId;
+      }
+
       return new ActivitySaldoGeralBinding((ScrollView) rootView, btAjuda, btCalculadora,
-          btExpandir, btSaldoGeralGuardado, btSaldoGeralPagar, btSaldoGeralReceber, exibirSaldo,
-          icFechar, saldoGeral);
+          btSaldoGeralGuardado, btSaldoGeralPagar, btSaldoGeralReceber, exibirSaldo, icFechar,
+          saldoGeral, spinner, spinnerContas);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

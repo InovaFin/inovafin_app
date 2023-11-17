@@ -2977,6 +2977,7 @@ drawable bg_menu_nav
 drawable bg_menu_nav_home
 drawable bg_menu_nav_home_ripple
 drawable bg_notificacao
+drawable bg_spinner_saldo_geral
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3274,7 +3275,6 @@ id btEditar
 id btEditarPerfil
 id btEsqueceuSenha
 id btExcluir
-id btExpandir
 id btLogin
 id btMinhasContas
 id btNotificacao
@@ -3645,6 +3645,7 @@ id south
 id spacer
 id special_effects_controller_view_tag
 id spinner
+id spinnerContas
 id spline
 id split_action_bar
 id spread
