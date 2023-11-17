@@ -113,7 +113,6 @@ class ValorReceber : AppCompatActivity() {
 
 
     private fun resgatarDados() {
-
         val usuarioId = autentificacao.currentUser!!.uid
 
         firestore.collection("Usuarios").document(usuarioId)

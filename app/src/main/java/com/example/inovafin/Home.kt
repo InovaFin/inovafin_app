@@ -9,6 +9,8 @@ import com.example.inovafin.Util.ConfiguraBd
 import com.example.inovafin.databinding.ActivityHomeBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import java.text.NumberFormat
+import java.util.Locale
 
 class Home : AppCompatActivity() {
 
@@ -17,6 +19,8 @@ class Home : AppCompatActivity() {
     private lateinit var autentificacao: FirebaseAuth
 
     private lateinit var firestore: FirebaseFirestore
+
+    private var numberFormat = NumberFormat.getCurrencyInstance(Locale("pt", "BR"))
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,8 +32,8 @@ class Home : AppCompatActivity() {
         firestore = ConfiguraBd.Firebasefirestore()
 
         binding.imagemUsuario.setOnClickListener {
-            var navegarTelaConfiguracoes = Intent(this, Configuracoes::class.java)
-            startActivity(navegarTelaConfiguracoes)
+            var i = Intent(this, Configuracoes::class.java)
+            startActivity(i)
         }
 
         binding.nomeUsuario.setOnClickListener {
@@ -48,23 +52,23 @@ class Home : AppCompatActivity() {
         }
 
         binding.btNotificacao.setOnClickListener {
-            var navegarTelaNotificacoes = Intent(this, Notificacoes::class.java)
-            startActivity(navegarTelaNotificacoes)
+            var i = Intent(this, Notificacoes::class.java)
+            startActivity(i)
         }
 
         binding.btSaldoGeral.setOnClickListener {
-            var navegarTelaSaldoGeral = Intent(this, SaldoGeral::class.java)
-            startActivity(navegarTelaSaldoGeral)
+            var i = Intent(this, SaldoGeral::class.java)
+            startActivity(i)
         }
 
         binding.btMinhasContas.setOnClickListener {
-            var navegarTelaMinhasContas = Intent(this, MinhasContas::class.java)
-            startActivity(navegarTelaMinhasContas)
+            var i = Intent(this, MinhasContas::class.java)
+            startActivity(i)
         }
 
         binding.btValorReceber.setOnClickListener {
-            var navegarTelaValorReceber = Intent(this, ValorReceber::class.java)
-            startActivity(navegarTelaValorReceber)
+            var i = Intent(this, ValorReceber::class.java)
+            startActivity(i)
         }
 
         binding.btValorPagar.setOnClickListener {
@@ -73,8 +77,8 @@ class Home : AppCompatActivity() {
         }
 
         binding.btValorGuardado.setOnClickListener {
-            var navegarTelaValorGuardado = Intent(this, ValorGuardado::class.java)
-            startActivity(navegarTelaValorGuardado)
+            var i = Intent(this, ValorGuardado::class.java)
+            startActivity(i)
         }
     }
 
@@ -100,6 +104,24 @@ class Home : AppCompatActivity() {
                             binding.imagemUsuario.setImageURI(null)
                         }
                     }
+                }
+
+            firestore.collection("Usuarios").document(usuarioId)
+                .collection("ContasBancarias")
+                .get()
+                .addOnSuccessListener { documents ->
+                    var soma = 0.0
+
+                    for (document in documents) {
+                        val saldoConta = document.getDouble("saldo")
+
+                        if (saldoConta != null) {
+                            soma += saldoConta
+                        }
+                    }
+
+                    val formatted = numberFormat.format(soma)
+                    binding.saldoGeral.text = formatted
                 }
         }
     }

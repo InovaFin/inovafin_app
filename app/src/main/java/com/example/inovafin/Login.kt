@@ -70,7 +70,6 @@ class Login : AppCompatActivity() {
     }
 
     private fun logarUsuario() {
-        val emailVerificado = autentificacao.currentUser!!.isEmailVerified
         val email = binding.emailUsuario.text.toString()
         val senha = binding.senhaUsuario.text.toString()
 
@@ -78,6 +77,7 @@ class Login : AppCompatActivity() {
             email, senha
         ).addOnCompleteListener(this) {task ->
             if (task.isSuccessful) {
+                val emailVerificado = autentificacao.currentUser!!.isEmailVerified
 
                 // Verifica se o email foi verificado
                 if (emailVerificado){

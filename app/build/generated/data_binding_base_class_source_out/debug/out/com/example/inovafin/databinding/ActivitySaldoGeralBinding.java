@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -41,10 +42,14 @@ public final class ActivitySaldoGeralBinding implements ViewBinding {
   @NonNull
   public final ImageView icFechar;
 
+  @NonNull
+  public final TextView saldoGeral;
+
   private ActivitySaldoGeralBinding(@NonNull ScrollView rootView, @NonNull ImageView btAjuda,
       @NonNull ImageView btCalculadora, @NonNull ImageView btExpandir,
       @NonNull LinearLayout btSaldoGeralGuardado, @NonNull LinearLayout btSaldoGeralPagar,
-      @NonNull LinearLayout btSaldoGeralReceber, @NonNull ImageView icFechar) {
+      @NonNull LinearLayout btSaldoGeralReceber, @NonNull ImageView icFechar,
+      @NonNull TextView saldoGeral) {
     this.rootView = rootView;
     this.btAjuda = btAjuda;
     this.btCalculadora = btCalculadora;
@@ -53,6 +58,7 @@ public final class ActivitySaldoGeralBinding implements ViewBinding {
     this.btSaldoGeralPagar = btSaldoGeralPagar;
     this.btSaldoGeralReceber = btSaldoGeralReceber;
     this.icFechar = icFechar;
+    this.saldoGeral = saldoGeral;
   }
 
   @Override
@@ -124,8 +130,15 @@ public final class ActivitySaldoGeralBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.saldoGeral;
+      TextView saldoGeral = ViewBindings.findChildViewById(rootView, id);
+      if (saldoGeral == null) {
+        break missingId;
+      }
+
       return new ActivitySaldoGeralBinding((ScrollView) rootView, btAjuda, btCalculadora,
-          btExpandir, btSaldoGeralGuardado, btSaldoGeralPagar, btSaldoGeralReceber, icFechar);
+          btExpandir, btSaldoGeralGuardado, btSaldoGeralPagar, btSaldoGeralReceber, icFechar,
+          saldoGeral);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

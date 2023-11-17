@@ -49,11 +49,15 @@ public final class ActivityHomeBinding implements ViewBinding {
   @NonNull
   public final TextView nomeUsuario;
 
+  @NonNull
+  public final TextView saldoGeral;
+
   private ActivityHomeBinding(@NonNull RelativeLayout rootView, @NonNull ImageView btCalculadora,
       @NonNull LinearLayout btMinhasContas, @NonNull ImageView btNotificacao,
       @NonNull LinearLayout btSaldoGeral, @NonNull LinearLayout btValorGuardado,
       @NonNull LinearLayout btValorPagar, @NonNull LinearLayout btValorReceber,
-      @NonNull ShapeableImageView imagemUsuario, @NonNull TextView nomeUsuario) {
+      @NonNull ShapeableImageView imagemUsuario, @NonNull TextView nomeUsuario,
+      @NonNull TextView saldoGeral) {
     this.rootView = rootView;
     this.btCalculadora = btCalculadora;
     this.btMinhasContas = btMinhasContas;
@@ -64,6 +68,7 @@ public final class ActivityHomeBinding implements ViewBinding {
     this.btValorReceber = btValorReceber;
     this.imagemUsuario = imagemUsuario;
     this.nomeUsuario = nomeUsuario;
+    this.saldoGeral = saldoGeral;
   }
 
   @Override
@@ -147,9 +152,15 @@ public final class ActivityHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.saldoGeral;
+      TextView saldoGeral = ViewBindings.findChildViewById(rootView, id);
+      if (saldoGeral == null) {
+        break missingId;
+      }
+
       return new ActivityHomeBinding((RelativeLayout) rootView, btCalculadora, btMinhasContas,
           btNotificacao, btSaldoGeral, btValorGuardado, btValorPagar, btValorReceber, imagemUsuario,
-          nomeUsuario);
+          nomeUsuario, saldoGeral);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

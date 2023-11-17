@@ -8,6 +8,8 @@ import com.example.inovafin.Util.ConfiguraBd
 import com.example.inovafin.databinding.ActivitySaldoGeralBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import java.text.NumberFormat
+import java.util.Locale
 
 class SaldoGeral : AppCompatActivity() {
 
@@ -16,6 +18,10 @@ class SaldoGeral : AppCompatActivity() {
     private lateinit var autentificacao: FirebaseAuth
 
     private lateinit var firestore: FirebaseFirestore
+
+    private var numberFormat = NumberFormat.getCurrencyInstance(Locale("pt", "BR"))
+
+    private var saldoGeral: Double = 0.0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySaldoGeralBinding.inflate(layoutInflater)
@@ -68,10 +74,51 @@ class SaldoGeral : AppCompatActivity() {
 
         firestore.collection("Usuarios").document(usuarioId)
             .collection("ContasBancarias")
-            .whereEqualTo("saldo", true)
             .get()
-            .addOnSuccessListener {
-                
+            .addOnSuccessListener { documents ->
+                val nomesContas = mutableListOf<String>()
+                var soma = 0.0
+
+                for (document in documents) {
+                    val nomeConta = document.getString("nome")
+                    val saldoConta = document.getDouble("saldo")
+
+                    if (nomeConta != null) {
+                        nomesContas.add(nomeConta)
+                    }
+
+                    if (saldoConta != null) {
+                        soma += saldoConta
+                    }
+                }
+
+                saldoGeral = soma
+                saldoGeralTemporario()
+
+                // Agora você tem a lista de nomes das contas bancárias
+//                configurarSpinner(nomesContas)
+
             }
+            .addOnFailureListener { exception ->
+                Toast.makeText(applicationContext, "Erro: $exception", Toast.LENGTH_LONG).show()
+            }
+    }
+
+    private fun saldoGeralTemporario() {
+        val usuarioId = autentificacao.currentUser!!.uid
+
+        val registroMasp = hashMapOf(
+            "saldoGeral" to saldoGeral
+        )
+
+        firestore.collection("Usuarios").document(usuarioId)
+            .collection("saldoGeralTemporario")
+            .document()
+            .set(registroMasp)
+            .addOnSuccessListener {
+                val formatted = numberFormat.format(saldoGeral)
+                binding.saldoGeral.text = formatted
+            }
+
     }
 }

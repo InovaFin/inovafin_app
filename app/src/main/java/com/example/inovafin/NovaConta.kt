@@ -19,7 +19,8 @@ import java.math.BigDecimal
 import java.text.NumberFormat
 import java.util.Locale
 
-class NovaConta : AppCompatActivity() {
+class
+NovaConta : AppCompatActivity() {
 
     private lateinit var binding: ActivityNovaContaBinding
 

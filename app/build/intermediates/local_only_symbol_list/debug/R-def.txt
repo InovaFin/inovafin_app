@@ -152,6 +152,7 @@ id nomeUsuario
 id novaSenha
 id saldo
 id saldoAtual
+id saldoGeral
 id senhaUsuario
 id spinner
 id titulo
