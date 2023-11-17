@@ -129,6 +129,7 @@ id exibirDataReceber
 id exibirNomeGuardado
 id exibirNomePagar
 id exibirNomeReceber
+id exibirSaldo
 id exibirValorGuardado
 id exibirValorPagar
 id exibirValorReceber

@@ -20,20 +20,16 @@
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\font\\roboto_bold.xml"
     },
     {
-        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\drawable_bg_edittext.xml.flat",
-        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\drawable\\bg_edittext.xml"
-    },
-    {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\xml_data_extraction_rules.xml.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\drawable_bg_botao.xml.flat",
-        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\drawable\\bg_botao.xml"
+        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\drawable_bg_edittext.xml.flat",
+        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\drawable\\bg_edittext.xml"
     },
     {
-        "merged": "com.example.inovafin.app-merged_res-39:/layout_activity_home.xml.flat",
-        "source": "com.example.inovafin.app-main-41:/layout/activity_home.xml"
+        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\drawable_bg_botao.xml.flat",
+        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\drawable\\bg_botao.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\drawable_ic_add_black.xml.flat",
@@ -52,16 +48,16 @@
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\drawable\\ic_perfil_config.png"
     },
     {
-        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\layout_activity_saldo_geral_pagar.xml.flat",
+        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\layout\\activity_saldo_geral_pagar.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\mipmap-xxxhdpi\\ic_launcher_foreground.webp"
     },
     {
-        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\layout_activity_saldo_geral_pagar.xml.flat",
-        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\layout\\activity_saldo_geral_pagar.xml"
+        "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\drawable_ic_duvida.xml.flat",
@@ -278,6 +274,10 @@
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\drawable_bg_duvida.xml.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\drawable\\bg_duvida.xml"
+    },
+    {
+        "merged": "com.example.inovafin.app-merged_res-39:/layout_activity_saldo_geral.xml.flat",
+        "source": "com.example.inovafin.app-main-41:/layout/activity_saldo_geral.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\layout_activity_registro_receber.xml.flat",

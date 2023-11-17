@@ -2,6 +2,7 @@ package com.example.inovafin
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.inovafin.Util.ConfiguraBd
@@ -31,8 +32,6 @@ class SaldoGeral : AppCompatActivity() {
         autentificacao = ConfiguraBd.Firebaseautentificacao()
         firestore = ConfiguraBd.Firebasefirestore()
 
-        resgatarDados()
-
         binding.icFechar.setOnClickListener {
             onBackPressed()
         }
@@ -46,6 +45,10 @@ class SaldoGeral : AppCompatActivity() {
             } catch (e: Exception) {
                 Toast.makeText(applicationContext, "Não foi possível abrir a calculadora.", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        binding.exibirSaldo.setOnClickListener {
+            resgatarDados()
         }
 
         binding.btAjuda.setOnClickListener {
@@ -118,6 +121,9 @@ class SaldoGeral : AppCompatActivity() {
             .addOnSuccessListener {
                 val formatted = numberFormat.format(saldoGeral)
                 binding.saldoGeral.text = formatted
+
+                binding.exibirSaldo.visibility = View.GONE
+                binding.saldoGeral.visibility = View.VISIBLE
             }
 
     }
