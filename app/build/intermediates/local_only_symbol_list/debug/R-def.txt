@@ -120,10 +120,13 @@ id btTransferir
 id btValorGuardado
 id btValorPagar
 id btValorReceber
+id checkbox
+id checkbox_selected
 id contaRegistro
 id descRegistro
 id descricao
 id emailUsuario
+id exibir
 id exibirDataPagar
 id exibirDataReceber
 id exibirNomeGuardado
@@ -207,6 +210,7 @@ layout activity_valor_guardado
 layout activity_valor_receber
 layout conta_item
 layout item_spinner_layout
+layout saldog_receber_item
 layout valor_guardado_item
 layout valor_pagar_item
 layout valor_receber_item

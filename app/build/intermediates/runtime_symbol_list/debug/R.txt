@@ -3306,6 +3306,7 @@ int id chain 0x7f0a0096
 int id chain2 0x7f0a0097
 int id chains 0x7f0a0098
 int id checkbox 0x7f0a0099
+int id checkbox_selected 0x7f0a0255
 int id checked 0x7f0a009a
 int id chronometer 0x7f0a009b
 int id circle_center 0x7f0a009c
@@ -3378,6 +3379,7 @@ int id endToStart 0x7f0a00de
 int id end_padder 0x7f0a00df
 int id enterAlways 0x7f0a00e0
 int id enterAlwaysCollapsed 0x7f0a00e1
+int id exibir 0x7f0a0254
 int id exibirDataPagar 0x7f0a00e2
 int id exibirDataReceber 0x7f0a00e3
 int id exibirNomeGuardado 0x7f0a00e4
@@ -3985,6 +3987,7 @@ int layout notification_template_media 0x7f0d0093
 int layout notification_template_media_custom 0x7f0d0094
 int layout notification_template_part_chronometer 0x7f0d0095
 int layout notification_template_part_time 0x7f0d0096
+int layout saldog_receber_item 0x7f0d009e
 int layout select_dialog_item_material 0x7f0d0097
 int layout select_dialog_multichoice_material 0x7f0d0098
 int layout select_dialog_singlechoice_material 0x7f0d0099

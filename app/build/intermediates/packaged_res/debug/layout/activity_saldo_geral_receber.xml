@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/branco_background"
     tools:context=".SaldoGeralReceber">
 
@@ -17,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:layout_marginBottom="60dp"
+            android:layout_marginBottom="40dp"
             android:paddingHorizontal="30dp">
 
             <LinearLayout
@@ -37,6 +38,7 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/exibir"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -51,170 +53,70 @@
         </RelativeLayout>
         <!--Header-->
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <!--Valor a Receber-->
-                <LinearLayout
-                    android:id="@+id/btRegistro"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:clickable="true"
-                    android:background="@drawable/bg_botao_terciario_ripple"
-                    android:gravity="center"
-                    android:paddingVertical="25dp"
-                    android:paddingHorizontal="30dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Estaff"
-                            android:textColor="@color/black_secundario"
-                            android:fontFamily="@font/roboto_medium"
-                            android:textSize="16sp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="15dp"
-                            android:layout_weight="1"
-                            android:text="14/08/23"
-                            android:textColor="@color/verde_principal"
-                            android:fontFamily="@font/roboto_light"
-                            android:textSize="12sp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="15dp"
-                            android:text="R$150,00"
-                            android:textColor="@color/black_secundario"
-                            android:fontFamily="@font/roboto_light"
-                            android:textSize="14sp"/>
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_checkbox_receber"/>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-                <!--Valor Receber-->
-
-                <!--Linha cinza-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_linha"/>
-                <!--Linha cinza-->
-
-                <!--Valor a Receber-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:clickable="true"
-                    android:background="@drawable/bg_botao_terciario_ripple"
-                    android:gravity="center"
-                    android:paddingVertical="25dp"
-                    android:paddingHorizontal="30dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Estaff"
-                            android:textColor="@color/black_secundario"
-                            android:fontFamily="@font/roboto_medium"
-                            android:textSize="16sp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="15dp"
-                            android:layout_weight="1"
-                            android:text="14/08/23"
-                            android:textColor="@color/verde_principal"
-                            android:fontFamily="@font/roboto_light"
-                            android:textSize="12sp"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="15dp"
-                            android:text="R$150,00"
-                            android:textColor="@color/black_secundario"
-                            android:fontFamily="@font/roboto_light"
-                            android:textSize="14sp"/>
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_checkbox"/>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-                <!--Valor Receber-->
-
-                <!--Linha cinza-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_linha"/>
-                <!--Linha cinza-->
-
-            </LinearLayout>
-
-        </ScrollView>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:padding="30dp"
-        android:orientation="vertical">
+        <!--Valor Total-->
+        <!--Valor Total-->
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:paddingHorizontal="17dp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:clickable="true"
-            android:background="@drawable/bg_botao_ripple">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Adicionar"
-                android:textColor="@color/white"
-                android:textSize="13sp"
-                android:fontFamily="@font/roboto_bold"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listaReceber"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="85dp"
+                tools:listitem="@layout/valor_receber_item"/>
 
         </LinearLayout>
 
     </LinearLayout>
+
+    <!--Botão Excluir e Adicionar-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/btAdicionar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_botao_ripple"
+            android:layout_marginHorizontal="30dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="17dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:src="@drawable/ic_add" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Adicionar"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <!--Botão Excluir e Adicionar-->
 
 </RelativeLayout>

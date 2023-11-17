@@ -7,8 +7,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.inovafin.R;
@@ -21,16 +23,25 @@ public final class ActivitySaldoGeralReceberBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
-  public final LinearLayout btRegistro;
+  public final LinearLayout btAdicionar;
+
+  @NonNull
+  public final TextView exibir;
 
   @NonNull
   public final ImageView icFechar;
 
+  @NonNull
+  public final RecyclerView listaReceber;
+
   private ActivitySaldoGeralReceberBinding(@NonNull RelativeLayout rootView,
-      @NonNull LinearLayout btRegistro, @NonNull ImageView icFechar) {
+      @NonNull LinearLayout btAdicionar, @NonNull TextView exibir, @NonNull ImageView icFechar,
+      @NonNull RecyclerView listaReceber) {
     this.rootView = rootView;
-    this.btRegistro = btRegistro;
+    this.btAdicionar = btAdicionar;
+    this.exibir = exibir;
     this.icFechar = icFechar;
+    this.listaReceber = listaReceber;
   }
 
   @Override
@@ -60,9 +71,15 @@ public final class ActivitySaldoGeralReceberBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btRegistro;
-      LinearLayout btRegistro = ViewBindings.findChildViewById(rootView, id);
-      if (btRegistro == null) {
+      id = R.id.btAdicionar;
+      LinearLayout btAdicionar = ViewBindings.findChildViewById(rootView, id);
+      if (btAdicionar == null) {
+        break missingId;
+      }
+
+      id = R.id.exibir;
+      TextView exibir = ViewBindings.findChildViewById(rootView, id);
+      if (exibir == null) {
         break missingId;
       }
 
@@ -72,7 +89,14 @@ public final class ActivitySaldoGeralReceberBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivitySaldoGeralReceberBinding((RelativeLayout) rootView, btRegistro, icFechar);
+      id = R.id.listaReceber;
+      RecyclerView listaReceber = ViewBindings.findChildViewById(rootView, id);
+      if (listaReceber == null) {
+        break missingId;
+      }
+
+      return new ActivitySaldoGeralReceberBinding((RelativeLayout) rootView, btAdicionar, exibir,
+          icFechar, listaReceber);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
