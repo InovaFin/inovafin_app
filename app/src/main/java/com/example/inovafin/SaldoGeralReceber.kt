@@ -1,6 +1,5 @@
 package com.example.inovafin
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -8,7 +7,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.inovafin.Util.AnimacaoDeLoad
 import com.example.inovafin.Util.ConfiguraBd
-import com.example.inovafin.Util.MyAdapterReceber
 import com.example.inovafin.Util.MyAdapterSaldoGReceber
 import com.example.inovafin.Util.RegistroSaldoGReceber
 import com.example.inovafin.Util.RegistroValorReceber
@@ -50,8 +48,6 @@ class SaldoGeralReceber : AppCompatActivity() {
         firestore = ConfiguraBd.Firebasefirestore()
         animacaoDeLoad = AnimacaoDeLoad(binding.btAnimacao, binding.btText, this)
 
-        saldo = intent.getDoubleExtra("saldo", 0.0)
-
         receberReyclerView = binding.listaReceber
         receberReyclerView.layoutManager = LinearLayoutManager(this)
         receberReyclerView.setHasFixedSize(true)
@@ -87,7 +83,6 @@ class SaldoGeralReceber : AppCompatActivity() {
         for (item in itensSelecionados) {
             // Verifica se item.valor não é nulo ou vazio
             item.nome?.let { valor ->
-                // Reverta a formatação antes de adicionar à lista
                 val valorSemSimbolo = valor.replace(NumberFormat.getCurrencyInstance().currency.symbol, "")
                 val valorSemFormatacao = valorSemSimbolo.replace(Regex("[^\\d]"), "")
                 valoresSemSimbolo.add((valorSemFormatacao.toDouble() / 100.0))
@@ -99,16 +94,16 @@ class SaldoGeralReceber : AppCompatActivity() {
 
 //        // Aqui você pode usar a soma dos valores conforme necessário
 //        Toast.makeText(applicationContext, "Soma dos Valores: $somaValores", Toast.LENGTH_SHORT).show()
-        somarComSaldo(somaValores)
+        consultarSaldoTemporario(somaValores) { saldoTemporario ->
+            somarComSaldo(saldoTemporario)
+        }
     }
 
     private fun somarComSaldo(somaValores: Double) {
         val usuarioId = autentificacao.currentUser!!.uid
 
-        val soma = saldo + somaValores
-
         val registroMasp = hashMapOf(
-            "saldoGeral" to soma
+            "saldoGeral" to somaValores
         )
 
         firestore.collection("Usuarios").document(usuarioId)
@@ -120,6 +115,29 @@ class SaldoGeralReceber : AppCompatActivity() {
             }
             .addOnFailureListener{
                 Toast.makeText(applicationContext, "alteração não realizada", Toast.LENGTH_SHORT).show()
+            }
+    }
+
+    private fun consultarSaldoTemporario(somaValores: Double, onComplete: (Double) -> Unit) {
+        val usuarioId = autentificacao.currentUser!!.uid
+
+        firestore.collection("Usuarios").document(usuarioId)
+            .collection("saldoGeralTemporario")
+            .document("temporario")
+            .get()
+            .addOnSuccessListener { documentSnapshot ->
+                val saldoTemporarioAtual = if (documentSnapshot.exists()) {
+                    documentSnapshot.getDouble("saldoGeral") ?: 0.0
+                } else {
+                    0.0
+                }
+
+                onComplete(saldoTemporarioAtual + somaValores)
+            }
+            .addOnFailureListener { e ->
+                // Tratar erro aqui, se necessário
+                Toast.makeText(applicationContext, "Erro ao obter documento: $e", Toast.LENGTH_LONG).show()
+                onComplete(0.0)
             }
     }
 

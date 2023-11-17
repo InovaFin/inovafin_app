@@ -63,7 +63,6 @@ class SaldoGeral : AppCompatActivity() {
 
         binding.btSaldoGeralReceber.setOnClickListener {
             val i = Intent(this, SaldoGeralReceber::class.java)
-            i.putExtra("saldo", saldoGeral)
             startActivity(i)
         }
 
