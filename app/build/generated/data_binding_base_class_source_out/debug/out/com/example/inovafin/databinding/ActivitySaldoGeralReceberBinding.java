@@ -7,12 +7,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.inovafin.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -26,7 +26,10 @@ public final class ActivitySaldoGeralReceberBinding implements ViewBinding {
   public final LinearLayout btAdicionar;
 
   @NonNull
-  public final TextView exibir;
+  public final LottieAnimationView btAnimacao;
+
+  @NonNull
+  public final LinearLayout btText;
 
   @NonNull
   public final ImageView icFechar;
@@ -35,11 +38,13 @@ public final class ActivitySaldoGeralReceberBinding implements ViewBinding {
   public final RecyclerView listaReceber;
 
   private ActivitySaldoGeralReceberBinding(@NonNull RelativeLayout rootView,
-      @NonNull LinearLayout btAdicionar, @NonNull TextView exibir, @NonNull ImageView icFechar,
+      @NonNull LinearLayout btAdicionar, @NonNull LottieAnimationView btAnimacao,
+      @NonNull LinearLayout btText, @NonNull ImageView icFechar,
       @NonNull RecyclerView listaReceber) {
     this.rootView = rootView;
     this.btAdicionar = btAdicionar;
-    this.exibir = exibir;
+    this.btAnimacao = btAnimacao;
+    this.btText = btText;
     this.icFechar = icFechar;
     this.listaReceber = listaReceber;
   }
@@ -77,9 +82,15 @@ public final class ActivitySaldoGeralReceberBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.exibir;
-      TextView exibir = ViewBindings.findChildViewById(rootView, id);
-      if (exibir == null) {
+      id = R.id.btAnimacao;
+      LottieAnimationView btAnimacao = ViewBindings.findChildViewById(rootView, id);
+      if (btAnimacao == null) {
+        break missingId;
+      }
+
+      id = R.id.btText;
+      LinearLayout btText = ViewBindings.findChildViewById(rootView, id);
+      if (btText == null) {
         break missingId;
       }
 
@@ -95,8 +106,8 @@ public final class ActivitySaldoGeralReceberBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivitySaldoGeralReceberBinding((RelativeLayout) rootView, btAdicionar, exibir,
-          icFechar, listaReceber);
+      return new ActivitySaldoGeralReceberBinding((RelativeLayout) rootView, btAdicionar,
+          btAnimacao, btText, icFechar, listaReceber);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

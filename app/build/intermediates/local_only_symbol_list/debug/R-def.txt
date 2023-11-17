@@ -126,7 +126,6 @@ id contaRegistro
 id descRegistro
 id descricao
 id emailUsuario
-id exibir
 id exibirDataPagar
 id exibirDataReceber
 id exibirNomeGuardado

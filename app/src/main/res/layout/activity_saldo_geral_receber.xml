@@ -38,17 +38,16 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/exibir"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-                android:text="Valores a Receber"
-                android:textSize="24sp"
+                android:layout_weight="1"
                 android:fontFamily="@font/roboto_medium"
-                android:textColor="@color/black"/>
+                android:gravity="center"
+                android:text="Valores a Receber"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
 
         </RelativeLayout>
         <!--Header-->
@@ -72,27 +71,29 @@
 
     </LinearLayout>
 
-    <!--Botão Excluir e Adicionar-->
+    <!--Botão Add-->
     <LinearLayout
+        android:id="@+id/btAdicionar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:visibility="visible"
+        android:paddingHorizontal="17dp"
         android:layout_alignParentBottom="true"
-        android:orientation="vertical">
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="30dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:clickable="true"
+        android:background="@drawable/bg_botao_ripple">
 
         <LinearLayout
-            android:id="@+id/btAdicionar"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/bg_botao_ripple"
-            android:layout_marginHorizontal="30dp"
-            android:clickable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingHorizontal="17dp">
+            android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/btText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -101,22 +102,33 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
-                    android:src="@drawable/ic_add" />
+                    android:layout_marginEnd="7dp"
+                    android:src="@drawable/ic_add"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
                     android:text="Adicionar"
                     android:textColor="@color/white"
-                    android:textSize="13sp" />
+                    android:textSize="13sp"
+                    android:fontFamily="@font/roboto_bold"/>
 
             </LinearLayout>
+
+            <!--Animação do Botão-->
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/btAnimacao"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:lottie_rawRes="@raw/load_white"
+                android:visibility="gone"
+                app:lottie_loop="true"
+                app:lottie_autoPlay="false"/>
+            <!--Animação do Botão-->
 
         </LinearLayout>
 
     </LinearLayout>
-    <!--Botão Excluir e Adicionar-->
+    <!--Botão Add-->
 
 </RelativeLayout>
