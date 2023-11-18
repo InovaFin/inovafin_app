@@ -39,9 +39,6 @@ public final class ActivitySaldoGeralBinding implements ViewBinding {
   public final LinearLayout btSaldoGeralReceber;
 
   @NonNull
-  public final LinearLayout exibirSaldo;
-
-  @NonNull
   public final ImageView icFechar;
 
   @NonNull
@@ -56,15 +53,14 @@ public final class ActivitySaldoGeralBinding implements ViewBinding {
   private ActivitySaldoGeralBinding(@NonNull ScrollView rootView, @NonNull ImageView btAjuda,
       @NonNull ImageView btCalculadora, @NonNull LinearLayout btSaldoGeralGuardado,
       @NonNull LinearLayout btSaldoGeralPagar, @NonNull LinearLayout btSaldoGeralReceber,
-      @NonNull LinearLayout exibirSaldo, @NonNull ImageView icFechar, @NonNull TextView saldoGeral,
-      @NonNull Spinner spinner, @NonNull RelativeLayout spinnerContas) {
+      @NonNull ImageView icFechar, @NonNull TextView saldoGeral, @NonNull Spinner spinner,
+      @NonNull RelativeLayout spinnerContas) {
     this.rootView = rootView;
     this.btAjuda = btAjuda;
     this.btCalculadora = btCalculadora;
     this.btSaldoGeralGuardado = btSaldoGeralGuardado;
     this.btSaldoGeralPagar = btSaldoGeralPagar;
     this.btSaldoGeralReceber = btSaldoGeralReceber;
-    this.exibirSaldo = exibirSaldo;
     this.icFechar = icFechar;
     this.saldoGeral = saldoGeral;
     this.spinner = spinner;
@@ -128,12 +124,6 @@ public final class ActivitySaldoGeralBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.exibirSaldo;
-      LinearLayout exibirSaldo = ViewBindings.findChildViewById(rootView, id);
-      if (exibirSaldo == null) {
-        break missingId;
-      }
-
       id = R.id.icFechar;
       ImageView icFechar = ViewBindings.findChildViewById(rootView, id);
       if (icFechar == null) {
@@ -159,8 +149,8 @@ public final class ActivitySaldoGeralBinding implements ViewBinding {
       }
 
       return new ActivitySaldoGeralBinding((ScrollView) rootView, btAjuda, btCalculadora,
-          btSaldoGeralGuardado, btSaldoGeralPagar, btSaldoGeralReceber, exibirSaldo, icFechar,
-          saldoGeral, spinner, spinnerContas);
+          btSaldoGeralGuardado, btSaldoGeralPagar, btSaldoGeralReceber, icFechar, saldoGeral,
+          spinner, spinnerContas);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

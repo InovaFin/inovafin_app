@@ -111,7 +111,7 @@ class SaldoGeralReceber : AppCompatActivity() {
             .document("temporario")
             .update(registroMasp as Map<String, Any>)
             .addOnSuccessListener {
-                Toast.makeText(applicationContext, "alteração realizada", Toast.LENGTH_SHORT).show()
+                finish()
             }
             .addOnFailureListener{
                 Toast.makeText(applicationContext, "alteração não realizada", Toast.LENGTH_SHORT).show()

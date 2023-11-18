@@ -69,7 +69,6 @@
 
             <RelativeLayout
                 android:id="@+id/spinnerContas"
-                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -91,38 +90,10 @@
 
             </RelativeLayout>
 
-
-            <LinearLayout
-                android:id="@+id/exibirSaldo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/verde_principal"
-                    android:text="Clique aqui"
-                    android:fontFamily="@font/roboto_bold"
-                    android:textSize="30dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="13dp"
-                    android:textColor="@color/verde_principal"
-                    android:text="para exibir o Saldo Geral"
-                    android:fontFamily="@font/roboto_medium"
-                    android:textSize="15dp"/>
-
-            </LinearLayout>
-
             <TextView
                 android:id="@+id/saldoGeral"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
                 android:layout_marginVertical="13dp"
                 android:textColor="@color/verde_principal"
                 android:text="R$ 0,00"

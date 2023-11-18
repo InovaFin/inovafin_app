@@ -24,7 +24,6 @@ class SaldoGeral : AppCompatActivity() {
 
     private var numberFormat = NumberFormat.getCurrencyInstance(Locale("pt", "BR"))
 
-    private var saldoGeral: Double = 0.0
     private lateinit var nomesContas: MutableList<String>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +35,7 @@ class SaldoGeral : AppCompatActivity() {
         firestore = ConfiguraBd.Firebasefirestore()
 
         verificarSpinner()
+        resgatarContas()
 
         binding.icFechar.setOnClickListener {
             onBackPressed()
@@ -50,10 +50,6 @@ class SaldoGeral : AppCompatActivity() {
             } catch (e: Exception) {
                 Toast.makeText(applicationContext, "Não foi possível abrir a calculadora.", Toast.LENGTH_SHORT).show()
             }
-        }
-
-        binding.exibirSaldo.setOnClickListener {
-            resgatarDados()
         }
 
         binding.btAjuda.setOnClickListener {
@@ -77,7 +73,24 @@ class SaldoGeral : AppCompatActivity() {
         }
     }
 
-    private fun resgatarDados() {
+    private fun resgatarSaldoGeral() {
+        val usuarioId = autentificacao.currentUser!!.uid
+
+        firestore.collection("Usuarios").document(usuarioId)
+            .collection("saldoGeralTemporario")
+            .document("temporario")
+            .get()
+            .addOnSuccessListener { document ->
+                if (document.exists()) {
+                    val saldo = document.getDouble("saldoGeral")
+                    val formatted = numberFormat.format(saldo)
+
+                    binding.saldoGeral.text = formatted
+                }
+            }
+    }
+
+    private fun resgatarContas() {
         val usuarioId = autentificacao.currentUser!!.uid
 
         firestore.collection("Usuarios").document(usuarioId)
@@ -85,29 +98,17 @@ class SaldoGeral : AppCompatActivity() {
             .get()
             .addOnSuccessListener { documents ->
                 nomesContas = mutableListOf<String>()
-                var soma = 0.0
 
                 for (document in documents) {
                     val nomeConta = document.getString("nome")
-                    val saldoConta = document.getDouble("saldo")
 
                     if (nomeConta != null) {
                         nomesContas.add(nomeConta)
                     }
-
-                    if (saldoConta != null) {
-                        soma += saldoConta
-                    }
                 }
-
-                saldoGeral = soma
-                saldoGeralTemporario()
 
                 // Agora você tem a lista de nomes das contas bancárias
                 configurarSpinner(nomesContas)
-
-                binding.spinnerContas.visibility = View.VISIBLE
-
             }
             .addOnFailureListener { exception ->
                 Toast.makeText(applicationContext, "Erro: $exception", Toast.LENGTH_LONG).show()
@@ -129,15 +130,13 @@ class SaldoGeral : AppCompatActivity() {
             override fun onItemSelected(parentView: AdapterView<*>?, selectedItemView: View?, position: Int, id: Long) {
                 // Verifica se a posição selecionada não é a posição padrão "Selecione uma conta"
                 if (position > 0) {
-                    // Recupera o nome da conta selecionada
+                    // Recupera o nome da conta selecionadaA
                     val contaSelecionada = nomesContas[position - 1]
 
                     // Aqui você pode adicionar o código para exibir o saldo da conta selecionada
-                    exibirSaldoContaSelecionada(contaSelecionada)
-                } else {
-                    val formatted = numberFormat.format(saldoGeral)
-                    binding.saldoGeral.text = formatted
-                    alterarSaldoTemporario(saldoGeral)
+                    resgatarContaSelecionada(contaSelecionada)
+                } else if (position == 0) {
+                    aplicarSaldoGeral()
                 }
             }
 
@@ -147,7 +146,38 @@ class SaldoGeral : AppCompatActivity() {
         }
     }
 
-    private fun exibirSaldoContaSelecionada(nomeConta: String) {
+    private fun aplicarSaldoGeral() {
+        val usuarioId = autentificacao.currentUser!!.uid
+
+        firestore.collection("Usuarios").document(usuarioId)
+            .collection("ContasBancarias")
+            .get()
+            .addOnSuccessListener { documents ->
+                var soma = 0.0
+
+                for (document in documents) {
+                    val saldoConta = document.getDouble("saldo")
+
+                    if (saldoConta != null) {
+                        soma += saldoConta
+                    }
+                }
+
+                val registroMasp = hashMapOf(
+                    "saldoGeral" to soma
+                )
+
+                firestore.collection("Usuarios").document(usuarioId)
+                    .collection("saldoGeralTemporario")
+                    .document("temporario")
+                    .set(registroMasp as Map<String, Any>)
+                    .addOnSuccessListener {
+                        resgatarSaldoGeral()
+                    }
+            }
+    }
+
+    private fun resgatarContaSelecionada(nomeConta: String) {
         val usuarioId = autentificacao.currentUser!!.uid
 
         firestore.collection("Usuarios").document(usuarioId)
@@ -161,14 +191,11 @@ class SaldoGeral : AppCompatActivity() {
                     saldo = document.getDouble("saldo")!!
                 }
 
-                val formatted = numberFormat.format(saldo)
-                binding.saldoGeral.text = formatted
-
-                alterarSaldoTemporario(saldo)
+                alterarSaldoGeral(saldo)
             }
     }
 
-    private fun alterarSaldoTemporario(saldo: Double) {
+    private fun alterarSaldoGeral(saldo: Double) {
         val usuarioId = autentificacao.currentUser!!.uid
 
         val registroMasp = hashMapOf(
@@ -180,28 +207,13 @@ class SaldoGeral : AppCompatActivity() {
             .document("temporario")
             .update(registroMasp as Map<String, Any>)
             .addOnSuccessListener {
-
+                resgatarSaldoGeral()
             }
     }
 
-    private fun saldoGeralTemporario() {
-        val usuarioId = autentificacao.currentUser!!.uid
+    override fun onStart() {
+        super.onStart()
 
-        val registroMasp = hashMapOf(
-            "saldoGeral" to saldoGeral
-        )
-
-        firestore.collection("Usuarios").document(usuarioId)
-            .collection("saldoGeralTemporario")
-            .document("temporario")
-            .set(registroMasp)
-            .addOnSuccessListener {
-                val formatted = numberFormat.format(saldoGeral)
-                binding.saldoGeral.text = formatted
-
-                binding.exibirSaldo.visibility = View.GONE
-                binding.saldoGeral.visibility = View.VISIBLE
-            }
-
+        resgatarSaldoGeral()
     }
 }

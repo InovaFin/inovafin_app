@@ -284,6 +284,10 @@
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\drawable\\bg_duvida.xml"
     },
     {
+        "merged": "com.example.inovafin.app-merged_res-39:/layout_activity_saldo_geral.xml.flat",
+        "source": "com.example.inovafin.app-main-41:/layout/activity_saldo_geral.xml"
+    },
+    {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\layout_activity_registro_receber.xml.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\layout\\activity_registro_receber.xml"
     },
@@ -326,10 +330,6 @@
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\layout_activity_main.xml.flat",
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\layout\\activity_main.xml"
-    },
-    {
-        "merged": "com.example.inovafin.app-merged_res-39:/layout_activity_saldo_geral_receber.xml.flat",
-        "source": "com.example.inovafin.app-main-41:/layout/activity_saldo_geral_receber.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-merged_res-39:\\layout_activity_home.xml.flat",

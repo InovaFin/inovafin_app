@@ -22,6 +22,8 @@ class Home : AppCompatActivity() {
 
     private var numberFormat = NumberFormat.getCurrencyInstance(Locale("pt", "BR"))
 
+    private var saldoGeral: Double = 0.0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
@@ -30,8 +32,6 @@ class Home : AppCompatActivity() {
 
         autentificacao = ConfiguraBd.Firebaseautentificacao()
         firestore = ConfiguraBd.Firebasefirestore()
-
-        verificarSaldoGeralTemporario()
 
         binding.imagemUsuario.setOnClickListener {
             var i = Intent(this, Configuracoes::class.java)
@@ -118,37 +118,29 @@ class Home : AppCompatActivity() {
                         }
                     }
 
+                    saldoGeral = soma
+
                     val formatted = numberFormat.format(soma)
                     binding.saldoGeral.text = formatted
+
+                    aplicarSaldoGeral()
                 }
         }
     }
 
-    private fun verificarSaldoGeralTemporario() {
+    private fun aplicarSaldoGeral() {
         val usuarioId = autentificacao.currentUser!!.uid
 
-        firestore.collection("Usuarios").document(usuarioId)
-            .collection("saldoGeralTemporario")
-            .get()
-            .addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    val documents = task.result
-                    if (documents != null && !documents.isEmpty) {
-                        excluirSaldoGeralTemporario()
-                    }
-                } else {
-                    // Trate o erro, se necessário
-                    Toast.makeText(applicationContext, "Erro ao verificar a coleção: ${task.exception}", Toast.LENGTH_SHORT).show()
-                }
-            }
-    }
-
-    private fun excluirSaldoGeralTemporario() {
-        val usuarioId = autentificacao.currentUser!!.uid
+        val registroMasp = hashMapOf(
+            "saldoGeral" to saldoGeral
+        )
 
         firestore.collection("Usuarios").document(usuarioId)
             .collection("saldoGeralTemporario")
             .document("temporario")
-            .delete()
+            .set(registroMasp as Map<String, Any>)
+            .addOnSuccessListener {
+
+            }
     }
 }
