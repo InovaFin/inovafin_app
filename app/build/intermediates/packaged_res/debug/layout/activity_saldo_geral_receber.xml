@@ -65,7 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="85dp"
-                tools:listitem="@layout/valor_receber_item"/>
+                tools:listitem="@layout/saldog_receber_item"/>
 
         </LinearLayout>
 

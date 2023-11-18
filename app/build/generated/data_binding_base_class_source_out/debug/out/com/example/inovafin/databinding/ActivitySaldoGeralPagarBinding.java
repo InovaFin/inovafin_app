@@ -9,8 +9,10 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.inovafin.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -21,16 +23,29 @@ public final class ActivitySaldoGeralPagarBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
-  public final LinearLayout btRegistro;
+  public final LinearLayout btAdicionar;
+
+  @NonNull
+  public final LottieAnimationView btAnimacao;
+
+  @NonNull
+  public final LinearLayout btText;
 
   @NonNull
   public final ImageView icFechar;
 
+  @NonNull
+  public final RecyclerView listaPagar;
+
   private ActivitySaldoGeralPagarBinding(@NonNull RelativeLayout rootView,
-      @NonNull LinearLayout btRegistro, @NonNull ImageView icFechar) {
+      @NonNull LinearLayout btAdicionar, @NonNull LottieAnimationView btAnimacao,
+      @NonNull LinearLayout btText, @NonNull ImageView icFechar, @NonNull RecyclerView listaPagar) {
     this.rootView = rootView;
-    this.btRegistro = btRegistro;
+    this.btAdicionar = btAdicionar;
+    this.btAnimacao = btAnimacao;
+    this.btText = btText;
     this.icFechar = icFechar;
+    this.listaPagar = listaPagar;
   }
 
   @Override
@@ -60,9 +75,21 @@ public final class ActivitySaldoGeralPagarBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btRegistro;
-      LinearLayout btRegistro = ViewBindings.findChildViewById(rootView, id);
-      if (btRegistro == null) {
+      id = R.id.btAdicionar;
+      LinearLayout btAdicionar = ViewBindings.findChildViewById(rootView, id);
+      if (btAdicionar == null) {
+        break missingId;
+      }
+
+      id = R.id.btAnimacao;
+      LottieAnimationView btAnimacao = ViewBindings.findChildViewById(rootView, id);
+      if (btAnimacao == null) {
+        break missingId;
+      }
+
+      id = R.id.btText;
+      LinearLayout btText = ViewBindings.findChildViewById(rootView, id);
+      if (btText == null) {
         break missingId;
       }
 
@@ -72,7 +99,14 @@ public final class ActivitySaldoGeralPagarBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivitySaldoGeralPagarBinding((RelativeLayout) rootView, btRegistro, icFechar);
+      id = R.id.listaPagar;
+      RecyclerView listaPagar = ViewBindings.findChildViewById(rootView, id);
+      if (listaPagar == null) {
+        break missingId;
+      }
+
+      return new ActivitySaldoGeralPagarBinding((RelativeLayout) rootView, btAdicionar, btAnimacao,
+          btText, icFechar, listaPagar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

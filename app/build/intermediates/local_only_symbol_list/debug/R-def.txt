@@ -208,6 +208,7 @@ layout activity_valor_guardado
 layout activity_valor_receber
 layout conta_item
 layout item_spinner_layout
+layout saldog_pagar_item
 layout saldog_receber_item
 layout valor_guardado_item
 layout valor_pagar_item
