@@ -3986,6 +3986,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout saldog_guardado_item
 layout saldog_pagar_item
 layout saldog_receber_item
 layout select_dialog_item_material
