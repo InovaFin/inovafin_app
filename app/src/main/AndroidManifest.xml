@@ -55,15 +55,6 @@
             android:name=".NovaConta"
             android:exported="false" />
         <activity
-            android:name=".ExcluirPagar"
-            android:exported="false" />
-        <activity
-            android:name=".ExcluirGuardado"
-            android:exported="false" />
-        <activity
-            android:name=".ExcluirReceber"
-            android:exported="false" />
-        <activity
             android:name=".RegistroReceber"
             android:exported="false" />
         <activity

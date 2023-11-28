@@ -29,9 +29,6 @@ public final class ActivityHomeBinding implements ViewBinding {
   public final LinearLayout btMinhasContas;
 
   @NonNull
-  public final ImageView btNotificacao;
-
-  @NonNull
   public final LinearLayout btSaldoGeral;
 
   @NonNull
@@ -53,15 +50,13 @@ public final class ActivityHomeBinding implements ViewBinding {
   public final TextView saldoGeral;
 
   private ActivityHomeBinding(@NonNull RelativeLayout rootView, @NonNull ImageView btCalculadora,
-      @NonNull LinearLayout btMinhasContas, @NonNull ImageView btNotificacao,
-      @NonNull LinearLayout btSaldoGeral, @NonNull LinearLayout btValorGuardado,
-      @NonNull LinearLayout btValorPagar, @NonNull LinearLayout btValorReceber,
-      @NonNull ShapeableImageView imagemUsuario, @NonNull TextView nomeUsuario,
-      @NonNull TextView saldoGeral) {
+      @NonNull LinearLayout btMinhasContas, @NonNull LinearLayout btSaldoGeral,
+      @NonNull LinearLayout btValorGuardado, @NonNull LinearLayout btValorPagar,
+      @NonNull LinearLayout btValorReceber, @NonNull ShapeableImageView imagemUsuario,
+      @NonNull TextView nomeUsuario, @NonNull TextView saldoGeral) {
     this.rootView = rootView;
     this.btCalculadora = btCalculadora;
     this.btMinhasContas = btMinhasContas;
-    this.btNotificacao = btNotificacao;
     this.btSaldoGeral = btSaldoGeral;
     this.btValorGuardado = btValorGuardado;
     this.btValorPagar = btValorPagar;
@@ -110,12 +105,6 @@ public final class ActivityHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.btNotificacao;
-      ImageView btNotificacao = ViewBindings.findChildViewById(rootView, id);
-      if (btNotificacao == null) {
-        break missingId;
-      }
-
       id = R.id.btSaldoGeral;
       LinearLayout btSaldoGeral = ViewBindings.findChildViewById(rootView, id);
       if (btSaldoGeral == null) {
@@ -159,8 +148,8 @@ public final class ActivityHomeBinding implements ViewBinding {
       }
 
       return new ActivityHomeBinding((RelativeLayout) rootView, btCalculadora, btMinhasContas,
-          btNotificacao, btSaldoGeral, btValorGuardado, btValorPagar, btValorReceber, imagemUsuario,
-          nomeUsuario, saldoGeral);
+          btSaldoGeral, btValorGuardado, btValorPagar, btValorReceber, imagemUsuario, nomeUsuario,
+          saldoGeral);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

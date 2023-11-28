@@ -49,10 +49,10 @@ class Home : AppCompatActivity() {
             }
         }
 
-        binding.btNotificacao.setOnClickListener {
-            var i = Intent(this, Notificacoes::class.java)
-            startActivity(i)
-        }
+//        binding.btNotificacao.setOnClickListener {
+//            var i = Intent(this, Notificacoes::class.java)
+//            startActivity(i)
+//        }
 
         binding.btSaldoGeral.setOnClickListener {
             var i = Intent(this, SaldoGeral::class.java)

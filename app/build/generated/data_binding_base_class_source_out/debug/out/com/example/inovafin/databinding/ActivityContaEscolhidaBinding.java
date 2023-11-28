@@ -9,7 +9,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.inovafin.R;
@@ -31,13 +30,34 @@ public final class ActivityContaEscolhidaBinding implements ViewBinding {
   public final ImageView btTransferir;
 
   @NonNull
+  public final TextView exibirDataPagar;
+
+  @NonNull
+  public final TextView exibirDataReceber;
+
+  @NonNull
+  public final TextView exibirNomeGuardado;
+
+  @NonNull
+  public final TextView exibirNomePagar;
+
+  @NonNull
+  public final TextView exibirNomeReceber;
+
+  @NonNull
+  public final TextView exibirValorGuardado;
+
+  @NonNull
+  public final TextView exibirValorPagar;
+
+  @NonNull
+  public final TextView exibirValorReceber;
+
+  @NonNull
   public final ImageView icFechar;
 
   @NonNull
   public final TextView instituicao;
-
-  @NonNull
-  public final RecyclerView listaRegistros;
 
   @NonNull
   public final TextView saldo;
@@ -46,16 +66,27 @@ public final class ActivityContaEscolhidaBinding implements ViewBinding {
   public final TextView titulo;
 
   private ActivityContaEscolhidaBinding(@NonNull LinearLayout rootView, @NonNull ImageView btEditar,
-      @NonNull ImageView btExcluir, @NonNull ImageView btTransferir, @NonNull ImageView icFechar,
-      @NonNull TextView instituicao, @NonNull RecyclerView listaRegistros, @NonNull TextView saldo,
+      @NonNull ImageView btExcluir, @NonNull ImageView btTransferir,
+      @NonNull TextView exibirDataPagar, @NonNull TextView exibirDataReceber,
+      @NonNull TextView exibirNomeGuardado, @NonNull TextView exibirNomePagar,
+      @NonNull TextView exibirNomeReceber, @NonNull TextView exibirValorGuardado,
+      @NonNull TextView exibirValorPagar, @NonNull TextView exibirValorReceber,
+      @NonNull ImageView icFechar, @NonNull TextView instituicao, @NonNull TextView saldo,
       @NonNull TextView titulo) {
     this.rootView = rootView;
     this.btEditar = btEditar;
     this.btExcluir = btExcluir;
     this.btTransferir = btTransferir;
+    this.exibirDataPagar = exibirDataPagar;
+    this.exibirDataReceber = exibirDataReceber;
+    this.exibirNomeGuardado = exibirNomeGuardado;
+    this.exibirNomePagar = exibirNomePagar;
+    this.exibirNomeReceber = exibirNomeReceber;
+    this.exibirValorGuardado = exibirValorGuardado;
+    this.exibirValorPagar = exibirValorPagar;
+    this.exibirValorReceber = exibirValorReceber;
     this.icFechar = icFechar;
     this.instituicao = instituicao;
-    this.listaRegistros = listaRegistros;
     this.saldo = saldo;
     this.titulo = titulo;
   }
@@ -105,6 +136,54 @@ public final class ActivityContaEscolhidaBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.exibirDataPagar;
+      TextView exibirDataPagar = ViewBindings.findChildViewById(rootView, id);
+      if (exibirDataPagar == null) {
+        break missingId;
+      }
+
+      id = R.id.exibirDataReceber;
+      TextView exibirDataReceber = ViewBindings.findChildViewById(rootView, id);
+      if (exibirDataReceber == null) {
+        break missingId;
+      }
+
+      id = R.id.exibirNomeGuardado;
+      TextView exibirNomeGuardado = ViewBindings.findChildViewById(rootView, id);
+      if (exibirNomeGuardado == null) {
+        break missingId;
+      }
+
+      id = R.id.exibirNomePagar;
+      TextView exibirNomePagar = ViewBindings.findChildViewById(rootView, id);
+      if (exibirNomePagar == null) {
+        break missingId;
+      }
+
+      id = R.id.exibirNomeReceber;
+      TextView exibirNomeReceber = ViewBindings.findChildViewById(rootView, id);
+      if (exibirNomeReceber == null) {
+        break missingId;
+      }
+
+      id = R.id.exibirValorGuardado;
+      TextView exibirValorGuardado = ViewBindings.findChildViewById(rootView, id);
+      if (exibirValorGuardado == null) {
+        break missingId;
+      }
+
+      id = R.id.exibirValorPagar;
+      TextView exibirValorPagar = ViewBindings.findChildViewById(rootView, id);
+      if (exibirValorPagar == null) {
+        break missingId;
+      }
+
+      id = R.id.exibirValorReceber;
+      TextView exibirValorReceber = ViewBindings.findChildViewById(rootView, id);
+      if (exibirValorReceber == null) {
+        break missingId;
+      }
+
       id = R.id.icFechar;
       ImageView icFechar = ViewBindings.findChildViewById(rootView, id);
       if (icFechar == null) {
@@ -114,12 +193,6 @@ public final class ActivityContaEscolhidaBinding implements ViewBinding {
       id = R.id.instituicao;
       TextView instituicao = ViewBindings.findChildViewById(rootView, id);
       if (instituicao == null) {
-        break missingId;
-      }
-
-      id = R.id.listaRegistros;
-      RecyclerView listaRegistros = ViewBindings.findChildViewById(rootView, id);
-      if (listaRegistros == null) {
         break missingId;
       }
 
@@ -136,7 +209,9 @@ public final class ActivityContaEscolhidaBinding implements ViewBinding {
       }
 
       return new ActivityContaEscolhidaBinding((LinearLayout) rootView, btEditar, btExcluir,
-          btTransferir, icFechar, instituicao, listaRegistros, saldo, titulo);
+          btTransferir, exibirDataPagar, exibirDataReceber, exibirNomeGuardado, exibirNomePagar,
+          exibirNomeReceber, exibirValorGuardado, exibirValorPagar, exibirValorReceber, icFechar,
+          instituicao, saldo, titulo);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

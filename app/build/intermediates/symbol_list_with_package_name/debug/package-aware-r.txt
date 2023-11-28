@@ -3061,6 +3061,7 @@ drawable ic_sair
 drawable ic_salvar
 drawable ic_search_black_24
 drawable ic_senha
+drawable ic_subtrair
 drawable ic_transacao
 drawable ic_transacao_branco
 drawable ic_voltar
@@ -3277,7 +3278,6 @@ id btEsqueceuSenha
 id btExcluir
 id btLogin
 id btMinhasContas
-id btNotificacao
 id btPagar
 id btReceber
 id btRecuperar
@@ -3460,7 +3460,6 @@ id listaContas
 id listaGuardado
 id listaPagar
 id listaReceber
-id listaRegistros
 id lottie_layer_name
 id m3_side_sheet
 id marquee

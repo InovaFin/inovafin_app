@@ -152,8 +152,12 @@
         "source": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-main-41:\\layout\\activity_splash_transferir.xml"
     },
     {
-        "merged": "com.example.inovafin.app-mergeDebugResources-38:/layout/saldog_guardado_item.xml",
-        "source": "com.example.inovafin.app-main-41:/layout/saldog_guardado_item.xml"
+        "merged": "com.example.inovafin.app-mergeDebugResources-38:/layout/activity_saldo_geral_pagar.xml",
+        "source": "com.example.inovafin.app-main-41:/layout/activity_saldo_geral_pagar.xml"
+    },
+    {
+        "merged": "com.example.inovafin.app-mergeDebugResources-38:/layout/activity_conta_escolhida.xml",
+        "source": "com.example.inovafin.app-main-41:/layout/activity_conta_escolhida.xml"
     },
     {
         "merged": "C:\\Users\\erick\\.gradle\\daemon\\8.0\\com.example.inovafin.app-mergeDebugResources-38:\\layout\\activity_configuracoes.xml",

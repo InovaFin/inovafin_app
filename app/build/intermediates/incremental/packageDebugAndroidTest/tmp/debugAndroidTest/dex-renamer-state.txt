@@ -1,4 +1,4 @@
-#Thu Oct 26 15:28:41 BRT 2023
+#Tue Nov 21 15:01:12 BRT 2023
 base.0=C\:\\Users\\erick\\OneDrive\\Documentos\\repositorios\\inovafin_app\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeExtDexDebugAndroidTest\\classes.dex
 base.1=C\:\\Users\\erick\\OneDrive\\Documentos\\repositorios\\inovafin_app\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
 base.2=C\:\\Users\\erick\\OneDrive\\Documentos\\repositorios\\inovafin_app\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\6\\classes.dex

@@ -165,30 +165,31 @@ class ContaEscolhida : AppCompatActivity() {
                     val registroId = document.id
                     excluirReceber(usuarioId, registroId)
                 }
-                excluirConta()
             }
 
-//        // Registros ContasPagar
-//        firestore.collection("Usuarios").document(usuarioId)
-//            .collection("ContasPagar").whereEqualTo("nome", nome)
-//            .get()
-//            .addOnSuccessListener { documents ->
-//                for (document in documents) {
-//                    val registroId = document.id
-//                    excluirPagar(usuarioId, registroId)
-//                }
-//            }
+        // Registros ContasPagar
+        firestore.collection("Usuarios").document(usuarioId)
+                .collection("ContasPagar").whereEqualTo("conta", nome)
+            .get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    val registroId = document.id
+                    excluirPagar(usuarioId, registroId)
+                }
+            }
 
-//        // Registros Guardado/Investido
-//        firestore.collection("Usuarios").document(usuarioId)
-//            .collection("Guardado/Investido").whereEqualTo("nome", nome)
-//            .get()
-//            .addOnSuccessListener { documents ->
-//                for (document in documents) {
-//                    val registroId = document.id
-//                    excluirGuardado(usuarioId, registroId)
-//                }
-//            }
+        // Registros Guardado/Investido
+        firestore.collection("Usuarios").document(usuarioId)
+            .collection("ValoresGuardado").whereEqualTo("conta", nome)
+            .get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    val registroId = document.id
+                    excluirGuardado(usuarioId, registroId)
+                }
+            }
+
+        excluirConta()
     }
 
     private fun excluirReceber(usuarioId: String, registroId: String) {
@@ -216,7 +217,7 @@ class ContaEscolhida : AppCompatActivity() {
 
     private fun excluirGuardado(usuarioId: String, registroId: String) {
         firestore.collection("Usuarios").document(usuarioId)
-            .collection("Guardado/Investido").document(registroId).delete()
+            .collection("ValoresGuardado").document(registroId).delete()
             .addOnSuccessListener {
 //                Toast.makeText(applicationContext, "Registro excluído", Toast.LENGTH_SHORT).show()
             }

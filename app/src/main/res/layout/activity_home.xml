@@ -69,17 +69,16 @@
                             android:id="@+id/btCalculadora"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="15dp"
                             android:src="@drawable/ic_calculadora"/>
                         <!--Botão Calculadora-->
 
-                        <!--Botão Notificações-->
-                        <ImageView
-                            android:id="@+id/btNotificacao"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_notificacao"/>
-                        <!--Botão Notificações-->
+<!--                        &lt;!&ndash;Botão Notificações&ndash;&gt;-->
+<!--                        <ImageView-->
+<!--                            android:id="@+id/btNotificacao"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:src="@drawable/ic_notificacao"/>-->
+<!--                        &lt;!&ndash;Botão Notificações&ndash;&gt;-->
 
                     </LinearLayout>
                     <!--Botões Cabeçalho-->
